@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727823D20E6FB520071D528 /* AppDelegate.swift */; };
+		0727824020E6FB520071D528 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727823F20E6FB520071D528 /* ViewController.swift */; };
+		0727824320E6FB520071D528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0727824120E6FB520071D528 /* Main.storyboard */; };
+		0727824520E6FB520071D528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0727824420E6FB520071D528 /* Assets.xcassets */; };
+		0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0727824620E6FB520071D528 /* LaunchScreen.storyboard */; };
+		0727825320E6FB520071D528 /* Boxing_247Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825220E6FB520071D528 /* Boxing_247Tests.swift */; };
+		0727825E20E6FB520071D528 /* Boxing_247UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825D20E6FB520071D528 /* Boxing_247UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0727824F20E6FB520071D528 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0727823220E6FB520071D528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0727823920E6FB520071D528;
+			remoteInfo = "Boxing 247";
+		};
+		0727825A20E6FB520071D528 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0727823220E6FB520071D528 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0727823920E6FB520071D528;
+			remoteInfo = "Boxing 247";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0727823A20E6FB520071D528 /* Boxing 247.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxing 247.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0727823D20E6FB520071D528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0727823F20E6FB520071D528 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0727824220E6FB520071D528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0727824420E6FB520071D528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0727824720E6FB520071D528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0727824920E6FB520071D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0727824E20E6FB520071D528 /* Boxing 247Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boxing 247Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0727825220E6FB520071D528 /* Boxing_247Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247Tests.swift; sourceTree = "<group>"; };
+		0727825420E6FB520071D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0727825920E6FB520071D528 /* Boxing 247UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boxing 247UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0727825D20E6FB520071D528 /* Boxing_247UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247UITests.swift; sourceTree = "<group>"; };
+		0727825F20E6FB520071D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0727823720E6FB520071D528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0727824B20E6FB520071D528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0727825620E6FB520071D528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0727823120E6FB520071D528 = {
+			isa = PBXGroup;
+			children = (
+				0727823C20E6FB520071D528 /* Boxing 247 */,
+				0727825120E6FB520071D528 /* Boxing 247Tests */,
+				0727825C20E6FB520071D528 /* Boxing 247UITests */,
+				0727823B20E6FB520071D528 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0727823B20E6FB520071D528 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0727823A20E6FB520071D528 /* Boxing 247.app */,
+				0727824E20E6FB520071D528 /* Boxing 247Tests.xctest */,
+				0727825920E6FB520071D528 /* Boxing 247UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0727823C20E6FB520071D528 /* Boxing 247 */ = {
+			isa = PBXGroup;
+			children = (
+				0727823D20E6FB520071D528 /* AppDelegate.swift */,
+				0727823F20E6FB520071D528 /* ViewController.swift */,
+				0727824120E6FB520071D528 /* Main.storyboard */,
+				0727824420E6FB520071D528 /* Assets.xcassets */,
+				0727824620E6FB520071D528 /* LaunchScreen.storyboard */,
+				0727824920E6FB520071D528 /* Info.plist */,
+			);
+			path = "Boxing 247";
+			sourceTree = "<group>";
+		};
+		0727825120E6FB520071D528 /* Boxing 247Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0727825220E6FB520071D528 /* Boxing_247Tests.swift */,
+				0727825420E6FB520071D528 /* Info.plist */,
+			);
+			path = "Boxing 247Tests";
+			sourceTree = "<group>";
+		};
+		0727825C20E6FB520071D528 /* Boxing 247UITests */ = {
+			isa = PBXGroup;
+			children = (
+				0727825D20E6FB520071D528 /* Boxing_247UITests.swift */,
+				0727825F20E6FB520071D528 /* Info.plist */,
+			);
+			path = "Boxing 247UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0727823920E6FB520071D528 /* Boxing 247 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0727826220E6FB520071D528 /* Build configuration list for PBXNativeTarget "Boxing 247" */;
+			buildPhases = (
+				0727823620E6FB520071D528 /* Sources */,
+				0727823720E6FB520071D528 /* Frameworks */,
+				0727823820E6FB520071D528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Boxing 247";
+			productName = "Boxing 247";
+			productReference = 0727823A20E6FB520071D528 /* Boxing 247.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0727824D20E6FB520071D528 /* Boxing 247Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0727826520E6FB520071D528 /* Build configuration list for PBXNativeTarget "Boxing 247Tests" */;
+			buildPhases = (
+				0727824A20E6FB520071D528 /* Sources */,
+				0727824B20E6FB520071D528 /* Frameworks */,
+				0727824C20E6FB520071D528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0727825020E6FB520071D528 /* PBXTargetDependency */,
+			);
+			name = "Boxing 247Tests";
+			productName = "Boxing 247Tests";
+			productReference = 0727824E20E6FB520071D528 /* Boxing 247Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0727825820E6FB520071D528 /* Boxing 247UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0727826820E6FB520071D528 /* Build configuration list for PBXNativeTarget "Boxing 247UITests" */;
+			buildPhases = (
+				0727825520E6FB520071D528 /* Sources */,
+				0727825620E6FB520071D528 /* Frameworks */,
+				0727825720E6FB520071D528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0727825B20E6FB520071D528 /* PBXTargetDependency */,
+			);
+			name = "Boxing 247UITests";
+			productName = "Boxing 247UITests";
+			productReference = 0727825920E6FB520071D528 /* Boxing 247UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0727823220E6FB520071D528 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Omar;
+				TargetAttributes = {
+					0727823920E6FB520071D528 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					0727824D20E6FB520071D528 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0727823920E6FB520071D528;
+					};
+					0727825820E6FB520071D528 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0727823920E6FB520071D528;
+					};
+				};
+			};
+			buildConfigurationList = 0727823520E6FB520071D528 /* Build configuration list for PBXProject "Boxing 247" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0727823120E6FB520071D528;
+			productRefGroup = 0727823B20E6FB520071D528 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0727823920E6FB520071D528 /* Boxing 247 */,
+				0727824D20E6FB520071D528 /* Boxing 247Tests */,
+				0727825820E6FB520071D528 /* Boxing 247UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0727823820E6FB520071D528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
+				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
+				0727824320E6FB520071D528 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0727824C20E6FB520071D528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0727825720E6FB520071D528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0727823620E6FB520071D528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0727824020E6FB520071D528 /* ViewController.swift in Sources */,
+				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0727824A20E6FB520071D528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0727825320E6FB520071D528 /* Boxing_247Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0727825520E6FB520071D528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0727825E20E6FB520071D528 /* Boxing_247UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0727825020E6FB520071D528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0727823920E6FB520071D528 /* Boxing 247 */;
+			targetProxy = 0727824F20E6FB520071D528 /* PBXContainerItemProxy */;
+		};
+		0727825B20E6FB520071D528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0727823920E6FB520071D528 /* Boxing 247 */;
+			targetProxy = 0727825A20E6FB520071D528 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0727824120E6FB520071D528 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0727824220E6FB520071D528 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0727824620E6FB520071D528 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0727824720E6FB520071D528 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0727826020E6FB520071D528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0727826120E6FB520071D528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0727826320E6FB520071D528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Boxing 247/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0727826420E6FB520071D528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Boxing 247/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0727826620E6FB520071D528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Boxing 247Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boxing 247.app/Boxing 247";
+			};
+			name = Debug;
+		};
+		0727826720E6FB520071D528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Boxing 247Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boxing 247.app/Boxing 247";
+			};
+			name = Release;
+		};
+		0727826920E6FB520071D528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Boxing 247UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Boxing 247";
+			};
+			name = Debug;
+		};
+		0727826A20E6FB520071D528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Boxing 247UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Boxing 247";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0727823520E6FB520071D528 /* Build configuration list for PBXProject "Boxing 247" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0727826020E6FB520071D528 /* Debug */,
+				0727826120E6FB520071D528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0727826220E6FB520071D528 /* Build configuration list for PBXNativeTarget "Boxing 247" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0727826320E6FB520071D528 /* Debug */,
+				0727826420E6FB520071D528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0727826520E6FB520071D528 /* Build configuration list for PBXNativeTarget "Boxing 247Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0727826620E6FB520071D528 /* Debug */,
+				0727826720E6FB520071D528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0727826820E6FB520071D528 /* Build configuration list for PBXNativeTarget "Boxing 247UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0727826920E6FB520071D528 /* Debug */,
+				0727826A20E6FB520071D528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0727823220E6FB520071D528 /* Project object */;
+}
