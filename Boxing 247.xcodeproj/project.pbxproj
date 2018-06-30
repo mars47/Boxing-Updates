@@ -14,6 +14,7 @@
 		0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0727824620E6FB520071D528 /* LaunchScreen.storyboard */; };
 		0727825320E6FB520071D528 /* Boxing_247Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825220E6FB520071D528 /* Boxing_247Tests.swift */; };
 		0727825E20E6FB520071D528 /* Boxing_247UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825D20E6FB520071D528 /* Boxing_247UITests.swift */; };
+		0727826D20E6FB9C0071D528 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0727826C20E6FB9C0071D528 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0727825920E6FB520071D528 /* Boxing 247UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boxing 247UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0727825D20E6FB520071D528 /* Boxing_247UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247UITests.swift; sourceTree = "<group>"; };
 		0727825F20E6FB520071D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0727826C20E6FB9C0071D528 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		0727823C20E6FB520071D528 /* Boxing 247 */ = {
 			isa = PBXGroup;
 			children = (
+				0727826B20E6FB6D0071D528 /* Git */,
 				0727823D20E6FB520071D528 /* AppDelegate.swift */,
 				0727823F20E6FB520071D528 /* ViewController.swift */,
 				0727824120E6FB520071D528 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				0727825F20E6FB520071D528 /* Info.plist */,
 			);
 			path = "Boxing 247UITests";
+			sourceTree = "<group>";
+		};
+		0727826B20E6FB6D0071D528 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				0727826C20E6FB9C0071D528 /* .gitignore */,
+			);
+			path = Git;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0727826D20E6FB9C0071D528 /* .gitignore in Resources */,
 				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
 				0727824320E6FB520071D528 /* Main.storyboard in Resources */,
