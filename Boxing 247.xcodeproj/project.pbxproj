@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727823D20E6FB520071D528 /* AppDelegate.swift */; };
-		0727824020E6FB520071D528 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727823F20E6FB520071D528 /* ViewController.swift */; };
+		0727824020E6FB520071D528 /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727823F20E6FB520071D528 /* NewsFeedVC.swift */; };
 		0727824320E6FB520071D528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0727824120E6FB520071D528 /* Main.storyboard */; };
 		0727824520E6FB520071D528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0727824420E6FB520071D528 /* Assets.xcassets */; };
 		0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0727824620E6FB520071D528 /* LaunchScreen.storyboard */; };
 		0727825320E6FB520071D528 /* Boxing_247Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825220E6FB520071D528 /* Boxing_247Tests.swift */; };
 		0727825E20E6FB520071D528 /* Boxing_247UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825D20E6FB520071D528 /* Boxing_247UITests.swift */; };
 		0727826D20E6FB9C0071D528 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0727826C20E6FB9C0071D528 /* .gitignore */; };
+		0727826F20E84C9D0071D528 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727826E20E84C9D0071D528 /* ContainerVC.swift */; };
+		077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */; };
+		077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		0727823A20E6FB520071D528 /* Boxing 247.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxing 247.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0727823D20E6FB520071D528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0727823F20E6FB520071D528 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0727823F20E6FB520071D528 /* NewsFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
 		0727824220E6FB520071D528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0727824420E6FB520071D528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0727824720E6FB520071D528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		0727825D20E6FB520071D528 /* Boxing_247UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247UITests.swift; sourceTree = "<group>"; };
 		0727825F20E6FB520071D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0727826C20E6FB9C0071D528 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0727826E20E84C9D0071D528 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVC.swift; sourceTree = "<group>"; };
+		077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVCDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +107,11 @@
 			children = (
 				0727826B20E6FB6D0071D528 /* Git */,
 				0727823D20E6FB520071D528 /* AppDelegate.swift */,
-				0727823F20E6FB520071D528 /* ViewController.swift */,
+				0727823F20E6FB520071D528 /* NewsFeedVC.swift */,
 				0727824120E6FB520071D528 /* Main.storyboard */,
+				0727826E20E84C9D0071D528 /* ContainerVC.swift */,
+				077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */,
+				077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */,
 				0727824420E6FB520071D528 /* Assets.xcassets */,
 				0727824620E6FB520071D528 /* LaunchScreen.storyboard */,
 				0727824920E6FB520071D528 /* Info.plist */,
@@ -271,8 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0727824020E6FB520071D528 /* ViewController.swift in Sources */,
+				0727826F20E84C9D0071D528 /* ContainerVC.swift in Sources */,
+				0727824020E6FB520071D528 /* NewsFeedVC.swift in Sources */,
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
+				077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */,
+				077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
