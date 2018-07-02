@@ -27,7 +27,6 @@ class NewsFeedVC: UIViewController {
 @objc
 protocol NewsFeedVCDelegate {
     @objc optional func toggleLeftPanel()
-    @objc optional func toggleRightPanel()
     @objc optional func collapseSidePanels()
 }
 

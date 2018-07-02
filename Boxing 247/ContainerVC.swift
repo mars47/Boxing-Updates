@@ -16,8 +16,6 @@ class ContainerVC: UIViewController {
         case rightPanelExpanded
     }
     
-    // ...
-    
     var centerNavigationController: UINavigationController!
     var newsFeedVC: NewsFeedVC!
     var currentState: SlideOutState = .bothCollapsed {
@@ -55,17 +53,10 @@ private extension UIStoryboard {
     static func navigationPanel() -> NavigationPanelVC? {
         return mainStoryboard().instantiateViewController(withIdentifier: "NavigationPanelVC") as? NavigationPanelVC
     }
-    
-//    static func rightViewController() -> SidePanelViewController? {
-//        return mainStoryboard().instantiateViewController(withIdentifier: "RightViewController") as? SidePanelViewController
-//    }
-    
+
     static func newsFeedVC() -> NewsFeedVC? {
         
-        let vc = mainStoryboard().instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC
-        
-        if vc == nil {print("vc nil")} else {print("vc not nil")}
-        return vc
+      return mainStoryboard().instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC
     }
 }
 
@@ -82,16 +73,6 @@ extension ContainerVC: NewsFeedVCDelegate {
         
         animateLeftPanel(shouldExpand: notAlreadyExpanded)
     }
-    
-//    func toggleRightPanel() {
-//        let notAlreadyExpanded = (currentState != .rightPanelExpanded)
-//
-//        if notAlreadyExpanded {
-//            addRightPanelViewController()
-//        }
-//
-//        animateRightPanel(shouldExpand: notAlreadyExpanded)
-//    }
     
     func collapseSidePanels() {
         
@@ -114,34 +95,7 @@ extension ContainerVC: NewsFeedVCDelegate {
             navigationPanel = vc
         }
     }
-    
-//    func addRightPanelViewController() {
-//
-//        guard rightViewController == nil else { return }
-//
-//        if let vc = UIStoryboard.rightViewController() {
-//            vc.animals = Animal.allDogs()
-//            addChildSidePanelController(vc)
-//            rightViewController = vc
-//        }
-//    }
-    
-//    func animateRightPanel(shouldExpand: Bool) {
-//
-//        if shouldExpand {
-//            currentState = .rightPanelExpanded
-//            animateCenterPanelXPosition(
-//                targetPosition: -centerNavigationController.view.frame.width + centerPanelExpandedOffset)
-//
-//        } else {
-//            animateCenterPanelXPosition(targetPosition: 0) { _ in
-//                self.currentState = .bothCollapsed
-//
-//                self.rightViewController?.view.removeFromSuperview()
-//                self.rightViewController = nil
-//            }
-//        }
-//    }
+
     func animateLeftPanel(shouldExpand: Bool) {
         
         //   This method simply checks whether it’s been told to expand or collapse the side panel. If it should expand, then it sets the current state to indicate the left panel is expanded, and then animates the center panel so it’s open. Otherwise, it animates the center panel closed and then removes its view and sets the current state to indicate it’s closed.
@@ -185,56 +139,10 @@ extension ContainerVC: NewsFeedVCDelegate {
     //
     func addChildSidePanelController(_ sidePanelController: NavigationPanelVC) {
         // n addition to what it was doing previously, the method will now set the center view controller as the side panels’ delegate.
-        sidePanelController.delegate = newsFeedVC
+       // sidePanelController.delegate = newsFeedVC
         view.insertSubview(sidePanelController.view, at: 0)
         
         addChildViewController(sidePanelController)
         sidePanelController.didMove(toParentViewController: self)
     }
 }
-
-//extension ContainerViewController: UIGestureRecognizerDelegate {
-//
-//    @objc func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
-//
-//        let gestureIsDraggingFromLeftToRight = (recognizer.velocity(in: view).x > 0)
-//
-//        switch recognizer.state {
-//
-//        case .began:
-//            if currentState == .bothCollapsed {
-//                if gestureIsDraggingFromLeftToRight {
-//                    addLeftPanelViewController()
-//                } else {
-//                    addRightPanelViewController()
-//                }
-//
-//                showShadowForCenterViewController(true)
-//            }
-//
-//        case .changed:
-//            if let rview = recognizer.view {
-//                rview.center.x = rview.center.x + recognizer.translation(in: view).x
-//                recognizer.setTranslation(CGPoint.zero, in: view)
-//            }
-//
-//        case .ended:
-//            if let _ = leftViewController,
-//                let rview = recognizer.view {
-//                // animate the side panel open or closed based on whether the view
-//                // has moved more or less than halfway
-//                let hasMovedGreaterThanHalfway = rview.center.x > view.bounds.size.width
-//                animateLeftPanel(shouldExpand: hasMovedGreaterThanHalfway)
-//
-//            } else if let _ = rightViewController,
-//                let rview = recognizer.view {
-//                let hasMovedGreaterThanHalfway = rview.center.x < 0
-//                animateRightPanel(shouldExpand: hasMovedGreaterThanHalfway)
-//            }
-//
-//        default:
-//            break
-//        }
-//    }
-//}
-

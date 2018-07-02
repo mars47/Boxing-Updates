@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--News FeedVC-->
+        <!--News-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="NewsFeedVC" id="BYZ-38-t0r" customClass="NewsFeedVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsFeedVC" title="News" id="BYZ-38-t0r" customClass="NewsFeedVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,29 +38,19 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-ds-fsa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="News" id="Enw-dt-NfO">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="ehK-jX-WvV">
-                                            <connections>
-                                                <action selector="navPanelButtonPressed:" destination="BYZ-38-t0r" id="ySV-4A-5qs"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="yCg-ds-fsa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="808-oK-EhX"/>
-                            <constraint firstItem="yCg-ds-fsa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zoi-AK-Enc"/>
-                            <constraint firstItem="yCg-ds-fsa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r7K-SU-Lns"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="News" id="klq-sI-Zy4" userLabel="News">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="ZrX-Ow-uOt">
+                            <connections>
+                                <action selector="navPanelButtonPressed:" destination="BYZ-38-t0r" id="w4l-vK-b5L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="navigationPanelButton" destination="ehK-jX-WvV" id="Fkv-S8-zyy"/>
+                        <outlet property="navigationPanelButton" destination="ZrX-Ow-uOt" id="Sbz-ha-x6u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

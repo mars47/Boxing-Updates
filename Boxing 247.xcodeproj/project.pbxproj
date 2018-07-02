@@ -108,11 +108,11 @@
 				0727826B20E6FB6D0071D528 /* Git */,
 				0727823D20E6FB520071D528 /* AppDelegate.swift */,
 				0727823F20E6FB520071D528 /* NewsFeedVC.swift */,
-				0727824120E6FB520071D528 /* Main.storyboard */,
 				0727826E20E84C9D0071D528 /* ContainerVC.swift */,
 				077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */,
 				077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */,
 				0727824420E6FB520071D528 /* Assets.xcassets */,
+				0727824120E6FB520071D528 /* Main.storyboard */,
 				0727824620E6FB520071D528 /* LaunchScreen.storyboard */,
 				0727824920E6FB520071D528 /* Info.plist */,
 			);
