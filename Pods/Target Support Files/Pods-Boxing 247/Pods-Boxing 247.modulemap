@@ -1,0 +1,6 @@
+framework module Pods_Boxing_247 {
+  umbrella header "Pods-Boxing 247-umbrella.h"
+
+  export *
+  module * { export * }
+}

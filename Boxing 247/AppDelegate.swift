@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Boxing 247
 //
-//  Created by Omar  on 30/06/2018.
 //  Copyright © 2018 Omar. All rights reserved.
 //
 
