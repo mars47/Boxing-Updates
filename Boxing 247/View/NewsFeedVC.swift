@@ -23,11 +23,14 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        //articles = appServerClient.downloadNews()
-        //setLayout()
+
         bindViewModel()
         viewModel.downloadNews()
     }
@@ -45,20 +48,12 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsFeedCell", for: indexPath) as! NewsFeedCell
-        cell.collectionView = self.collectionView
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
+
         // Prepares viewModel for assignation to a collectionViewCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         cell.assignViewModel(viewModel: cellViewModel)
         return cell
-    }
-    
-    func setLayout() {
-        
-        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
-        layout.minimumInteritemSpacing = 5
-        layout.itemSize = CGSize(width: ((self.collectionView?.frame.size.width)! - 20)/2, height: (self.collectionView?.frame.size.height)!/3)
     }
 }
 

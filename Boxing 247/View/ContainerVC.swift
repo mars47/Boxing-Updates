@@ -55,7 +55,7 @@ private extension UIStoryboard {
 
     static func newsFeedVC() -> NewsFeedVC? {
         
-      return mainStoryboard().instantiateViewController(withIdentifier: "NewsFeedVC") as? NewsFeedVC
+      return mainStoryboard().instantiateViewController(withIdentifier: "tController") as? NewsFeedVC
     }
 }
 
