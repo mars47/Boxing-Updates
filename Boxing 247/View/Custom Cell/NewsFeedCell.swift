@@ -20,7 +20,7 @@ class NewsFeedCell: UICollectionViewCell {
         // Initialization code
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         let screenWidth = UIScreen.main.bounds.size.width
-        widthConstraint.constant = screenWidth - (2 * 12)
+        widthConstraint.constant = screenWidth - (2 * 10)
     }
     
     var viewModel: NewsFeedCellVM! {
@@ -30,6 +30,9 @@ class NewsFeedCell: UICollectionViewCell {
     }
     
     func updateUI() {
+        
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 0.3
         
         DispatchQueue.main.async {
             
@@ -42,10 +45,6 @@ class NewsFeedCell: UICollectionViewCell {
             self.thumbnail.contentMode = .scaleAspectFill
             self.thumbnail.clipsToBounds = true
         }
-    }
-
-    func assignViewModel(viewModel: NewsFeedCellVM) {
-        self.viewModel = viewModel
     }
 }
 

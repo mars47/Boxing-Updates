@@ -13,9 +13,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
     var delegate: NewsFeedVCDelegate?
-    let appServerClient = AppServerClient()
     let viewModel = NewsFeedVM()
-    var articles: [Article]?
+
 
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel?()
@@ -33,6 +32,13 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
         bindViewModel()
         viewModel.downloadNews()
+        
+        let unixTimestamp = 1532380690.0
+        var date = Date(timeIntervalSince1970: unixTimestamp)
+        let timeAgo = date.timeAgoSinceDate(date)
+       
+        print("timestamp: \(date)")
+        print("time ago: \(timeAgo)")
     }
     
     func bindViewModel(){
@@ -52,9 +58,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
         // Prepares viewModel for assignation to a collectionViewCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
-        cell.assignViewModel(viewModel: cellViewModel)
+        cell.viewModel = cellViewModel
         return cell
     }
+    
 }
 
 
