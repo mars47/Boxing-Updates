@@ -24,7 +24,7 @@ class NewsFeedVM: NSObject {
             self.articlesArray.value = result
             
             // create an array of view models. 1 for each tableview view cell / articles returned from the web request
-            self.cellVMArray = self.articlesArray.value.flatMap{ NewsFeedCellVM(initWith: $0) }
+            self.cellVMArray = self.articlesArray.value.compactMap{ NewsFeedCellVM(initWith: $0) }
         }
         
     }

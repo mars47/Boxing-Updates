@@ -31,8 +31,8 @@ class NewsFeedCell: UICollectionViewCell {
     
     func updateUI() {
         
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 0.3
+        //self.layer.borderColor = UIColor.lightGray.cgColor
+        //self.layer.borderWidth = 0.3
         
         DispatchQueue.main.async {
             

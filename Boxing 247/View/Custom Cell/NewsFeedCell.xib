@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -45,12 +45,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm3-mi-xQb" customClass="RoundUIView" customModule="Boxing_247" customModuleProvider="target">
+                                <rect key="frame" x="4" y="229" width="392" height="2"/>
+                                <color key="backgroundColor" red="0.81492572841305422" green="0.053322053251784858" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="aZa-wJ-jhW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Ie9-Gq-Gy0" firstAttribute="leading" secondItem="cn7-WG-g0P" secondAttribute="leading" constant="8" id="2eX-rf-DZ8"/>
                             <constraint firstItem="ixA-el-ksx" firstAttribute="top" secondItem="Ww5-1u-kwm" secondAttribute="bottom" constant="8" id="ABc-ba-pJb"/>
                             <constraint firstItem="ixA-el-ksx" firstAttribute="top" secondItem="Ww5-1u-kwm" secondAttribute="bottom" constant="8" id="AjC-Nu-jq2"/>
                             <constraint firstAttribute="trailing" secondItem="QHl-8i-0Lp" secondAttribute="trailing" constant="8" id="BDG-Fz-7SF"/>
+                            <constraint firstItem="dm3-mi-xQb" firstAttribute="leading" secondItem="cn7-WG-g0P" secondAttribute="leading" constant="4" id="C5N-Rt-AWg"/>
+                            <constraint firstAttribute="trailing" secondItem="dm3-mi-xQb" secondAttribute="trailing" constant="4" id="Iac-zJ-yr0"/>
                             <constraint firstItem="Ww5-1u-kwm" firstAttribute="leading" secondItem="cn7-WG-g0P" secondAttribute="leading" constant="8" id="PKC-Vu-VPD"/>
                             <constraint firstItem="Ie9-Gq-Gy0" firstAttribute="top" secondItem="ixA-el-ksx" secondAttribute="bottom" constant="8" id="Rr9-I2-K96"/>
                             <constraint firstItem="Ww5-1u-kwm" firstAttribute="top" secondItem="cn7-WG-g0P" secondAttribute="top" constant="8" id="ZDA-sV-PL6"/>
@@ -59,6 +73,7 @@
                             <constraint firstAttribute="bottom" secondItem="QHl-8i-0Lp" secondAttribute="bottom" constant="5" id="d2m-aw-0F3"/>
                             <constraint firstAttribute="width" constant="400" id="eNr-xi-xSH"/>
                             <constraint firstItem="QHl-8i-0Lp" firstAttribute="top" secondItem="Ie9-Gq-Gy0" secondAttribute="bottom" constant="-1" id="n0e-vW-Bfq"/>
+                            <constraint firstItem="dm3-mi-xQb" firstAttribute="top" secondItem="ixA-el-ksx" secondAttribute="bottom" constant="5" id="pOl-JZ-I7g"/>
                             <constraint firstItem="Ie9-Gq-Gy0" firstAttribute="top" secondItem="ixA-el-ksx" secondAttribute="bottom" constant="8" id="rSG-fB-XVP"/>
                             <constraint firstItem="QHl-8i-0Lp" firstAttribute="leading" secondItem="cn7-WG-g0P" secondAttribute="leading" constant="8" id="yOe-eE-G4g"/>
                             <constraint firstAttribute="trailing" secondItem="ixA-el-ksx" secondAttribute="trailing" id="zQM-Jt-WTV"/>
