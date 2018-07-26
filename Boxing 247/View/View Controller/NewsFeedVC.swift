@@ -61,8 +61,14 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         // Prepares viewModel for assignation to a collectionViewCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         cell.viewModel = cellViewModel
+        cell.bounds.size.height = cell.heightConstraint.constant
         return cell
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072
+//        return CGSize()
+//    }
     
 }
 

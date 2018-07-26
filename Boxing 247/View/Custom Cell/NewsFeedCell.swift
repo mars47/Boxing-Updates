@@ -14,6 +14,8 @@ class NewsFeedCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var author: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +41,7 @@ class NewsFeedCell: UICollectionViewCell {
             if self.viewModel.image == nil { self.updateUI() } // a hack to ensure that a cell is always returned with a UIImage when given a viewModel
             else { self.thumbnail.image = self.viewModel.image }
             
+            self.author.text = "Posted by \(self.viewModel.article.author)"
             self.pubDate.text = self.viewModel.article.pubDate
             self.title.text = self.viewModel.article.title
             self.content.text = self.viewModel.article.description;
