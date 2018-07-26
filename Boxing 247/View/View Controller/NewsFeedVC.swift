@@ -33,12 +33,14 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         bindViewModel()
         viewModel.downloadNews()
         
-        let unixTimestamp = 1532380690.0
+        let unixTimestamp = 1532596768.0
         var date = Date(timeIntervalSince1970: unixTimestamp)
         let timeAgo = date.timeAgoSinceDate(date)
        
         print("timestamp: \(date)")
         print("time ago: \(timeAgo)")
+        
+
     }
     
     func bindViewModel(){
