@@ -41,13 +41,12 @@ class NewsFeedCell: UICollectionViewCell {
             if self.viewModel.image == nil { self.updateUI() } // a hack to ensure that a cell is always returned with a UIImage when given a viewModel
             else { self.thumbnail.image = self.viewModel.image }
             
-            self.author.text = "Published by \(self.viewModel.article.author)"
-            self.pubDate.text = self.viewModel.article.timeAgo
+            self.author.text = "Posted by \(self.viewModel.article.author)"
+            self.pubDate.text = self.viewModel.article.pubDate
             self.title.text = self.viewModel.article.title
             self.content.text = self.viewModel.article.description;
             self.thumbnail.contentMode = .scaleAspectFill
             self.thumbnail.clipsToBounds = true
-            self.bounds.size.height = self.heightConstraint.constant
         }
     }
 }

@@ -31,12 +31,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="27"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;pubdate&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww5-1u-kwm">
-                                        <rect key="frame" x="20" y="6" width="67.5" height="16"/>
+                                        <rect key="frame" x="8" y="6" width="67.5" height="16"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                                         <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKZ-4I-8yQ" userLabel="Bookmark">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKZ-4I-8yQ">
                                         <rect key="frame" x="341" y="2" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="TSo-QM-4JB"/>
@@ -44,7 +44,7 @@
                                         </constraints>
                                         <state key="normal" image="bookmarkIconWHITE"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLu-Y4-K6c" userLabel="Enlarge">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLu-Y4-K6c">
                                         <rect key="frame" x="372" y="2" width="24" height="24"/>
                                         <color key="backgroundColor" red="0.81568627450980391" green="0.054901960784313725" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -53,7 +53,7 @@
                                         </constraints>
                                         <state key="normal" image="enlargeIcon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-Yf-AMe" userLabel="Share">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-Yf-AMe">
                                         <rect key="frame" x="310" y="2" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="1X6-Zf-7QV"/>
@@ -61,13 +61,6 @@
                                         </constraints>
                                         <state key="normal" image="uploadIconWhite"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockIconRED" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-pZ-lRA">
-                                        <rect key="frame" x="7" y="8" width="12" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="12" id="IdD-qM-zeS"/>
-                                            <constraint firstAttribute="height" constant="12" id="KCG-fU-Xwi"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.69673052226027399" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -76,10 +69,8 @@
                                     <constraint firstItem="Fwe-Yf-AMe" firstAttribute="top" secondItem="N4w-3X-fGL" secondAttribute="top" constant="2" id="OUz-jp-OSV"/>
                                     <constraint firstItem="dKZ-4I-8yQ" firstAttribute="leading" secondItem="Fwe-Yf-AMe" secondAttribute="trailing" constant="6" id="QFK-m6-AbT"/>
                                     <constraint firstItem="zLu-Y4-K6c" firstAttribute="leading" secondItem="dKZ-4I-8yQ" secondAttribute="trailing" constant="6" id="RIG-SK-ja5"/>
-                                    <constraint firstItem="cnM-pZ-lRA" firstAttribute="leading" secondItem="N4w-3X-fGL" secondAttribute="leading" constant="7" id="Uq4-NC-72a"/>
-                                    <constraint firstItem="Ww5-1u-kwm" firstAttribute="top" secondItem="N4w-3X-fGL" secondAttribute="top" constant="6" id="YmG-gP-Kk1"/>
-                                    <constraint firstItem="cnM-pZ-lRA" firstAttribute="top" secondItem="N4w-3X-fGL" secondAttribute="top" constant="8" id="eu0-fB-rGT"/>
-                                    <constraint firstItem="Ww5-1u-kwm" firstAttribute="leading" secondItem="cnM-pZ-lRA" secondAttribute="trailing" constant="1" id="kXI-ZZ-Qce"/>
+                                    <constraint firstItem="Ww5-1u-kwm" firstAttribute="leading" secondItem="N4w-3X-fGL" secondAttribute="leading" constant="8" id="WO5-2X-YW6"/>
+                                    <constraint firstItem="Ww5-1u-kwm" firstAttribute="top" secondItem="N4w-3X-fGL" secondAttribute="top" constant="6" id="hpR-Fq-ITq"/>
                                     <constraint firstItem="zLu-Y4-K6c" firstAttribute="top" secondItem="N4w-3X-fGL" secondAttribute="top" constant="2" id="nAk-RM-unS"/>
                                     <constraint firstItem="dKZ-4I-8yQ" firstAttribute="top" secondItem="N4w-3X-fGL" secondAttribute="top" constant="2" id="oR4-38-KVd"/>
                                 </constraints>
@@ -164,7 +155,6 @@
     </objects>
     <resources>
         <image name="bookmarkIconWHITE" width="25" height="25"/>
-        <image name="clockIconRED" width="32" height="32"/>
         <image name="enlargeIcon" width="24" height="24"/>
         <image name="uploadIconWhite" width="25" height="25"/>
     </resources>

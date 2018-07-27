@@ -32,6 +32,15 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
         bindViewModel()
         viewModel.downloadNews()
+        
+        let unixTimestamp = 1532596768.0
+        var date = Date(timeIntervalSince1970: unixTimestamp)
+        let timeAgo = date.timeAgoSinceDate(date)
+       
+        print("timestamp: \(date)")
+        print("time ago: \(timeAgo)")
+        
+
     }
     
     func bindViewModel(){
@@ -52,6 +61,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         // Prepares viewModel for assignation to a collectionViewCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         cell.viewModel = cellViewModel
+        cell.bounds.size.height = cell.heightConstraint.constant
         return cell
     }
     
