@@ -143,5 +143,6 @@ extension ContainerVC: NewsFeedVCDelegate {
         
         addChildViewController(sidePanelController)
         sidePanelController.didMove(toParentViewController: self)
+        //reverted 
     }
 }
