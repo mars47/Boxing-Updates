@@ -18,22 +18,31 @@ struct Article {
     private (set) var thumbnail: String
     private (set) var description: String
     private (set) var content: String
+    private (set) var timeAgo: String
 
 
     init(initialiseArticleWith json:JSON) {
         
-        self.title = json["title"].string!
-        self.pubDate = json["pubDate"].string!
-        self.link = json["link"].string!
-        self.guid = json["guid"].string!
-        self.author = json["author"].string!
-        self.thumbnail = json["thumbnail"].string!
+        title = json["title"].string!
+        pubDate = json["pubDate"].string!
+        link = json["link"].string!
+        guid = json["guid"].string!
+        author = json["author"].string!
+        thumbnail = json["thumbnail"].string!
         
-        self.description = json["description"].string!
-        self.description = self.description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-        self.description = self.description.trimmingCharacters(in: .whitespacesAndNewlines);
+        description = json["description"].string!
+        description = self.description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        description = self.description.trimmingCharacters(in: .whitespacesAndNewlines);
         //print(" My String: '\(self.description)'")
-        self.content = json["content"].string!
-        self.content = self.content.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        content = json["content"].string!
+        content = self.content.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        
+        // --- convert pubDate to timeAgo string ----
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" //date format
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
+        guard let date = dateFormatter.date(from: pubDate) else {
+            self.timeAgo = "n/a"; return } //according to date format
+         timeAgo = date.timeAgoSinceDate(date)
     }
 }
