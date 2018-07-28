@@ -130,6 +130,8 @@ extension ContainerVC: NewsFeedVCDelegate {
         
         if shouldShowShadow {
             centerNavigationController.view.layer.shadowOpacity = 0.8
+           // centerNavigationController.view.layer.shadowColor = red247.cgColor
+
         } else {
             centerNavigationController.view.layer.shadowOpacity = 0.0
         }
