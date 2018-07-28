@@ -11,7 +11,7 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var tableView: UITableView!
     var delegate: NavigationPanelVCDelegate?
-    let pages : [String] = ["FIGHT SCHEDULE", "CURRENT CHAMPIONS", "WEIGHT CLASSES", "COMMUNITY", "SAVED ARTICLES"]
+    let pages : [String] = ["Fight Schedule", "Current Champions", "Weight Classes", "Community", "Saved Articles"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

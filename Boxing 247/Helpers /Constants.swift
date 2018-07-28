@@ -1,0 +1,17 @@
+//
+//  Extension-UIColour.swift
+//  Boxing 247
+//
+//  Created by Omar  on 27/07/2018.
+//  Copyright © 2018 Omar. All rights reserved.
+//
+
+import UIKit
+
+let dark247 = UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.0)
+let grey247 = UIColor(red:0.25, green:0.25, blue:0.25, alpha:1.0)
+let lightGrey247 = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0) // text
+let white247 = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0) // text
+let red247 = UIColor(red:0.82, green:0.05, blue:0.00, alpha:1.0)
+
+
