@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = containerVC
         self.window!.makeKeyAndVisible()
         
+        let attributes = [NSAttributedStringKey.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedStringKey.foregroundColor: white247]
         
         
         // Set navigation bar tint / background colour
@@ -29,8 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //To change iOS 11 navigationBar largeTitle color
             
             UINavigationBar.appearance().prefersLargeTitles = true
-            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
+            //UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
+            UINavigationBar.appearance().largeTitleTextAttributes = attributes
+            
+                UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
             
         } else {
             // for default navigation bar title color
@@ -76,3 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+//for familyName in UIFont.familyNames {
+//    print(UIFont.fontNames(forFamilyName: familyName))
+//}

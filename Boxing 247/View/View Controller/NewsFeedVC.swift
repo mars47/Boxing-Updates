@@ -22,7 +22,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
