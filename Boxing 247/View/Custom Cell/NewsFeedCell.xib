@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm3-mi-xQb" userLabel="Red Panel" customClass="RoundUIView" customModule="Boxing_247" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="160" width="400" height="1"/>
+                                <rect key="frame" x="0.0" y="160" width="400" height="0.5"/>
                                 <color key="backgroundColor" red="0.81568627450980391" green="0.054901960784313725" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="aZa-wJ-jhW"/>
