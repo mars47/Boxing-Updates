@@ -30,6 +30,8 @@
 		07DE4CE62108772800730457 /* Extension-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE52108772800730457 /* Extension-UIView.swift */; };
 		07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE92108846700730457 /* RoundedUIView.swift */; };
 		07DE4CEC210B883900730457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CEB210B883900730457 /* Constants.swift */; };
+		07F9627121123FC6006E0010 /* WeightDivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */; };
+		07F9627221123FC6006E0010 /* WeightDivisionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F9627021123FC6006E0010 /* WeightDivisionCell.xib */; };
 		2CFBC2AF4839E201B48998A1 /* Pods_Boxing_247Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBED1198E9968A585BBE24B /* Pods_Boxing_247Tests.framework */; };
 		7A6646AC0C87FDEAA07EE106 /* Pods_Boxing_247.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7578F102F527955BD3063C /* Pods_Boxing_247.framework */; };
 		9F8029E8E36255C3D08D9FEE /* Pods_Boxing_247UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F71B7ED58A081BD490D4CF /* Pods_Boxing_247UITests.framework */; };
@@ -82,6 +84,8 @@
 		07DE4CE52108772800730457 /* Extension-UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIView.swift"; sourceTree = "<group>"; };
 		07DE4CE92108846700730457 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		07DE4CEB210B883900730457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDivisionCell.swift; sourceTree = "<group>"; };
+		07F9627021123FC6006E0010 /* WeightDivisionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightDivisionCell.xib; sourceTree = "<group>"; };
 		1420D11ACB3F09770796B01D /* Pods-Boxing 247UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247UITests/Pods-Boxing 247UITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C716950DE0EAFD75088DE26 /* Pods-Boxing 247UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247UITests/Pods-Boxing 247UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2EE16E0F3F43C9587A4BBE1F /* Pods-Boxing 247.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247.release.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247/Pods-Boxing 247.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				071C378620F0020B002CA348 /* PanelCell.swift */,
 				071C377D20EF7C7E002CA348 /* NewsFeedCell.swift */,
 				071B2BB62104712D0096A57C /* NewsFeedCell.xib */,
+				07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */,
+				07F9627021123FC6006E0010 /* WeightDivisionCell.xib */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 			files = (
 				0727826D20E6FB9C0071D528 /* .gitignore in Resources */,
 				071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */,
+				07F9627221123FC6006E0010 /* WeightDivisionCell.xib in Resources */,
 				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
 				0727824320E6FB520071D528 /* Main.storyboard in Resources */,
@@ -511,6 +518,7 @@
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
 				07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */,
 				077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */,
+				07F9627121123FC6006E0010 /* WeightDivisionCell.swift in Sources */,
 				077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* AppServerClient.swift in Sources */,
 				071C378020EF82C8002CA348 /* NewsFeedCellVM.swift in Sources */,

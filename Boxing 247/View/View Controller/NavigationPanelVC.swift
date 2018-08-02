@@ -12,7 +12,7 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableView: UITableView!
     var delegate: NavigationPanelVCDelegate?
     let sections =  ["Latest", "Boxing", "Community", "Help"]
-    let array = [
+    let rows = [
         ["News", "Fight Schedule", "Saved Articles"],
         ["Current Champions", "Weight Divisions"],
         ["Dashboard", "Messages", "Polls"],
@@ -49,25 +49,25 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
         return sections[section]
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return array.count
+        return rows.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return array[section].count
+        return rows[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PanelCell", for: indexPath) as? PanelCell {
             
             cell.icon.image = icons[indexPath.section][indexPath.row]!
-            cell.pageTitle.text = array[indexPath.section][indexPath.row]
-            if indexPath.row != 0 {
+            cell.pageTitle.text = rows[indexPath.section][indexPath.row]
+            if indexPath.row == 0 {
                 cell.topPanel.backgroundColor = cell.backgroundColor
             }
             
             else {
-                cell.topPanel.backgroundColor = UIColor.lightGray
+                cell.topPanel.backgroundColor = cell.backgroundColor
             }
 
             return cell

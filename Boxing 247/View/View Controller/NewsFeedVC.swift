@@ -32,7 +32,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
         bindViewModel()
         viewModel.downloadNews()
-        
     }
     
     func bindViewModel(){
