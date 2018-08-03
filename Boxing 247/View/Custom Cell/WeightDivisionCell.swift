@@ -10,16 +10,22 @@ import UIKit
 
 class WeightDivisionCell: UITableViewCell {
 
+    @IBOutlet weak var divisionTitle: UILabel!
+    @IBOutlet weak var thumbnail: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.bounds.size.width  = UIScreen.main.bounds.size.width
-        self.bounds.size.height = (self.bounds.size.width / 4.498)
+        //thumbnail.layer.borderWidth = 0.5
+        //thumbnail.layer.borderColor = UIColor.lightGray.cgColor
+        self.backgroundColor = test247
+        //divisionTitle.layer.borderWidth = 0.3
+        //divisionTitle.layer.borderColor = UIColor.lightGray.cgColor
+       // divisionTitle.textColor = dark247
+       // divisionTitle.backgroundColor = red247
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        //contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(5, 5, 5, 5)) //t l b r
     }
     
 }
