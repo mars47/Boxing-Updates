@@ -256,8 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				0727826E20E84C9D0071D528 /* ContainerVC.swift */,
-				0727823F20E6FB520071D528 /* NewsFeedVC.swift */,
 				077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */,
+				0727823F20E6FB520071D528 /* NewsFeedVC.swift */,
 				07F96273211316ED006E0010 /* WeightDivisionVC.swift */,
 			);
 			path = "View Controller";

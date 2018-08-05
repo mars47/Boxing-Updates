@@ -69,16 +69,3 @@ protocol NewsFeedVCDelegate {
     @objc optional func collapseSidePanels()
 }
 
-extension NewsFeedVC: NavigationPanelVCDelegate {
-    
-    // This method simply populates the image view and labels in the center view controller with the animal’s image, title, and creator. Then, if the center view controller has a delegate of its own, you can tell it to collapse the side panel away so you can focus on the selected item.
-    
-    func didSelectAnimal() {
-        //        imageView.image = animal.image
-        //        titleLabel.text = animal.title
-        //        creatorLabel.text = animal.creator
-        //
-        //        delegate?.collapseSidePanels?()
-    }
-}
-

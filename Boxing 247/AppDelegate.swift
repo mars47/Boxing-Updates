@@ -14,44 +14,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        //UIApplication.shared.statusBarStyle = .lightContent
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let containerVC = ContainerVC()
-//        self.window!.rootViewController = containerVC
-//        self.window!.makeKeyAndVisible()
-//
-//        let attributes = [NSAttributedStringKey.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedStringKey.foregroundColor: white247]
-//        
-//
-//        // Set navigation bar tint / background colour
-//        UINavigationBar.appearance().barTintColor = UIColor.black
-//
-//        if #available(iOS 11.0, *) {
-//            //To change iOS 11 navigationBar largeTitle color
-//
-//            UINavigationBar.appearance().prefersLargeTitles = true
-//            //UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
-//            UINavigationBar.appearance().largeTitleTextAttributes = attributes
-//             
-//
-//                UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
-//
-//        } else {
-//            // for default navigation bar title color
-//            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
-//
-//        }
-//
-//        // Set navigation bar ItemButton tint colour
-//        UIBarButtonItem.appearance().tintColor = red247
-//
-//        // Set Navigation bar background image
-//        //        let navBgImage:UIImage = UIImage(named: “bg_blog_navbar_reduced.jpg”)!
-//        //        UINavigationBar.appearance().setBackgroundImage(navBgImage, forBarMetrics: .Default)
-//        
-//        //Set navigation bar Back button tint colour
-//        //        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-//
+        //UIApplication.shared.statusBarStyle = .lightContent
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let containerVC = ContainerVC()
+        self.window!.rootViewController = containerVC
+        self.window!.makeKeyAndVisible()
+
+        let attributes = [NSAttributedStringKey.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedStringKey.foregroundColor: white247]
+        
+
+        // Set navigation bar tint / background colour
+        UINavigationBar.appearance().barTintColor = UIColor.black
+
+        if #available(iOS 11.0, *) {
+            //To change iOS 11 navigationBar largeTitle color
+
+            UINavigationBar.appearance().prefersLargeTitles = true
+            //UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
+            UINavigationBar.appearance().largeTitleTextAttributes = attributes
+             
+
+                UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
+
+        } else {
+            // for default navigation bar title color
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
+
+        }
+
+        // Set navigation bar ItemButton tint colour
+        UIBarButtonItem.appearance().tintColor = red247
+
+        // Set Navigation bar background image
+        //        let navBgImage:UIImage = UIImage(named: “bg_blog_navbar_reduced.jpg”)!
+        //        UINavigationBar.appearance().setBackgroundImage(navBgImage, forBarMetrics: .Default)
+        
+        //Set navigation bar Back button tint colour
+        //        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+
         return true
     }
 

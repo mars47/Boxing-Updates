@@ -10,7 +10,11 @@ import UIKit
 class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var delegate: NavigationPanelVCDelegate?
+    var mainStoryboard: UIStoryboard!
+    var centerNavigationController: UINavigationController!
+    var containerVC: ContainerVC!
+    var delegate: NewsFeedVCDelegate?
+    
     let sections =  ["Latest", "Boxing", "Community", "Help"]
     let rows = [
         ["News", "Fight Schedule", "Saved Articles"],
@@ -73,6 +77,15 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let path = "path\([indexPath.section])\([indexPath.row])"
+       
+        let newVC = mainStoryboard.instantiateViewController(withIdentifier: "WeightDivision") as? WeightDivisionVC
+        newVC?.delegate = containerVC
+        self.centerNavigationController?.pushViewController(newVC!, animated: true)
+        delegate!.toggleLeftPanel?()
     }
 }
 

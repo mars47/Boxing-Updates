@@ -14,7 +14,8 @@ class ContainerVC: UIViewController {
         case leftPanelExpanded
         case rightPanelExpanded
     }
-    
+    var navigationPanel: NavigationPanelVC?
+    let centerPanelExpandedOffset: CGFloat = 60
     var centerNavigationController: UINavigationController!
     var newsFeedVC: NewsFeedVC!
     var currentState: SlideOutState = .bothCollapsed {
@@ -23,11 +24,7 @@ class ContainerVC: UIViewController {
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
-    var navigationPanel: NavigationPanelVC?
 
-    
-    let centerPanelExpandedOffset: CGFloat = 60
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         newsFeedVC = UIStoryboard.newsFeedVC()
@@ -89,7 +86,10 @@ extension ContainerVC: NewsFeedVCDelegate {
         guard navigationPanel == nil else { return }
         
         if let vc = UIStoryboard.navigationPanel() {
-           // vc.animals = Animal.allCats()
+            vc.mainStoryboard = UIStoryboard.mainStoryboard()
+            vc.centerNavigationController = centerNavigationController
+            vc.containerVC = self
+            
             addChildSidePanelController(vc)
             navigationPanel = vc
         }
@@ -140,7 +140,7 @@ extension ContainerVC: NewsFeedVCDelegate {
     //
     func addChildSidePanelController(_ sidePanelController: NavigationPanelVC) {
         // n addition to what it was doing previously, the method will now set the center view controller as the side panels’ delegate.
-       // sidePanelController.delegate = newsFeedVC
+        sidePanelController.delegate = self
         view.insertSubview(sidePanelController.view, at: 0)
         
         addChildViewController(sidePanelController)
