@@ -8,6 +8,7 @@
 
 import UIKit
 
+let charcoal  = UIColor(red:0.06, green:0.06, blue:0.06, alpha:1.0)
 let dark247 = UIColor(red:0.13, green:0.13, blue:0.13, alpha:1.0)
 let grey247 = UIColor(red:0.25, green:0.25, blue:0.25, alpha:1.0)
 let lightGrey247 = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0) // text

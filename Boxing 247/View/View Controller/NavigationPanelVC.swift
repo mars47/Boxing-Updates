@@ -14,7 +14,7 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
     var centerNavigationController: UINavigationController!
     var containerVC: ContainerVC!
     var delegate: NewsFeedVCDelegate?
-    
+
     let sections =  ["Latest", "Boxing", "Community", "Help"]
     let rows = [
         ["News", "Fight Schedule", "Saved Articles"],
@@ -66,14 +66,6 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
             
             cell.icon.image = icons[indexPath.section][indexPath.row]!
             cell.pageTitle.text = rows[indexPath.section][indexPath.row]
-            if indexPath.row == 0 {
-                cell.topPanel.backgroundColor = cell.backgroundColor
-            }
-            
-            else {
-                cell.topPanel.backgroundColor = cell.backgroundColor
-            }
-
             return cell
         }
         return UITableViewCell()
