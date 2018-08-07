@@ -52,6 +52,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         // Prepares viewModel for assignation to a collectionViewCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         cell.viewModel = cellViewModel
+        cell.thumbnail.contentMode = .scaleAspectFit
+        cell.thumbnail.clipsToBounds = true
         return cell
     }
     

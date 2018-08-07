@@ -134,6 +134,63 @@
             </objects>
             <point key="canvasLocation" x="210" y="300"/>
         </scene>
+        <!--Weight DivisionVC-->
+        <scene sceneID="Smd-wo-yBe">
+            <objects>
+                <viewController storyboardIdentifier="Division" id="J2n-AQ-QtV" customClass="WeightDivisionVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aeg-S1-PEN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UrJ-PW-etp" customClass="CustomSegmentedControl" customModule="Boxing_247" customModuleProvider="target">
+                                <rect key="frame" x="4" y="48" width="367" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aYb-jn-JTJ">
+                                <rect key="frame" x="0.0" y="84" width="375" height="694"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="FYB-WX-TyU">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eiU-Tp-mec">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UrJ-PW-etp" firstAttribute="top" secondItem="nqq-eg-b9O" secondAttribute="top" constant="4" id="1H4-Lo-r4b"/>
+                            <constraint firstItem="aYb-jn-JTJ" firstAttribute="leading" secondItem="nqq-eg-b9O" secondAttribute="leading" id="7Xh-7q-hWi"/>
+                            <constraint firstItem="nqq-eg-b9O" firstAttribute="bottom" secondItem="aYb-jn-JTJ" secondAttribute="bottom" id="I8Z-C9-1Ho"/>
+                            <constraint firstItem="nqq-eg-b9O" firstAttribute="trailing" secondItem="UrJ-PW-etp" secondAttribute="trailing" constant="4" id="IjQ-v9-uh4"/>
+                            <constraint firstItem="aYb-jn-JTJ" firstAttribute="top" secondItem="UrJ-PW-etp" secondAttribute="bottom" constant="8" id="JpZ-vs-u5o"/>
+                            <constraint firstItem="UrJ-PW-etp" firstAttribute="leading" secondItem="nqq-eg-b9O" secondAttribute="leading" constant="4" id="Wpv-9K-87s"/>
+                            <constraint firstItem="nqq-eg-b9O" firstAttribute="trailing" secondItem="aYb-jn-JTJ" secondAttribute="trailing" id="akf-58-oMa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nqq-eg-b9O"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="aYb-jn-JTJ" id="LUc-M7-sqC"/>
+                        <outlet property="segmentedControl" destination="UrJ-PW-etp" id="1vA-wr-VPC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Urg-iY-8HL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="306"/>
+        </scene>
         <!--Champions-->
         <scene sceneID="XsE-ef-mY4">
             <objects>
@@ -142,7 +199,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YyS-UI-j3S">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YyS-UI-j3S" customClass="CustomSegmentedControl" customModule="Boxing_247" customModuleProvider="target">
                                 <rect key="frame" x="4" y="48" width="363" height="29"/>
                                 <segments>
                                     <segment title="By Weight Division"/>
@@ -173,7 +230,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heavyweight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0E-Ww-dPz">
                                                             <rect key="frame" x="6.3333333333333357" y="11.666666666666664" width="69.666666666666657" height="13.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
-                                                            <color key="textColor" red="0.083700941512391797" green="0.084529663705583791" blue="0.084529663705583791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.082352941176470587" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
