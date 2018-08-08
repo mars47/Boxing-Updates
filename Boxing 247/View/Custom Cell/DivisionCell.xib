@@ -72,7 +72,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.11655298223350252" green="0.01743525512338906" blue="0.0010069925353096475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="fTt-VT-ITg" secondAttribute="bottom" id="8kA-Jl-S3H"/>
                             <constraint firstAttribute="width" constant="320" id="Cuh-tL-UXw"/>

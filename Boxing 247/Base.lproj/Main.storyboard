@@ -134,7 +134,7 @@
             </objects>
             <point key="canvasLocation" x="210" y="300"/>
         </scene>
-        <!--Weight DivisionVC-->
+        <!--Champions-->
         <scene sceneID="Smd-wo-yBe">
             <objects>
                 <viewController storyboardIdentifier="Division" id="J2n-AQ-QtV" customClass="WeightDivisionVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,14 +145,18 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UrJ-PW-etp" customClass="CustomSegmentedControl" customModule="Boxing_247" customModuleProvider="target">
                                 <rect key="frame" x="4" y="48" width="367" height="29"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="By Weight Division"/>
+                                    <segment title="By Federation"/>
                                 </segments>
+                                <color key="tintColor" red="0.080291769309246558" green="0.084430520304568546" blue="0.084430520304568546" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentControlValueChanged:" destination="J2n-AQ-QtV" eventType="valueChanged" id="Fum-Gi-Lcr"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aYb-jn-JTJ">
                                 <rect key="frame" x="0.0" y="84" width="375" height="694"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="FYB-WX-TyU">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="bU9-bM-j5j">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -182,19 +186,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nqq-eg-b9O"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Champions" id="fLO-l5-b94">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="Xbh-79-ACa">
+                            <connections>
+                                <action selector="navPanelButtonPressed:" destination="J2n-AQ-QtV" id="ZJQ-Z1-bB1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="aYb-jn-JTJ" id="LUc-M7-sqC"/>
-                        <outlet property="segmentedControl" destination="UrJ-PW-etp" id="1vA-wr-VPC"/>
+                        <outlet property="segmentedControl" destination="UrJ-PW-etp" id="r1i-dM-ANV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Urg-iY-8HL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="306"/>
+            <point key="canvasLocation" x="-1310" y="300"/>
         </scene>
         <!--Champions-->
         <scene sceneID="XsE-ef-mY4">
             <objects>
-                <viewController storyboardIdentifier="WeightDivision" id="wAO-gA-Alu" customClass="WeightDivisionVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeightDivision" id="wAO-gA-Alu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbq-hm-hLI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yg-DP-KRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1314.4000000000001" y="300"/>
+            <point key="canvasLocation" x="289" y="1302"/>
         </scene>
     </scenes>
     <resources>

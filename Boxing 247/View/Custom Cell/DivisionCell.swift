@@ -48,11 +48,11 @@ class DivisionCell: UICollectionViewCell {
         
 
 
-//        clearPanelWidth.constant = screenWidth / 3.902
-//        blurViewWidth.constant = clearPanelWidth.constant
-//        
-//        clearPanelHeight.constant = screenHeight / 2
-//        blurViewHeight.constant = screenHeight / 2
+        clearPanelWidth.constant =  widthConstraint.constant / 3.902
+        blurViewWidth.constant = clearPanelWidth.constant
+    
+        clearPanelHeight.constant = heightConstraint.constant / 2
+        blurViewHeight.constant = heightConstraint.constant / 2
         
         self.backgroundColor = UIColor.white
     }

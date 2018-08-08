@@ -13,6 +13,8 @@
 		071B9F3321189E9C00EF6404 /* DivisionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071B9F3121189E9C00EF6404 /* DivisionCell.xib */; };
 		071B9F3621189EE500EF6404 /* FederationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B9F3421189EE500EF6404 /* FederationCell.swift */; };
 		071B9F3721189EE500EF6404 /* FederationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071B9F3521189EE500EF6404 /* FederationCell.xib */; };
+		071B9F3C211A21D000EF6404 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071B9F3B211A21D000EF6404 /* Logos.xcassets */; };
+		071B9F3E211A415100EF6404 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B9F3D211A415100EF6404 /* UIImage+Blur.swift */; };
 		071C377620EF1AB5002CA348 /* AppServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C377520EF1AB5002CA348 /* AppServerClient.swift */; };
 		071C377820EF39CA002CA348 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C377720EF39CA002CA348 /* Article.swift */; };
 		071C377A20EF74E7002CA348 /* NewsFeedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C377920EF74E7002CA348 /* NewsFeedVM.swift */; };
@@ -67,6 +69,8 @@
 		071B9F3121189E9C00EF6404 /* DivisionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DivisionCell.xib; sourceTree = "<group>"; };
 		071B9F3421189EE500EF6404 /* FederationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederationCell.swift; sourceTree = "<group>"; };
 		071B9F3521189EE500EF6404 /* FederationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FederationCell.xib; sourceTree = "<group>"; };
+		071B9F3B211A21D000EF6404 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
+		071B9F3D211A415100EF6404 /* UIImage+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
 		071C377520EF1AB5002CA348 /* AppServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServerClient.swift; sourceTree = "<group>"; };
 		071C377720EF39CA002CA348 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		071C377920EF74E7002CA348 /* NewsFeedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedVM.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				071C378420EFECAF002CA348 /* Helpers  */,
 				0727823D20E6FB520071D528 /* AppDelegate.swift */,
 				0727824420E6FB520071D528 /* Assets.xcassets */,
+				071B9F3B211A21D000EF6404 /* Logos.xcassets */,
 				0727824120E6FB520071D528 /* Main.storyboard */,
 				0727824620E6FB520071D528 /* LaunchScreen.storyboard */,
 				0727824920E6FB520071D528 /* Info.plist */,
@@ -270,6 +275,7 @@
 			children = (
 				07DE4CE32107979700730457 /* Extension-Date.swift */,
 				07DE4CE52108772800730457 /* Extension-UIView.swift */,
+				071B9F3D211A415100EF6404 /* UIImage+Blur.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				071B9F3721189EE500EF6404 /* FederationCell.xib in Resources */,
 				071B9F3321189E9C00EF6404 /* DivisionCell.xib in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
+				071B9F3C211A21D000EF6404 /* Logos.xcassets in Resources */,
 				0727824320E6FB520071D528 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				071C377E20EF7C7E002CA348 /* NewsFeedCell.swift in Sources */,
+				071B9F3E211A415100EF6404 /* UIImage+Blur.swift in Sources */,
 				071B9F2F21176E1800EF6404 /* CustomSegmentedControl.swift in Sources */,
 				071C377820EF39CA002CA348 /* Article.swift in Sources */,
 				071C378720F0020B002CA348 /* PanelCell.swift in Sources */,
