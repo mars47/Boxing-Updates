@@ -33,8 +33,7 @@
 		0727826F20E84C9D0071D528 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727826E20E84C9D0071D528 /* ContainerVC.swift */; };
 		077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */; };
 		077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */; };
-		07DE4CE42107979700730457 /* Extension-Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE32107979700730457 /* Extension-Date.swift */; };
-		07DE4CE62108772800730457 /* Extension-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE52108772800730457 /* Extension-UIView.swift */; };
+		07DE4CE42107979700730457 /* Date+TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE32107979700730457 /* Date+TimeAgo.swift */; };
 		07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE92108846700730457 /* RoundedUIView.swift */; };
 		07DE4CEC210B883900730457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CEB210B883900730457 /* Constants.swift */; };
 		07F9627121123FC6006E0010 /* WeightDivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */; };
@@ -95,8 +94,7 @@
 		0727826E20E84C9D0071D528 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVC.swift; sourceTree = "<group>"; };
 		077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVCDelegate.swift; sourceTree = "<group>"; };
-		07DE4CE32107979700730457 /* Extension-Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Date.swift"; sourceTree = "<group>"; };
-		07DE4CE52108772800730457 /* Extension-UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIView.swift"; sourceTree = "<group>"; };
+		07DE4CE32107979700730457 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgo.swift"; sourceTree = "<group>"; };
 		07DE4CE92108846700730457 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		07DE4CEB210B883900730457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDivisionCell.swift; sourceTree = "<group>"; };
@@ -273,8 +271,7 @@
 		07DE4CE22107977F00730457 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				07DE4CE32107979700730457 /* Extension-Date.swift */,
-				07DE4CE52108772800730457 /* Extension-UIView.swift */,
+				07DE4CE32107979700730457 /* Date+TimeAgo.swift */,
 				071B9F3D211A415100EF6404 /* UIImage+Blur.swift */,
 			);
 			path = Extensions;
@@ -551,7 +548,6 @@
 				071C378720F0020B002CA348 /* PanelCell.swift in Sources */,
 				0727826F20E84C9D0071D528 /* ContainerVC.swift in Sources */,
 				071B9F3621189EE500EF6404 /* FederationCell.swift in Sources */,
-				07DE4CE62108772800730457 /* Extension-UIView.swift in Sources */,
 				0727824020E6FB520071D528 /* NewsFeedVC.swift in Sources */,
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
 				07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */,
@@ -560,7 +556,7 @@
 				077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* AppServerClient.swift in Sources */,
 				071C378020EF82C8002CA348 /* NewsFeedCellVM.swift in Sources */,
-				07DE4CE42107979700730457 /* Extension-Date.swift in Sources */,
+				07DE4CE42107979700730457 /* Date+TimeAgo.swift in Sources */,
 				071C377A20EF74E7002CA348 /* NewsFeedVM.swift in Sources */,
 				071C377C20EF7516002CA348 /* Bindable.swift in Sources */,
 				07DE4CEC210B883900730457 /* Constants.swift in Sources */,

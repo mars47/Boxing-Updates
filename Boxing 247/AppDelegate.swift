@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //UIApplication.shared.statusBarStyle = .lightContent
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let containerVC = ContainerVC()
         self.window!.rootViewController = containerVC
@@ -29,14 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if #available(iOS 11.0, *) {
             //To change iOS 11 navigationBar largeTitle color
-
+            
+            
             UINavigationBar.appearance().prefersLargeTitles = true
             //UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
             UINavigationBar.appearance().largeTitleTextAttributes = attributes
-             
-
-                UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
-
+            
+            
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]
+            
         } else {
             // for default navigation bar title color
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): white247]

@@ -72,10 +72,12 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="backgroundHeight" destination="CPp-m7-Ck7" id="pSv-Ed-mG8"/>
+                <outlet property="backgroundImage" destination="AdB-dR-EJu" id="wcU-MW-jJu"/>
                 <outlet property="backgroundWidth" destination="Hk0-84-ofk" id="QwY-rf-A5e"/>
                 <outlet property="clearPanelHeight" destination="lDi-3I-2HL" id="Umb-vH-sxt"/>
                 <outlet property="clearPanelWidth" destination="HYW-Dc-bmb" id="ATP-Qs-J39"/>
                 <outlet property="heightConstraint" destination="Hf8-n9-Mvz" id="LDz-QY-f1O"/>
+                <outlet property="icon" destination="Y4h-dh-mnV" id="89n-bQ-PjF"/>
                 <outlet property="logoHeight" destination="ecU-iw-wzD" id="19S-aW-gJ8"/>
                 <outlet property="logoWidth" destination="Jrt-df-1Ep" id="QxY-Kw-6MR"/>
                 <outlet property="widthConstraint" destination="UCC-KY-Cs7" id="xbH-EP-93j"/>

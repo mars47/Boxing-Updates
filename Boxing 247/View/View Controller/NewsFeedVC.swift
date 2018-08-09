@@ -12,6 +12,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
+    var centerNavigationController: UINavigationController!
     var delegate: NewsFeedVCDelegate?
     let viewModel = NewsFeedVM()
 
@@ -22,7 +23,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //centerNavigationController.navigationBar.prefersLargeTitles = true
         collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)

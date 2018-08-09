@@ -12,12 +12,19 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
     @IBOutlet weak var segmentedControl: CustomSegmentedControl!
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var collectionView: UICollectionView?
-    var centerNavigationController: UINavigationController!
     var delegate: NewsFeedVCDelegate?
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate!.toggleLeftPanel?()
     }
-    let array = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3")]
+    
+    let weightArray = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3")]
+    
+    
+    let federationArray = [UIImage(named: "wbo belt"), UIImage(named: "wba belt"), UIImage(named: "wbc belt")]
+    
+    let icons = [UIImage(named: "wbo logo"), UIImage(named: "logo belt"), UIImage(named: "wbc logo")]
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +46,10 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
 
             collectionView.dataSource = self
             collectionView.delegate = self
+            collectionView.backgroundColor = view.backgroundColor
         }
-        
     }
+
     
     @IBAction func segmentControlValueChanged(_ sender: CustomSegmentedControl) {
         collectionView?.reloadData()
@@ -49,7 +57,7 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "divisionCell") as! WeightDivisionCell
-        cell.thumbnail.image = array[indexPath.row]
+        cell.thumbnail.image = weightArray[indexPath.row]
         cell.thumbnail.contentMode = .scaleAspectFill
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsets.zero
@@ -58,20 +66,20 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return weightArray.count
     }
     
     // MARK -- CollectionView Delegate & Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return array.count
+        return weightArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if segmentedControl.selectedSegmentIndex == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "test", for: indexPath) as! DivisionCell
-            cell.thumbnail.image = array[indexPath.row]
+            cell.thumbnail.image = weightArray[indexPath.row]
             
             // cell.thumbnail.image = cell.thumbnail.image?.blurEffect(input: cell.thumbnail.image!)
             return cell
@@ -89,7 +97,7 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if segmentedControl.selectedSegmentIndex == 0 {
             let width  = self.view.frame.size.width
-            let height = width / 4.498
+            let height = (width  / 4.498 )
             return CGSize(width: width, height: height)
         }
         
@@ -101,7 +109,14 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
         
         return CGSize()
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {}
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if segmentedControl.selectedSegmentIndex == 0 { return 0 } else { return 20 }
+    }
 }
+
 
 
 

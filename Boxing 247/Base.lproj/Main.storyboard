@@ -91,7 +91,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eOg-TI-yLx">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MML-q4-j0w">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="MML-q4-j0w">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -118,7 +118,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hXh-aj-UiY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Boxing 247" id="cjf-qc-pTP">
+                    <navigationItem key="navigationItem" title="Boxing 247" largeTitleDisplayMode="always" id="cjf-qc-pTP">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" style="plain" id="qE3-hN-VPq">
                             <connections>
                                 <action selector="navPanelButtonPressed:" destination="1ST-Jg-Yj0" id="1UH-rf-4uI"/>
@@ -186,7 +186,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nqq-eg-b9O"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Champions" id="fLO-l5-b94">
+                    <navigationItem key="navigationItem" title="Champions" largeTitleDisplayMode="always" id="fLO-l5-b94">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="Xbh-79-ACa">
                             <connections>
                                 <action selector="navPanelButtonPressed:" destination="J2n-AQ-QtV" id="ZJQ-Z1-bB1"/>
@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yg-DP-KRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="1302"/>
+            <point key="canvasLocation" x="-550" y="1716"/>
         </scene>
     </scenes>
     <resources>

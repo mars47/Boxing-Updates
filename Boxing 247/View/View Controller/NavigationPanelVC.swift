@@ -73,11 +73,18 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let path = "path\([indexPath.section])\([indexPath.row])"
+        if indexPath.row == 0 && indexPath.section == 0 {
+            let newVC = mainStoryboard.instantiateViewController(withIdentifier: "tController") as? NewsFeedVC
+            newVC?.delegate = containerVC
+            self.centerNavigationController?.pushViewController(newVC!, animated: true)
+            delegate!.toggleLeftPanel?()
+        } else {
        
         let newVC = mainStoryboard.instantiateViewController(withIdentifier: "Division") as? WeightDivisionVC
         newVC?.delegate = containerVC
         self.centerNavigationController?.pushViewController(newVC!, animated: true)
         delegate!.toggleLeftPanel?()
+        }
     }
 }
 

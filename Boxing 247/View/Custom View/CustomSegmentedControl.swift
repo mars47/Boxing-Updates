@@ -4,7 +4,7 @@
 //
 //  Created by Omar  on 05/08/2018.
 //  Copyright © 2018 Omar. All rights reserved.
-// https://www.sep.com/sep-blog/2017/04/28/custom-uisegmentedcontrol-swift-tutorial/
+//  https://www.sep.com/sep-blog/2017/04/28/custom-uisegmentedcontrol-swift-tutorial/
 
 import UIKit
 
@@ -27,7 +27,7 @@ class CustomSegmentedControl: UISegmentedControl {
         self.setTitleTextAttributes(selectedAttributes, for: .selected)
         self.setTitleTextAttributes(unselectedAttributes, for: .normal)
         
-        let state = self.titleTextAttributes(for: .selected)
+        //let state = self.titleTextAttributes(for: .selected)
         //print("state: \(state!)")
         
 

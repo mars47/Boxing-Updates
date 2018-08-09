@@ -31,11 +31,15 @@ class DivisionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 0.5
+        
         self.backgroundColor = test247
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         let screenWidth = UIScreen.main.bounds.size.width
 
-        widthConstraint.constant = screenWidth
+        widthConstraint.constant = screenWidth 
 
         let ratio = self.bounds.size.width / self.bounds.size.height
 
@@ -46,8 +50,6 @@ class DivisionCell: UICollectionViewCell {
         thumbnailHeight.constant = heightConstraint.constant
         thumbnailWidth.constant = widthConstraint.constant
         
-
-
         clearPanelWidth.constant =  widthConstraint.constant / 3.902
         blurViewWidth.constant = clearPanelWidth.constant
     
