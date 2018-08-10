@@ -76,12 +76,15 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
         if indexPath.row == 0 && indexPath.section == 0 {
             let newVC = mainStoryboard.instantiateViewController(withIdentifier: "tController") as? NewsFeedVC
             newVC?.delegate = containerVC
+            newVC?.navigationBar.largeTitleDisplayMode = .never
             self.centerNavigationController?.pushViewController(newVC!, animated: true)
             delegate!.toggleLeftPanel?()
         } else {
        
         let newVC = mainStoryboard.instantiateViewController(withIdentifier: "Division") as? WeightDivisionVC
         newVC?.delegate = containerVC
+        newVC?.mainStoryboard = mainStoryboard
+        newVC?.centerNavigationController = centerNavigationController
         self.centerNavigationController?.pushViewController(newVC!, animated: true)
         delegate!.toggleLeftPanel?()
         }

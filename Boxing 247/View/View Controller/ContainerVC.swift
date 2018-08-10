@@ -29,6 +29,7 @@ class ContainerVC: UIViewController {
         super.viewDidLoad()
         newsFeedVC = UIStoryboard.newsFeedVC()
         newsFeedVC.delegate = self
+        newsFeedVC.navigationBar.largeTitleDisplayMode = .always
         newsFeedVC.centerNavigationController = centerNavigationController
         
         // wrap the centerViewController in a navigation controller, so we can push views to it

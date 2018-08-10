@@ -10,27 +10,28 @@ import UIKit
 
 class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
     var centerNavigationController: UINavigationController!
     var delegate: NewsFeedVCDelegate?
     let viewModel = NewsFeedVM()
-
+    var count = 0
 
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel?()
             //This uses optional chaining to only call toggleLeftPanel() if delegate has a value and it has implemented the method.
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //centerNavigationController.navigationBar.prefersLargeTitles = true
         collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
         }
         collectionView.delegate = self
         collectionView.dataSource = self
-
+        
         bindViewModel()
         viewModel.downloadNews()
     }
@@ -42,6 +43,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             }
         }
     }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.articlesArray.value.count

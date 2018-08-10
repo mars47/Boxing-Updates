@@ -28,7 +28,7 @@ class FederationCell: UICollectionViewCell {
         super.awakeFromNib()
         
         self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 0.5
+        self.layer.borderWidth = 2
         
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         let screenWidth = UIScreen.main.bounds.size.width - 20

@@ -8,11 +8,18 @@
 
 import UIKit
 
-class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     @IBOutlet weak var segmentedControl: CustomSegmentedControl!
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var collectionView: UICollectionView?
     var delegate: NewsFeedVCDelegate?
+    
+    var mainStoryboard: UIStoryboard!
+    var centerNavigationController: UINavigationController!
+    var containerVC: ContainerVC!
+    
+    
+    
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate!.toggleLeftPanel?()
     }
@@ -22,7 +29,7 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
     
     let federationArray = [UIImage(named: "wbo belt"), UIImage(named: "wba belt"), UIImage(named: "wbc belt")]
     
-    let icons = [UIImage(named: "wbo logo"), UIImage(named: "logo belt"), UIImage(named: "wbc logo")]
+    let icons = [UIImage(named: "wbo logo"), UIImage(named: "wba logo"), UIImage(named: "wbc logo")]
 
     
 
@@ -72,7 +79,9 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
     // MARK -- CollectionView Delegate & Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if segmentedControl.selectedSegmentIndex == 0 {
         return weightArray.count
+        } else { return federationArray.count }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,7 +97,8 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
         if segmentedControl.selectedSegmentIndex == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Federation", for: indexPath) as! FederationCell
            // cell.thumbnail.image = array[indexPath.row]
-            
+            cell.backgroundImage.image = federationArray[indexPath.row]
+            cell.icon.image = icons[indexPath.row]
             return cell
         }
         return UICollectionViewCell()
@@ -113,8 +123,20 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {}
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if segmentedControl.selectedSegmentIndex == 0 { return 0 } else { return 20 }
+        if segmentedControl.selectedSegmentIndex == 0 { return 5 } else { return 20 }
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if segmentedControl.selectedSegmentIndex == 0 {
+//            if indexPath.row == 0 {
+//                let newVC = mainStoryboard.instantiateViewController(withIdentifier: "fighter") as? FighterVC
+//                newVC?.delegate = containerVC
+//                self.centerNavigationController?.pushViewController(newVC!, animated: true)
+//                delegate!.toggleLeftPanel?()
+//        }
+//    }
+//}
+
 }
 
 
