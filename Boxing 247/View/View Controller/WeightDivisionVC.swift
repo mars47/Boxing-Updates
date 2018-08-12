@@ -123,19 +123,19 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {}
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if segmentedControl.selectedSegmentIndex == 0 { return 5 } else { return 20 }
+        if segmentedControl.selectedSegmentIndex == 0 { return 2.5 } else { return 14 }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if segmentedControl.selectedSegmentIndex == 0 {
-//            if indexPath.row == 0 {
-//                let newVC = mainStoryboard.instantiateViewController(withIdentifier: "fighter") as? FighterVC
-//                newVC?.delegate = containerVC
-//                self.centerNavigationController?.pushViewController(newVC!, animated: true)
-//                delegate!.toggleLeftPanel?()
-//        }
-//    }
-//}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            if indexPath.row == 0 {
+                let newVC = mainStoryboard.instantiateViewController(withIdentifier: "fighter") as? FighterVC
+                newVC?.delegate = containerVC
+                self.centerNavigationController?.pushViewController(newVC!, animated: true)
+                //delegate!.toggleLeftPanel?()
+        }
+    }
+}
 
 }
 

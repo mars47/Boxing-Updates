@@ -16,7 +16,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var centerNavigationController: UINavigationController!
     var delegate: NewsFeedVCDelegate?
     let viewModel = NewsFeedVM()
-    var count = 0
 
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel?()
