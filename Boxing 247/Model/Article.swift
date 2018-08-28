@@ -3,7 +3,7 @@
 //  Boxing 247
 //
 //  Copyright © 2018 Omar. All rights reserved.
-//
+// https://regexr.com
 
 import Foundation
 import SwiftyJSON
@@ -24,6 +24,8 @@ struct Article {
     init(initialiseArticleWith json:JSON) {
         
         title = json["title"].string!
+        title = self.title.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
+        
         pubDate = json["pubDate"].string!
         link = json["link"].string!
         guid = json["guid"].string!
