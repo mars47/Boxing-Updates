@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Set navigation bar Back button tint colour
         //        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-
+    
         return true
     }
 

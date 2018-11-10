@@ -14,6 +14,8 @@ class FighterVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
 
      var delegate: NewsFeedVCDelegate?
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self

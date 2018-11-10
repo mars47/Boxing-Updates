@@ -19,10 +19,7 @@ class NewsFeedCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        let screenWidth = UIScreen.main.bounds.size.width
-        widthConstraint.constant = screenWidth - (2 * 12)
     }
     
     var viewModel: NewsFeedCellVM! {
@@ -47,14 +44,32 @@ class NewsFeedCell: UICollectionViewCell {
             self.content.text = self.viewModel.article.description;
             self.thumbnail.contentMode = .scaleAspectFill
             self.thumbnail.clipsToBounds = true
-            self.bounds.size.height = self.heightConstraint.constant
+            
+            let deviceSize = UIScreen.main.bounds.size
+            self.widthConstraint.constant = deviceSize.width - (2 * 12);
         }
+    }
+    
+    func heightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{
+        
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        
+        label.numberOfLines = lines
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.text = text
+        label.sizeToFit()
+        
+        return label.frame.height
     }
 }
 
 //self.thumbnailWidth.constant = UIScreen.main.bounds.width
 //self.thumbnailHeight.constant = self.collectionView.subviews[0].bounds.height / 1.7
 // self.title.preferredMaxLayoutWidth = (self.superview?.bounds.size.width)! / 1.0923
-
+//        let width = widthConstraint.constant
+//        heightConstraint.constant = widthConstraint.constant / 1.5
+//        let height = heightConstraint.constant
+//        print(width); print(height)
 
 

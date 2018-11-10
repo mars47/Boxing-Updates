@@ -34,11 +34,11 @@
 		0727826F20E84C9D0071D528 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727826E20E84C9D0071D528 /* ContainerVC.swift */; };
 		077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */; };
 		077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */; };
+		07C999782197404400E24E61 /* WeightDivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C999762197404400E24E61 /* WeightDivisionCell.swift */; };
+		07C999792197404400E24E61 /* WeightDivisionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C999772197404400E24E61 /* WeightDivisionCell.xib */; };
 		07DE4CE42107979700730457 /* Date+TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE32107979700730457 /* Date+TimeAgo.swift */; };
 		07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE92108846700730457 /* RoundedUIView.swift */; };
 		07DE4CEC210B883900730457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CEB210B883900730457 /* Constants.swift */; };
-		07F9627121123FC6006E0010 /* WeightDivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */; };
-		07F9627221123FC6006E0010 /* WeightDivisionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F9627021123FC6006E0010 /* WeightDivisionCell.xib */; };
 		07F96274211316ED006E0010 /* WeightDivisionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F96273211316ED006E0010 /* WeightDivisionVC.swift */; };
 		2CFBC2AF4839E201B48998A1 /* Pods_Boxing_247Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBED1198E9968A585BBE24B /* Pods_Boxing_247Tests.framework */; };
 		7A6646AC0C87FDEAA07EE106 /* Pods_Boxing_247.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7578F102F527955BD3063C /* Pods_Boxing_247.framework */; };
@@ -96,11 +96,11 @@
 		0727826E20E84C9D0071D528 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVC.swift; sourceTree = "<group>"; };
 		077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVCDelegate.swift; sourceTree = "<group>"; };
+		07C999762197404400E24E61 /* WeightDivisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDivisionCell.swift; sourceTree = "<group>"; };
+		07C999772197404400E24E61 /* WeightDivisionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDivisionCell.xib; sourceTree = "<group>"; };
 		07DE4CE32107979700730457 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgo.swift"; sourceTree = "<group>"; };
 		07DE4CE92108846700730457 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		07DE4CEB210B883900730457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDivisionCell.swift; sourceTree = "<group>"; };
-		07F9627021123FC6006E0010 /* WeightDivisionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightDivisionCell.xib; sourceTree = "<group>"; };
 		07F96273211316ED006E0010 /* WeightDivisionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDivisionVC.swift; sourceTree = "<group>"; };
 		1420D11ACB3F09770796B01D /* Pods-Boxing 247UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247UITests/Pods-Boxing 247UITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C716950DE0EAFD75088DE26 /* Pods-Boxing 247UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247UITests/Pods-Boxing 247UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,22 +141,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		071B9F3821189EEE00EF6404 /* nibs */ = {
-			isa = PBXGroup;
-			children = (
-				071B2BB62104712D0096A57C /* NewsFeedCell.xib */,
-				07F9627021123FC6006E0010 /* WeightDivisionCell.xib */,
-				071B9F3121189E9C00EF6404 /* DivisionCell.xib */,
-				071B9F3521189EE500EF6404 /* FederationCell.xib */,
-			);
-			name = nibs;
-			sourceTree = "<group>";
-		};
 		071C378120EFEC63002CA348 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				07DE4CE7210883BF00730457 /* View Controller */,
-				071C378520EFECED002CA348 /* Custom Cell */,
 				07DE4CE8210883EF00730457 /* Custom View */,
 			);
 			path = View;
@@ -192,19 +180,6 @@
 			path = "Helpers ";
 			sourceTree = "<group>";
 		};
-		071C378520EFECED002CA348 /* Custom Cell */ = {
-			isa = PBXGroup;
-			children = (
-				071B9F3821189EEE00EF6404 /* nibs */,
-				071C378620F0020B002CA348 /* PanelCell.swift */,
-				071C377D20EF7C7E002CA348 /* NewsFeedCell.swift */,
-				071B9F3021189E9C00EF6404 /* DivisionCell.swift */,
-				07F9626F21123FC6006E0010 /* WeightDivisionCell.swift */,
-				071B9F3421189EE500EF6404 /* FederationCell.swift */,
-			);
-			path = "Custom Cell";
-			sourceTree = "<group>";
-		};
 		0727823120E6FB520071D528 = {
 			isa = PBXGroup;
 			children = (
@@ -230,11 +205,11 @@
 		0727823C20E6FB520071D528 /* Boxing 247 */ = {
 			isa = PBXGroup;
 			children = (
+				0727823D20E6FB520071D528 /* AppDelegate.swift */,
 				071C378220EFEC7B002CA348 /* Model */,
 				071C378120EFEC63002CA348 /* View */,
 				071C378320EFEC9F002CA348 /* View Model */,
 				071C378420EFECAF002CA348 /* Helpers  */,
-				0727823D20E6FB520071D528 /* AppDelegate.swift */,
 				0727824420E6FB520071D528 /* Assets.xcassets */,
 				071B9F3B211A21D000EF6404 /* Logos.xcassets */,
 				0727824120E6FB520071D528 /* Main.storyboard */,
@@ -270,6 +245,55 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
+		07C999712197396900E24E61 /* ContainerVC */ = {
+			isa = PBXGroup;
+			children = (
+				0727826E20E84C9D0071D528 /* ContainerVC.swift */,
+			);
+			path = ContainerVC;
+			sourceTree = "<group>";
+		};
+		07C999722197399100E24E61 /* NewsFeedVC */ = {
+			isa = PBXGroup;
+			children = (
+				0727823F20E6FB520071D528 /* NewsFeedVC.swift */,
+				071C377D20EF7C7E002CA348 /* NewsFeedCell.swift */,
+				071B2BB62104712D0096A57C /* NewsFeedCell.xib */,
+			);
+			path = NewsFeedVC;
+			sourceTree = "<group>";
+		};
+		07C99973219739C000E24E61 /* NavigationPanelVC */ = {
+			isa = PBXGroup;
+			children = (
+				071C378620F0020B002CA348 /* PanelCell.swift */,
+				077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */,
+			);
+			path = NavigationPanelVC;
+			sourceTree = "<group>";
+		};
+		07C99974219739E400E24E61 /* WeightDivisionVC */ = {
+			isa = PBXGroup;
+			children = (
+				071B9F3421189EE500EF6404 /* FederationCell.swift */,
+				07C999762197404400E24E61 /* WeightDivisionCell.swift */,
+				071B9F3021189E9C00EF6404 /* DivisionCell.swift */,
+				07F96273211316ED006E0010 /* WeightDivisionVC.swift */,
+				071B9F3121189E9C00EF6404 /* DivisionCell.xib */,
+				07C999772197404400E24E61 /* WeightDivisionCell.xib */,
+				071B9F3521189EE500EF6404 /* FederationCell.xib */,
+			);
+			path = WeightDivisionVC;
+			sourceTree = "<group>";
+		};
+		07C9997521973A0000E24E61 /* FighterVC */ = {
+			isa = PBXGroup;
+			children = (
+				07208C9E211C3834009D9A5C /* FighterVC.swift */,
+			);
+			path = FighterVC;
+			sourceTree = "<group>";
+		};
 		07DE4CE22107977F00730457 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,11 +306,11 @@
 		07DE4CE7210883BF00730457 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0727826E20E84C9D0071D528 /* ContainerVC.swift */,
-				0727823F20E6FB520071D528 /* NewsFeedVC.swift */,
-				077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */,
-				07F96273211316ED006E0010 /* WeightDivisionVC.swift */,
-				07208C9E211C3834009D9A5C /* FighterVC.swift */,
+				07C999712197396900E24E61 /* ContainerVC */,
+				07C999722197399100E24E61 /* NewsFeedVC */,
+				07C99973219739C000E24E61 /* NavigationPanelVC */,
+				07C9997521973A0000E24E61 /* FighterVC */,
+				07C99974219739E400E24E61 /* WeightDivisionVC */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -390,7 +414,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Omar;
 				TargetAttributes = {
 					0727823920E6FB520071D528 = {
@@ -436,13 +460,13 @@
 			files = (
 				0727826D20E6FB9C0071D528 /* .gitignore in Resources */,
 				071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */,
-				07F9627221123FC6006E0010 /* WeightDivisionCell.xib in Resources */,
 				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
 				071B9F3721189EE500EF6404 /* FederationCell.xib in Resources */,
 				071B9F3321189E9C00EF6404 /* DivisionCell.xib in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
 				071B9F3C211A21D000EF6404 /* Logos.xcassets in Resources */,
 				0727824320E6FB520071D528 /* Main.storyboard in Resources */,
+				07C999792197404400E24E61 /* WeightDivisionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,13 +574,13 @@
 				071C377820EF39CA002CA348 /* Article.swift in Sources */,
 				071C378720F0020B002CA348 /* PanelCell.swift in Sources */,
 				0727826F20E84C9D0071D528 /* ContainerVC.swift in Sources */,
+				07C999782197404400E24E61 /* WeightDivisionCell.swift in Sources */,
 				071B9F3621189EE500EF6404 /* FederationCell.swift in Sources */,
 				0727824020E6FB520071D528 /* NewsFeedVC.swift in Sources */,
 				07208C9F211C3834009D9A5C /* FighterVC.swift in Sources */,
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
 				07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */,
 				077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */,
-				07F9627121123FC6006E0010 /* WeightDivisionCell.swift in Sources */,
 				077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* AppServerClient.swift in Sources */,
 				071C378020EF82C8002CA348 /* NewsFeedCellVM.swift in Sources */,
@@ -634,6 +658,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -641,6 +666,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -691,6 +717,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -698,6 +725,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -735,7 +763,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
 				INFOPLIST_FILE = "Boxing 247/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -752,7 +780,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
 				INFOPLIST_FILE = "Boxing 247/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,7 +8,7 @@
 import UIKit
 
 
-class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -16,10 +16,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var centerNavigationController: UINavigationController!
     var delegate: NewsFeedVCDelegate?
     let viewModel = NewsFeedVM()
-
+    
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel?()
-            //This uses optional chaining to only call toggleLeftPanel() if delegate has a value and it has implemented the method.
+            //This uses optional chaining to only call toggleLeftPanel() if delegate has a value.
     }
     
     override func viewDidLoad() {
@@ -27,12 +27,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         view.backgroundColor = dark247
         self.navigationBar.largeTitleDisplayMode = .always
         collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
-        }
+
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+
         bindViewModel()
         viewModel.downloadNews()
     }
@@ -61,10 +59,30 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072
-//        return CGSize()
-//    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let deviceSize = UIScreen.main.bounds.size
+        
+        // Calculates width of cell
+        
+        let cellWidth = deviceSize.width - (2 * 12);
+        
+        // Calulates height of cell by adding the heights of all contained views, then returning the cell 
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
+        let cellViewModel = viewModel.cellVMArray[indexPath.row]
+        
+        var cellHeight = cell.heightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth, lines: 2)
+       
+        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth, lines: 2)
+        
+        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 1)
+        
+        cellHeight = cellHeight + cell.thumbnail.bounds.size.height + 3
+        
+        return CGSize(width: cellWidth , height: cellHeight)
+    }
     
 }
 
@@ -75,3 +93,4 @@ protocol NewsFeedVCDelegate {
     @objc optional func collapseSidePanels()
 }
 
+// https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072
