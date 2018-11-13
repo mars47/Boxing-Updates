@@ -172,7 +172,6 @@
 			children = (
 				0727826B20E6FB6D0071D528 /* Git */,
 				07DE4CE22107977F00730457 /* Extensions */,
-				071C377520EF1AB5002CA348 /* AppServerClient.swift */,
 				071C377B20EF7516002CA348 /* Bindable.swift */,
 				07DE4CEB210B883900730457 /* Constants.swift */,
 				077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */,
@@ -209,6 +208,7 @@
 				071C378220EFEC7B002CA348 /* Model */,
 				071C378120EFEC63002CA348 /* View */,
 				071C378320EFEC9F002CA348 /* View Model */,
+				07C9997A21974F1000E24E61 /* Network */,
 				071C378420EFECAF002CA348 /* Helpers  */,
 				0727824420E6FB520071D528 /* Assets.xcassets */,
 				071B9F3B211A21D000EF6404 /* Logos.xcassets */,
@@ -275,10 +275,10 @@
 		07C99974219739E400E24E61 /* WeightDivisionVC */ = {
 			isa = PBXGroup;
 			children = (
+				07F96273211316ED006E0010 /* WeightDivisionVC.swift */,
 				071B9F3421189EE500EF6404 /* FederationCell.swift */,
 				07C999762197404400E24E61 /* WeightDivisionCell.swift */,
 				071B9F3021189E9C00EF6404 /* DivisionCell.swift */,
-				07F96273211316ED006E0010 /* WeightDivisionVC.swift */,
 				071B9F3121189E9C00EF6404 /* DivisionCell.xib */,
 				07C999772197404400E24E61 /* WeightDivisionCell.xib */,
 				071B9F3521189EE500EF6404 /* FederationCell.xib */,
@@ -292,6 +292,14 @@
 				07208C9E211C3834009D9A5C /* FighterVC.swift */,
 			);
 			path = FighterVC;
+			sourceTree = "<group>";
+		};
+		07C9997A21974F1000E24E61 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				071C377520EF1AB5002CA348 /* AppServerClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		07DE4CE22107977F00730457 /* Extensions */ = {

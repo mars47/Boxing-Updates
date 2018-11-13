@@ -65,22 +65,23 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         let deviceSize = UIScreen.main.bounds.size
         
         // Calculates width of cell
-        
         let cellWidth = deviceSize.width - (2 * 12);
         
-        // Calulates height of cell by adding the heights of all contained views, then returning the cell 
-        
+        // Calulates height of cell by adding the heights of all contained views, then returning the cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         
-        var cellHeight = cell.heightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth, lines: 2)
+        // Adds the height of 3 labels and the UImage
+        var cellHeight = cell.heightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - 5, lines: 2)
        
-        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth, lines: 2)
+        let test = cellHeight
         
-        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 1)
+        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth , lines: 2)
+        
+        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 3)
         
         cellHeight = cellHeight + cell.thumbnail.bounds.size.height + 3
-        
+        print("cell height: \(cellHeight), TEST:\(test) ")
         return CGSize(width: cellWidth , height: cellHeight)
     }
     
