@@ -73,6 +73,7 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let path = "path\([indexPath.section])\([indexPath.row])"
+
         if indexPath.row == 0 && indexPath.section == 0 {
             let newVC = mainStoryboard.instantiateViewController(withIdentifier: "tController") as? NewsFeedVC
             newVC?.delegate = containerVC
@@ -89,5 +90,24 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
         delegate!.toggleLeftPanel?()
         }
     }
+    
+    func getViewController(for indexPath: IndexPath) -> UIViewController {
+    
+        let cellPosition : (Int, Int) = (indexPath.section, indexPath.row)
+        
+        switch cellPosition {
+        case (0,0):
+            return mainStoryboard.instantiateViewController(withIdentifier: "tController") as! NewsFeedVC
+            
+        case (0,0):
+            return mainStoryboard.instantiateViewController(withIdentifier: "tController") as! NewsFeedVC
+            
+        case (0,0):
+            return mainStoryboard.instantiateViewController(withIdentifier: "tController") as! NewsFeedVC
+        default:
+            return UIViewController()
+        }
+    }
 }
+
 

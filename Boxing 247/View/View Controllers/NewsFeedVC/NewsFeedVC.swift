@@ -43,7 +43,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.articlesArray.value.count
     }
@@ -54,8 +53,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         // Prepares viewModel for assignation to a collectionViewCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         cell.viewModel = cellViewModel
-        cell.thumbnail.contentMode = .scaleAspectFit
-        cell.thumbnail.clipsToBounds = true
         return cell
     }
     
@@ -63,28 +60,20 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let deviceSize = UIScreen.main.bounds.size
-        
-        // Calculates width of cell
         let cellWidth = deviceSize.width - (2 * 12);
         
-        // Calulates height of cell by adding the heights of all contained views, then returning the cell
+        // Calulates height of cell by adding the heights of all contained views in NewsFeedCell.xib
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         
-        // Adds the height of 3 labels and the UImage
-        var cellHeight = cell.heightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - 5, lines: 2)
-       
-        let test = cellHeight
+        let cellHeight =
+            cell.heightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth, lines: 2) +
+            cell.heightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth , lines: 2) +
+            cell.heightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 3) +
+            cell.thumbnail.bounds.size.height + 3
         
-        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth , lines: 2)
-        
-        cellHeight = cellHeight + cell.heightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 3)
-        
-        cellHeight = cellHeight + cell.thumbnail.bounds.size.height + 3
-        print("cell height: \(cellHeight), TEST:\(test) ")
         return CGSize(width: cellWidth , height: cellHeight)
     }
-    
 }
 
 
