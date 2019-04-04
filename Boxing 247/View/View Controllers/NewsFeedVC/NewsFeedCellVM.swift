@@ -19,7 +19,7 @@ class NewsFeedCellVM: NSObject {
         self.appServerClient = appServerClient
         super.init()
         let thumbnailUrl = URL(string: article.thumbnail)
-        setupThumbnailImage(url: thumbnailUrl!) // needs time to download image 
+        setupThumbnailImage(url: thumbnailUrl!) // asynchronous network request
     }
     
     func setupThumbnailImage(url: URL) {
