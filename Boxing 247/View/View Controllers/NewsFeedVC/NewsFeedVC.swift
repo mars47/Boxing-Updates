@@ -60,7 +60,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let deviceSize = UIScreen.main.bounds.size
-        let cellWidth = deviceSize.width - (2 * 12);
+        let insets = (2 * 12) as CGFloat
+        let cellWidth = deviceSize.width - insets;
         
         // Calulates height of cell by adding the heights of all contained views in NewsFeedCell.xib
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell

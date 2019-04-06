@@ -18,11 +18,11 @@ class CustomSegmentedControl: UISegmentedControl {
     func configure() {
 
 
-        let selectedAttributes : [NSAttributedStringKey : NSObject] = [NSAttributedStringKey.foregroundColor: UIColor.white,
-                                                                       NSAttributedStringKey.font:  UIFont(name: "AppleSDGothicNeo-Regular", size: 13.0)!]
+        let selectedAttributes : [NSAttributedString.Key : NSObject] = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                                                       NSAttributedString.Key.font:  UIFont(name: "AppleSDGothicNeo-Regular", size: 13.0)!]
         
-        let unselectedAttributes : [NSAttributedStringKey : NSObject] = [NSAttributedStringKey.foregroundColor: grey247,
-                                                                         NSAttributedStringKey.font:  UIFont(name: "AppleSDGothicNeo-Regular", size: 13.0)!]
+        let unselectedAttributes : [NSAttributedString.Key : NSObject] = [NSAttributedString.Key.foregroundColor: grey247,
+                                                                         NSAttributedString.Key.font:  UIFont(name: "AppleSDGothicNeo-Regular", size: 13.0)!]
         
         self.setTitleTextAttributes(selectedAttributes, for: .selected)
         self.setTitleTextAttributes(unselectedAttributes, for: .normal)

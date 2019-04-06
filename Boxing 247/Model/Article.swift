@@ -23,21 +23,18 @@ struct Article {
 
     init(initialiseArticleWith json:JSON) {
         
-        title = json["title"].string!
-        title = self.title.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
-        
+        title = json["title"].string!.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
         pubDate = json["pubDate"].string!
         link = json["link"].string!
         guid = json["guid"].string!
         author = json["author"].string!
         thumbnail = json["thumbnail"].string!
         
-        description = json["description"].string!
-        description = self.description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        description = json["description"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         description = self.description.trimmingCharacters(in: .whitespacesAndNewlines);
         //print(" My String: '\(self.description)'")
-        content = json["content"].string!
-        content = self.content.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        content = json["content"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        //content = self.content
         
         // --- convert pubDate to timeAgo string ----
         let dateFormatter = DateFormatter()

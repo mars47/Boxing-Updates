@@ -36,9 +36,9 @@ class ContainerVC: UIViewController {
         // and display bar button items in the navigation bar
         centerNavigationController = UINavigationController(rootViewController: newsFeedVC)
         view.addSubview(centerNavigationController.view)
-        addChildViewController(centerNavigationController)
+        addChild(centerNavigationController)
         
-        centerNavigationController.didMove(toParentViewController: self)
+        centerNavigationController.didMove(toParent: self)
 //        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
 //        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
     }
@@ -145,8 +145,8 @@ extension ContainerVC: NewsFeedVCDelegate {
         sidePanelController.delegate = self
         view.insertSubview(sidePanelController.view, at: 0)
         
-        addChildViewController(sidePanelController)
-        sidePanelController.didMove(toParentViewController: self)
+        addChild(sidePanelController)
+        sidePanelController.didMove(toParent: self)
         //reverted 
     }
 }
