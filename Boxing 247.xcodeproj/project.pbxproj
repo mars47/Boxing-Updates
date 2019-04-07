@@ -33,6 +33,7 @@
 		0727826D20E6FB9C0071D528 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0727826C20E6FB9C0071D528 /* .gitignore */; };
 		0727826F20E84C9D0071D528 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727826E20E84C9D0071D528 /* ContainerVC.swift */; };
 		072B899F22592D8A00973942 /* 247ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B899E22592D8A00973942 /* 247ViewController.swift */; };
+		072B89A12259ED8700973942 /* NavigationPanelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B89A02259ED8700973942 /* NavigationPanelVM.swift */; };
 		077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */; };
 		077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */; };
 		07C999782197404400E24E61 /* WeightDivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C999762197404400E24E61 /* WeightDivisionCell.swift */; };
@@ -96,6 +97,7 @@
 		0727826C20E6FB9C0071D528 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0727826E20E84C9D0071D528 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		072B899E22592D8A00973942 /* 247ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 247ViewController.swift; sourceTree = "<group>"; };
+		072B89A02259ED8700973942 /* NavigationPanelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVM.swift; sourceTree = "<group>"; };
 		077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVC.swift; sourceTree = "<group>"; };
 		077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVCDelegate.swift; sourceTree = "<group>"; };
 		07C999762197404400E24E61 /* WeightDivisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDivisionCell.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */,
+				072B89A02259ED8700973942 /* NavigationPanelVM.swift */,
 				071C378620F0020B002CA348 /* PanelCell.swift */,
 			);
 			path = NavigationPanelVC;
@@ -595,6 +598,7 @@
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
 				07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */,
 				077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */,
+				072B89A12259ED8700973942 /* NavigationPanelVM.swift in Sources */,
 				077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* AppServerClient.swift in Sources */,
 				071C378020EF82C8002CA348 /* NewsFeedCellVM.swift in Sources */,

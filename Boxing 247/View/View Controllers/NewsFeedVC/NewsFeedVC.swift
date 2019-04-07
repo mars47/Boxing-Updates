@@ -8,19 +8,20 @@
 import UIKit
 
 
-class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
-    var centerNavigationController: UINavigationController!
-    var delegate: NewsFeedVCDelegate?
+    //var centerNavigationController: UINavigationController!
+    //var delegate: NewsFeedVCDelegate?
     let viewModel = NewsFeedVM()
     
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel?()
             //This uses optional chaining to only call toggleLeftPanel() if delegate has a value.
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

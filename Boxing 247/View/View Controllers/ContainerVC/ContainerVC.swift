@@ -54,7 +54,7 @@ private extension UIStoryboard {
 
     static func newsFeedVC() -> NewsFeedVC? {
         
-      return mainStoryboard().instantiateViewController(withIdentifier: "tController") as? NewsFeedVC
+      return mainStoryboard().instantiateViewController(withIdentifier: "NewsFeed") as? NewsFeedVC
     }
 }
 
@@ -90,7 +90,7 @@ extension ContainerVC: NewsFeedVCDelegate {
         if let vc = UIStoryboard.navigationPanel() {
             vc.mainStoryboard = UIStoryboard.mainStoryboard()
             vc.centerNavigationController = centerNavigationController
-            vc.containerVC = self
+            vc.delegate = self
             
             addChildSidePanelController(vc)
             navigationPanel = vc

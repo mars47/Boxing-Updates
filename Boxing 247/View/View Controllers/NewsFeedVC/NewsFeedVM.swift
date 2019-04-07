@@ -24,6 +24,5 @@ class NewsFeedVM: NSObject {
             self.articlesArray.value = result
             self.cellVMArray = self.articlesArray.value.compactMap{ NewsFeedCellVM(initWith: $0) } // create an array of view models. 1 for each tableview view cell / articles returned from the web request
         }
-        
     }
 }

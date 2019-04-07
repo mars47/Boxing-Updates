@@ -12,9 +12,16 @@ class B247ViewController: UIViewController {
     
     var centerNavigationController: UINavigationController!
     var delegate: NewsFeedVCDelegate?
-    var containerVC: ContainerVC!
+    var mainStoryboard: UIStoryboard!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func configureController(withProperties viewController: B247ViewController, isCenter: Bool) {
+        
+        centerNavigationController = viewController.centerNavigationController
+        delegate = viewController.delegate
+        mainStoryboard = viewController.mainStoryboard
     }
 }

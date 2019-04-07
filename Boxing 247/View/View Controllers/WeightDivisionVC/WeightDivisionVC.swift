@@ -8,15 +8,15 @@
 
 import UIKit
 
-class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     @IBOutlet weak var segmentedControl: CustomSegmentedControl!
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var collectionView: UICollectionView?
-    var delegate: NewsFeedVCDelegate?
-    
-    var mainStoryboard: UIStoryboard!
-    var centerNavigationController: UINavigationController!
-    var containerVC: ContainerVC!
+//    var delegate: NewsFeedVCDelegate?
+//
+//    var mainStoryboard: UIStoryboard!
+//    var centerNavigationController: UINavigationController!
+//    var containerVC: ContainerVC!
     
     
     
@@ -130,7 +130,7 @@ class WeightDivisionVC: UIViewController, UITableViewDataSource, UICollectionVie
         if segmentedControl.selectedSegmentIndex == 0 {
             if indexPath.row == 0 {
                 let newVC = mainStoryboard.instantiateViewController(withIdentifier: "fighter") as? FighterVC
-                newVC?.delegate = containerVC
+                newVC?.delegate = delegate
                 self.centerNavigationController?.pushViewController(newVC!, animated: true)
                 //delegate!.toggleLeftPanel?()
         }

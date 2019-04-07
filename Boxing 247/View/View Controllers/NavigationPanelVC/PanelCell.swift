@@ -24,4 +24,11 @@ class PanelCell: UITableViewCell {
         icon.contentMode = .scaleAspectFill
        // icon.clipsToBounds = true
     }
+    
+    func configureCell(with viewModel: NavigationPanelVM, and indexPath: IndexPath) {
+        
+        icon.image = viewModel.icons[indexPath.section][indexPath.row]!
+        pageTitle.text = viewModel.rows[indexPath.section][indexPath.row]
+        
+    }
 }
