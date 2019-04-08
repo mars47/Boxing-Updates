@@ -260,10 +260,10 @@
 			isa = PBXGroup;
 			children = (
 				0727823F20E6FB520071D528 /* NewsFeedVC.swift */,
-				071C377D20EF7C7E002CA348 /* NewsFeedCell.swift */,
-				071B2BB62104712D0096A57C /* NewsFeedCell.xib */,
 				071C377920EF74E7002CA348 /* NewsFeedVM.swift */,
+				071C377D20EF7C7E002CA348 /* NewsFeedCell.swift */,
 				071C377F20EF82C8002CA348 /* NewsFeedCellVM.swift */,
+				071B2BB62104712D0096A57C /* NewsFeedCell.xib */,
 			);
 			path = NewsFeedVC;
 			sourceTree = "<group>";

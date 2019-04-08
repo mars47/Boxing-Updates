@@ -44,21 +44,20 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        getViewControllerAndPush(for: indexPath)
+        let viewController = getViewController(for: indexPath)
+        pushViewController(viewController: viewController)
     }
     
     //MARK: Class Functions
     
-    fileprivate func getViewControllerAndPush(for indexPath: IndexPath) {
+    fileprivate func getViewController(for indexPath: IndexPath) -> B247ViewController {
     
-        let cellPosition : (Int, Int) = (indexPath.section, indexPath.row)
-        var vc: B247ViewController?
-        
-        switch cellPosition {
+        let cellIndex : (Int, Int) = (indexPath.section, indexPath.row)
+       
+        switch cellIndex {
         case (0,0):
-            vc = mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
-            vc!.configureController(withProperties: self, isCenter: true)
+            let newsFeedVC = mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
+            return newsFeedVC.configureController(withProperties: self)
 
 //        case (0,1):
 //            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
@@ -67,10 +66,9 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
 //            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
        
         default:
-            vc = mainStoryboard.instantiateViewController(withIdentifier: "Division") as! WeightDivisionVC
-            vc!.configureController(withProperties: self, isCenter: true)
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "Division") as! WeightDivisionVC
+            return vc.configureController(withProperties: self)
         }
-        pushViewController(viewController: vc!)
     }
     
     func pushViewController(viewController: B247ViewController) {

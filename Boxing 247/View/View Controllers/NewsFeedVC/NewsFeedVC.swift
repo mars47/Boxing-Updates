@@ -13,15 +13,14 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
-    //var centerNavigationController: UINavigationController!
-    //var delegate: NewsFeedVCDelegate?
+
     let viewModel = NewsFeedVM()
+    let refreshControl = UIRefreshControl()
     
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel?()
             //This uses optional chaining to only call toggleLeftPanel() if delegate has a value.
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +30,26 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
 
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
 
         bindViewModel()
-        viewModel.downloadNews()
+        viewModel.downloadNews{}
     }
     
     func bindViewModel(){
         viewModel.articlesArray.bindAndFire() { [weak self] _ in
             DispatchQueue.main.async{
                 self?.collectionView?.reloadData()
+            }
+        }
+    }
+    
+    @objc private func refreshNews(_ sender: Any) {
+        
+        viewModel.downloadNews {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.refreshControl.endRefreshing()
             }
         }
     }

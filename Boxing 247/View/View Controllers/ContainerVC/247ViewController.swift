@@ -8,20 +8,23 @@
 
 import UIKit
 
+/* Parent class for all custom View Controllers. Contains all the properties needed by any custom View controller so that the Navigation Panel can work  */
+
 class B247ViewController: UIViewController {
     
     var centerNavigationController: UINavigationController!
-    var delegate: NewsFeedVCDelegate?
+    var delegate: NewsFeedVCDelegate? // <-- Should always be instance of 'ContainerVC'
     var mainStoryboard: UIStoryboard!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func configureController(withProperties viewController: B247ViewController, isCenter: Bool) {
+    func configureController(withProperties viewController: B247ViewController) -> B247ViewController {
         
         centerNavigationController = viewController.centerNavigationController
         delegate = viewController.delegate
         mainStoryboard = viewController.mainStoryboard
+        return self
     }
 }

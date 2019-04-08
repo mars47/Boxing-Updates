@@ -9,6 +9,7 @@
 import Foundation
 extension Date {
     func timeAgoSinceDate(_ date:Date, numericDates:Bool = false) -> String {
+        
         let calendar = NSCalendar.current
         let unitFlags: Set<Calendar.Component> = [.minute, .hour, .day, .weekOfYear, .month, .year, .second]
         let now = Date()

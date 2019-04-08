@@ -14,6 +14,8 @@ class AppServerClient: NSObject {
     var articles = [Article]()
     
     func downloadNews(completion: @escaping ([Article]) -> ()) {
+        
+        articles.removeAll()
         let newsfeedURL = URL(string: "https://bit.ly/2tZmM0E")
         var json : JSON?
         
@@ -35,14 +37,13 @@ class AppServerClient: NSObject {
         }
     }
     
-    func loadURLimage(imageURL: String, completion: @escaping (UIImage) -> ()) {
-        var image : UIImage?
+    func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage) -> ()) {
         
-        Alamofire.request(imageURL).responseData { (response) in
+        Alamofire.request(url).responseData { (response) in
             if response.error == nil {
                 print(response.result)
                 if let data = response.data {
-                    image = UIImage(data: data)
+                   let image = UIImage(data: data)
                     completion(image!)
                 }
             }
