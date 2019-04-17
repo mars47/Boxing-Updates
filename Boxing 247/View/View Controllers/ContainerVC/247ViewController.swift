@@ -13,7 +13,7 @@ import UIKit
 class B247ViewController: UIViewController {
     
     var centerNavigationController: UINavigationController!
-    var delegate: NewsFeedVCDelegate? // <-- Should always be instance of 'ContainerVC'
+    var delegate: NavigationPanelDelegate? // <-- Should always be instance of 'ContainerVC'
     var mainStoryboard: UIStoryboard!
 
     override func viewDidLoad() {

@@ -25,8 +25,8 @@ class AppServerClient: NSObject {
             case .success(let value):
                 json = JSON(value)
 
-                for element in json!["items"].arrayValue {
-                    let article = Article(initialiseArticleWith: element)
+                for item in json!["items"].arrayValue {
+                    let article = Article(initialiseArticleWith: item)
                     self.articles.append(article)
                 }
                 completion(self.articles)

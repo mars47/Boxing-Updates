@@ -46,7 +46,6 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @objc private func refreshNews(_ sender: Any) {
-        
         viewModel.downloadNews {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.refreshControl.endRefreshing()
@@ -54,6 +53,8 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
         }
     }
 
+    //MARK: collectionView Delegate & Datasource -------
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.articlesArray.value.count
     }
@@ -74,14 +75,14 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
         let insets = (2 * 12) as CGFloat
         let cellWidth = deviceSize.width - insets;
         
-        // Calulates height of cell by adding the heights of all contained views in NewsFeedCell.xib
+        // Calulates height of cell by adding the heights of all views found in NewsFeedCell.xib
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
         
         let cellHeight =
-            cell.heightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth, lines: 2) +
-            cell.heightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth , lines: 2) +
-            cell.heightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 3) +
+            cell.calculateHeightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth, lines: 2) +
+            cell.calculateHeightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth , lines: 2) +
+            cell.calculateHeightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 3) +
             cell.thumbnail.bounds.size.height + 3
         
         return CGSize(width: cellWidth , height: cellHeight)
@@ -90,7 +91,7 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
 
 
 @objc
-protocol NewsFeedVCDelegate {
+protocol NavigationPanelDelegate {
     @objc optional func toggleLeftPanel()
     @objc optional func collapseSidePanels()
 }

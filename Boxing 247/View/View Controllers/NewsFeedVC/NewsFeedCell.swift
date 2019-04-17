@@ -50,7 +50,7 @@ class NewsFeedCell: UICollectionViewCell {
         }
     }
     
-    func heightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{
+    func calculateHeightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{
         
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
         

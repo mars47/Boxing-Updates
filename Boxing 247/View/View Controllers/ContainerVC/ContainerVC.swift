@@ -60,7 +60,7 @@ private extension UIStoryboard {
 
 // MARK: CenterViewController delegate
 
-extension ContainerVC: NewsFeedVCDelegate {
+extension ContainerVC: NavigationPanelDelegate {
     
     func toggleLeftPanel() {
         let notAlreadyExpanded = (currentState != .leftPanelExpanded)
