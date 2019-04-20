@@ -15,25 +15,25 @@ struct Article {
     private (set) var link: String
     private (set) var guid: String
     private (set) var author: String
-    private (set) var thumbnail: String
+    private (set) var thumbnailUrl: String
     private (set) var description: String
     private (set) var content: String
     private (set) var timeAgo: String
 
 
-    init(initialiseArticleWith json:JSON) {
+    init(initWith dictionary:JSON) {
         
-        title = json["title"].string!.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
-        pubDate = json["pubDate"].string!
-        link = json["link"].string!
-        guid = json["guid"].string!
-        author = json["author"].string!
-        thumbnail = json["thumbnail"].string!
+        title = dictionary["title"].string!.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
+        pubDate = dictionary["pubDate"].string!
+        link = dictionary["link"].string!
+        guid = dictionary["guid"].string!
+        author = dictionary["author"].string!
+        thumbnailUrl = dictionary["thumbnail"].string!
         
-        description = json["description"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        description = dictionary["description"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         description = self.description.trimmingCharacters(in: .whitespacesAndNewlines);
         //print(" My String: '\(self.description)'")
-        content = json["content"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        content = dictionary["content"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         //content = self.content
         
         // --- convert pubDate to timeAgo string ----

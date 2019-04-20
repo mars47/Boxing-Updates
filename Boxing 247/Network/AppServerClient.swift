@@ -16,17 +16,18 @@ class AppServerClient: NSObject {
     func downloadNews(completion: @escaping ([Article]) -> ()) {
         
         articles.removeAll()
-        let newsfeedURL = URL(string: "https://bit.ly/2tZmM0E")
+        guard let newsfeedURL = URL(string: "https://bit.ly/2tZmM0E")
+            else { completion([Article]()); return }
         var json : JSON?
         
-        Alamofire.request(newsfeedURL!).responseJSON { response in
+        Alamofire.request(newsfeedURL).responseJSON { response in
             
             switch response.result {
             case .success(let value):
                 json = JSON(value)
 
-                for item in json!["items"].arrayValue {
-                    let article = Article(initialiseArticleWith: item)
+                for dict in json!["items"].arrayValue {
+                    let article = Article(initWith: dict)
                     self.articles.append(article)
                 }
                 completion(self.articles)
@@ -46,6 +47,9 @@ class AppServerClient: NSObject {
                    let image = UIImage(data: data)
                     completion(image!)
                 }
+            } else {
+                let image = UIImage(named: "placeholder.jpg")!
+                completion(image)
             }
         }
     

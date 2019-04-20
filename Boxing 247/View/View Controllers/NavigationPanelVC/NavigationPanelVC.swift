@@ -45,7 +45,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = getViewController(for: indexPath)
-        pushViewController(viewController: viewController)
+        pushViewController(viewController)
     }
     
     //MARK: Class Functions
@@ -71,7 +71,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func pushViewController(viewController: B247ViewController) {
+    func pushViewController(_ viewController: B247ViewController) {
         self.centerNavigationController?.pushViewController(viewController, animated: true)
         delegate!.toggleLeftPanel?()
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07109E01226A02B40038A414 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07109E00226A02B40038A414 /* placeholder.jpg */; };
 		071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071B2BB62104712D0096A57C /* NewsFeedCell.xib */; };
 		071B9F2F21176E1800EF6404 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B9F2E21176E1800EF6404 /* CustomSegmentedControl.swift */; };
 		071B9F3221189E9C00EF6404 /* DivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B9F3021189E9C00EF6404 /* DivisionCell.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07109E00226A02B40038A414 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		071B2BB62104712D0096A57C /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
 		071B9F2E21176E1800EF6404 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		071B9F3021189E9C00EF6404 /* DivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionCell.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		071C378420EFECAF002CA348 /* Helpers  */ = {
 			isa = PBXGroup;
 			children = (
+				07109E00226A02B40038A414 /* placeholder.jpg */,
 				0727826B20E6FB6D0071D528 /* Git */,
 				07DE4CE22107977F00730457 /* Extensions */,
 				071C377B20EF7516002CA348 /* Bindable.swift */,
@@ -478,6 +481,7 @@
 				0727826D20E6FB9C0071D528 /* .gitignore in Resources */,
 				071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */,
 				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
+				07109E01226A02B40038A414 /* placeholder.jpg in Resources */,
 				071B9F3721189EE500EF6404 /* FederationCell.xib in Resources */,
 				071B9F3321189E9C00EF6404 /* DivisionCell.xib in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
