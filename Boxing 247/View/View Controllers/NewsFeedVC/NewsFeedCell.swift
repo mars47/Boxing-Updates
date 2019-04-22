@@ -34,6 +34,7 @@ class NewsFeedCell: UICollectionViewCell {
         self.layer.borderWidth = 0.5
         
         DispatchQueue.main.async {
+            #warning("needs refactoring")
             
             if self.viewModel.image == nil { self.updateUI() } // a hack to ensure that a cell is always returned with a UIImage when given a viewModel
             else { self.thumbnail.image = self.viewModel.image }

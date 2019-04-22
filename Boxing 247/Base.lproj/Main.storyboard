@@ -342,7 +342,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavyweight3" translatesAutoresizingMaskIntoConstraints="NO" id="o9f-QU-9Qo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375.00000000000011" height="70.5"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEw-tl-LUv">
                                                     <rect key="frame" x="0.0" y="0.0" width="82" height="36"/>
