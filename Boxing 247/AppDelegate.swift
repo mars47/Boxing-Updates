@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // for default navigation bar title color
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
-
         }
 
         // Set navigation bar ItemButton tint colour

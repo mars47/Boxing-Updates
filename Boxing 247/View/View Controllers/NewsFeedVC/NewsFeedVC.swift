@@ -88,12 +88,4 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
         return CGSize(width: cellWidth , height: cellHeight)
     }
 }
-
-
-@objc
-protocol NavigationPanelDelegate {
-    @objc optional func toggleLeftPanel()
-    @objc optional func collapseSidePanels()
-}
-
 // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072

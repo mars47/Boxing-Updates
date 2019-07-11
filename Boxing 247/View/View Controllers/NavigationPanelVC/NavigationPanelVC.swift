@@ -44,20 +44,21 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = getViewController(for: indexPath)
+        guard let viewController = getViewController(for: indexPath) else { return }
         pushViewController(viewController)
     }
     
     //MARK: Class Functions
     
-    fileprivate func getViewController(for indexPath: IndexPath) -> B247ViewController {
+    //                                     return -> UIViewController & ViewControllerDelegate
+    fileprivate func getViewController(for indexPath: IndexPath) -> B247ViewController? {
     
         let cellIndex : (Int, Int) = (indexPath.section, indexPath.row)
        
         switch cellIndex {
         case (0,0):
-            let newsFeedVC = mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
-            return newsFeedVC.configureController(withProperties: self)
+            let newsFeedVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeed") as? NewsFeedVC
+            return newsFeedVC?.configureController(withProperties: self)
 
 //        case (0,1):
 //            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC

@@ -7,6 +7,19 @@
 
 import UIKit
 
+@objc
+protocol NavigationPanelDelegate {
+    
+    @objc optional func toggleLeftPanel()
+    @objc optional func collapseSidePanels()
+}
+
+protocol ViewControllerDelegate {
+    
+    var navigationController : UINavigationController? { get set }
+    var containerVC: ContainerVC? { get set }
+}
+
 class ContainerVC: UIViewController {
 
     enum SlideOutState {
@@ -14,6 +27,7 @@ class ContainerVC: UIViewController {
         case leftPanelExpanded
         case rightPanelExpanded
     }
+    
     var navigationPanel: NavigationPanelVC?
     let centerPanelExpandedOffset: CGFloat = 60
     var centerNavigationController: UINavigationController!
@@ -139,7 +153,6 @@ extension ContainerVC: NavigationPanelDelegate {
         }
     }
     
-    //
     func addChildSidePanelController(_ sidePanelController: NavigationPanelVC) {
         // n addition to what it was doing previously, the method will now set the center view controller as the side panels’ delegate.
         sidePanelController.delegate = self

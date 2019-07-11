@@ -27,4 +27,7 @@ class B247ViewController: UIViewController {
         mainStoryboard = viewController.mainStoryboard
         return self
     }
+
+
 }
+

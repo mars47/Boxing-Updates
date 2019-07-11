@@ -19,9 +19,9 @@ struct Article {
     private (set) var description: String
     private (set) var content: String
     private (set) var timeAgo: String
+    let dateFormatter = DateFormatter()
 
-
-    init(initWith dictionary:JSON) {
+    init(initWith dictionary: JSON) {
         
         title = dictionary["title"].string!.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
         pubDate = dictionary["pubDate"].string!
@@ -37,7 +37,6 @@ struct Article {
         //content = self.content
         
         // --- convert pubDate to timeAgo string ----
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" //date format
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
         guard let date = dateFormatter.date(from: pubDate) else {

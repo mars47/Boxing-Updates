@@ -16,7 +16,7 @@ class AppServerClient: NSObject {
     func downloadNews(completion: @escaping ([Article]) -> ()) {
         
         articles.removeAll()
-        guard let newsfeedURL = URL(string: "https://bit.ly/2tZmM0E")
+        guard let newsfeedURL = URL(string: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
             else { completion([Article]()); return }
         var json : JSON?
         
