@@ -16,15 +16,21 @@ class NewsFeedCell: UICollectionViewCell {
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var author: UILabel!
+    
+    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var topPanelStackView: UIStackView?
+    @IBOutlet weak var mainStackView: UIStackView?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-    }
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+//    }
     
     var viewModel: NewsFeedCellVM! {
         didSet {
             updateUI()
+            setDynamicConstraints()
         }
     }
     
@@ -36,6 +42,8 @@ class NewsFeedCell: UICollectionViewCell {
         DispatchQueue.main.async {
             #warning("needs refactoring")
             
+            self.view.sendSubviewToBack(self.mainStackView!)
+            
             if self.viewModel.image == nil { self.updateUI() } // a hack to ensure that a cell is always returned with a UIImage when given a viewModel
             else { self.thumbnail.image = self.viewModel.image }
             
@@ -45,10 +53,15 @@ class NewsFeedCell: UICollectionViewCell {
             self.content.text = self.viewModel.article.description;
             self.thumbnail.contentMode = .scaleAspectFill
             self.thumbnail.clipsToBounds = true
-            
-            let deviceSize = UIScreen.main.bounds.size
-            self.widthConstraint.constant = deviceSize.width - (2 * 12);
         }
+    }
+    
+    func setDynamicConstraints() {
+        
+        let deviceSize = UIScreen.main.bounds.size
+        let cellWidthWithInsets = deviceSize.width - (2 * 12)
+        self.widthConstraint.constant = cellWidthWithInsets
+        self.topPanelStackView?.spacing = cellWidthWithInsets - (80 + 84 + 16)
     }
     
     func calculateHeightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{
@@ -64,13 +77,3 @@ class NewsFeedCell: UICollectionViewCell {
         return label.frame.height
     }
 }
-
-//self.thumbnailWidth.constant = UIScreen.main.bounds.width
-//self.thumbnailHeight.constant = self.collectionView.subviews[0].bounds.height / 1.7
-// self.title.preferredMaxLayoutWidth = (self.superview?.bounds.size.width)! / 1.0923
-//        let width = widthConstraint.constant
-//        heightConstraint.constant = widthConstraint.constant / 1.5
-//        let height = heightConstraint.constant
-//        print(width); print(height)
-
-

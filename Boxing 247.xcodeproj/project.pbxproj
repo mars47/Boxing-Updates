@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0703123B22E33DB2008B5A2A /* NewsFeedCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0703123A22E33DB2008B5A2A /* NewsFeedCell2.xib */; };
 		07109E01226A02B40038A414 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07109E00226A02B40038A414 /* placeholder.jpg */; };
 		071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071B2BB62104712D0096A57C /* NewsFeedCell.xib */; };
 		071B9F2F21176E1800EF6404 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B9F2E21176E1800EF6404 /* CustomSegmentedControl.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0703123A22E33DB2008B5A2A /* NewsFeedCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsFeedCell2.xib; sourceTree = "<group>"; };
 		07109E00226A02B40038A414 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		071B2BB62104712D0096A57C /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
 		071B9F2E21176E1800EF6404 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				071C377D20EF7C7E002CA348 /* NewsFeedCell.swift */,
 				071C377F20EF82C8002CA348 /* NewsFeedCellVM.swift */,
 				071B2BB62104712D0096A57C /* NewsFeedCell.xib */,
+				0703123A22E33DB2008B5A2A /* NewsFeedCell2.xib */,
 			);
 			path = NewsFeedVC;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				0727826D20E6FB9C0071D528 /* .gitignore in Resources */,
 				071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */,
 				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
+				0703123B22E33DB2008B5A2A /* NewsFeedCell2.xib in Resources */,
 				07109E01226A02B40038A414 /* placeholder.jpg in Resources */,
 				071B9F3721189EE500EF6404 /* FederationCell.xib in Resources */,
 				071B9F3321189E9C00EF6404 /* DivisionCell.xib in Resources */,

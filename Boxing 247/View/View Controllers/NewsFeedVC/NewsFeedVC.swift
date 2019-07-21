@@ -26,7 +26,7 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
         super.viewDidLoad()
         view.backgroundColor = dark247
         self.navigationBar.largeTitleDisplayMode = .always
-        collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
+        collectionView.register(UINib.init(nibName: "NewsFeedCell2", bundle: nil), forCellWithReuseIdentifier: "tCell")
 
         collectionView.delegate = self
         collectionView.dataSource = self
