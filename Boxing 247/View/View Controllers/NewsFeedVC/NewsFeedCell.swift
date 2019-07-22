@@ -61,7 +61,7 @@ class NewsFeedCell: UICollectionViewCell {
         let deviceSize = UIScreen.main.bounds.size
         let cellWidthWithInsets = deviceSize.width - (2 * 12)
         self.widthConstraint.constant = cellWidthWithInsets
-        self.topPanelStackView?.spacing = cellWidthWithInsets - (80 + 84 + 16)
+        self.topPanelStackView?.spacing = cellWidthWithInsets - (12 + 80 + 84 + 4)
     }
     
     func calculateHeightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{

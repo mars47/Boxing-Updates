@@ -97,7 +97,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ibh-Ef-tbc">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="262"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="264"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Arh-IB-T9n">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="161"/>
@@ -123,27 +123,28 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="twq-I4-La3">
-                                        <rect key="frame" x="0.0" y="162" width="395" height="100"/>
+                                        <rect key="frame" x="0.0" y="162" width="400" height="102"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt;&lt;title&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-Gq-Gy0">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-Gq-Gy0">
+                                                <rect key="frame" x="4" y="0.0" width="392" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;description&gt; &lt;description&gt; &lt;description&gt; &lt;description&gt; &lt;description&gt; &lt;description&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHl-8i-0Lp">
-                                                <rect key="frame" x="0.0" y="48" width="395" height="36"/>
+                                                <rect key="frame" x="4" y="48" width="392" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
                                                 <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;author&gt; &lt;author&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nom-aa-9Ie">
-                                                <rect key="frame" x="0.0" y="84" width="116" height="16"/>
+                                                <rect key="frame" x="4" y="84" width="116" height="16"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="4" bottom="2" right="4"/>
                                     </stackView>
                                 </subviews>
                             </stackView>

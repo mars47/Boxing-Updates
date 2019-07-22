@@ -27,6 +27,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
         return viewModel.sections[section]
     }
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return viewModel.rows.count
     }
 
