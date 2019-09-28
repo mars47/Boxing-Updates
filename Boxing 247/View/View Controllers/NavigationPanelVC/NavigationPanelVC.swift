@@ -51,7 +51,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: Class Functions
     
-    //                                     return -> UIViewController & ViewControllerDelegate
+    //                                     return -> UIViewController & Navigatable
     fileprivate func getViewController(for indexPath: IndexPath) -> B247ViewController? {
     
         let cellIndex : (Int, Int) = (indexPath.section, indexPath.row)
@@ -75,7 +75,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     
     func pushViewController(_ viewController: B247ViewController) {
         self.centerNavigationController?.pushViewController(viewController, animated: true)
-        delegate!.toggleLeftPanel?()
+        containerVC!.toggleLeftPanel?()
     }
 }
 

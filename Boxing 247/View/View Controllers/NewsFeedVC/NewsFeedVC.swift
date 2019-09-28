@@ -18,7 +18,7 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     let refreshControl = UIRefreshControl()
     
     @IBAction func navPanelButtonPressed(_ sender: Any) {
-        delegate?.toggleLeftPanel?()
+        containerVC?.toggleLeftPanel?()
             //This uses optional chaining to only call toggleLeftPanel() if delegate has a value.
     }
     
@@ -35,6 +35,7 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
 
         bindViewModel()
         viewModel.downloadNews{}
+
     }
     
     func bindViewModel(){

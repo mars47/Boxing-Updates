@@ -21,7 +21,7 @@ class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionV
     
     
     @IBAction func navPanelButtonPressed(_ sender: Any) {
-        delegate!.toggleLeftPanel?()
+        containerVC!.toggleLeftPanel?()
     }
     
     let weightArray = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3")]
@@ -130,7 +130,7 @@ class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionV
         if segmentedControl.selectedSegmentIndex == 0 {
             if indexPath.row == 0 {
                 let newVC = mainStoryboard.instantiateViewController(withIdentifier: "fighter") as? FighterVC
-                newVC?.delegate = delegate
+                newVC?.delegate = containerVC
                 self.centerNavigationController?.pushViewController(newVC!, animated: true)
                 //delegate!.toggleLeftPanel?()
         }

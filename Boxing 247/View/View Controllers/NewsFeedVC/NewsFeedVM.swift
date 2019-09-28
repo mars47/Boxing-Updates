@@ -13,7 +13,7 @@ class NewsFeedVM: NSObject {
     let url = URL(string: "https://bit.ly/2tZmM0E")
     var cellVMArray: [NewsFeedCellVM]!
     let appServerClient : AppServerClient
-    
+        
     init(appServerClient: AppServerClient = AppServerClient()) {
         self.appServerClient = appServerClient
     }
@@ -25,6 +25,7 @@ class NewsFeedVM: NSObject {
             self.articlesArray.value = result
             self.cellVMArray = self.articlesArray.value.compactMap{ NewsFeedCellVM(initWith: $0) } // create an array of view models. 1 for each tableview view cell / article returned from the web request
             completion()
+            
         }
     }
 }

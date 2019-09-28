@@ -13,7 +13,7 @@ import UIKit
 class B247ViewController: UIViewController {
     
     var centerNavigationController: UINavigationController!
-    var delegate: NavigationPanelDelegate? // <-- Should always be instance of 'ContainerVC'
+    var containerVC: Withdrawable? // <-- Should always be instance of 'ContainerVC'
     var mainStoryboard: UIStoryboard!
 
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class B247ViewController: UIViewController {
     func configureController(withProperties viewController: B247ViewController) -> B247ViewController {
         
         centerNavigationController = viewController.centerNavigationController
-        delegate = viewController.delegate
+        containerVC = viewController.containerVC
         mainStoryboard = viewController.mainStoryboard
         return self
     }

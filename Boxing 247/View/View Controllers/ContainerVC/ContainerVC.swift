@@ -8,21 +8,23 @@
 import UIKit
 
 @objc
-protocol NavigationPanelDelegate {
+protocol Withdrawable {
     
     @objc optional func toggleLeftPanel()
     @objc optional func collapseSidePanels()
 }
 
-protocol ViewControllerDelegate {
+protocol Navigatable {
     
-    var navigationController : UINavigationController? { get set }
-    var containerVC: ContainerVC? { get set }
+    var navigationController : UINavigationController { get }
+    var delegate: ContainerVC { get }
+    var mainStoryboard: UIStoryboard { get }
 }
 
 class ContainerVC: UIViewController {
 
     enum SlideOutState {
+        
         case bothCollapsed
         case leftPanelExpanded
         case rightPanelExpanded
@@ -40,18 +42,22 @@ class ContainerVC: UIViewController {
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         newsFeedVC = UIStoryboard.newsFeedVC()
-        newsFeedVC.delegate = self
+        newsFeedVC.containerVC = self
         newsFeedVC.navigationBar.largeTitleDisplayMode = .always
         newsFeedVC.centerNavigationController = centerNavigationController
         
         // wrap the centerViewController in a navigation controller, so we can push views to it
         // and display bar button items in the navigation bar
+        
+        /* viewControllers = [vc1, vc2, vc3].map{UINavigationController(rootViewController: $0)}
+         http://swiftdeveloperblog.com/code-examples/create-uitabbarcontroller-programmatically/ */
+        
         centerNavigationController = UINavigationController(rootViewController: newsFeedVC)
         view.addSubview(centerNavigationController.view)
         addChild(centerNavigationController)
-        
         centerNavigationController.didMove(toParent: self)
 //        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
 //        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
@@ -74,7 +80,7 @@ private extension UIStoryboard {
 
 // MARK: CenterViewController delegate
 
-extension ContainerVC: NavigationPanelDelegate {
+extension ContainerVC: Withdrawable {
     
     func toggleLeftPanel() {
         let notAlreadyExpanded = (currentState != .leftPanelExpanded)
@@ -104,7 +110,7 @@ extension ContainerVC: NavigationPanelDelegate {
         if let vc = UIStoryboard.navigationPanel() {
             vc.mainStoryboard = UIStoryboard.mainStoryboard()
             vc.centerNavigationController = centerNavigationController
-            vc.delegate = self
+            vc.containerVC = self
             
             addChildSidePanelController(vc)
             navigationPanel = vc
@@ -155,7 +161,7 @@ extension ContainerVC: NavigationPanelDelegate {
     
     func addChildSidePanelController(_ sidePanelController: NavigationPanelVC) {
         // n addition to what it was doing previously, the method will now set the center view controller as the side panels’ delegate.
-        sidePanelController.delegate = self
+        sidePanelController.containerVC = self
         view.insertSubview(sidePanelController.view, at: 0)
         
         addChild(sidePanelController)

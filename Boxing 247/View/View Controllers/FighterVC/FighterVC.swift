@@ -12,7 +12,7 @@ class FighterVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     @IBOutlet weak var collectionView: UICollectionView!
 
-     var delegate: NavigationPanelDelegate?
+     var delegate: Withdrawable?
 
     
     
