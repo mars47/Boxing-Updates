@@ -13,7 +13,7 @@ class NewsFeedCellVM: NSObject {
     let appServerClient: AppServerClient
     var image: UIImage!
     
-    init(initWith article: Article, appServerClient: AppServerClient = AppServerClient()) {
+    init(article: Article, appServerClient: AppServerClient = AppServerClient()) {
         
         self.article = article
         self.appServerClient = appServerClient
@@ -21,7 +21,8 @@ class NewsFeedCellVM: NSObject {
         guard let thumbnailUrl = URL(string: article.thumbnailUrl)
             else {
                 self.image = UIImage(named:"placeholder.jpg")!
-                return }
+                return
+        }
         setThumbnailImage(url: thumbnailUrl) // asynchronous network request
     }
     

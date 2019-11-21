@@ -14,6 +14,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = dark247
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,6 +46,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         guard let viewController = getViewController(for: indexPath) else { return }
         pushViewController(viewController)
     }
@@ -68,12 +70,13 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
 //            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
        
         default:
-            let vc = mainStoryboard.instantiateViewController(withIdentifier: "Division") as! WeightDivisionVC
+            let vc = mainStoryboard.instantiateViewController(withIdentifier: "WeightDivision") as! WeightDivisionVC
             return vc.configureController(withProperties: self)
         }
     }
     
     func pushViewController(_ viewController: B247ViewController) {
+        
         self.centerNavigationController?.pushViewController(viewController, animated: true)
         containerVC!.toggleLeftPanel?()
     }

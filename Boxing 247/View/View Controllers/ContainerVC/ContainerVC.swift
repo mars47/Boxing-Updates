@@ -17,8 +17,7 @@ protocol Withdrawable {
 protocol Navigatable {
     
     var navigationController : UINavigationController { get }
-    var delegate: ContainerVC { get }
-    var mainStoryboard: UIStoryboard { get }
+    var delegate: Withdrawable { get }
 }
 
 class ContainerVC: UIViewController {
@@ -29,7 +28,7 @@ class ContainerVC: UIViewController {
         case leftPanelExpanded
         case rightPanelExpanded
     }
-    
+        
     var navigationPanel: NavigationPanelVC?
     let centerPanelExpandedOffset: CGFloat = 60
     var centerNavigationController: UINavigationController!
@@ -42,12 +41,11 @@ class ContainerVC: UIViewController {
     }
 
     override func viewDidLoad() {
-        
+                
         super.viewDidLoad()
         newsFeedVC = UIStoryboard.newsFeedVC()
         newsFeedVC.containerVC = self
         newsFeedVC.navigationBar.largeTitleDisplayMode = .always
-        newsFeedVC.centerNavigationController = centerNavigationController
         
         // wrap the centerViewController in a navigation controller, so we can push views to it
         // and display bar button items in the navigation bar
@@ -56,6 +54,8 @@ class ContainerVC: UIViewController {
          http://swiftdeveloperblog.com/code-examples/create-uitabbarcontroller-programmatically/ */
         
         centerNavigationController = UINavigationController(rootViewController: newsFeedVC)
+        newsFeedVC.centerNavigationController = centerNavigationController
+
         view.addSubview(centerNavigationController.view)
         addChild(centerNavigationController)
         centerNavigationController.didMove(toParent: self)
@@ -66,9 +66,13 @@ class ContainerVC: UIViewController {
 
 private extension UIStoryboard {
     
-    static func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: Bundle.main) }
+    static func mainStoryboard() -> UIStoryboard {
+        
+        return UIStoryboard(name: "Main", bundle: Bundle.main)
+    }
     
     static func navigationPanel() -> NavigationPanelVC? {
+        
         return mainStoryboard().instantiateViewController(withIdentifier: "NavigationPanelVC") as? NavigationPanelVC
     }
 

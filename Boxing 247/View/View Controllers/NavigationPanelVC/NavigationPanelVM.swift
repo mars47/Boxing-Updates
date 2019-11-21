@@ -9,7 +9,14 @@
 import Foundation
 import UIKit
 
-class NavigationPanelVM: NSObject {
+struct NavigationPanelVM {
+    
+//    var navigationController: UINavigationController
+//    
+//    var delegate: Withdrawable
+//    
+//    var mainStoryboard: UIStoryboard
+    
     
     let sections =  ["Latest", "Boxing", "Community", "Help"]
     let rows = [

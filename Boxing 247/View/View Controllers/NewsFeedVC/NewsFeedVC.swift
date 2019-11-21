@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var navigationBar: UINavigationItem!
@@ -19,15 +18,15 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         containerVC?.toggleLeftPanel?()
-            //This uses optional chaining to only call toggleLeftPanel() if delegate has a value.
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = dark247
-        self.navigationBar.largeTitleDisplayMode = .always
+        navigationBar.largeTitleDisplayMode = .always
+        
         collectionView.register(UINib.init(nibName: "NewsFeedCell2", bundle: nil), forCellWithReuseIdentifier: "tCell")
-
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.refreshControl = refreshControl
@@ -35,7 +34,6 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
 
         bindViewModel()
         viewModel.downloadNews{}
-
     }
     
     func bindViewModel(){
@@ -69,7 +67,6 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
         return cell
     }
     
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let deviceSize = UIScreen.main.bounds.size
@@ -87,6 +84,14 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
             cell.thumbnail.bounds.size.height + 3
         
         return CGSize(width: cellWidth , height: cellHeight)
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let newsFeedDetailVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeedDetail") as? NewsFeedDetailVC else { return }
+        self.centerNavigationController?.pushViewController(newsFeedDetailVC, animated: true)
     }
 }
 // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072

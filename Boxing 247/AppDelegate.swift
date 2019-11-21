@@ -19,39 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let containerVC = ContainerVC()
         self.window!.rootViewController = containerVC
         self.window!.makeKeyAndVisible()
-
+        
         let attributes = [NSAttributedString.Key.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedString.Key.foregroundColor: white247]
         
-
+        
         // Set navigation bar tint / background colour
+        //UINavigationBar.appearance().
         UINavigationBar.appearance().barTintColor = UIColor.black
-
-        if #available(iOS 11.0, *) {
-            //To change iOS 11 navigationBar largeTitle color
-            
-            
-            UINavigationBar.appearance().prefersLargeTitles = true
-            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
-            UINavigationBar.appearance().largeTitleTextAttributes = attributes
-            
-            
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
-            
-        } else {
-            // for default navigation bar title color
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
-        }
-
+        UINavigationBar.appearance().prefersLargeTitles = true
+        //UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
+        UINavigationBar.appearance().largeTitleTextAttributes = attributes
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
+        
+        
         // Set navigation bar ItemButton tint colour
         UIBarButtonItem.appearance().tintColor = red247
-
+        
         // Set Navigation bar background image
         //        let navBgImage:UIImage = UIImage(named: “bg_blog_navbar_reduced.jpg”)!
         //        UINavigationBar.appearance().setBackgroundImage(navBgImage, forBarMetrics: .Default)
         
         //Set navigation bar Back button tint colour
         //        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-    
+        
         return true
     }
 

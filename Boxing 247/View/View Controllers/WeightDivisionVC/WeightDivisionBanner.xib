@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="D52-jC-uX7" customClass="WeightDivisionBanner" customModule="Boxing_247" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavyweight5" translatesAutoresizingMaskIntoConstraints="NO" id="IQO-LO-pma">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="VBw-yA-yeH"/>
+                        <constraint firstAttribute="height" constant="71" id="uNp-nX-Hgs"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOV-hw-SAS" customClass="GradientView" customModule="Boxing_247" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="71" width="320" height="62"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                            <color key="value" name="alizarin247"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                            <color key="value" name="pomegranate247"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ThirdColor">
+                            <color key="value" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-EN-N1v">
+                    <rect key="frame" x="16" y="79" width="141" height="42.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Heavyweight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agQ-B3-jl6">
+                            <rect key="frame" x="0.0" y="0.0" width="141" height="22"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="26"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="≥ 90 kg / 198 lbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mb-sq-9oc">
+                            <rect key="frame" x="0.0" y="22" width="117.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
+                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSj-rp-tei">
+                    <rect key="frame" x="284" y="90" width="20" height="22"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" image="plus.circle" catalog="system"/>
+                    <state key="selected" image="minus.circle" catalog="system"/>
+                    <connections>
+                        <action selector="expandButtonClicked:" destination="D52-jC-uX7" eventType="touchUpInside" id="xwQ-Rz-qTL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mOV-hw-SAS" firstAttribute="bottom" secondItem="nLA-cI-Dav" secondAttribute="bottom" constant="2" id="5J2-XE-uoB"/>
+                <constraint firstItem="kSj-rp-tei" firstAttribute="top" secondItem="IQO-LO-pma" secondAttribute="bottom" constant="19" id="DOQ-Le-t88"/>
+                <constraint firstItem="nLA-cI-Dav" firstAttribute="bottom" secondItem="bfG-EN-N1v" secondAttribute="bottom" constant="9.5" id="E55-lX-dd0"/>
+                <constraint firstItem="IQO-LO-pma" firstAttribute="top" secondItem="D52-jC-uX7" secondAttribute="top" id="N5G-Ew-ciA"/>
+                <constraint firstItem="bfG-EN-N1v" firstAttribute="leading" secondItem="nLA-cI-Dav" secondAttribute="leading" constant="16" id="N9T-Bp-dPX"/>
+                <constraint firstItem="nLA-cI-Dav" firstAttribute="bottom" secondItem="kSj-rp-tei" secondAttribute="bottom" constant="19" id="NIw-dR-qzd"/>
+                <constraint firstItem="bfG-EN-N1v" firstAttribute="top" secondItem="IQO-LO-pma" secondAttribute="bottom" constant="8" id="UZO-gl-n0X"/>
+                <constraint firstItem="nLA-cI-Dav" firstAttribute="trailing" secondItem="kSj-rp-tei" secondAttribute="trailing" constant="16" id="fcR-cq-gCj"/>
+                <constraint firstItem="mOV-hw-SAS" firstAttribute="top" secondItem="IQO-LO-pma" secondAttribute="bottom" id="hDN-fU-WSs"/>
+                <constraint firstItem="IQO-LO-pma" firstAttribute="trailing" secondItem="nLA-cI-Dav" secondAttribute="trailing" id="ks7-Gl-udV"/>
+                <constraint firstItem="mOV-hw-SAS" firstAttribute="leading" secondItem="nLA-cI-Dav" secondAttribute="leading" id="lcg-dX-pll"/>
+                <constraint firstItem="IQO-LO-pma" firstAttribute="leading" secondItem="nLA-cI-Dav" secondAttribute="leading" id="qEY-Te-eIO"/>
+                <constraint firstItem="mOV-hw-SAS" firstAttribute="trailing" secondItem="nLA-cI-Dav" secondAttribute="trailing" id="uq9-0D-bHO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="nLA-cI-Dav"/>
+            <connections>
+                <outlet property="colouredPanel" destination="mOV-hw-SAS" id="6py-7h-lPo"/>
+                <outlet property="divisionLabel" destination="agQ-B3-jl6" id="4jD-u8-aaa"/>
+                <outlet property="expandButton" destination="kSj-rp-tei" id="KVf-kd-IXX"/>
+                <outlet property="thumbnail" destination="IQO-LO-pma" id="wAg-MO-kkJ"/>
+                <outlet property="thumbnailHeight" destination="uNp-nX-Hgs" id="JdU-Hb-3cy"/>
+                <outlet property="thumbnailWidth" destination="VBw-yA-yeH" id="eN9-jp-hba"/>
+                <outlet property="weightLabel" destination="1mb-sq-9oc" id="pcW-cz-iBq"/>
+            </connections>
+            <point key="canvasLocation" x="1.4492753623188408" y="-192.52232142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heavyweight5" width="768" height="170"/>
+        <image name="minus.circle" catalog="system" width="64" height="62"/>
+        <image name="plus.circle" catalog="system" width="64" height="62"/>
+        <namedColor name="alizarin247">
+            <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pomegranate247">
+            <color red="0.64901253172588835" green="0.19330372594945328" blue="0.15071424585305876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
