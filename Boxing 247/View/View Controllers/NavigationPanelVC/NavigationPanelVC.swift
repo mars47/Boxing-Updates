@@ -7,11 +7,13 @@
 
 import UIKit
 
+//dismiss(animated: true, completion: nil)
+
 class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     let viewModel = NavigationPanelVM()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         

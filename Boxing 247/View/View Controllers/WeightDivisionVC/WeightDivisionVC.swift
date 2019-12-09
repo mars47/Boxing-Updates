@@ -11,13 +11,8 @@ import UIKit
 class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var collectionView: UICollectionView?
-    
-    //    var delegate: NewsFeedVCDelegate?
-    //    var mainStoryboard: UIStoryboard!
-    //    var centerNavigationController: UINavigationController!
-    //    var containerVC: ContainerVC!
     
     let banners = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3")]
     
@@ -27,25 +22,12 @@ class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = dark247
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorColor = dark247
-        tableView.backgroundColor = view.backgroundColor
-        tableView.tableFooterView = UIView()
-        tableView.estimatedSectionHeaderHeight = 200
-        tableView.register(UINib.init(nibName: "TextCell", bundle: nil), forCellReuseIdentifier: "federationCell")
-        
-
-        
-        tableView.backgroundColor = .clear // very important
-        tableView.layer.masksToBounds = false
-        tableView.layer.shadowOpacity = 1
-        tableView.layer.shadowRadius = 1.5
-        tableView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        tableView.layer.shadowColor = UIColor.darkGray.cgColor
-        tableView.clipsToBounds = true
-
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        tableView?.separatorColor = dark247
+        tableView?.tableFooterView = UIView()
+        tableView?.estimatedSectionHeaderHeight = 200
+        tableView?.register(UINib.init(nibName: "TextCell", bundle: nil), forCellReuseIdentifier: "federationCell")
         
         //        if let collectionView = collectionView {
         //
@@ -60,7 +42,7 @@ class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionV
     
     @IBAction func navPanelButtonPressed(_ sender: Any) {
         
-        containerVC!.toggleLeftPanel?()
+        //containerVC!.toggleLeftPanel!()
     }
     
     @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
@@ -77,7 +59,18 @@ class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "federationCell") as! TextCell
-       //cell = TextCell(style: .default, reuseIdentifier: "federationCell")
+        
+        //cell.layer.cornerRadius = 10
+        //cell.layer.addShadow()
+        
+//        if indexPath.row == 0 {
+//            cell.configureCellType(type: .top)
+//        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1  {
+//            cell.configureCellType(type: .bottom)
+//        } else {
+//            cell.configureCellType(type: .middle)
+//        }
+        
         return cell
     }
     
@@ -108,26 +101,27 @@ class WeightDivisionVC: B247ViewController, UITableViewDataSource, UICollectionV
         return nil
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-
-            cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12)
-            //cell.layer.cornerRadius = 10
-            cell.layer.masksToBounds = true
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-
-        } else {
-
-            cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 0)
-            cell.layer.masksToBounds = true
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 65, bottom: 0, right: 30)
-        }
-        
-//        tableView.layer.masksToBounds = true
-//        let radius = tableView.layer.cornerRadius
-//        tableView.layer.shadowPath = UIBezierPath(roundedRect: tableView.bounds, cornerRadius: radius).cgPath
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+//
+//            cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12)
+//            cell.layer.cornerRadius = 10
+//            cell.layer.masksToBounds = false
+//            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+//
+//        } else {
+//
+//            //cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 0)
+//            cell.layer.masksToBounds = false
+//            cell.separatorInset = UIEdgeInsets(top: 0, left: 65, bottom: 0, right: 30)
+//        }
+//
+////        tableView.layer.masksToBounds = true
+////        let radius = tableView.layer.cornerRadius
+////        tableView.layer.shadowPath = UIBezierPath(roundedRect: tableView.bounds, cornerRadius: radius).cgPath
+//    }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         

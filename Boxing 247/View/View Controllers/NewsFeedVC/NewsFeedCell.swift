@@ -35,10 +35,20 @@ class NewsFeedCell: UICollectionViewCell {
     }
     
     func updateUI() {
-
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 0.5
         
+        contentView.layer.cornerRadius = 12
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.clear.cgColor
+        contentView.layer.masksToBounds = true
+
+        layer.shadowColor = dark247.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0) // 0, 2
+        layer.shadowRadius = 6 // 6
+        layer.shadowOpacity = 1 // 1
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+        layer.backgroundColor = UIColor.clear.cgColor
+
         DispatchQueue.main.async {
             #warning("needs refactoring")
             
@@ -59,7 +69,7 @@ class NewsFeedCell: UICollectionViewCell {
     func setDynamicConstraints() {
         
         let deviceSize = UIScreen.main.bounds.size
-        let cellWidthWithInsets = deviceSize.width - (2 * 12)
+        let cellWidthWithInsets = deviceSize.width - (2 * 20)
         self.widthConstraint.constant = cellWidthWithInsets
         self.topPanelStackView?.spacing = cellWidthWithInsets - (12 + 80 + 84 + 4)
     }

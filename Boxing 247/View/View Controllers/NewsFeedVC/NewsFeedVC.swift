@@ -9,6 +9,7 @@ import UIKit
 
 class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var layout: UICollectionViewFlowLayout!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
@@ -17,18 +18,18 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     let refreshControl = UIRefreshControl()
     
     @IBAction func navPanelButtonPressed(_ sender: Any) {
-        containerVC?.toggleLeftPanel?()
+        
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         view.backgroundColor = dark247
-        navigationBar.largeTitleDisplayMode = .always
         
         collectionView.register(UINib.init(nibName: "NewsFeedCell2", bundle: nil), forCellWithReuseIdentifier: "tCell")
         collectionView.delegate = self
         collectionView.dataSource = self
+        layout.minimumLineSpacing = 18.5
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
 
@@ -46,7 +47,7 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     
     @objc private func refreshNews(_ sender: Any) {
         viewModel.downloadNews {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.refreshControl.endRefreshing()
             }
         }
@@ -70,7 +71,7 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let deviceSize = UIScreen.main.bounds.size
-        let insets = (2 * 12) as CGFloat
+        let insets = (2 * 20) as CGFloat
         let cellWidth = deviceSize.width - insets;
         
         // Calulates height of cell by adding the heights of all views found in NewsFeedCell.xib
@@ -90,8 +91,14 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let newsFeedDetailVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeedDetail") as? NewsFeedDetailVC else { return }
-        self.centerNavigationController?.pushViewController(newsFeedDetailVC, animated: true)
+        performSegue(withIdentifier: "showNewsDetail", sender: nil)
+        
+        //guard let newsFeedDetailVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeedDetail") as? NewsFeedDetailVC else { return }
+        //self.centerNavigationController?.pushViewController(newsFeedDetailVC, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
 }
 // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072

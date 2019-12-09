@@ -8,12 +8,13 @@
 
 import UIKit
 
-class WeightDivisionCell: UITableViewCell {
+class WeightDivisionCell: UICollectionViewCell {
 
-    @IBOutlet weak var divisionTitle: UILabel!
-    @IBOutlet weak var thumbnail: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         //thumbnail.layer.borderWidth = 0.5
         //thumbnail.layer.borderColor = UIColor.lightGray.cgColor
         self.backgroundColor = test247

@@ -23,6 +23,8 @@ class WeightDivisionBanner: UIView {
         
         super.awakeFromNib()
         
+        clipsToBounds = false
+        
         //self.layer.borderColor = UIColor.lightGray.cgColor
         //self.layer.borderWidth = 0.5
         
@@ -31,7 +33,10 @@ class WeightDivisionBanner: UIView {
         thumbnailWidth.constant = screenWidth - 32
         thumbnailHeight.constant = thumbnailWidth.constant / 4.507
         thumbnail.contentMode = .scaleAspectFill
-        layer.masksToBounds = true
+        //layer.masksToBounds = true
+        
+        //thumbnail.layer.cornerRadius = 10
+        //thumbnail.layer.addShadow()
     }
     
     @IBAction func expandButtonClicked(_ sender: Any) {
@@ -42,7 +47,7 @@ class WeightDivisionBanner: UIView {
     override func layoutSubviews() {
         
         super.layoutSubviews()
-        self.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
+        //self.roundCorners(corners: [.topLeft, .topRight], radius: 10.0, altBounds: nil)
     }
 
 }

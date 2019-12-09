@@ -28,10 +28,10 @@ class ContainerVC: UIViewController {
         case leftPanelExpanded
         case rightPanelExpanded
     }
-        
+            
     var navigationPanel: NavigationPanelVC?
     let centerPanelExpandedOffset: CGFloat = 60
-    var centerNavigationController: UINavigationController!
+    var centerNavigationController: UINavigationController! 
     var newsFeedVC: NewsFeedVC!
     var currentState: SlideOutState = .bothCollapsed {
         didSet {
@@ -43,24 +43,40 @@ class ContainerVC: UIViewController {
     override func viewDidLoad() {
                 
         super.viewDidLoad()
-        newsFeedVC = UIStoryboard.newsFeedVC()
-        newsFeedVC.containerVC = self
-        newsFeedVC.navigationBar.largeTitleDisplayMode = .always
+//        newsFeedVC = UIStoryboard.newsFeedVC()
+//        newsFeedVC.containerVC = self
+//        newsFeedVC.navigationBar.largeTitleDisplayMode = .always
+//        
+//        // wrap the centerViewController in a navigation controller, so we can push views to it
+//        // and display bar button items in the navigation bar
+//        
+//        /* viewControllers = [vc1, vc2, vc3].map{UINavigationController(rootViewController: $0)}
+//         http://swiftdeveloperblog.com/code-examples/create-uitabbarcontroller-programmatically/ */
+//
         
-        // wrap the centerViewController in a navigation controller, so we can push views to it
-        // and display bar button items in the navigation bar
+        centerNavigationController = UINavigationController(rootViewController: (storyboard!.instantiateViewController(withIdentifier: "NavigationPanelVC") as? NavigationPanelVC)!);
+      
+        DispatchQueue.main.async(){
+            
+            self.performSegue(withIdentifier: "tabBarSegue", sender: nil)
+        }
         
-        /* viewControllers = [vc1, vc2, vc3].map{UINavigationController(rootViewController: $0)}
-         http://swiftdeveloperblog.com/code-examples/create-uitabbarcontroller-programmatically/ */
+//        newsFeedVC.centerNavigationController = centerNavigationController
+//
+//        view.addSubview(centerNavigationController.view)
+//        addChild(centerNavigationController)
+//        centerNavigationController.didMove(toParent: self)
+////        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+////        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        centerNavigationController = UINavigationController(rootViewController: newsFeedVC)
-        newsFeedVC.centerNavigationController = centerNavigationController
-
-        view.addSubview(centerNavigationController.view)
-        addChild(centerNavigationController)
-        centerNavigationController.didMove(toParent: self)
-//        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-//        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        if segue.destination is CustomTabBarController {
+            
+            let vc = segue.destination as! CustomTabBarController
+            vc.containerVC = self
+        }
     }
 }
 
@@ -109,18 +125,21 @@ extension ContainerVC: Withdrawable {
     }
     
     func addLeftPanelViewController() {
+        
+        
         guard navigationPanel == nil else { return }
         
-        if let vc = UIStoryboard.navigationPanel() {
-            vc.mainStoryboard = UIStoryboard.mainStoryboard()
-            vc.centerNavigationController = centerNavigationController
-            vc.containerVC = self
+        if let vc = storyboard!.instantiateViewController(withIdentifier: "NavigationPanelVC") as? NavigationPanelVC {
+            
+//            vc.mainStoryboard = UIStoryboard.mainStoryboard()
+//            vc.centerNavigationController = centerNavigationController
+//            vc.containerVC = self
             
             addChildSidePanelController(vc)
             navigationPanel = vc
         }
     }
-
+    
     func animateLeftPanel(shouldExpand: Bool) {
         
         //   This method simply checks whether it’s been told to expand or collapse the side panel. If it should expand, then it sets the current state to indicate the left panel is expanded, and then animates the center panel so it’s open. Otherwise, it animates the center panel closed and then removes its view and sets the current state to indicate it’s closed.
@@ -172,4 +191,5 @@ extension ContainerVC: Withdrawable {
         sidePanelController.didMove(toParent: self)
         //reverted 
     }
+    
 }

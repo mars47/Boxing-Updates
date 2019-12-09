@@ -15,17 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let containerVC = ContainerVC()
-        self.window!.rootViewController = containerVC
-        self.window!.makeKeyAndVisible()
+        self.window?.tintColor = UIColor(named: "pomegranate247")
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        let containerVC = ContainerVC()
+//        self.window!.rootViewController = containerVC
+//        self.window!.makeKeyAndVisible()
         
         let attributes = [NSAttributedString.Key.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedString.Key.foregroundColor: white247]
         
         
         // Set navigation bar tint / background colour
         //UINavigationBar.appearance().
-        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().backgroundColor = dark247
+        //UINavigationBar.appearance().barTintColor = dark247
         UINavigationBar.appearance().prefersLargeTitles = true
         //UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
         UINavigationBar.appearance().largeTitleTextAttributes = attributes
