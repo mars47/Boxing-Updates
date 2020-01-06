@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
     @IBOutlet weak var navigationBar: UINavigationItem!
@@ -32,6 +32,8 @@ class NewsFeedVC: B247ViewController, UICollectionViewDelegate, UICollectionView
         layout.minimumLineSpacing = 18.5
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
+        
+        self.navigationController?.navigationBar.isTranslucent = true
 
         bindViewModel()
         viewModel.downloadNews{}

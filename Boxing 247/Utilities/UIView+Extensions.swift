@@ -60,8 +60,24 @@ extension UIView {
         return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
     }
     
-    func roundCorners(corners: UIRectCorner, radius: CGFloat, altBounds: CGRect?) {
+    func configureShadowAndRoundCorners(shadowBounds: UIView) {
         
+            shadowBounds.layer.cornerRadius = 12
+            shadowBounds.layer.borderWidth = 1.0
+            shadowBounds.layer.borderColor = UIColor.clear.cgColor
+            shadowBounds.layer.masksToBounds = true
+
+            layer.shadowColor = dark247.cgColor
+            layer.shadowOffset = CGSize(width: 0, height: 0) // 0, 2
+            layer.shadowRadius = 6 // 6
+            layer.shadowOpacity = 1 // 1
+            layer.masksToBounds = false
+            layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: shadowBounds.layer.cornerRadius).cgPath
+            layer.backgroundColor = UIColor.clear.cgColor
+    }
+    
+    func roundCorners(corners: UIRectCorner, radius: CGFloat, altBounds: CGRect?) {
+        //cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12)
         let bounds = altBounds == nil ? self.bounds : altBounds!
         
         

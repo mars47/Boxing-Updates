@@ -8,25 +8,41 @@
 
 import UIKit
 
-class WeightDivisionCell: UICollectionViewCell {
-
+class WeightDivisionCell: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var width: NSLayoutConstraint!
+    @IBOutlet weak var height: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView?
+    
+    var isExpanded = true
+    var array = [1,2,3,4]
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
-        //thumbnail.layer.borderWidth = 0.5
-        //thumbnail.layer.borderColor = UIColor.lightGray.cgColor
-        self.backgroundColor = test247
-        //divisionTitle.layer.borderWidth = 0.3
-        //divisionTitle.layer.borderColor = UIColor.lightGray.cgColor
-       // divisionTitle.textColor = dark247
-       // divisionTitle.backgroundColor = red247
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.estimatedRowHeight = 52.5
+        tableView?.register(UINib(nibName: "TextCell", bundle: nil), forCellReuseIdentifier: "federationCell")
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(5, 5, 5, 5)) //t l b r
+        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+//        tableView.safeAreaInsets = section == 0 ? UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0) : UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        //isExpanded ? 4 : 0
+        array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "federationCell", for: indexPath) as! TextCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
 }

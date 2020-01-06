@@ -63,7 +63,7 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
         switch cellIndex {
         case (0,0):
             let newsFeedVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeed") as? NewsFeedVC
-            return newsFeedVC?.configureController(withProperties: self)
+            return nil
 
 //        case (0,1):
 //            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC

@@ -36,19 +36,8 @@ class NewsFeedCell: UICollectionViewCell {
     
     func updateUI() {
         
-        contentView.layer.cornerRadius = 12
-        contentView.layer.borderWidth = 1.0
-        contentView.layer.borderColor = UIColor.clear.cgColor
-        contentView.layer.masksToBounds = true
-
-        layer.shadowColor = dark247.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0) // 0, 2
-        layer.shadowRadius = 6 // 6
-        layer.shadowOpacity = 1 // 1
-        layer.masksToBounds = false
-        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
-        layer.backgroundColor = UIColor.clear.cgColor
-
+        configureShadowAndRoundCorners(shadowBounds: contentView)
+        
         DispatchQueue.main.async {
             #warning("needs refactoring")
             

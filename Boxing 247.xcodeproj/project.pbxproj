@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0703123B22E33DB2008B5A2A /* NewsFeedCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0703123A22E33DB2008B5A2A /* NewsFeedCell2.xib */; };
-		070A7E5E239BD22A003AE278 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A7E5D239BD22A003AE278 /* CALayer+Extensions.swift */; };
-		070A7E60239D865A003AE278 /* WeightDivisionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070A7E5F239D865A003AE278 /* WeightDivisionCell.xib */; };
 		070B40BF2392943200F41500 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B40BE2392943200F41500 /* CustomTabBarController.swift */; };
 		07109E01226A02B40038A414 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07109E00226A02B40038A414 /* placeholder.jpg */; };
 		071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071B2BB62104712D0096A57C /* NewsFeedCell.xib */; };
@@ -44,7 +42,11 @@
 		07715F3322E9DD7A00EB6178 /* NewsFeedCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07715F3222E9DD7A00EB6178 /* NewsFeedCell3.xib */; };
 		077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */; };
 		077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */; };
+		07B7045423B995780083D02A /* FederationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B7045223B995780083D02A /* FederationReusableView.swift */; };
+		07B7045523B995780083D02A /* FederationReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B7045323B995780083D02A /* FederationReusableView.xib */; };
 		07C999782197404400E24E61 /* WeightDivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C999762197404400E24E61 /* WeightDivisionCell.swift */; };
+		07DCB14923C0FFAA00A75161 /* WeightDivisionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07DCB14823C0FFAA00A75161 /* WeightDivisionReusableView.xib */; };
+		07DE41AF23AA2AD100F0C4D8 /* WeightDivisionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE41AD23AA2AD100F0C4D8 /* WeightDivisionReusableView.swift */; };
 		07DE4CE42107979700730457 /* Date+TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE32107979700730457 /* Date+TimeAgo.swift */; };
 		07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CE92108846700730457 /* RoundedUIView.swift */; };
 		07DE4CEC210B883900730457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE4CEB210B883900730457 /* Constants.swift */; };
@@ -80,8 +82,6 @@
 
 /* Begin PBXFileReference section */
 		0703123A22E33DB2008B5A2A /* NewsFeedCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsFeedCell2.xib; sourceTree = "<group>"; };
-		070A7E5D239BD22A003AE278 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
-		070A7E5F239D865A003AE278 /* WeightDivisionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightDivisionCell.xib; sourceTree = "<group>"; };
 		070B40BE2392943200F41500 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		07109E00226A02B40038A414 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		071B2BB62104712D0096A57C /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
@@ -122,7 +122,11 @@
 		07715F3222E9DD7A00EB6178 /* NewsFeedCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsFeedCell3.xib; sourceTree = "<group>"; };
 		077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVC.swift; sourceTree = "<group>"; };
 		077CE83020E8CD1A00462AED /* NavigationPanelVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVCDelegate.swift; sourceTree = "<group>"; };
+		07B7045223B995780083D02A /* FederationReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederationReusableView.swift; sourceTree = "<group>"; };
+		07B7045323B995780083D02A /* FederationReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FederationReusableView.xib; sourceTree = "<group>"; };
 		07C999762197404400E24E61 /* WeightDivisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightDivisionCell.swift; sourceTree = "<group>"; };
+		07DCB14823C0FFAA00A75161 /* WeightDivisionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDivisionReusableView.xib; sourceTree = "<group>"; };
+		07DE41AD23AA2AD100F0C4D8 /* WeightDivisionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDivisionReusableView.swift; sourceTree = "<group>"; };
 		07DE4CE32107979700730457 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgo.swift"; sourceTree = "<group>"; };
 		07DE4CE92108846700730457 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		07DE4CEB210B883900730457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -177,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				07F651E023775D1A00F79140 /* UIView+Extensions.swift */,
-				070A7E5D239BD22A003AE278 /* CALayer+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -286,6 +289,21 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
+		07B7045123B3B76A0083D02A /* Old views */ = {
+			isa = PBXGroup;
+			children = (
+				07F651E223775DDE00F79140 /* FederationView.xib */,
+				07F651DE2377392300F79140 /* FederationView.swift */,
+				071B9F3421189EE500EF6404 /* FederationCell.swift */,
+				071B9F3521189EE500EF6404 /* FederationCell.xib */,
+				07F651E423786E7500F79140 /* WeightDivisionBanner.xib */,
+				07F651E623786E8700F79140 /* WeightDivisionBanner.swift */,
+				071B9F3021189E9C00EF6404 /* DivisionCell.swift */,
+				071B9F3121189E9C00EF6404 /* DivisionCell.xib */,
+			);
+			path = "Old views";
+			sourceTree = "<group>";
+		};
 		07C999712197396900E24E61 /* ContainerVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,19 +341,15 @@
 		07C99974219739E400E24E61 /* WeightDivisionVC */ = {
 			isa = PBXGroup;
 			children = (
+				07B7045123B3B76A0083D02A /* Old views */,
 				07F96273211316ED006E0010 /* WeightDivisionVC.swift */,
-				07F651E423786E7500F79140 /* WeightDivisionBanner.xib */,
-				07F651E623786E8700F79140 /* WeightDivisionBanner.swift */,
+				07C999762197404400E24E61 /* WeightDivisionCell.swift */,
+				07DE41AD23AA2AD100F0C4D8 /* WeightDivisionReusableView.swift */,
+				07DCB14823C0FFAA00A75161 /* WeightDivisionReusableView.xib */,
+				07B7045223B995780083D02A /* FederationReusableView.swift */,
+				07B7045323B995780083D02A /* FederationReusableView.xib */,
 				07F651E8237A0AB200F79140 /* TextCell.swift */,
 				07F651E9237A0AB200F79140 /* TextCell.xib */,
-				071B9F3421189EE500EF6404 /* FederationCell.swift */,
-				07C999762197404400E24E61 /* WeightDivisionCell.swift */,
-				070A7E5F239D865A003AE278 /* WeightDivisionCell.xib */,
-				071B9F3021189E9C00EF6404 /* DivisionCell.swift */,
-				071B9F3121189E9C00EF6404 /* DivisionCell.xib */,
-				071B9F3521189EE500EF6404 /* FederationCell.xib */,
-				07F651E223775DDE00F79140 /* FederationView.xib */,
-				07F651DE2377392300F79140 /* FederationView.swift */,
 			);
 			path = WeightDivisionVC;
 			sourceTree = "<group>";
@@ -530,11 +544,12 @@
 				071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */,
 				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
 				07F651EB237A0AB200F79140 /* TextCell.xib in Resources */,
-				070A7E60239D865A003AE278 /* WeightDivisionCell.xib in Resources */,
 				0703123B22E33DB2008B5A2A /* NewsFeedCell2.xib in Resources */,
 				07109E01226A02B40038A414 /* placeholder.jpg in Resources */,
 				07F651E323775DDE00F79140 /* FederationView.xib in Resources */,
 				07715F3322E9DD7A00EB6178 /* NewsFeedCell3.xib in Resources */,
+				07B7045523B995780083D02A /* FederationReusableView.xib in Resources */,
+				07DCB14923C0FFAA00A75161 /* WeightDivisionReusableView.xib in Resources */,
 				071B9F3721189EE500EF6404 /* FederationCell.xib in Resources */,
 				071B9F3321189E9C00EF6404 /* DivisionCell.xib in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
@@ -656,7 +671,6 @@
 				07F651E723786E8700F79140 /* WeightDivisionBanner.swift in Sources */,
 				07F651E123775D1A00F79140 /* UIView+Extensions.swift in Sources */,
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
-				070A7E5E239BD22A003AE278 /* CALayer+Extensions.swift in Sources */,
 				07DE4CEA2108846700730457 /* RoundedUIView.swift in Sources */,
 				077CE83120E8CD1A00462AED /* NavigationPanelVCDelegate.swift in Sources */,
 				072B89A12259ED8700973942 /* NavigationPanelVM.swift in Sources */,
@@ -664,6 +678,7 @@
 				074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* AppServerClient.swift in Sources */,
 				071C378020EF82C8002CA348 /* NewsFeedCellVM.swift in Sources */,
+				07DE41AF23AA2AD100F0C4D8 /* WeightDivisionReusableView.swift in Sources */,
 				07DE4CE42107979700730457 /* Date+TimeAgo.swift in Sources */,
 				07F651DF2377392300F79140 /* FederationView.swift in Sources */,
 				071C377A20EF74E7002CA348 /* NewsFeedVM.swift in Sources */,
@@ -672,6 +687,7 @@
 				071B9F3221189E9C00EF6404 /* DivisionCell.swift in Sources */,
 				074E95F8237EB9AC00BC15CB /* GradientView.swift in Sources */,
 				07F96274211316ED006E0010 /* WeightDivisionVC.swift in Sources */,
+				07B7045423B995780083D02A /* FederationReusableView.swift in Sources */,
 				072B899F22592D8A00973942 /* 247ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
