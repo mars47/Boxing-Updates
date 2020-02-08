@@ -8,11 +8,13 @@
 
 import UIKit
 
-class FederationReusableView: UICollectionReusableView {
+class FederationReusableView: RankingsHeader {
+    
     @IBOutlet weak var height: NSLayoutConstraint!
     @IBOutlet weak var width: NSLayoutConstraint!
-    @IBOutlet weak var backgroundView: UIImageView!
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var clearPanel: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +23,10 @@ class FederationReusableView: UICollectionReusableView {
         let screenWidth = UIScreen.main.bounds.size.width
         width.constant = screenWidth
         height.constant = width.constant / 2
+    }
+    
+    func roundPanelCorners() {
+        clearPanel.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 25)
     }
     
 }

@@ -31,8 +31,7 @@ class WeightDivisionVC: B247ViewController, UICollectionViewDataSource, UICollec
         collectionView!.register(UINib.init(nibName: "WeightDivisionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
         let width = self.view.frame.size.width
         layout.headerReferenceSize = CGSize(width: width
-            , height: (width / 5 ) + 55 )
-        
+            , height: (width / 5 ) + 55 )        
         for (index, _) in banners.enumerated() { sectionStates.append([index]) }
         //print("cellRef: \(sectionStates)")
     }

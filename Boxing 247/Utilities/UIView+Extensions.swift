@@ -56,8 +56,15 @@ extension UIView {
 //    }
     
     class func fromNib<T: UIView>() -> T {
-        
+        /** How to use: let myCustomView: CustomView = UIView.fromNib() */
         return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+    }
+    
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
     }
     
     func configureShadowAndRoundCorners(shadowBounds: UIView) {
@@ -76,14 +83,11 @@ extension UIView {
             layer.backgroundColor = UIColor.clear.cgColor
     }
     
-    func roundCorners(corners: UIRectCorner, radius: CGFloat, altBounds: CGRect?) {
-        //cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12)
-        let bounds = altBounds == nil ? self.bounds : altBounds!
-        
-        
-         let mask = CAShapeLayer()
-
-        
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        /**  how to use: view.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12) */
+       
+        let bounds = self.bounds
+        let mask = CAShapeLayer()
         mask.masksToBounds = false
         mask.shadowOpacity = 1
         mask.shadowRadius = 3
@@ -91,8 +95,7 @@ extension UIView {
         mask.shadowColor = UIColor.yellow.cgColor
         
         mask.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
-        
-        
+    
          layer.mask = mask
      }
     
