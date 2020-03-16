@@ -41,7 +41,9 @@ class NewsFeedCell: UICollectionViewCell {
             #warning("needs refactoring")
                         
             if self.viewModel.image == nil { self.updateUI() } // a hack to ensure that a cell is always returned with a UIImage when given a viewModel
-            else { self.thumbnail.image = self.viewModel.image }
+            else {// self.thumbnail.image = self.viewModel.image
+                
+            }
             
             //self.author.text = "Published by \(self.viewModel.article.author)"
             self.pubDate.text = self.viewModel.article.timeAgo

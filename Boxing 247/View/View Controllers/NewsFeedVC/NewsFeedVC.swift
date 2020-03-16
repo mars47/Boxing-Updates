@@ -83,10 +83,12 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         let cellHeight =
             
                 cell.calculateHeightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
-                + cell.calculateHeightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth - labelInsets, lines: 1)
-                + cell.thumbnail.bounds.size.height
-                + 16 // stackview subview spacing
-                + 12 // top+bottom stackview space
+                //+ cell.calculateHeightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth - labelInsets, lines: 1)
+                + 25 // button stackview
+                + cellWidth / 5.63 
+                //+ cell.thumbnail.bounds.size.height
+                //+ 16 // stackview subview spacing
+                //+ 12 // top+bottom stackview space
         
         return CGSize(width: cellWidth , height: cellHeight)
     }
