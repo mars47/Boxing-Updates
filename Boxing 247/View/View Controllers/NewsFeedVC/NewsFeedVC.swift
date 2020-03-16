@@ -73,18 +73,20 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let deviceSize = UIScreen.main.bounds.size
-        let insets = (2 * 20) as CGFloat
-        let cellWidth = deviceSize.width - insets;
+        let cellInsets = 2 * 20 as CGFloat
+        let labelInsets = 16 * 2 as CGFloat
+        let cellWidth = (deviceSize.width - cellInsets)
         
-        // Calulates height of cell by adding the heights of all views found in NewsFeedCell.xib
+        // Calulates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
         let cellViewModel = viewModel.cellVMArray[indexPath.row]
-        
         let cellHeight =
-            cell.calculateHeightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth, lines: 2) +
-            cell.calculateHeightForLable(text: cellViewModel.article.content, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight), width: cellWidth , lines: 2) +
-            cell.calculateHeightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth, lines: 3) +
-            cell.thumbnail.bounds.size.height + 3
+            
+                cell.calculateHeightForLable(text: cellViewModel.article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
+                + cell.calculateHeightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth - labelInsets, lines: 1)
+                + cell.thumbnail.bounds.size.height
+                + 16 // stackview subview spacing
+                + 12 // top+bottom stackview space
         
         return CGSize(width: cellWidth , height: cellHeight)
     }

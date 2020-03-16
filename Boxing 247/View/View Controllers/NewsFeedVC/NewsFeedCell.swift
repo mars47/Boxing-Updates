@@ -21,7 +21,6 @@ class NewsFeedCell: UICollectionViewCell {
     @IBOutlet weak var topPanelStackView: UIStackView?
     @IBOutlet weak var mainStackView: UIStackView?
 
-    
 //    override func awakeFromNib() {
 //        super.awakeFromNib()
 //        self.contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +29,7 @@ class NewsFeedCell: UICollectionViewCell {
     var viewModel: NewsFeedCellVM! {
         didSet {
             updateUI()
-            setDynamicConstraints()
+           // setDynamicConstraints()
         }
     }
     
@@ -40,28 +39,26 @@ class NewsFeedCell: UICollectionViewCell {
         
         DispatchQueue.main.async {
             #warning("needs refactoring")
-            
-            self.view.sendSubviewToBack(self.mainStackView!)
-            
+                        
             if self.viewModel.image == nil { self.updateUI() } // a hack to ensure that a cell is always returned with a UIImage when given a viewModel
             else { self.thumbnail.image = self.viewModel.image }
             
-            self.author.text = "Published by \(self.viewModel.article.author)"
+            //self.author.text = "Published by \(self.viewModel.article.author)"
             self.pubDate.text = self.viewModel.article.timeAgo
             self.title.text = self.viewModel.article.title
-            self.content.text = self.viewModel.article.description;
+            //self.content.text = self.viewModel.article.description;
             self.thumbnail.contentMode = .scaleAspectFill
             self.thumbnail.clipsToBounds = true
         }
     }
     
-    func setDynamicConstraints() {
-        
-        let deviceSize = UIScreen.main.bounds.size
-        let cellWidthWithInsets = deviceSize.width - (2 * 20)
-        self.widthConstraint.constant = cellWidthWithInsets
-        self.topPanelStackView?.spacing = cellWidthWithInsets - (12 + 80 + 84 + 4)
-    }
+//    func setDynamicConstraints() {
+//
+//        let deviceSize = UIScreen.main.bounds.size
+//        let cellWidthWithInsets = deviceSize.width - (2 * 20)
+//        self.widthConstraint.constant = cellWidthWithInsets
+//        self.topPanelStackView?.spacing = cellWidthWithInsets - (12 + 80 + 84 + 4)
+//    }
     
     func calculateHeightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{
         
