@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,18 +42,19 @@
                         <constraint firstAttribute="trailing" secondItem="bwu-8g-7bQ" secondAttribute="trailing" constant="11" id="vPB-uE-Fqj"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-pl-C5B">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-pl-C5B">
                     <rect key="frame" x="297" y="138" width="17" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="3ui-oS-zKO"/>
                         <constraint firstAttribute="width" constant="17" id="anX-fR-KEL"/>
                     </constraints>
-                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="tintColor" systemColor="darkTextColor"/>
                     <state key="normal" image="minus.circle" catalog="system"/>
                     <state key="selected" image="minus.circle" catalog="system"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="qfb-qK-gcO"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="02Y-k9-s27" firstAttribute="leading" secondItem="qfb-qK-gcO" secondAttribute="leading" id="78w-aH-jyM"/>
                 <constraint firstItem="qfb-qK-gcO" firstAttribute="trailing" secondItem="jPP-pl-C5B" secondAttribute="trailing" constant="6" id="CDL-Ee-DyQ"/>
@@ -65,7 +68,6 @@
                 <constraint firstItem="02Y-k9-s27" firstAttribute="top" secondItem="JyH-Re-vdl" secondAttribute="top" id="vb3-Fv-dSz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="qfb-qK-gcO"/>
             <connections>
                 <outlet property="background" destination="02Y-k9-s27" id="m8n-Vi-eb9"/>
                 <outlet property="button" destination="jPP-pl-C5B" id="0Ic-5M-kOs"/>
@@ -78,11 +80,17 @@
         </view>
     </objects>
     <resources>
-        <image name="minus.circle" catalog="system" width="64" height="60"/>
+        <image name="minus.circle" catalog="system" width="128" height="121"/>
         <image name="wba belt" width="1148" height="574"/>
         <image name="wba logo" width="249" height="249"/>
         <namedColor name="grey247">
             <color red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

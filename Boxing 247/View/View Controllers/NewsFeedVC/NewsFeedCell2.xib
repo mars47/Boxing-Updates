@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="161" width="399" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt; &lt;title&gt;" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-Gq-Gy0">
-                                                <rect key="frame" x="16" y="6" width="367" height="48"/>
+                                                <rect key="frame" x="16" y="6" width="365" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -119,6 +120,7 @@
                     </stackView>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="cNp-uq-ihp"/>
             <constraints>
                 <constraint firstItem="cn7-WG-g0P" firstAttribute="leading" secondItem="rZq-kZ-AvW" secondAttribute="leading" id="3aP-PJ-lzt"/>
                 <constraint firstAttribute="bottom" secondItem="cn7-WG-g0P" secondAttribute="bottom" id="7FZ-du-U8F"/>
@@ -129,7 +131,6 @@
                 <constraint firstItem="9ue-TS-H37" firstAttribute="leading" secondItem="rZq-kZ-AvW" secondAttribute="leading" constant="16" id="l8N-Qd-Uq1"/>
                 <constraint firstAttribute="trailing" secondItem="9M5-ZB-46l" secondAttribute="trailing" constant="16" id="reL-1y-ZjD"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="cNp-uq-ihp"/>
             <size key="customSize" width="298" height="253"/>
             <connections>
                 <outlet property="mainStackView" destination="Ibh-Ef-tbc" id="BQj-HC-md1"/>
@@ -142,10 +143,10 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="clock" catalog="system" width="64" height="60"/>
-        <image name="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system" width="60" height="64"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
-        <image name="star" catalog="system" width="64" height="58"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system" width="121" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="alizarin247">
             <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

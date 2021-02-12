@@ -27,7 +27,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let vc = segue.destination as? NewsFeedVC {
+        if let _ = segue.destination as? NewsFeedVC {
             
             print("Yay it worked")
             _ = ""

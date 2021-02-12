@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMx-b8-5Kb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMx-b8-5Kb">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,13 +70,13 @@
                                 <sections/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rn9-e0-Ylf"/>
                         <constraints>
                             <constraint firstItem="Rn9-e0-Ylf" firstAttribute="trailing" secondItem="hva-ze-4rs" secondAttribute="trailing" id="8EQ-tW-1Ke"/>
                             <constraint firstItem="Rn9-e0-Ylf" firstAttribute="bottom" secondItem="hva-ze-4rs" secondAttribute="bottom" id="KdB-6H-8il"/>
                             <constraint firstItem="hva-ze-4rs" firstAttribute="leading" secondItem="Rn9-e0-Ylf" secondAttribute="leading" id="Sp5-Up-Stu"/>
                             <constraint firstItem="hva-ze-4rs" firstAttribute="top" secondItem="Rn9-e0-Ylf" secondAttribute="top" id="pcK-cY-NfJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Rn9-e0-Ylf"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="hva-ze-4rs" id="daB-t1-dKN"/>
@@ -109,7 +111,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="i29-xt-zWe">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell1" id="i29-xt-zWe">
                                         <rect key="frame" x="21" y="8" width="372" height="225"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bXx-0e-jBs">
@@ -118,7 +120,7 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TQX-8f-zlG">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell2" id="TQX-8f-zlG">
                                         <rect key="frame" x="21" y="243" width="372" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qf5-GG-zr8">
@@ -130,6 +132,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="hXh-aj-UiY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NdO-AU-OKs" firstAttribute="leading" secondItem="hXh-aj-UiY" secondAttribute="leading" constant="6" id="1Hz-Tz-mlI"/>
@@ -140,7 +143,6 @@
                             <constraint firstItem="eOg-TI-yLx" firstAttribute="leading" secondItem="hXh-aj-UiY" secondAttribute="leading" id="drs-Bl-jos"/>
                             <constraint firstItem="NdO-AU-OKs" firstAttribute="top" secondItem="hXh-aj-UiY" secondAttribute="top" id="t6G-Gn-J05"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hXh-aj-UiY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Boxing 247" largeTitleDisplayMode="always" id="cjf-qc-pTP">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" style="plain" id="qE3-hN-VPq">
@@ -212,6 +214,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cRN-Bj-Ct9"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Z1Z-7x-Tgk" firstAttribute="trailing" secondItem="cRN-Bj-Ct9" secondAttribute="trailing" id="1ed-98-fnr"/>
@@ -219,7 +222,6 @@
                             <constraint firstItem="Z1Z-7x-Tgk" firstAttribute="bottom" secondItem="cRN-Bj-Ct9" secondAttribute="bottom" id="RZF-JA-5uc"/>
                             <constraint firstItem="Z1Z-7x-Tgk" firstAttribute="leading" secondItem="cRN-Bj-Ct9" secondAttribute="leading" id="dOt-hL-xTZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cRN-Bj-Ct9"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Z1Z-7x-Tgk" id="Oer-NQ-4vl"/>
@@ -247,7 +249,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dhf-uP-Sfm">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="test4" id="dhf-uP-Sfm">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -258,6 +260,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Dt-AT-BVu"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Dt-AT-BVu" firstAttribute="trailing" secondItem="IuQ-3P-RM9" secondAttribute="trailing" id="5Hc-Q6-zHS"/>
@@ -265,7 +268,6 @@
                             <constraint firstItem="9Dt-AT-BVu" firstAttribute="bottom" secondItem="IuQ-3P-RM9" secondAttribute="bottom" id="YTa-BM-fMr"/>
                             <constraint firstItem="IuQ-3P-RM9" firstAttribute="top" secondItem="9Dt-AT-BVu" secondAttribute="top" id="zmD-sy-MR3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9Dt-AT-BVu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="h5J-9O-otf">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="hfw-oM-L89"/>
@@ -309,7 +311,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eiU-Tp-mec">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="test3" id="eiU-Tp-mec">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -320,6 +322,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nqq-eg-b9O"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UrJ-PW-etp" firstAttribute="top" secondItem="nqq-eg-b9O" secondAttribute="top" constant="4" id="1H4-Lo-r4b"/>
@@ -330,7 +333,6 @@
                             <constraint firstItem="UrJ-PW-etp" firstAttribute="leading" secondItem="nqq-eg-b9O" secondAttribute="leading" constant="4" id="Wpv-9K-87s"/>
                             <constraint firstItem="nqq-eg-b9O" firstAttribute="trailing" secondItem="aYb-jn-JTJ" secondAttribute="trailing" id="akf-58-oMa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nqq-eg-b9O"/>
                     </view>
                     <navigationItem key="navigationItem" title="Champions" largeTitleDisplayMode="always" id="fLO-l5-b94">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="Xbh-79-ACa">
@@ -366,7 +368,7 @@
                                                 <rect key="frame" x="0.0" y="-44" width="414" height="324"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="ns1-CR-ekv" secondAttribute="bottom" id="TxP-5Z-TNU"/>
                                             <constraint firstItem="ns1-CR-ekv" firstAttribute="leading" secondItem="kMt-aX-LUo" secondAttribute="leading" id="fP5-Ss-d2r"/>
@@ -375,7 +377,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrl-pP-iHy">
                                         <rect key="frame" x="0.0" y="280" width="414" height="20.333333333333314"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -397,8 +399,9 @@
                                 </connections>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FTl-Uz-DbG"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="linkColor"/>
                         <constraints>
                             <constraint firstItem="HZf-1s-5bO" firstAttribute="trailing" secondItem="FTl-Uz-DbG" secondAttribute="trailing" id="Bbd-Yl-liU"/>
                             <constraint firstItem="FTl-Uz-DbG" firstAttribute="top" secondItem="ns1-CR-ekv" secondAttribute="top" priority="900" constant="44" id="C9t-zD-f9y"/>
@@ -407,7 +410,6 @@
                             <constraint firstItem="HZf-1s-5bO" firstAttribute="top" secondItem="Lmh-76-fuP" secondAttribute="top" id="OYA-Mo-k1i"/>
                             <constraint firstItem="Zrl-pP-iHy" firstAttribute="width" secondItem="Lmh-76-fuP" secondAttribute="width" id="kkT-Wo-HbQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FTl-Uz-DbG"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="Zrl-pP-iHy" id="oD9-xT-Bvf"/>
@@ -450,7 +452,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavyweight3" translatesAutoresizingMaskIntoConstraints="NO" id="iRR-ZH-aJ1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374.00000000000011" height="71"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="71"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zt0-8D-S8E">
                                                     <rect key="frame" x="0.0" y="0.0" width="82" height="36"/>
@@ -513,6 +515,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hea-lj-q0J"/>
                         <color key="backgroundColor" name="dark247"/>
                         <constraints>
                             <constraint firstItem="Hea-lj-q0J" firstAttribute="trailing" secondItem="qoP-Y0-LHs" secondAttribute="trailing" constant="6" id="N6F-cO-D1u"/>
@@ -523,7 +526,6 @@
                             <constraint firstItem="qoP-Y0-LHs" firstAttribute="leading" secondItem="Hea-lj-q0J" secondAttribute="leading" constant="6" id="hXZ-ln-0i8"/>
                             <constraint firstItem="Hea-lj-q0J" firstAttribute="bottom" secondItem="wK3-Kn-G2i" secondAttribute="bottom" id="nMh-lp-clb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hea-lj-q0J"/>
                     </view>
                     <navigationItem key="navigationItem" title="Champions" largeTitleDisplayMode="always" id="JNe-Qu-baQ">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="AeQ-F7-th1">
@@ -644,13 +646,13 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lEx-mM-pvx"/>
                         <color key="backgroundColor" name="grey247"/>
                         <constraints>
                             <constraint firstItem="LtA-5c-atr" firstAttribute="bottom" secondItem="lEx-mM-pvx" secondAttribute="bottom" id="Hud-Pr-61c"/>
                             <constraint firstItem="LtA-5c-atr" firstAttribute="leading" secondItem="lEx-mM-pvx" secondAttribute="leading" id="L2f-SK-5GI"/>
                             <constraint firstItem="LtA-5c-atr" firstAttribute="trailing" secondItem="lEx-mM-pvx" secondAttribute="trailing" id="mCs-E8-L95"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lEx-mM-pvx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Rankings" id="i7K-sR-bx8">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="iR1-wL-ZKc">
@@ -722,7 +724,7 @@
                                                             </constraints>
                                                         </tableView>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="sDq-ZI-M35" secondAttribute="trailing" id="a79-0I-8MH"/>
                                                         <constraint firstItem="sDq-ZI-M35" firstAttribute="top" secondItem="0je-Bd-n9S" secondAttribute="top" id="bYc-gg-WrC"/>
@@ -751,6 +753,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Fx-5V-w1C"/>
                         <color key="backgroundColor" name="dark247"/>
                         <constraints>
                             <constraint firstItem="cHN-fD-4ND" firstAttribute="top" secondItem="uUO-uh-3QE" secondAttribute="bottom" constant="5" id="FfE-IL-hgQ"/>
@@ -761,7 +764,6 @@
                             <constraint firstAttribute="trailing" secondItem="cHN-fD-4ND" secondAttribute="trailing" id="hrW-Lb-WWG"/>
                             <constraint firstItem="cHN-fD-4ND" firstAttribute="leading" secondItem="49s-uT-WqV" secondAttribute="leading" id="nzz-ax-dgP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="8Fx-5V-w1C"/>
                     </view>
                     <navigationItem key="navigationItem" title="Rankings" id="8uS-46-PWD"/>
                     <connections>
@@ -797,7 +799,7 @@
                                 <subviews>
                                     <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-Jk-lEW">
                                         <rect key="frame" x="16" y="0.0" width="382" height="775"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-16" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="divisionCell" rowHeight="71" id="UOM-Hl-xwe" customClass="WeightDivisionCell" customModule="Boxing_247" customModuleProvider="target">
@@ -808,7 +810,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavyweight3" translatesAutoresizingMaskIntoConstraints="NO" id="o9f-QU-9Qo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382.00000000000011" height="71"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="71"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEw-tl-LUv">
                                                             <rect key="frame" x="0.0" y="0.0" width="82" height="36"/>
@@ -881,6 +883,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hmv-pa-SYx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YyS-UI-j3S" firstAttribute="leading" secondItem="Hmv-pa-SYx" secondAttribute="leading" constant="4" id="3ZL-8x-AVE"/>
@@ -891,7 +894,6 @@
                             <constraint firstItem="1O3-OH-Jrd" firstAttribute="top" secondItem="YyS-UI-j3S" secondAttribute="bottom" constant="8" id="VS1-MZ-qvJ"/>
                             <constraint firstItem="Hmv-pa-SYx" firstAttribute="trailing" secondItem="YyS-UI-j3S" secondAttribute="trailing" constant="8" id="xZj-Uq-ZWI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hmv-pa-SYx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Champions" largeTitleDisplayMode="always" id="Of5-YC-5nx"/>
                     <connections>
@@ -903,7 +905,7 @@
                 <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ubq-dC-R5Q">
                     <rect key="frame" x="0.0" y="0.0" width="343" height="624"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                     <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-16" maxY="0.0"/>
                     <prototypes>
                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="divisionCell" rowHeight="71" id="9pW-bG-Cgb" customClass="WeightDivisionCell" customModule="Boxing_247" customModuleProvider="target">
@@ -914,7 +916,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavyweight3" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-fF-mu9">
-                                        <rect key="frame" x="0.0" y="0.0" width="343.00000000000011" height="71"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="71"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRu-fn-5Hk">
                                         <rect key="frame" x="0.0" y="0.0" width="82" height="36"/>
@@ -1000,11 +1002,11 @@
             </objects>
             <point key="canvasLocation" x="-1455" y="-807"/>
         </scene>
-        <!--Champions-->
+        <!--Rankings-->
         <scene sceneID="FVC-QD-uBd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d67-Hg-n9K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Champions" image="arrow.up.arrow.down.square" catalog="system" selectedImage="arrow.up.arrow.down.square.fill" id="G3d-gm-W8l"/>
+                    <tabBarItem key="tabBarItem" title="Rankings" image="arrow.up.arrow.down.square" catalog="system" selectedImage="arrow.up.arrow.down.square.fill" id="G3d-gm-W8l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bbx-g0-Gg2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1039,15 +1041,19 @@
             <point key="canvasLocation" x="-2183" y="-78"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zwW-iS-s4R"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" name="pomegranate247"/>
     <resources>
-        <image name="arrow.up.arrow.down.square" catalog="system" width="64" height="56"/>
-        <image name="arrow.up.arrow.down.square.fill" catalog="system" width="64" height="56"/>
+        <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
+        <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
         <image name="heavyweight3" width="765" height="170"/>
         <image name="joshua" width="200" height="252"/>
         <image name="navIcon" width="30" height="30"/>
         <image name="placeholder.jpg" width="1200" height="675"/>
-        <image name="rectangle.stack" catalog="system" width="64" height="60"/>
-        <image name="rectangle.stack.fill" catalog="system" width="64" height="60"/>
+        <image name="rectangle.stack" catalog="system" width="128" height="122"/>
+        <image name="rectangle.stack.fill" catalog="system" width="128" height="122"/>
         <namedColor name="alizarin247">
             <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1057,9 +1063,20 @@
         <namedColor name="grey247">
             <color red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="pomegranate247">
+            <color red="0.6470588235294118" green="0.19215686274509805" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zwW-iS-s4R"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" name="pomegranate247"/>
 </document>

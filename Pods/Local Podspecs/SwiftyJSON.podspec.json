@@ -11,7 +11,7 @@
     "tangplin": "tangplin@gmail.com"
   },
   "requires_arc": true,
-  "swift_version": "5.0",
+  "swift_versions": "5.0",
   "platforms": {
     "osx": "10.9",
     "ios": "8.0",
@@ -22,5 +22,6 @@
     "git": "https://github.com/SwiftyJSON/SwiftyJSON.git",
     "tag": "5.0.0"
   },
-  "source_files": "Source/SwiftyJSON/*.swift"
+  "source_files": "Source/SwiftyJSON/*.swift",
+  "swift_version": "5.0"
 }

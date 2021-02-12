@@ -47,8 +47,8 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         header.configureButtonImage(isExpanded: sectionStates[segment!.rawValue][section])
         
         DispatchQueue.main.async {
-            
-            header.configureShadowAndRoundCorners(shadowBounds: header.subviews[1])
+            //header.subviews.count - 1
+            header.configureShadowAndRoundCorners(shadowBounds: header.subviews[2])
             header is FederationReusableView ? (header as! FederationReusableView).roundPanelCorners() : Void()
         }
 

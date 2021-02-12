@@ -26,7 +26,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         super.viewDidLoad()
         view.backgroundColor = dark247
         
-        collectionView.register(UINib.init(nibName: "NewsFeedCell2", bundle: nil), forCellWithReuseIdentifier: "tCell")
+        collectionView.register(UINib.init(nibName: "NewsFeedCell4", bundle: nil), forCellWithReuseIdentifier: "tCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         layout.minimumLineSpacing = 18.5
@@ -55,7 +55,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
 
-    //MARK: collectionView Delegate & Datasource -------
+    // MARK: - collectionView Delegate & Datasource -------
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.articlesArray.value.count

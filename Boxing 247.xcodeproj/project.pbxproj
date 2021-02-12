@@ -16,6 +16,7 @@
 		07143C0C23C7F9A4007C525D /* RankingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07143C0B23C7F9A3007C525D /* RankingsCell.swift */; };
 		07143C0E23C7FE5E007C525D /* RankingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07143C0D23C7FE5E007C525D /* RankingsVC.swift */; };
 		071B2BB72104712D0096A57C /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071B2BB62104712D0096A57C /* NewsFeedCell.xib */; };
+		071B569225D5B9730010BA38 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B569125D5B9720010BA38 /* GradientView.swift */; };
 		071B9F2F21176E1800EF6404 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B9F2E21176E1800EF6404 /* CustomSegmentedControl.swift */; };
 		071B9F3221189E9C00EF6404 /* DivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071B9F3021189E9C00EF6404 /* DivisionCell.swift */; };
 		071B9F3321189E9C00EF6404 /* DivisionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071B9F3121189E9C00EF6404 /* DivisionCell.xib */; };
@@ -43,7 +44,6 @@
 		072B899F22592D8A00973942 /* 247ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B899E22592D8A00973942 /* 247ViewController.swift */; };
 		072B89A12259ED8700973942 /* NavigationPanelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B89A02259ED8700973942 /* NavigationPanelVM.swift */; };
 		0744379624202AD300DF126C /* NewsFeedCell4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0744379524202AD200DF126C /* NewsFeedCell4.xib */; };
-		074E95F8237EB9AC00BC15CB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E95F7237EB9AC00BC15CB /* GradientView.swift */; };
 		074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E95F923801C9F00BC15CB /* NewsFeedDetailVC.swift */; };
 		07715F3322E9DD7A00EB6178 /* NewsFeedCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07715F3222E9DD7A00EB6178 /* NewsFeedCell3.xib */; };
 		077CE82F20E8CC5C00462AED /* NavigationPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */; };
@@ -97,6 +97,7 @@
 		07143C0B23C7F9A3007C525D /* RankingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsCell.swift; sourceTree = "<group>"; };
 		07143C0D23C7FE5E007C525D /* RankingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsVC.swift; sourceTree = "<group>"; };
 		071B2BB62104712D0096A57C /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
+		071B569125D5B9720010BA38 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		071B9F2E21176E1800EF6404 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		071B9F3021189E9C00EF6404 /* DivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionCell.swift; sourceTree = "<group>"; };
 		071B9F3121189E9C00EF6404 /* DivisionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DivisionCell.xib; sourceTree = "<group>"; };
@@ -130,7 +131,6 @@
 		072B899E22592D8A00973942 /* 247ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 247ViewController.swift; sourceTree = "<group>"; };
 		072B89A02259ED8700973942 /* NavigationPanelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVM.swift; sourceTree = "<group>"; };
 		0744379524202AD200DF126C /* NewsFeedCell4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsFeedCell4.xib; sourceTree = "<group>"; };
-		074E95F7237EB9AC00BC15CB /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = ../../../../../../Downloads/GradientView.swift; sourceTree = "<group>"; };
 		074E95F923801C9F00BC15CB /* NewsFeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDetailVC.swift; sourceTree = "<group>"; };
 		07715F3222E9DD7A00EB6178 /* NewsFeedCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsFeedCell3.xib; sourceTree = "<group>"; };
 		077CE82E20E8CC5C00462AED /* NavigationPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPanelVC.swift; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 				07143C0D23C7FE5E007C525D /* RankingsVC.swift */,
 				07143C0B23C7F9A3007C525D /* RankingsCell.swift */,
 				07143C0723C7F98B007C525D /* RankingsHeader.swift */,
-				07143C0823C7F98C007C525D /* WeightDivisionHeader.xib */,
 				07B7045223B995780083D02A /* FederationReusableView.swift */,
+				07143C0823C7F98C007C525D /* WeightDivisionHeader.xib */,
 				07B7045323B995780083D02A /* FederationReusableView.xib */,
 				07143C0323C7F0D8007C525D /* TextCell.swift */,
 				07F651E9237A0AB200F79140 /* TextCell.xib */,
@@ -370,7 +370,7 @@
 			path = NavigationPanelVC;
 			sourceTree = "<group>";
 		};
-		07C99974219739E400E24E61 /* WeightDivisionVC */ = {
+		07C99974219739E400E24E61 /* - */ = {
 			isa = PBXGroup;
 			children = (
 				07B7045123B3B76A0083D02A /* Old views */,
@@ -379,7 +379,7 @@
 				07DE41AD23AA2AD100F0C4D8 /* WeightDivisionReusableView.swift */,
 				07DCB14823C0FFAA00A75161 /* WeightDivisionReusableView.xib */,
 			);
-			path = WeightDivisionVC;
+			path = "-";
 			sourceTree = "<group>";
 		};
 		07C9997521973A0000E24E61 /* NewsFeedDetailsController */ = {
@@ -415,7 +415,7 @@
 				07C999722197399100E24E61 /* NewsFeedVC */,
 				07C9997521973A0000E24E61 /* NewsFeedDetailsController */,
 				07C99973219739C000E24E61 /* NavigationPanelVC */,
-				07C99974219739E400E24E61 /* WeightDivisionVC */,
+				07C99974219739E400E24E61 /* - */,
 				07143BFA23C7EF37007C525D /* RankingsVC */,
 			);
 			path = "View Controllers";
@@ -426,7 +426,7 @@
 			children = (
 				07DE4CE92108846700730457 /* RoundedUIView.swift */,
 				071B9F2E21176E1800EF6404 /* CustomSegmentedControl.swift */,
-				074E95F7237EB9AC00BC15CB /* GradientView.swift */,
+				071B569125D5B9720010BA38 /* GradientView.swift */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -521,7 +521,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Omar;
 				TargetAttributes = {
 					0727823920E6FB520071D528 = {
@@ -631,7 +631,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Boxing 247/Pods-Boxing 247-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Boxing 247/Pods-Boxing 247-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -642,7 +642,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Boxing 247/Pods-Boxing 247-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boxing 247/Pods-Boxing 247-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		812DC6A3A6FDCA138484735F /* [CP] Check Pods Manifest.lock */ = {
@@ -688,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071B569225D5B9730010BA38 /* GradientView.swift in Sources */,
 				071C377E20EF7C7E002CA348 /* NewsFeedCell.swift in Sources */,
 				071B9F3E211A415100EF6404 /* UIImage+Blur.swift in Sources */,
 				07143C0423C7F0D9007C525D /* TextCell.swift in Sources */,
@@ -721,7 +722,6 @@
 				07143C0E23C7FE5E007C525D /* RankingsVC.swift in Sources */,
 				07DE4CEC210B883900730457 /* Constants.swift in Sources */,
 				071B9F3221189E9C00EF6404 /* DivisionCell.swift in Sources */,
-				074E95F8237EB9AC00BC15CB /* GradientView.swift in Sources */,
 				07F96274211316ED006E0010 /* WeightDivisionVC.swift in Sources */,
 				07B7045423B995780083D02A /* FederationReusableView.swift in Sources */,
 				072B899F22592D8A00973942 /* 247ViewController.swift in Sources */,
@@ -804,6 +804,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -829,7 +830,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -863,6 +864,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -882,7 +884,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -898,7 +900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
 				INFOPLIST_FILE = "Boxing 247/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -915,7 +917,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
 				INFOPLIST_FILE = "Boxing 247/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247";
 				PRODUCT_NAME = "$(TARGET_NAME)";
