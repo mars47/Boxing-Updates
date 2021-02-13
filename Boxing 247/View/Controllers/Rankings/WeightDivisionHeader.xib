@@ -59,7 +59,6 @@
                                     <state key="selected" image="minus.circle" catalog="system"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="5wO-98-bgS" secondAttribute="bottom" constant="7.5" id="4V3-86-HZI"/>
                                 <constraint firstItem="5wO-98-bgS" firstAttribute="leading" secondItem="AVR-qY-B9h" secondAttribute="leading" constant="16" id="UTA-Yt-AvE"/>
@@ -122,9 +121,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

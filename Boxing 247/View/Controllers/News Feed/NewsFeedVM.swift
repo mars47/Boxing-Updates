@@ -23,7 +23,7 @@ class NewsFeedVM: NSObject {
         networkManager = appServerClient
     }
     
-    // MARK: - Network Requests
+    // MARK: - Public Methods
     
     func downloadNews(completion: @escaping () -> Void) {
         
@@ -33,6 +33,8 @@ class NewsFeedVM: NSObject {
             
             downloadImages{
                 reloadCollectionView?()
+                completion()
+                
             }
             reloadCollectionView?()
         }
@@ -40,26 +42,36 @@ class NewsFeedVM: NSObject {
     
     func downloadImages(completion: @escaping () -> Void) {
         
-        for article in articles {
+        for (index, article) in articles.enumerated() {
             
             guard
                 let thumbnailUrl = URL(string: article.thumbnailUrl)
             else {
                 article.setImage(image: UIImage(named:"placeholder.jpg")!)
+                
+                if index == articles.endIndex - 1 {
+                    completion()
+                }
                 continue
             }
             
-            setThumbnailImage(url: thumbnailUrl) { (image) in
+            setThumbnailImage(url: thumbnailUrl) { [self] (image) in
+                
                 article.setImage(image: image)
+                
+                if index == articles.endIndex - 1 {
+                    completion()
+                }
             }
         }
     }
     
-    // MARK: - Public Methods 
+    // MARK: - Private Methods
 
-    func setThumbnailImage(url: URL, completion: @escaping (UIImage) -> Void) {
+    private func setThumbnailImage(url: URL, completion: @escaping (UIImage) -> Void) {
+        
         networkManager.downloadThumbnailImage(for: url) { (image) in
-        completion(image)
+            completion(image)
         }
     }
 }

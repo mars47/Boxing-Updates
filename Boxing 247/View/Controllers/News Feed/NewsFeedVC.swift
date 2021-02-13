@@ -22,7 +22,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         super.viewDidLoad()
         configureView()
-        configureReloadTask()
+        configureCollectionViewReload()
         viewModel.downloadNews{}
     }
     
@@ -30,7 +30,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     fileprivate func configureView() {
         
-        collectionView.register(UINib.init(nibName: "NewsFeedCell4", bundle: nil), forCellWithReuseIdentifier: "tCell")
+        collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.refreshControl = refreshControl
@@ -41,7 +41,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         navigationController?.navigationBar.isTranslucent = true
     }
 
-    fileprivate func configureReloadTask() {
+    fileprivate func configureCollectionViewReload() {
         viewModel.reloadCollectionView = { [self] in
             collectionView?.reloadData()
         }
@@ -62,11 +62,11 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
-
-
+    
     // MARK: - collectionView Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return viewModel.articles.count
     }
     
@@ -88,15 +88,12 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         // Calulates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
         let article = viewModel.articles[indexPath.row]
+        
         let cellHeight =
             
                 cell.calculateHeightForLable(text: article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
-                //+ cell.calculateHeightForLable(text: cellViewModel.article.author, font: UIFont.italicSystemFont(ofSize: 13), width: cellWidth - labelInsets, lines: 1)
                 + 25 // button stackview
-                + cellWidth / 5.63 
-                //+ cell.thumbnail.bounds.size.height
-                //+ 16 // stackview subview spacing
-                //+ 12 // top+bottom stackview space
+                + cellWidth / 5.63 // remaining space
         
         return CGSize(width: cellWidth , height: cellHeight)
     }
