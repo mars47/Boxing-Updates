@@ -9,7 +9,7 @@ import UIKit
 
 //dismiss(animated: true, completion: nil)
 
-class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDataSource {
+class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     let viewModel = NavigationPanelVM()
@@ -49,39 +49,39 @@ class NavigationPanelVC: B247ViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let viewController = getViewController(for: indexPath) else { return }
-        pushViewController(viewController)
+//        guard let viewController = getViewController(for: indexPath) else { return }
+//        pushViewController(viewController)
     }
     
     //MARK: Class Functions
     
-    //                                     return -> UIViewController & Navigatable
-    fileprivate func getViewController(for indexPath: IndexPath) -> B247ViewController? {
-    
-        let cellIndex : (Int, Int) = (indexPath.section, indexPath.row)
-       
-        switch cellIndex {
-        case (0,0):
-            let _ = storyboard?.instantiateViewController(withIdentifier: "NewsFeed") as? NewsFeedVC
-            return nil
-
-//        case (0,1):
-//            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
-//
+//    //                                     return -> UIViewController & Navigatable
+//    fileprivate func getViewController(for indexPath: IndexPath) -> B247ViewController? {
+//    
+//        let cellIndex : (Int, Int) = (indexPath.section, indexPath.row)
+//       
+//        switch cellIndex {
 //        case (0,0):
-//            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
-       
-        default:
-            let vc = mainStoryboard.instantiateViewController(withIdentifier: "WeightDivision") as! WeightDivisionVC
-            return vc.configureController(withProperties: self)
-        }
-    }
-    
-    func pushViewController(_ viewController: B247ViewController) {
-        
-        self.centerNavigationController?.pushViewController(viewController, animated: true)
-        containerVC!.toggleLeftPanel?()
-    }
+//            let _ = storyboard?.instantiateViewController(withIdentifier: "NewsFeed") as? NewsFeedVC
+//            return nil
+//
+////        case (0,1):
+////            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
+////
+////        case (0,0):
+////            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
+//       
+//        default:
+//            let vc = mainStoryboard.instantiateViewController(withIdentifier: "WeightDivision") as! WeightDivisionVC
+//            return vc.configureController(withProperties: self)
+//        }
+//    }
+//    
+//    func pushViewController(_ viewController: B247ViewController) {
+//        
+//        self.centerNavigationController?.pushViewController(viewController, animated: true)
+//        containerVC!.toggleLeftPanel?()
+//    }
 }
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FederationReusableView: RankingsHeader {
+class FederationHeader: RankingsHeader {
     
     @IBOutlet weak var height: NSLayoutConstraint!
     @IBOutlet weak var width: NSLayoutConstraint!

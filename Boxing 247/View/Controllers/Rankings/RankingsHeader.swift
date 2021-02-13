@@ -17,13 +17,4 @@ class RankingsHeader: UITableViewHeaderFooterView {
         
         button.setImage(UIImage(systemName: isExpanded ? "minus.circle" : "plus.circle")!, for: .normal)
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

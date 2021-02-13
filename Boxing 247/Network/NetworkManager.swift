@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class AppServerClient: NSObject {
+class NetworkManager: NSObject {
     
     var articles = [Article]()
     

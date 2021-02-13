@@ -9,6 +9,8 @@ import UIKit
 
 class NewsFeedCell: UICollectionViewCell {
     
+    // MARK: - Properties -
+    
     @IBOutlet weak var pubDate: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var title: UILabel!
@@ -26,33 +28,25 @@ class NewsFeedCell: UICollectionViewCell {
 //        self.contentView.translatesAutoresizingMaskIntoConstraints = false
 //    }
     
-    var viewModel: NewsFeedCellVM! {
-        didSet {
-            updateUI()
-           // setDynamicConstraints()
-        }
-    }
+    // MARK: - Configuration -
     
-    func updateUI() {
-        
-        configureShadowAndRoundCorners(shadowBounds: contentView)
+    func configureCell(with article: Article) {
         
         DispatchQueue.main.async {
-            #warning("needs refactoring")
                         
-            if self.viewModel.image == nil { self.updateUI() } // a hack to ensure that a cell is always returned with a UIImage when given a viewModel
-            else {// self.thumbnail.image = self.viewModel.image
-                
-            }
-            
-            //self.author.text = "Published by \(self.viewModel.article.author)"
-            self.pubDate.text = self.viewModel.article.timeAgo
-            self.title.text = self.viewModel.article.title
-            //self.content.text = self.viewModel.article.description;
+            self.pubDate.text = article.timeAgo
+            self.title.text = article.title
             self.thumbnail.contentMode = .scaleAspectFill
             self.thumbnail.clipsToBounds = true
+
+            //self.author.text = "Published by \(article.author)"
+            //self.content.text = article.description;
         }
+        
+        configureShadowAndRoundCorners(shadowBounds: contentView)
     }
+    
+
     
 //    func setDynamicConstraints() {
 //

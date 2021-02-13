@@ -26,7 +26,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView?.dataSource = self
         tableView.clipsToBounds = false
         tableView.register(UINib.init(nibName: "WeightDivisionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "WEIGHT_DIVISION_HEADER")
-        tableView.register(UINib.init(nibName: "FederationReusableView", bundle: nil), forHeaderFooterViewReuseIdentifier: "FEDERATION_HEADER")
+        tableView.register(UINib.init(nibName: "FederationHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "FEDERATION_HEADER")
         for _ in banners { sectionStates[0].append(true) }
         for _ in belts { sectionStates[1].append(true) }
     }
@@ -49,7 +49,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DispatchQueue.main.async {
             //header.subviews.count - 1
             header.configureShadowAndRoundCorners(shadowBounds: header.subviews[2])
-            header is FederationReusableView ? (header as! FederationReusableView).roundPanelCorners() : Void()
+            header is FederationHeader ? (header as! FederationHeader).roundPanelCorners() : Void()
         }
 
         return header

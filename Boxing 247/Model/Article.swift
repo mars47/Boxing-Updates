@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Article {
+class Article {
     
     private (set) var title: String
     private (set) var pubDate: String
@@ -19,6 +19,8 @@ struct Article {
     private (set) var description: String
     private (set) var content: String
     private (set) var timeAgo: String
+    private (set) var image: UIImage?
+    
     let dateFormatter = DateFormatter()
 
     init(initWith dictionary: JSON) {
@@ -32,7 +34,6 @@ struct Article {
         
         description = dictionary["description"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         description = self.description.trimmingCharacters(in: .whitespacesAndNewlines);
-        //print(" My String: '\(self.description)'")
         content = dictionary["content"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         //content = self.content
         
@@ -42,5 +43,9 @@ struct Article {
         guard let date = dateFormatter.date(from: pubDate) else {
             self.timeAgo = "n/a"; return } //according to date format
          timeAgo = date.timeAgoSinceDate(date)
+    }
+    
+    func setImage(image: UIImage) {
+        self.image = image
     }
 }
