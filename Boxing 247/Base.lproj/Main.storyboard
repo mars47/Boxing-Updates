@@ -268,7 +268,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="11"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="grey247"/>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RANKING_CELL" rowHeight="208" id="g5K-zu-mNS" customClass="RankingsCell" customModule="Boxing_247">
                                                 <rect key="frame" x="0.0" y="39" width="374" height="208"/>
@@ -281,7 +281,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="208"/>
                                                             <color key="backgroundColor" name="grey247"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="210" id="v7z-ew-8g6"/>
+                                                                <constraint firstAttribute="height" priority="750" constant="210" id="v7z-ew-8g6"/>
                                                             </constraints>
                                                         </tableView>
                                                     </subviews>
@@ -295,7 +295,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" name="dark247"/>
                                                 <constraints>
-                                                    <constraint firstItem="sDq-ZI-M35" firstAttribute="height" secondItem="g5K-zu-mNS" secondAttribute="height" id="AwN-0H-2nM"/>
+                                                    <constraint firstItem="sDq-ZI-M35" firstAttribute="height" secondItem="g5K-zu-mNS" secondAttribute="height" priority="750" id="AwN-0H-2nM"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="height" destination="v7z-ew-8g6" id="lGc-dG-PSv"/>
@@ -402,7 +402,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tVL-fE-Rlp"/>
+        <segue reference="OcY-sz-ttD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="pomegranate247"/>
     <resources>

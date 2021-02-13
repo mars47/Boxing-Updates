@@ -86,12 +86,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         let cellWidth = (deviceSize.width - cellInsets)
         
         // Calulates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
+
         let article = viewModel.articles[indexPath.row]
-        
         let cellHeight =
-            
-                cell.calculateHeightForLable(text: article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
+                NewsFeedCell.calculateHeightForLable(text: article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
                 + 25 // button stackview
                 + cellWidth / 5.63 // remaining space
         

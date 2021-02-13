@@ -73,9 +73,6 @@
                                 <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
                                     <color key="value" name="pomegranate247"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="ThirdColor">
-                                    <color key="value" systemColor="systemIndigoColor"/>
-                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
@@ -90,7 +87,6 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="eUf-Xo-V4v"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Ot7-at-2oE" secondAttribute="trailing" id="FaI-Yk-cop"/>
                 <constraint firstItem="Ot7-at-2oE" firstAttribute="top" secondItem="4nr-dt-CaG" secondAttribute="top" id="f7w-sL-hDD"/>
@@ -121,9 +117,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

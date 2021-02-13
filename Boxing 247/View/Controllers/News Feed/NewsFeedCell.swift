@@ -35,7 +35,7 @@ class NewsFeedCell: UICollectionViewCell {
         configureShadowAndRoundCorners(shadowBounds: contentView)
     }
     
-    func calculateHeightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{
+    static func calculateHeightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{
         
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
         
