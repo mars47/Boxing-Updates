@@ -1,5 +1,5 @@
 //
-//  RankingCell.swift
+//  TextCell.swift
 //  Boxing 247
 //
 //  Created by Omar on 11/11/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RankingCell: UITableViewCell {
+class TextCell: UITableViewCell {
     
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var iconHeight: NSLayoutConstraint!

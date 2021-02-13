@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07109E01226A02B40038A414 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07109E00226A02B40038A414 /* placeholder.jpg */; };
-		07143C0423C7F0D9007C525D /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07143C0323C7F0D8007C525D /* RankingCell.swift */; };
+		07143C0423C7F0D9007C525D /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07143C0323C7F0D8007C525D /* TextCell.swift */; };
 		07143C0923C7F98C007C525D /* RankingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07143C0723C7F98B007C525D /* RankingsHeader.swift */; };
 		07143C0A23C7F98C007C525D /* WeightDivisionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07143C0823C7F98C007C525D /* WeightDivisionHeader.xib */; };
 		07143C0C23C7F9A4007C525D /* RankingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07143C0B23C7F9A3007C525D /* RankingsCell.swift */; };
@@ -42,7 +42,7 @@
 		07F5D25923DDEBBD002AE1F2 /* CowbellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F5D25823DDEBBD002AE1F2 /* CowbellView.xib */; };
 		07F5D25B23DDF386002AE1F2 /* CowbellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F5D25A23DDF386002AE1F2 /* CowbellView.swift */; };
 		07F651E123775D1A00F79140 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F651E023775D1A00F79140 /* UIView+Extensions.swift */; };
-		07F651EB237A0AB200F79140 /* RankingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F651E9237A0AB200F79140 /* RankingCell.xib */; };
+		07F651EB237A0AB200F79140 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F651E9237A0AB200F79140 /* TextCell.xib */; };
 		2CFBC2AF4839E201B48998A1 /* Pods_Boxing_247Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBED1198E9968A585BBE24B /* Pods_Boxing_247Tests.framework */; };
 		7A6646AC0C87FDEAA07EE106 /* Pods_Boxing_247.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7578F102F527955BD3063C /* Pods_Boxing_247.framework */; };
 		9F8029E8E36255C3D08D9FEE /* Pods_Boxing_247UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F71B7ED58A081BD490D4CF /* Pods_Boxing_247UITests.framework */; };
@@ -67,7 +67,7 @@
 
 /* Begin PBXFileReference section */
 		07109E00226A02B40038A414 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
-		07143C0323C7F0D8007C525D /* RankingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
+		07143C0323C7F0D8007C525D /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		07143C0723C7F98B007C525D /* RankingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsHeader.swift; sourceTree = "<group>"; };
 		07143C0823C7F98C007C525D /* WeightDivisionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightDivisionHeader.xib; sourceTree = "<group>"; };
 		07143C0B23C7F9A3007C525D /* RankingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingsCell.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		07F5D25823DDEBBD002AE1F2 /* CowbellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CowbellView.xib; sourceTree = "<group>"; };
 		07F5D25A23DDF386002AE1F2 /* CowbellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowbellView.swift; sourceTree = "<group>"; };
 		07F651E023775D1A00F79140 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		07F651E9237A0AB200F79140 /* RankingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingCell.xib; sourceTree = "<group>"; };
+		07F651E9237A0AB200F79140 /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		1420D11ACB3F09770796B01D /* Pods-Boxing 247UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247UITests/Pods-Boxing 247UITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C716950DE0EAFD75088DE26 /* Pods-Boxing 247UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247UITests/Pods-Boxing 247UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2EE16E0F3F43C9587A4BBE1F /* Pods-Boxing 247.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxing 247.release.xcconfig"; path = "Pods/Target Support Files/Pods-Boxing 247/Pods-Boxing 247.release.xcconfig"; sourceTree = "<group>"; };
@@ -333,9 +333,9 @@
 		07EF992F25D7EAB800311204 /* Text Cell */ = {
 			isa = PBXGroup;
 			children = (
-				07143C0323C7F0D8007C525D /* RankingCell.swift */,
+				07143C0323C7F0D8007C525D /* TextCell.swift */,
 				07F5D25A23DDF386002AE1F2 /* CowbellView.swift */,
-				07F651E9237A0AB200F79140 /* RankingCell.xib */,
+				07F651E9237A0AB200F79140 /* TextCell.xib */,
 				07F5D25823DDEBBD002AE1F2 /* CowbellView.xib */,
 			);
 			path = "Text Cell";
@@ -481,7 +481,7 @@
 				0727826D20E6FB9C0071D528 /* .gitignore in Resources */,
 				07143C0A23C7F98C007C525D /* WeightDivisionHeader.xib in Resources */,
 				0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */,
-				07F651EB237A0AB200F79140 /* RankingCell.xib in Resources */,
+				07F651EB237A0AB200F79140 /* TextCell.xib in Resources */,
 				07109E01226A02B40038A414 /* placeholder.jpg in Resources */,
 				07B7045523B995780083D02A /* FederationHeader.xib in Resources */,
 				0744379624202AD300DF126C /* NewsFeedCell.xib in Resources */,
@@ -593,7 +593,7 @@
 				071B569225D5B9730010BA38 /* GradientView.swift in Sources */,
 				071C377E20EF7C7E002CA348 /* NewsFeedCell.swift in Sources */,
 				071B9F3E211A415100EF6404 /* UIImage+Blur.swift in Sources */,
-				07143C0423C7F0D9007C525D /* RankingCell.swift in Sources */,
+				07143C0423C7F0D9007C525D /* TextCell.swift in Sources */,
 				071B9F2F21176E1800EF6404 /* CustomSegmentedControl.swift in Sources */,
 				071C377820EF39CA002CA348 /* Article.swift in Sources */,
 				071C378720F0020B002CA348 /* PanelCell.swift in Sources */,
