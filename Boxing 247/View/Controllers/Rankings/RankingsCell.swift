@@ -25,7 +25,7 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
         tableView.delegate = self
         tableView.dataSource = self
         tableView?.estimatedRowHeight = 52.5
-        tableView?.register(UINib(nibName: "TextCell", bundle: nil), forCellReuseIdentifier: "federationCell")
+        tableView?.register(UINib(nibName: "RankingCell", bundle: nil), forCellReuseIdentifier: "rankingCell")
     }
     
     func updateHeight() {
@@ -39,7 +39,7 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "federationCell", for: indexPath) as! TextCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rankingCell", for: indexPath) as! RankingCell
         cell.configureIcon(segment: segment)
         return cell
     }
