@@ -21,7 +21,7 @@ class TextCell: UITableViewCell {
         icon.layer.cornerRadius = icon.frame.height / 2
     }
 
-    func configureIcon(segment: Segment) {
+    func configureIcon(segment: RankingsVC.Segment) {
         
         if segment == .federation {
             let view: CowbellView = UIView.fromNib()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FederationHeader: RankingsHeader {
+class FederationHeader: WeightDivisionHeader {
     
     @IBOutlet weak var height: NSLayoutConstraint!
     @IBOutlet weak var width: NSLayoutConstraint!

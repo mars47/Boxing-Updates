@@ -190,13 +190,12 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrl-pP-iHy">
                                         <rect key="frame" x="0.0" y="280" width="414" height="20.333333333333314"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="alizarin247"/>
+                                <color key="backgroundColor" name="dark247"/>
                                 <constraints>
                                     <constraint firstItem="Zrl-pP-iHy" firstAttribute="top" secondItem="HZf-1s-5bO" secondAttribute="top" constant="280" id="0E4-Yx-eAB"/>
                                     <constraint firstItem="Zrl-pP-iHy" firstAttribute="top" secondItem="kMt-aX-LUo" secondAttribute="bottom" id="6dj-1Y-cEE"/>
@@ -412,9 +411,6 @@
         <image name="placeholder.jpg" width="1200" height="675"/>
         <image name="rectangle.stack" catalog="system" width="128" height="122"/>
         <image name="rectangle.stack.fill" catalog="system" width="128" height="122"/>
-        <namedColor name="alizarin247">
-            <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="dark247">
             <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

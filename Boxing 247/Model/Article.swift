@@ -25,10 +25,10 @@ class Article {
 
     init(initWith dictionary: JSON) {
         
+        guid = dictionary["guid"].string! // unique identifier
         title = dictionary["title"].string!.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
         pubDate = dictionary["pubDate"].string!
         link = dictionary["link"].string!
-        guid = dictionary["guid"].string!
         author = dictionary["author"].string!
         thumbnailUrl = dictionary["thumbnail"].string!
         

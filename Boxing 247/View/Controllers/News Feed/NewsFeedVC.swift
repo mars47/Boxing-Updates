@@ -18,6 +18,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
     
+    // MARK: - Configuration
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -25,8 +27,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         configureCollectionViewReload()
         viewModel.downloadNews{}
     }
-    
-    // MARK: - Configuration
     
     fileprivate func configureView() {
         
@@ -63,7 +63,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
     }
     
-    // MARK: - collectionView Datasource
+    // MARK: - Collection view datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -85,18 +85,18 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         let labelInsets = 16 * 2 as CGFloat
         let cellWidth = (deviceSize.width - cellInsets)
         
-        // Calulates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib
+        /** Calculates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib */
 
         let article = viewModel.articles[indexPath.row]
         let cellHeight =
                 NewsFeedCell.calculateHeightForLable(text: article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
                 + 25 // button stackview
-                + cellWidth / 5.63 // remaining space
+                + cellWidth / 5.63 // remaining space, dynamically calculated
         
         return CGSize(width: cellWidth , height: cellHeight)
     }
     
-    // MARK: collectionView delegate
+    // MARK: Collection view delegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

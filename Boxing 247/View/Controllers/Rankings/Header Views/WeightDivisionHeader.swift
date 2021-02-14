@@ -8,8 +8,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
-class RankingsHeader: UITableViewHeaderFooterView {
+class WeightDivisionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var button: UIButton!
          

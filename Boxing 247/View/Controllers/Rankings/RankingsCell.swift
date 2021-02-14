@@ -10,15 +10,20 @@ import UIKit
 
 class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Properties
+
+    /* This cell contains a tableview that hosts 4 text cells */
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var height: NSLayoutConstraint!
 
-    var segment: Segment! {
+    var segment: RankingsVC.Segment! {
         didSet {
             tableView.reloadData()
         }
     }
-        
+    
+    // MARK: - Configuration
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -28,13 +33,17 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
         tableView?.register(UINib(nibName: "TextCell", bundle: nil), forCellReuseIdentifier: "federationCell")
     }
     
-    func updateHeight() {
-        height.constant = tableView.contentSize.height
-        tableView.reloadData()
+    override func layoutSubviews() {
+        
+        configureShadowAndRoundCorners(shadowBounds: subviews[0])
+        super.layoutSubviews()
     }
     
+    // MARK: - Table view data source
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,11 +54,7 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return UITableView.automaticDimension
-    }
-    
-    override func layoutSubviews() {
-        configureShadowAndRoundCorners(shadowBounds: subviews[0])
-        super.layoutSubviews()
     }
 }

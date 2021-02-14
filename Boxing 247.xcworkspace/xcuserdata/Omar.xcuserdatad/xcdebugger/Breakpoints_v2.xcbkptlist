@@ -47,8 +47,8 @@
             filePath = "Boxing 247/Utilities/UIView+Extensions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "configureShadowAndRoundCorners(shadowBounds:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -247,22 +247,6 @@
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "downloadNews(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7D959696-7367-42EB-B314-3FC598B32A41"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Boxing 247/View/Controllers/News Feed/NewsFeedVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "downloadImages(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

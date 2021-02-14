@@ -9,15 +9,20 @@
 import UIKit
 
 class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    // MARK: - Properties
+
+    enum Segment: Int {
+        case weightDivision
+        case federation
+    }
         
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    let viewModel = RankingsVM()
     
-    var banners = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3")]
-    let belts = [UIImage(named: "wbo belt"), UIImage(named: "wba belt"), UIImage(named: "wbc belt")]
-    let logos = [UIImage(named: "wbo logo"), UIImage(named: "wba logo"), UIImage(named: "wbc logo")]
-    var sectionStates = [ [Bool](), [Bool]() ]
-    
+    // MARK: - Configuration
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,32 +32,13 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.clipsToBounds = false
         tableView.register(UINib.init(nibName: "WeightDivisionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "WEIGHT_DIVISION_HEADER")
         tableView.register(UINib.init(nibName: "FederationHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "FEDERATION_HEADER")
-        for _ in banners { sectionStates[0].append(true) }
-        for _ in belts { sectionStates[1].append(true) }
+        viewModel.configureSectionStates()
     }
     
+    // MARK: - Events
+
     @IBAction func controlTapped(_ sender: Any) {
         tableView.reloadData()
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
-        let identifier = segment == .weightDivision ? "WEIGHT_DIVISION_HEADER" : "FEDERATION_HEADER"
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! RankingsHeader
-        
-        header.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        header.button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
-        header.button.tag = section
-        header.configureButtonImage(isExpanded: sectionStates[segment!.rawValue][section])
-        
-        DispatchQueue.main.async {
-            //header.subviews.count - 1
-            header.configureShadowAndRoundCorners(shadowBounds: header.subviews[2])
-            header is FederationHeader ? (header as! FederationHeader).roundPanelCorners() : Void()
-        }
-
-        return header
     }
     
     @objc func handleExpandClose(button: UIButton) {
@@ -65,8 +51,8 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         indexPaths.append(IndexPath(row: 0, section: section))
         indexPaths.append(IndexPath(row: 1, section: section))
         
-        let isExpanded = sectionStates[segment.rawValue][section]
-        sectionStates[segment.rawValue][section] = !isExpanded
+        let isExpanded = viewModel.sectionStates[segment.rawValue][section]
+        viewModel.sectionStates[segment.rawValue][section] = !isExpanded
         
         button.setImage(UIImage(systemName: isExpanded ? "plus.circle" : "minus.circle")!, for: .normal)
         
@@ -74,19 +60,14 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                      tableView.insertRows(at: indexPaths, with: .fade)
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
-        return segment == .weightDivision ? banners.count : belts.count
-    }
+    // MARK: - Navigation
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        guard let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex) else { return 0 }
-        
-        let state = sectionStates[segment.rawValue][section]
-        return state ? 2 : 0
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+
+    // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
@@ -102,15 +83,38 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        if indexPath.row == 1 {
-            let _cell = cell as! RankingsCell
+        let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
+        let identifier = segment == .weightDivision ? "WEIGHT_DIVISION_HEADER" : "FEDERATION_HEADER"
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! WeightDivisionHeader
+        
+        header.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        header.button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+        header.button.tag = section
+        header.configureButtonImage(isExpanded: viewModel.sectionStates[segment!.rawValue][section])
+        
+        DispatchQueue.main.async {
             
-            DispatchQueue.main.async {
-                _cell.layoutSubviews()
-            }
+            header.configureShadowAndRoundCorners(shadowBounds: header.subviews[2])
+            header is FederationHeader ? (header as! FederationHeader).roundPanelCorners() : Void()
         }
+
+        return header
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
+        return segment == .weightDivision ? viewModel.banners.count : viewModel.belts.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex) else { return 0 }
+        
+        let state = viewModel.sectionStates[segment.rawValue][section]
+        return state ? 2 : 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -134,19 +138,18 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return view
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+     // MARK: Table view delegate
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 1 {
+            let _cell = cell as! RankingsCell
+            
+            DispatchQueue.main.async {
+                _cell.layoutSubviews()
+            }
+        }
+    }
 }
 
-enum Segment: Int {
-    case weightDivision
-    case federation
-}
+

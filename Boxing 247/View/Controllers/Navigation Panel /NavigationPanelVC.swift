@@ -14,6 +14,8 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableView: UITableView!
     let viewModel = NavigationPanelVM()
         
+    // MARK: - Configuration
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,12 +25,14 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.backgroundColor = test247
     }
     
-    //MARK: TableView datasource & delegate
+    // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView,
                    titleForHeaderInSection section: Int) -> String? {
+        
         return viewModel.sections[section]
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return viewModel.rows.count

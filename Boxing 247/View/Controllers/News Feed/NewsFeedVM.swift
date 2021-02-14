@@ -34,8 +34,8 @@ class NewsFeedVM: NSObject {
             downloadImages{
                 reloadCollectionView?()
                 completion()
-                
             }
+            
             reloadCollectionView?()
         }
     }

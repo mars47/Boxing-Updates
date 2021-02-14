@@ -10,14 +10,7 @@ import Foundation
 import UIKit
 
 struct NavigationPanelVM {
-    
-//    var navigationController: UINavigationController
-//    
-//    var delegate: Withdrawable
-//    
-//    var mainStoryboard: UIStoryboard
-    
-    
+        
     let sections =  ["Latest", "Boxing", "Community", "Help"]
     let rows = [
         ["News", "Fight Schedule", "Saved Articles"],
