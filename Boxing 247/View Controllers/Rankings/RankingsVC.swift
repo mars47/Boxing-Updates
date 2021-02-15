@@ -53,7 +53,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         guard let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex) else { return }
         let section = button.tag
         
-        // close the section first by deleting the rows
+        /** close the section first by deleting the rows */
         var indexPaths = [IndexPath]()
         indexPaths.append(IndexPath(row: 0, section: section))
         indexPaths.append(IndexPath(row: 1, section: section))
