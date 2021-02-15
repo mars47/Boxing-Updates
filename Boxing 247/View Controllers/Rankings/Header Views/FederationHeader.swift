@@ -25,8 +25,8 @@ class FederationHeader: WeightDivisionHeader {
         height.constant = width.constant / 2
     }
     
-    func roundPanelCorners() {
+    func roundClearPanelCorners() {
+        
         clearPanel.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 25)
     }
-    
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PanelCell: UITableViewCell {
+class HelpMenuCell: UITableViewCell {
     
     @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var topPanel: UIView!
@@ -25,7 +25,7 @@ class PanelCell: UITableViewCell {
        // icon.clipsToBounds = true
     }
     
-    func configureCell(with viewModel: NavigationPanelVM, and indexPath: IndexPath) {
+    func configureCell(with viewModel: HelpMenuVM, and indexPath: IndexPath) {
         
         icon.image = viewModel.icons[indexPath.section][indexPath.row]!
         pageTitle.text = viewModel.rows[indexPath.section][indexPath.row]

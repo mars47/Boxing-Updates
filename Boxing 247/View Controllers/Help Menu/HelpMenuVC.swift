@@ -9,10 +9,10 @@ import UIKit
 
 //dismiss(animated: true, completion: nil)
 
-class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let viewModel = NavigationPanelVM()
+    let viewModel = HelpMenuVM()
         
     // MARK: - Configuration
 
@@ -45,7 +45,7 @@ class NavigationPanelVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PanelCell", for: indexPath) as? PanelCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PanelCell", for: indexPath) as? HelpMenuCell else { return UITableViewCell() }
         
         cell.configureCell(with: viewModel, and: indexPath)
         return cell

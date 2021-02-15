@@ -2,8 +2,8 @@
 //  GradientView.swift
 //  ChatBot
 //
-//  Created by Gerson Costa on 15/11/2019.
-//  Copyright © 2019 Gerson Costa. All rights reserved.
+//  Created by Omar on 15/11/2019.
+//  Copyright © 2019 Omar. All rights reserved.
 //
 
 import UIKit

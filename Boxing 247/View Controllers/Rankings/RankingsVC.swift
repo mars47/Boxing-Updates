@@ -12,36 +12,43 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Properties
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
+    let viewModel = RankingsVM()
     enum Segment: Int {
         case weightDivision
         case federation
     }
         
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
-    let viewModel = RankingsVM()
-    
     // MARK: - Configuration
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView?.delegate = self
-        tableView?.dataSource = self
+        configureTableView()
+        configureHeaderViews()
+        viewModel.configureSectionStates()
+    }
+    
+    fileprivate func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.clipsToBounds = false
+    }
+
+    fileprivate func configureHeaderViews() {
         tableView.register(UINib.init(nibName: "WeightDivisionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "WEIGHT_DIVISION_HEADER")
         tableView.register(UINib.init(nibName: "FederationHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "FEDERATION_HEADER")
-        viewModel.configureSectionStates()
     }
     
     // MARK: - Events
 
-    @IBAction func controlTapped(_ sender: Any) {
+    @IBAction func segmentedControlTapped(_ sender: Any) {
         tableView.reloadData()
     }
     
-    @objc func handleExpandClose(button: UIButton) {
+    @objc func expandCloseTapped(button: UIButton) {
         
         guard let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex) else { return }
         let section = button.tag
@@ -90,14 +97,14 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! WeightDivisionHeader
         
         header.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        header.button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+        header.button.addTarget(self, action: #selector(expandCloseTapped), for: .touchUpInside)
         header.button.tag = section
         header.configureButtonImage(isExpanded: viewModel.sectionStates[segment!.rawValue][section])
         
         DispatchQueue.main.async {
             
             header.configureShadowAndRoundCorners(shadowBounds: header.subviews[2])
-            header is FederationHeader ? (header as! FederationHeader).roundPanelCorners() : Void()
+            header is FederationHeader ? (header as! FederationHeader).roundClearPanelCorners() : Void()
         }
 
         return header

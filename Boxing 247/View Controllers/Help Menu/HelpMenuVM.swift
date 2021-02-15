@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct NavigationPanelVM {
+struct HelpMenuVM {
         
     let sections =  ["Latest", "Boxing", "Community", "Help"]
     let rows = [
