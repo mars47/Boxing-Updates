@@ -147,7 +147,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" style="plain" id="qE3-hN-VPq">
                             <connections>
                                 <action selector="navPanelButtonPressed:" destination="1ST-Jg-Yj0" id="1UH-rf-4uI"/>
-                                <segue destination="oY4-sR-CFS" kind="presentation" id="tVL-fE-Rlp"/>
+                                <segue destination="ufl-ko-qw7" kind="presentation" identifier="showNewsDetail" id="ecO-xP-w2u"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -156,7 +156,6 @@
                         <outlet property="layout" destination="MML-q4-j0w" id="Fwe-Mb-QNm"/>
                         <outlet property="navigationBar" destination="cjf-qc-pTP" id="kuv-hQ-IOv"/>
                         <outlet property="navigationPanelButton" destination="qE3-hN-VPq" id="wPk-u2-qrD"/>
-                        <segue destination="ufl-ko-qw7" kind="showDetail" identifier="showNewsDetail" id="m7k-KP-5Fy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mi9-2c-fOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -239,7 +238,7 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6p-N8-JGP">
-                                <rect key="frame" x="137" y="784" width="140" height="24"/>
+                                <rect key="frame" x="117" y="784" width="181" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" name="pomegranate247"/>
                                 <state key="normal" title="View Website" image="square.and.arrow.down.on.square.fill" catalog="system">
@@ -256,13 +255,19 @@
                             <constraint firstItem="FTl-Uz-DbG" firstAttribute="top" secondItem="ns1-CR-ekv" secondAttribute="top" priority="900" constant="44" id="C9t-zD-f9y"/>
                             <constraint firstItem="HZf-1s-5bO" firstAttribute="leading" secondItem="FTl-Uz-DbG" secondAttribute="leading" id="HtM-Bs-zOu"/>
                             <constraint firstAttribute="bottom" secondItem="HZf-1s-5bO" secondAttribute="bottom" id="JBv-tL-lFf"/>
+                            <constraint firstItem="FTl-Uz-DbG" firstAttribute="trailing" secondItem="c6p-N8-JGP" secondAttribute="trailing" constant="116" id="LLX-ps-707"/>
                             <constraint firstItem="HZf-1s-5bO" firstAttribute="top" secondItem="Lmh-76-fuP" secondAttribute="top" id="OYA-Mo-k1i"/>
                             <constraint firstItem="c6p-N8-JGP" firstAttribute="width" secondItem="kMt-aX-LUo" secondAttribute="width" multiplier="0.338164" id="PPa-Pr-iWQ"/>
-                            <constraint firstItem="FTl-Uz-DbG" firstAttribute="trailing" secondItem="c6p-N8-JGP" secondAttribute="trailing" constant="137" id="YRY-tD-0KM"/>
+                            <constraint firstItem="c6p-N8-JGP" firstAttribute="leading" secondItem="FTl-Uz-DbG" secondAttribute="leading" constant="117" id="fnl-Hn-T9l"/>
                             <constraint firstItem="Zrl-pP-iHy" firstAttribute="width" secondItem="Lmh-76-fuP" secondAttribute="width" id="kkT-Wo-HbQ"/>
-                            <constraint firstItem="c6p-N8-JGP" firstAttribute="leading" secondItem="FTl-Uz-DbG" secondAttribute="leading" constant="137" id="uvo-GT-3Q2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PPa-Pr-iWQ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Klr-c8-Gth"/>
                     <connections>
                         <outlet property="label" destination="Zrl-pP-iHy" id="oD9-xT-Bvf"/>
                         <outlet property="scrollview2" destination="HZf-1s-5bO" id="ojC-U9-Cba"/>
@@ -270,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zi4-Es-eCj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2184.057971014493" y="1360.0446428571429"/>
+            <point key="canvasLocation" x="-2184" y="1339"/>
         </scene>
         <!--Rankings-->
         <scene sceneID="3Cw-Fm-dsI">
@@ -440,9 +445,6 @@
             <point key="canvasLocation" x="-2183" y="-78"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="OcY-sz-ttD"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" name="pomegranate247"/>
     <resources>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>

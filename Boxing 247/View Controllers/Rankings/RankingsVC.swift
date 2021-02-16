@@ -48,7 +48,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.reloadData()
     }
     
-    @objc func expandCloseTapped(button: UIButton) {
+    @objc func expandCloseButtonTapped(button: UIButton) {
         
         guard let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex) else { return }
         let section = button.tag
@@ -97,7 +97,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! WeightDivisionHeader
         
         header.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        header.button.addTarget(self, action: #selector(expandCloseTapped), for: .touchUpInside)
+        header.button.addTarget(self, action: #selector(expandCloseButtonTapped), for: .touchUpInside)
         header.button.tag = section
         header.configureButtonImage(isExpanded: viewModel.sectionStates[segment!.rawValue][section])
         
