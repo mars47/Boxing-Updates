@@ -16,7 +16,7 @@ class NewsFeedDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.label.text = "12 hours ago"
+         self.label.text = ""
 
 
             

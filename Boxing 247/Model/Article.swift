@@ -11,7 +11,7 @@ import SwiftyJSON
 class Article {
     
     private (set) var title: String
-    private (set) var pubDate: String
+    private (set) var pubDateString: String
     private (set) var link: String
     private (set) var guid: String
     private (set) var author: String
@@ -19,7 +19,9 @@ class Article {
     private (set) var description: String
     private (set) var content: String
     private (set) var timeAgo: String
+    
     private (set) var image: UIImage?
+    private (set) var date: Date?
     
     let dateFormatter = DateFormatter()
 
@@ -27,7 +29,7 @@ class Article {
         
         guid = dictionary["guid"].string! // unique identifier
         title = dictionary["title"].string!.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
-        pubDate = dictionary["pubDate"].string!
+        pubDateString = dictionary["pubDate"].string!
         link = dictionary["link"].string!
         author = dictionary["author"].string!
         thumbnailUrl = dictionary["thumbnail"].string!
@@ -40,9 +42,10 @@ class Article {
         // --- convert pubDate to timeAgo string ----
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" //date format
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
-        guard let date = dateFormatter.date(from: pubDate) else {
+        guard let date = dateFormatter.date(from: pubDateString) else {
             self.timeAgo = "n/a"; return } //according to date format
-         timeAgo = date.timeAgoSinceDate(date)
+        self.date = date
+        timeAgo = date.timeAgoSinceDate(date)
     }
     
     func setImage(image: UIImage) {
