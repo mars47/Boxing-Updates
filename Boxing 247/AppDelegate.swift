@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let newsArticles = FetchUtility.news(fetch: .old) else { print("fetch failure"); return }
         
         for news in newsArticles {
-            print("deleting news article")
+            print("DELETEING: \(news.pubDate!)\t\(news.title!)\n")
            _ = NewsArticle.eraseCurrent(news)
         }
     }

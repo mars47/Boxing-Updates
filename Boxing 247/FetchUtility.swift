@@ -42,7 +42,7 @@ private extension FetchUtility {
             NSPredicate(format: "isBookmarked = %d", true) :
             NSPredicate(format: "isBookmarked = %d", false)
         
-        let predicateCompound = NSCompoundPredicate.init(type: .or, subpredicates: [predicate1,predicate2])
+        let predicateCompound = NSCompoundPredicate.init(type: newsType == .new ? .or : .and, subpredicates: [predicate1,predicate2])
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")
         let sortDescriptor = NSSortDescriptor(key: "pubDate", ascending: false)
