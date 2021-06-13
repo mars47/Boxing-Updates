@@ -11,27 +11,24 @@ import SwiftyJSON
 
 class NetworkManager: NSObject {
     
-    var articles = [Article]()
+    var articles = [NewsArticle]()
     
-    func downloadNews(completion: @escaping ([Article]) -> ()) {
+    func downloadNewsArticles(completion: @escaping (Bool) -> Void) {
         
         articles.removeAll()
         guard let newsfeedURL = URL(string: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
-            else { completion([Article]()); return }
-        var json : JSON?
+        else {completion(false); return }
         
         Alamofire.request(newsfeedURL).responseJSON { response in
             
             switch response.result {
             case .success(let value):
-                json = JSON(value)
+                
+                SaveUtility.saveNewsArticles(withData: JSON(value)) { (isSuccess) in
 
-                for dict in json!["items"].arrayValue {
-                    let article = Article(initWith: dict)
-                    self.articles.append(article)
+                    isSuccess == true ? completion(true) : completion(false)
                 }
-                completion(self.articles)
-            
+                    
             case .failure(let error):
                 print(error)
             }
@@ -54,5 +51,31 @@ class NetworkManager: NSObject {
         }
     
     }
+    
+//    func downloadNews(completion: @escaping ([Article]) -> ()) {
+//        
+//        articles.removeAll()
+//        guard let newsfeedURL = URL(string: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
+//            else { completion([Article]()); return }
+//        var json : JSON?
+//        
+//        Alamofire.request(newsfeedURL).responseJSON { response in
+//            
+//            switch response.result {
+//            case .success(let value):
+//                json = JSON(value)
+//
+//                for dict in json!["items"].arrayValue {
+//                    let article = Article(initWith: dict)
+//                    self.articles.append(article)
+//                }
+//                completion(self.articles)
+//            
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+    
 }
 

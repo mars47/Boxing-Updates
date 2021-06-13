@@ -62,3 +62,5 @@ extension UIView {
         UIView.animate(withDuration: 1, delay: 0.0, options: [.curveLinear], animations: {self.alpha = 1.0}, completion: nil)
     }
 }
+
+

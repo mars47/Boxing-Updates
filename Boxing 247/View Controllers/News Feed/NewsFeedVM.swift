@@ -14,7 +14,7 @@ class NewsFeedVM: NSObject {
     
     var reloadCollectionView : ( () -> Void)?
     let url = URL(string: "https://bit.ly/2tZmM0E")
-    var articles: [Article] = []
+    var newsArticles: [NewsArticle] = []
     let networkManager : NetworkManager
         
     // MARK: - Initialisation
@@ -27,10 +27,14 @@ class NewsFeedVM: NSObject {
     
     func downloadNews(completion: @escaping () -> Void) {
         
-        networkManager.downloadNews() { [self] (articles) in
+        networkManager.downloadNewsArticles { [self] _ in
             
-            self.articles = articles
-            
+            guard let newsArticles = FetchUtility.news(fetch: .new) else {
+                print("fetch failure")
+                return }
+
+            self.newsArticles = newsArticles
+                    
             downloadImages{
                 reloadCollectionView?()
                 completion()
@@ -42,14 +46,15 @@ class NewsFeedVM: NSObject {
     
     func downloadImages(completion: @escaping () -> Void) {
         
-        for (index, article) in articles.enumerated() {
+        for (index, article) in newsArticles.enumerated() {
             
             guard
-                let thumbnailUrl = URL(string: article.thumbnailUrl)
+                let url = article.thumbnailUrl,
+                let thumbnailUrl = URL(string: url)
             else {
                 article.setImage(image: UIImage(named:"placeholder.jpg")!)
                 
-                if index == articles.endIndex - 1 {
+                if index == newsArticles.endIndex - 1 {
                     completion()
                 }
                 continue
@@ -59,7 +64,7 @@ class NewsFeedVM: NSObject {
                 
                 article.setImage(image: image)
                 
-                if index == articles.endIndex - 1 {
+                if index == newsArticles.endIndex - 1 {
                     completion()
                 }
             }
