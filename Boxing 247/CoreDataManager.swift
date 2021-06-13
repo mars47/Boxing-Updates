@@ -31,7 +31,6 @@ final class CoreDataManager {
         backgroundContext.parent = container.viewContext
         
         if AppStatus.isTesting {
-            
             CoreDataManager.setInMemoryStoreType(for: container)
         }
         

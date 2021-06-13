@@ -42,14 +42,18 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
 
     fileprivate func configureCollectionViewReload() {
+        
         viewModel.reloadCollectionView = { [self] in
-            collectionView?.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                collectionView?.reloadData()
+            }
         }
     }
     
     // MARK: - Refresh
 
     @objc private func refreshNews(_ sender: Any) {
+        
         viewModel.downloadNews {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.refreshControl.endRefreshing()
@@ -60,21 +64,42 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    }
+    
+    func presentUIAlert(title: String, message: String, completion: ((Bool) -> Void)? ) {
         
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.view.tintColor = .label
+
+        if completion == nil {
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        } else {
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){ handler in
+                completion?(true)
+            })
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive, handler: nil))
+        }
+        
+        self.present(alert, animated: true, completion: nil)        
     }
     
     // MARK: - Collection view datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return viewModel.articles.count
+        return viewModel.newsArticles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
-        let article = viewModel.articles[indexPath.row]
+        let article = viewModel.newsArticles[indexPath.row]
         cell.configureCell(with: article)
+        cell.presentUIAlert = { [self] title, message, completion in
+            presentUIAlert(title: title, message: message, completion: completion)
+        }
         return cell
     }
     
@@ -87,9 +112,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         /** Calculates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib */
 
-        let article = viewModel.articles[indexPath.row]
+        let article = viewModel.newsArticles[indexPath.row]
         let cellHeight =
-                NewsFeedCell.calculateHeightForLable(text: article.title, font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
+                NewsFeedCell.calculateHeightForLable(text: article.title ?? "", font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
                 + 25 // button stackview
                 + cellWidth / 5.63 // remaining space, dynamically calculated
         

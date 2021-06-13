@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class NewsFeedCell: UICollectionViewCell {
     
     // MARK: - Properties
@@ -16,23 +17,50 @@ class NewsFeedCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var mainStackView: UIStackView?
+    @IBOutlet weak var bookmarkButton: UIButton!
+   
+    var newsArticle : NewsArticle?
+    var presentUIAlert : ( (String, String, ((Bool) -> Void )?) -> Void)?
     
     // MARK: - Configuration
     
-    func configureCell(with article: Article) {
+    func configureCell(with article: NewsArticle) {
         
-        DispatchQueue.main.async {
+        newsArticle = article
+        
+        DispatchQueue.main.async { [self] in
                         
-            self.pubDate.text = article.timeAgo
-            self.title.text = article.title
-            self.thumbnail.contentMode = .scaleAspectFill
-            self.thumbnail.clipsToBounds = true
+            pubDate.text = article.timeAgo
+            title.text = article.title
+            bookmarkButton.isSelected = article.isBookmarked
+
+            thumbnail.contentMode = .scaleAspectFill
+            thumbnail.clipsToBounds = true
 
             //self.author.text = "Published by \(article.author)"
             //self.content.text = article.description;
         }
         
         configureShadowAndRoundCorners(shadowBounds: contentView)
+    }
+    
+    @IBAction func bookmarkNewsArticle(_ sender: Any) {
+        
+        guard let newsArticle = newsArticle else {
+            presentUIAlert?("Something happened", "Unable to bookmark item", nil)
+            return
+        }
+        
+        if bookmarkButton.isSelected {
+            
+            presentUIAlert?("Warning", "Are you sure you want to remove article from saved items?") { isActionCancelled in
+                self.bookmarkButton.isSelected = isActionCancelled
+            }
+        }
+            
+        newsArticle.isBookmarked = !bookmarkButton.isSelected
+        bookmarkButton.isSelected = !bookmarkButton.isSelected
+        SaveUtility.saveChanges()
     }
     
     static func calculateHeightForLable(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{

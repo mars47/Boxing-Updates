@@ -50,7 +50,6 @@ protocol Updatable: Managed {
     static var objectIdentifier: String { get set }
     
     func update(with json: JSON)
-    
 }
 
 extension Updatable where Self: NSManagedObject {
@@ -76,12 +75,20 @@ extension Updatable where Self: NSManagedObject {
     static func object(withId id: String, in context: NSManagedObjectContext) -> Self? {
         
         return try? context.fetch(fetchRequest(forId: id)).first as? Self ?? nil
-
     }
     
     static func fetchAll() -> [Self] {
         
         return (try? CoreDataManager.shared.container.viewContext.fetch(self.sortedFetchRequest) as [Self]) ?? []
+    }
+    
+    func eraseCurrent<T: NSManagedObject>(elements: Set<T>?) {
+        
+        if let elements = elements, !elements.isEmpty {
+            for element in elements {
+                managedObjectContext?.delete(element)
+            }
+        }
     }
     
     private static func fetchRequest(forId id: String) -> NSFetchRequest<NSFetchRequestResult> {
