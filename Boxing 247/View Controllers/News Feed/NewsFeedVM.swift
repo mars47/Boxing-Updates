@@ -25,23 +25,31 @@ class NewsFeedVM: NSObject {
     
     // MARK: - Public Methods
     
-    func downloadNews(completion: @escaping () -> Void) {
+    func downloadNews(for tab: NewsFeedVC.Segment, completion: (() -> Void)?) {
         
         networkManager.downloadNewsArticles { [self] _ in
-            
-            guard let newsArticles = FetchUtility.news(fetch: .new) else {
-                print("fetch failure")
-                return }
-
-            self.newsArticles = newsArticles
-                    
-            downloadImages{
-                reloadCollectionView?()
-                completion()
-            }
-            
-            reloadCollectionView?()
+            completion?()
+            fetchNewsArticles(for: tab)
         }
+    }
+    
+    func fetchNewsArticles(for tab: NewsFeedVC.Segment) {
+        
+        guard let newsArticles = tab == .bookmarked ?
+            FetchUtility.bookmarkedNews() :
+            FetchUtility.news(fetch: .new)
+        else {
+            print("fetch failure")
+            return
+        }
+
+        self.newsArticles = newsArticles
+                
+        downloadImages{
+            self.reloadCollectionView?()
+        }
+        
+        reloadCollectionView?()
     }
     
     func downloadImages(completion: @escaping () -> Void) {
@@ -79,4 +87,7 @@ class NewsFeedVM: NSObject {
             completion(image)
         }
     }
+    
+        
+    
 }

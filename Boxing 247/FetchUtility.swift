@@ -26,28 +26,44 @@ class FetchUtility {
         }
         return nil
     }
+    
+    static func bookmarkedNews() -> [NewsArticle]? {
+        
+        let context = CoreDataManager.shared.container.viewContext
+        do {
+            let request = fetchRequest(entityName: "NewsArticle", sortKey: "pubDate", predicate: NSPredicate(format: "isBookmarked = %d", true))
+            
+            return try (context.fetch(request) as? [NewsArticle])
+        } catch {
+            print("Couldn't fetch news: \(error.localizedDescription)")
+        }
+        return nil
+    }
 }
 
 private extension FetchUtility {
     
     static func newsRequest(for newsType: NewsType) -> NSFetchRequest<NSFetchRequestResult> {
         
-        let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        let fiveDaysAgo = Calendar.current.date(byAdding: .day, value: -5, to: Date())!
         
         let predicate1 = newsType == .new ?
-            NSPredicate(format: "pubDate >= %@", threeDaysAgo as NSDate) :
-            NSPredicate(format: "pubDate < %@", threeDaysAgo as NSDate)
+            NSPredicate(format: "pubDate >= %@", fiveDaysAgo as NSDate) :
+            NSPredicate(format: "pubDate < %@", fiveDaysAgo as NSDate)
         
-        let predicate2 = newsType == .new ?
-            NSPredicate(format: "isBookmarked = %d", true) :
-            NSPredicate(format: "isBookmarked = %d", false)
+        let predicate2 = NSPredicate(format: "isBookmarked = %d", false)
         
-        let predicateCompound = NSCompoundPredicate.init(type: newsType == .new ? .or : .and, subpredicates: [predicate1,predicate2])
+        let predicateCompound = NSCompoundPredicate.init(type: .and, subpredicates: [predicate1,predicate2])
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsArticle")
-        let sortDescriptor = NSSortDescriptor(key: "pubDate", ascending: false)
+        return fetchRequest(entityName: "NewsArticle", sortKey: "pubDate", predicate: newsType == .new ? predicate1 : predicateCompound)
+    }
+    
+    static func fetchRequest(entityName: String, sortKey: String, predicate: NSPredicate) -> NSFetchRequest<NSFetchRequestResult> {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let sortDescriptor = NSSortDescriptor(key: sortKey, ascending: false)
         request.sortDescriptors = [sortDescriptor]
-        request.predicate = predicateCompound
+        request.predicate = predicate
         return request
     }
 }

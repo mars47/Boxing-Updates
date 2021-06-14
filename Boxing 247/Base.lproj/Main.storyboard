@@ -99,6 +99,9 @@
                                     <segment title="Latest"/>
                                     <segment title="Saved Items"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlTapped:" destination="1ST-Jg-Yj0" eventType="valueChanged" id="xMX-kq-jPF"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eOg-TI-yLx">
                                 <rect key="frame" x="0.0" y="124" width="375" height="605"/>
@@ -156,6 +159,7 @@
                         <outlet property="layout" destination="MML-q4-j0w" id="Fwe-Mb-QNm"/>
                         <outlet property="navigationBar" destination="cjf-qc-pTP" id="kuv-hQ-IOv"/>
                         <outlet property="navigationPanelButton" destination="qE3-hN-VPq" id="wPk-u2-qrD"/>
+                        <outlet property="segmentedControl" destination="NdO-AU-OKs" id="duf-qr-B9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mi9-2c-fOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,6 +258,7 @@
                                                 <state key="normal" image="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system"/>
                                             </button>
                                         </subviews>
+                                        <color key="tintColor" name="pomegranate247"/>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOFSJDF SOJSDOF FJODSFJSDOFSDJFOSD IJO FJIDOFJSDOFSDJOFI DFSJOFOSFJ SAOFDP FSDOFSOD JF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-VB-QeH">
                                         <rect key="frame" x="0.0" y="310.33333333333331" width="375" height="61"/>

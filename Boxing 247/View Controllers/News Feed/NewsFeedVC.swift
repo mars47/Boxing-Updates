@@ -15,9 +15,17 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
+    enum Segment: Int {
+        case latest
+        case bookmarked
+    }
     
+    var tab : Segment {
+        return Segment(rawValue: segmentedControl.selectedSegmentIndex)!
+    }
     // MARK: - Configuration
 
     override func viewDidLoad() {
@@ -25,7 +33,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         super.viewDidLoad()
         configureView()
         configureCollectionViewReload()
-        viewModel.downloadNews{}
+        viewModel.downloadNews(for:tab, completion: nil)
     }
     
     fileprivate func configureView() {
@@ -50,11 +58,15 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
+    @IBAction func segmentedControlTapped(_ sender: Any) {
+        
+        viewModel.fetchNewsArticles(for: tab)
+    }
     // MARK: - Refresh
 
     @objc private func refreshNews(_ sender: Any) {
         
-        viewModel.downloadNews {
+        viewModel.downloadNews(for: tab) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.refreshControl.endRefreshing()
             }
