@@ -28,8 +28,7 @@ final class CoreDataManager {
         
         container = NSPersistentContainer(name: "Boxing247")
         backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        backgroundContext.parent = container.viewContext
-        
+                
         if AppStatus.isTesting {
             CoreDataManager.setInMemoryStoreType(for: container)
         }
@@ -45,6 +44,8 @@ final class CoreDataManager {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
+        backgroundContext.parent = container.viewContext
     }
     
     static func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
