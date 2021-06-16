@@ -27,6 +27,7 @@ class NewsFeedVM: NSObject {
     
     func downloadNews(for tab: NewsFeedVC.Segment, completion: (() -> Void)?) {
         
+        #warning("Error handling needed")
         networkManager.downloadNewsArticles { [self] _ in
             completion?()
             fetchNewsArticles(for: tab)
@@ -86,8 +87,5 @@ class NewsFeedVM: NSObject {
         networkManager.downloadThumbnailImage(for: url) { (image) in
             completion(image)
         }
-    }
-    
-        
-    
+    }  
 }

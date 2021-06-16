@@ -11,11 +11,9 @@ import SwiftyJSON
 
 class NetworkManager: NSObject {
     
-    var articles = [NewsArticle]()
     
     func downloadNewsArticles(completion: @escaping (Bool) -> Void) {
         
-        articles.removeAll()
         guard let newsfeedURL = URL(string: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
         else {completion(false); return }
         
@@ -25,11 +23,11 @@ class NetworkManager: NSObject {
             case .success(let value):
                 
                 SaveUtility.saveNewsArticles(withData: JSON(value)) { (isSuccess) in
-
-                    isSuccess == true ? completion(true) : completion(false)
+                    completion(isSuccess)
                 }
                     
             case .failure(let error):
+                completion(false)
                 print(error)
             }
         }

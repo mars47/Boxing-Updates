@@ -16,16 +16,18 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+   
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
+   
     enum Segment: Int {
         case latest
         case bookmarked
     }
-    
-    var tab : Segment {
+    var segment : Segment {
         return Segment(rawValue: segmentedControl.selectedSegmentIndex)!
     }
+    
     // MARK: - Configuration
 
     override func viewDidLoad() {
@@ -33,7 +35,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         super.viewDidLoad()
         configureView()
         configureCollectionViewReload()
-        viewModel.downloadNews(for:tab, completion: nil)
+        viewModel.downloadNews(for:segment, completion: nil)
     }
     
     fileprivate func configureView() {
@@ -52,28 +54,28 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     fileprivate func configureCollectionViewReload() {
         
         viewModel.reloadCollectionView = { [self] in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+            DispatchQueue.main.async {
                 collectionView?.reloadData()
             }
         }
     }
     
+    // MARK: - Events
+
+    
     @IBAction func segmentedControlTapped(_ sender: Any) {
         
-        viewModel.fetchNewsArticles(for: tab)
+        viewModel.fetchNewsArticles(for: segment)
     }
-    // MARK: - Refresh
 
     @objc private func refreshNews(_ sender: Any) {
         
-        viewModel.downloadNews(for: tab) {
+        viewModel.downloadNews(for: segment) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.refreshControl.endRefreshing()
             }
         }
     }
-    
-    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -126,7 +128,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
         let article = viewModel.newsArticles[indexPath.row]
         let cellHeight =
-                NewsFeedCell.calculateHeightForLable(text: article.title ?? "", font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
+                NewsFeedCell.calculateHeightForLabel(text: article.title ?? "", font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
                 + 25 // button stackview
                 + cellWidth / 5.63 // remaining space, dynamically calculated
         

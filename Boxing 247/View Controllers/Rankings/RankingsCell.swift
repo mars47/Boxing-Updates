@@ -49,7 +49,7 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "federationCell", for: indexPath) as! TextCell
-        cell.configureIcon(segment: segment)
+        cell.configureIcon(with: segment)
         return cell
     }
     
