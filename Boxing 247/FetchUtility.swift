@@ -15,12 +15,15 @@ class FetchUtility {
         case old
         case new
     }
-    
+        
     static func news(fetch newsType: NewsType) -> [NewsArticle]? {
         
         let context = CoreDataManager.shared.container.viewContext
         do {
-            return try (context.fetch(newsRequest(for: newsType)) as? [NewsArticle])
+            
+            let request = newsRequest(for: newsType)
+            
+            return try context.fetch(request) as? [NewsArticle]
         } catch {
             print("Couldn't fetch news: \(error.localizedDescription)")
         }
@@ -33,7 +36,7 @@ class FetchUtility {
         do {
             let request = fetchRequest(entityName: "NewsArticle", sortKey: "pubDate", predicate: NSPredicate(format: "isBookmarked = %d", true))
             
-            return try (context.fetch(request) as? [NewsArticle])
+            return try context.fetch(request) as? [NewsArticle]
         } catch {
             print("Couldn't fetch news: \(error.localizedDescription)")
         }
@@ -57,7 +60,7 @@ private extension FetchUtility {
         
         return fetchRequest(entityName: "NewsArticle", sortKey: "pubDate", predicate: newsType == .new ? predicate1 : predicateCompound)
     }
-    
+        
     static func fetchRequest(entityName: String, sortKey: String, predicate: NSPredicate) -> NSFetchRequest<NSFetchRequestResult> {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)

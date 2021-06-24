@@ -10,13 +10,25 @@ import UIKit
 
 class NewsFeedDetailVC: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var scrollview2: UIScrollView!
+    @IBOutlet weak var timeAgoLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var bookmarkButton: UIButton!
+    
+    @IBOutlet weak var enlargeButton: UIButton!
+    @IBOutlet weak var websiteButton: UIButton!
+    
+    var newsArticle : NewsArticle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.label.text = ""
+         //self.label.text = ""
+        titleLabel.text = newsArticle?.title
+        descriptionLabel.text = newsArticle?.content
 
 
             

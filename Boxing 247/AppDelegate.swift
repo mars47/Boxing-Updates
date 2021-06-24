@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        deleteOldNewsArticles()
+        //deleteOldNewsArticles()
         
         self.window?.tintColor = UIColor(named: "pomegranate247")
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -50,12 +50,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func deleteOldNewsArticles() {
         
-        guard let newsArticles = FetchUtility.news(fetch: .old) else {
-            print("fetch failure"); return
+        guard
+            let oldNewsArticles = FetchUtility.news(fetch: .old)
+        else {
+            print("fetch failure")
+            return
         }
         
-        for news in newsArticles {
-            print("DELETEING: \(news.pubDate!)\t\(news.title!)\n")
+        for news in oldNewsArticles {
+            print("DELETING: \(news.title!)\n\(news.pubDate!)\n")
            _ = NewsArticle.eraseCurrent(news)
         }
     }

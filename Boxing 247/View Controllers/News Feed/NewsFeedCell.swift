@@ -28,18 +28,19 @@ class NewsFeedCell: UICollectionViewCell {
         
         newsArticle = article
         
-        DispatchQueue.main.async { [self] in
-                        
-            pubDate.text = article.timeAgo
-            title.text = article.title
-            bookmarkButton.isSelected = article.isBookmarked
-
-            thumbnail.contentMode = .scaleAspectFill
-            thumbnail.clipsToBounds = true
-
-            //self.author.text = "Published by \(article.author)"
-            //self.content.text = article.description;
+        pubDate.text = article.pubDate == nil ? "n/a" : Date().timeAgoSinceDate(article.pubDate!)
+        title.text = article.title
+        bookmarkButton.isSelected = article.isBookmarked
+        
+        if let imageData = article.thumbnail  {
+            thumbnail.image = UIImage(data: imageData)
         }
+        
+        thumbnail.contentMode = .scaleAspectFill
+        thumbnail.clipsToBounds = true
+        
+        //self.author.text = "Published by \(article.author)"
+        //self.content.text = article.description;
         
         configureShadowAndRoundCorners(shadowBounds: contentView)
     }
@@ -53,13 +54,17 @@ class NewsFeedCell: UICollectionViewCell {
         
         if bookmarkButton.isSelected {
             
-            presentUIAlert?("Warning", "Are you sure you want to remove article from saved items?") { isActionCancelled in
-                self.bookmarkButton.isSelected = isActionCancelled
+            presentUIAlert?("Warning", "Are you sure you want to remove article from saved items?") { [self] isActionCancelled in
+                
+                bookmarkButton.isSelected = isActionCancelled
+                newsArticle.isBookmarked = isActionCancelled
             }
-        }
             
-        newsArticle.isBookmarked = !bookmarkButton.isSelected
-        bookmarkButton.isSelected = !bookmarkButton.isSelected
+        } else {
+            newsArticle.isBookmarked = !bookmarkButton.isSelected
+            bookmarkButton.isSelected = !bookmarkButton.isSelected
+        }
+        
         SaveUtility.saveChanges()
     }
     

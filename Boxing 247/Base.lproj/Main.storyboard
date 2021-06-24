@@ -133,16 +133,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8S-Qf-Q8r">
+                                <rect key="frame" x="142" y="691" width="91" height="30"/>
+                                <state key="normal" title="More News"/>
+                                <connections>
+                                    <action selector="moreButtonPressed:" destination="1ST-Jg-Yj0" eventType="touchUpInside" id="3Mr-Lg-I5E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hXh-aj-UiY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NdO-AU-OKs" firstAttribute="leading" secondItem="hXh-aj-UiY" secondAttribute="leading" constant="6" id="1Hz-Tz-mlI"/>
+                            <constraint firstItem="hXh-aj-UiY" firstAttribute="trailing" secondItem="D8S-Qf-Q8r" secondAttribute="trailing" constant="142" id="5iW-KL-q4v"/>
                             <constraint firstItem="hXh-aj-UiY" firstAttribute="trailing" secondItem="eOg-TI-yLx" secondAttribute="trailing" id="6fe-pw-H8Z"/>
                             <constraint firstItem="eOg-TI-yLx" firstAttribute="top" secondItem="NdO-AU-OKs" secondAttribute="bottom" constant="5" id="St3-Oh-jvO"/>
                             <constraint firstItem="hXh-aj-UiY" firstAttribute="trailing" secondItem="NdO-AU-OKs" secondAttribute="trailing" constant="6" id="V2D-sh-pJB"/>
                             <constraint firstItem="hXh-aj-UiY" firstAttribute="bottom" secondItem="eOg-TI-yLx" secondAttribute="bottom" id="VFZ-VM-B8K"/>
+                            <constraint firstItem="D8S-Qf-Q8r" firstAttribute="leading" secondItem="hXh-aj-UiY" secondAttribute="leading" constant="142" id="Y4N-eI-OgP"/>
                             <constraint firstItem="eOg-TI-yLx" firstAttribute="leading" secondItem="hXh-aj-UiY" secondAttribute="leading" id="drs-Bl-jos"/>
+                            <constraint firstItem="hXh-aj-UiY" firstAttribute="bottom" secondItem="D8S-Qf-Q8r" secondAttribute="bottom" constant="8" id="rlf-bX-fPU"/>
                             <constraint firstItem="NdO-AU-OKs" firstAttribute="top" secondItem="hXh-aj-UiY" secondAttribute="top" id="t6G-Gn-J05"/>
                         </constraints>
                     </view>
@@ -157,6 +167,7 @@
                     <connections>
                         <outlet property="collectionView" destination="eOg-TI-yLx" id="7iH-og-pZQ"/>
                         <outlet property="layout" destination="MML-q4-j0w" id="Fwe-Mb-QNm"/>
+                        <outlet property="moreNewsButton" destination="D8S-Qf-Q8r" id="Wud-iD-WAe"/>
                         <outlet property="navigationBar" destination="cjf-qc-pTP" id="kuv-hQ-IOv"/>
                         <outlet property="navigationPanelButton" destination="qE3-hN-VPq" id="wPk-u2-qrD"/>
                         <outlet property="segmentedControl" destination="NdO-AU-OKs" id="duf-qr-B9u"/>
@@ -164,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mi9-2c-fOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2184.057971014493" y="618.75"/>
+            <point key="canvasLocation" x="-2184.8000000000002" y="618.4729064039409"/>
         </scene>
         <!--News Feed DetailVC-->
         <scene sceneID="rM6-0a-gIV">
@@ -266,7 +277,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-Op-PXE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-Op-PXE">
                                         <rect key="frame" x="186" y="379" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -297,6 +308,11 @@
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="top" secondItem="Zrl-pP-iHy" secondAttribute="bottom" constant="10" id="xxr-dd-uLU"/>
                                     <constraint firstItem="RN1-Rr-iJj" firstAttribute="top" secondItem="kMt-aX-LUo" secondAttribute="bottom" constant="8" id="zOi-qg-59F"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="IKI-Op-PXE"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="ufl-ko-qw7" id="qWM-Ut-qzl"/>
                                 </connections>
@@ -333,8 +349,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="Klr-c8-Gth"/>
                     <connections>
+                        <outlet property="bookmarkButton" destination="HJC-Ff-ZbZ" id="2aM-uq-SyZ"/>
+                        <outlet property="descriptionLabel" destination="mPG-VB-QeH" id="Pio-rK-tAu"/>
+                        <outlet property="enlargeButton" destination="BKy-vM-A88" id="0IN-ba-87z"/>
                         <outlet property="label" destination="Zrl-pP-iHy" id="oD9-xT-Bvf"/>
                         <outlet property="scrollview2" destination="HZf-1s-5bO" id="ojC-U9-Cba"/>
+                        <outlet property="shareButton" destination="bo9-4I-hGz" id="QZd-px-ewr"/>
+                        <outlet property="timeAgoLabel" destination="RXi-UL-fmf" id="ser-Nn-ukF"/>
+                        <outlet property="titleLabel" destination="adA-Ib-tHE" id="gCY-cz-kBM"/>
+                        <outlet property="websiteButton" destination="c6p-N8-JGP" id="EBy-B2-acc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zi4-Es-eCj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

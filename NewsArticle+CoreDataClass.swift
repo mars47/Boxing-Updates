@@ -16,13 +16,12 @@ public class NewsArticle: NSManagedObject, Updatable {
     
     static var dataIdentifier: String = "guid"
     static var objectIdentifier: String = "guid"
-    private (set) var image: UIImage?
 
     func update(with dictionary: JSON) {
         
         guid = dictionary["guid"].string! // unique identifier
         title = dictionary["title"].string!.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
-        setTimeAgo(dictionary["pubDate"].string!)
+        setPubdate(dictionary["pubDate"].string!)
         link = dictionary["link"].string!
         author = dictionary["author"].string!
         thumbnailUrl = dictionary["thumbnail"].string!
@@ -31,16 +30,16 @@ public class NewsArticle: NSManagedObject, Updatable {
         content = dictionary["content"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
     
-    func setTimeAgo(_ pubDateString: String) {
-        
+    func setPubdate(_ pubDateString: String) {
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" //date format
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
         pubDate = dateFormatter.date(from: pubDateString)
-        timeAgo = pubDate == nil ? "n/a" : Date().timeAgoSinceDate(pubDate!)
     }
     
     func setImage(image: UIImage) {
-        self.image = image
+        
+        thumbnail = image.pngData() ?? image.jpegData(compressionQuality: 1)
     }
 }

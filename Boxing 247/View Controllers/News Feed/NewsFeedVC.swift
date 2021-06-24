@@ -16,7 +16,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-   
+    @IBOutlet weak var moreNewsButton: UIButton!
+    
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
    
@@ -35,6 +36,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         super.viewDidLoad()
         configureView()
         configureCollectionViewReload()
+        configurePostDownloadCollectionViewScroll()
         viewModel.downloadNews(for:segment, completion: nil)
     }
     
@@ -46,6 +48,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         collectionView.refreshControl = refreshControl
 
         layout.minimumLineSpacing = 18.5
+        moreNewsButton.isHidden = true
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
         view.backgroundColor = dark247
         navigationController?.navigationBar.isTranslucent = true
@@ -60,25 +63,66 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
+    fileprivate func configurePostDownloadCollectionViewScroll() {
+        
+        viewModel.scrollCollectionView = { [self] in
+            
+            DispatchQueue.main.async {
+                
+                let offset = viewModel.collectionViewScrollOffset
+                let lastItem = collectionView(collectionView, numberOfItemsInSection: 0) - 1
+                let indexpath = IndexPath(row: lastItem - offset, section: 0)
+                collectionView.scrollToItem(at: indexpath, at: .centeredVertically, animated: true)
+            }
+        }
+    }
+    
     // MARK: - Events
 
-    
     @IBAction func segmentedControlTapped(_ sender: Any) {
         
-        viewModel.fetchNewsArticles(for: segment)
+        viewModel.switchDatasource(for: segment, indexPath: collectionView.indexPathsForVisibleItems.last!)
+        viewModel.reloadCollectionView!()
+        
+        DispatchQueue.main.async { [self] in
+            
+            switch segment {
+            
+            case .latest:
+                collectionView.scrollToItem(at: viewModel.snapshotForSegmentLatest!.1, at: .bottom, animated: false)
+                
+            case .bookmarked:
+                let lastItem = collectionView(collectionView, numberOfItemsInSection: 0) - 1
+                collectionView.scrollToItem(at: IndexPath(row: lastItem, section: 0), at: .centeredVertically, animated: false)
+            }
+        }
     }
-
+    
+    @IBAction func moreButtonPressed(_ sender: Any) {
+        
+        let itemCount = collectionView.numberOfItems(inSection: 0)
+        viewModel.updateDatasource(for: segment, itemsDisplayedCount: itemCount)
+        viewModel.reloadCollectionView?()
+        viewModel.scrollCollectionView?()
+    }
+    
     @objc private func refreshNews(_ sender: Any) {
         
         viewModel.downloadNews(for: segment) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.refreshControl.endRefreshing()
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+       
+        guard
+            let article = sender as? NewsArticle,
+            let vc = segue.destination as? NewsFeedDetailVC
+        else { return }
+        
+        vc.newsArticle = article
     }
     
     func presentUIAlert(title: String, message: String, completion: ((Bool) -> Void)? ) {
@@ -93,7 +137,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){ handler in
                 completion?(true)
             })
-            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) { handlee in
+                completion?(false)
+            })
         }
         
         self.present(alert, animated: true, completion: nil)        
@@ -103,13 +149,14 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return viewModel.newsArticles.count
+        return viewModel.datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
-        let article = viewModel.newsArticles[indexPath.row]
+        let article = viewModel.datasource[indexPath.row]
+                
         cell.configureCell(with: article)
         cell.presentUIAlert = { [self] title, message, completion in
             presentUIAlert(title: title, message: message, completion: completion)
@@ -126,7 +173,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         /** Calculates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib */
 
-        let article = viewModel.newsArticles[indexPath.row]
+        let article = viewModel.datasource[indexPath.row]
         let cellHeight =
                 NewsFeedCell.calculateHeightForLabel(text: article.title ?? "", font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
                 + 25 // button stackview
@@ -137,9 +184,27 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     // MARK: Collection view delegate
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if segment == .bookmarked {
+            moreNewsButton.isHidden = true
+            return 
+        }
+        
+        let islastCellDisplayed = indexPath.row == viewModel.datasource.count - 1
+        
+        moreNewsButton.isHidden = islastCellDisplayed ? false : true
+        
+        if islastCellDisplayed && viewModel.allItemsFetched {
+            moreNewsButton.isHidden = true
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "showNewsDetail", sender: nil)
+        //for a in viewModel.newsArticles {print("\(a.pubDate)  \(a.title)\n")}
+        let article = viewModel.newsArticles[indexPath.row]
+        performSegue(withIdentifier: "showNewsDetail", sender: article)
         
         //guard let newsFeedDetailVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeedDetail") as? NewsFeedDetailVC else { return }
         //self.centerNavigationController?.pushViewController(newsFeedDetailVC, animated: true)

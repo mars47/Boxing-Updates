@@ -11,24 +11,37 @@ import SwiftyJSON
 
 class NetworkManager: NSObject {
     
-    
+    var urls  = [URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxinginsider.com%2Ffeed%2F"), URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxingnews24.com%2Ffeed%2F")]
+//, URL(string:"https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
     func downloadNewsArticles(completion: @escaping (Bool) -> Void) {
         
-        guard let newsfeedURL = URL(string: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
-        else {completion(false); return }
-        
-        Alamofire.request(newsfeedURL).responseJSON { response in
+        var successfulSave = 0
+    
+        for (index, url) in urls.enumerated() {
+            let islastIteration = index == self.urls.endIndex - 1
             
-            switch response.result {
-            case .success(let value):
+            Alamofire.request(url!).responseJSON { response in
                 
-                SaveUtility.saveNewsArticles(withData: JSON(value)) { (isSuccess) in
-                    completion(isSuccess)
-                }
+                switch response.result {
+                
+                case .success(let value):
                     
-            case .failure(let error):
-                completion(false)
-                print(error)
+                    SaveUtility.saveNewsArticles(withData: JSON(value)) { (isSuccess) in
+                        
+                        if isSuccess { successfulSave += 1 }
+                        if islastIteration {
+                            successfulSave == self.urls.count ? completion(true) : completion(false)
+                        }
+                    }
+                    
+                case .failure(let error):
+                    
+                    print(error)
+                    
+                    if islastIteration {
+                        completion(false)
+                    }
+                }
             }
         }
     }
