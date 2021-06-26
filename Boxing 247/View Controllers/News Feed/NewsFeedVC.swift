@@ -25,7 +25,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         case latest
         case bookmarked
     }
-    var segment : Segment {
+    var selectedSegment : Segment {
         return Segment(rawValue: segmentedControl.selectedSegmentIndex)!
     }
     
@@ -37,7 +37,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         configureView()
         configureCollectionViewReload()
         configurePostDownloadCollectionViewScroll()
-        viewModel.downloadNews(for:segment, completion: nil)
+        viewModel.downloadNews(for:selectedSegment, completion: nil)
     }
     
     fileprivate func configureView() {
@@ -81,34 +81,53 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     @IBAction func segmentedControlTapped(_ sender: Any) {
         
-        viewModel.switchDatasource(for: segment, indexPath: collectionView.indexPathsForVisibleItems.last!)
-        viewModel.reloadCollectionView!()
-        
-        DispatchQueue.main.async { [self] in
+        func _switchAndReloadDatasource() {
             
-            switch segment {
+            viewModel.switchDatasource(for: selectedSegment, indexPath: indexPath)
+            viewModel.reloadCollectionView?()
             
-            case .latest:
-                collectionView.scrollToItem(at: viewModel.snapshotForSegmentLatest!.1, at: .bottom, animated: false)
+            DispatchQueue.main.async { [self] in
                 
-            case .bookmarked:
-                let lastItem = collectionView(collectionView, numberOfItemsInSection: 0) - 1
-                collectionView.scrollToItem(at: IndexPath(row: lastItem, section: 0), at: .centeredVertically, animated: false)
+                if viewModel.datasource.count == 0 { return }
+                
+                switch selectedSegment {
+                
+                case .latest:
+                    collectionView.scrollToItem(at: viewModel.snapshotForSegmentLatest?.1 ?? IndexPath(row: 0, section: 0), at: .top, animated: false)
+                    
+                case .bookmarked:
+                    collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredVertically, animated: false)
+                }
             }
         }
+        
+        var indexPath : IndexPath?
+        
+        if selectedSegment == .bookmarked  {
+
+            moreNewsButton.isHidden = true
+            
+            guard
+                let cell = collectionView.visibleCells.first,
+                let indexpath = collectionView.indexPath(for: cell)
+            else { _switchAndReloadDatasource(); return }
+            indexPath = indexpath
+        }
+        
+        _switchAndReloadDatasource()
     }
     
     @IBAction func moreButtonPressed(_ sender: Any) {
         
         let itemCount = collectionView.numberOfItems(inSection: 0)
-        viewModel.updateDatasource(for: segment, itemsDisplayedCount: itemCount)
+        viewModel.updateDatasource(for: selectedSegment, itemsDisplayedCount: itemCount)
         viewModel.reloadCollectionView?()
         viewModel.scrollCollectionView?()
     }
     
     @objc private func refreshNews(_ sender: Any) {
         
-        viewModel.downloadNews(for: segment) {
+        viewModel.downloadNews(for: selectedSegment) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.refreshControl.endRefreshing()
             }
@@ -119,10 +138,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
        
         guard
             let article = sender as? NewsArticle,
-            let vc = segue.destination as? NewsFeedDetailVC
+            let viewController = segue.destination as? NewsFeedDetailVC
         else { return }
         
-        vc.newsArticle = article
+        viewController.newsArticle = article
     }
     
     func presentUIAlert(title: String, message: String, completion: ((Bool) -> Void)? ) {
@@ -137,8 +156,13 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){ handler in
                 completion?(true)
             })
-            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) { handlee in
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) { [self] handler in
                 completion?(false)
+                
+                if selectedSegment == .bookmarked {
+                    viewModel.updateDatasourceBookmarkRemoved()
+                    viewModel.reloadCollectionView?()
+                }
             })
         }
         
@@ -185,12 +209,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     // MARK: Collection view delegate
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        if segment == .bookmarked {
-            moreNewsButton.isHidden = true
-            return 
-        }
-        
+            
         let islastCellDisplayed = indexPath.row == viewModel.datasource.count - 1
         
         moreNewsButton.isHidden = islastCellDisplayed ? false : true
