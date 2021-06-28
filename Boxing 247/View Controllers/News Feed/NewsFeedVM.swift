@@ -119,7 +119,7 @@ class NewsFeedVM: NSObject {
                 let url = article.thumbnailUrl,
                 let thumbnailUrl = URL(string: url)
             else {
-                article.setImage(image: UIImage(named:"placeholder.jpg")!)
+                article.setImage(image: UIImage(named:"ring.jpg")!)
                 
                 if index == newsArticles.endIndex - 1 {
                     completion()

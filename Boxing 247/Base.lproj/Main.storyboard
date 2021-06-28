@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hva-ze-4rs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hva-ze-4rs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="mPf-y8-VpU">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -38,23 +38,23 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-82-6AG">
-                                                    <rect key="frame" x="3" y="8.6666666666666643" width="25" height="25"/>
+                                                    <rect key="frame" x="16" y="8.6666666666666643" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="Tlf-PR-zF4"/>
                                                         <constraint firstAttribute="width" constant="25" id="yZj-3y-lcF"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DD-qD-xcr">
-                                                    <rect key="frame" x="32" y="11" width="272" height="21"/>
+                                                    <rect key="frame" x="57" y="11" width="256" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="f5U-82-6AG" firstAttribute="leading" secondItem="WYW-D7-O5d" secondAttribute="leading" constant="16" id="089-Bf-8ht"/>
                                                 <constraint firstItem="f5U-82-6AG" firstAttribute="top" secondItem="WYW-D7-O5d" secondAttribute="top" constant="8.5" id="Bge-UM-cMe"/>
-                                                <constraint firstItem="f5U-82-6AG" firstAttribute="leading" secondItem="WYW-D7-O5d" secondAttribute="leading" constant="3" id="cGa-YU-EvD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rC9-U4-PiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1417" y="-78"/>
+            <point key="canvasLocation" x="-1415.2" y="617.73399014778329"/>
         </scene>
         <!--News-->
         <scene sceneID="fQI-ic-cMJ">
@@ -156,11 +156,10 @@
                             <constraint firstItem="NdO-AU-OKs" firstAttribute="top" secondItem="hXh-aj-UiY" secondAttribute="top" id="t6G-Gn-J05"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Boxing 247" largeTitleDisplayMode="always" id="cjf-qc-pTP">
+                    <navigationItem key="navigationItem" title="News" largeTitleDisplayMode="always" id="cjf-qc-pTP">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" style="plain" id="qE3-hN-VPq">
                             <connections>
-                                <action selector="navPanelButtonPressed:" destination="1ST-Jg-Yj0" id="1UH-rf-4uI"/>
-                                <segue destination="ufl-ko-qw7" kind="presentation" identifier="showNewsDetail" id="ecO-xP-w2u"/>
+                                <segue destination="oY4-sR-CFS" kind="presentation" identifier="showHelpMenu" id="NMb-h9-A6W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -171,6 +170,7 @@
                         <outlet property="navigationBar" destination="cjf-qc-pTP" id="kuv-hQ-IOv"/>
                         <outlet property="navigationPanelButton" destination="qE3-hN-VPq" id="wPk-u2-qrD"/>
                         <outlet property="segmentedControl" destination="NdO-AU-OKs" id="duf-qr-B9u"/>
+                        <segue destination="ufl-ko-qw7" kind="presentation" identifier="showNewsDetail" id="8y1-ZZ-UVy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mi9-2c-fOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,7 +271,7 @@
                                         </subviews>
                                         <color key="tintColor" name="pomegranate247"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOFSJDF SOJSDOF FJODSFJSDOFSDJFOSD IJO FJIDOFJSDOFSDJOFI DFSJOFOSFJ SAOFDP FSDOFSOD JF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-VB-QeH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOFSJDF SOJSDOF FJODSFJSDOFSDJFOSD IJO FJIDOFJSDOFSDJOFI DFSJOFOSFJ SAOFDP FSDOFSOD JF" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-VB-QeH">
                                         <rect key="frame" x="0.0" y="310.33333333333331" width="375" height="61"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -459,6 +459,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Rankings" id="8uS-46-PWD">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="SM5-Ts-HN0">
+                            <color key="tintColor" name="pomegranate247"/>
                             <connections>
                                 <segue destination="oY4-sR-CFS" kind="presentation" id="OcY-sz-ttD"/>
                             </connections>
@@ -532,6 +533,9 @@
             <point key="canvasLocation" x="-2183" y="-78"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NMb-h9-A6W"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="pomegranate247"/>
     <resources>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>

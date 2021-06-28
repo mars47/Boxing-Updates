@@ -56,7 +56,7 @@ class NetworkManager: NSObject {
                     completion(image!)
                 }
             } else {
-                let image = UIImage(named: "placeholder.jpg")!
+                let image = UIImage(named: "ring.jpg")!
                 completion(image)
             }
         }

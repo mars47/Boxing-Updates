@@ -29,6 +29,5 @@ class HelpMenuCell: UITableViewCell {
         
         icon.image = viewModel.icons[indexPath.section][indexPath.row]!
         pageTitle.text = viewModel.rows[indexPath.section][indexPath.row]
-        
     }
 }

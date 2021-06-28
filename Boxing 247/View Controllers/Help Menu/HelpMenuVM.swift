@@ -11,12 +11,11 @@ import UIKit
 
 struct HelpMenuVM {
         
-    let sections =  ["Latest", "Boxing", "Community", "Help"]
+    let sections =  ["Help"]
     let rows = [
-        ["News", "Fight Schedule", "Saved Articles"],
-        ["Current Champions", "Weight Divisions"],
-        ["Dashboard", "Messages", "Polls"],
-        ["Contact Us", "Settings"]
+        ["About Us", "Send Feedback", "Share App", "Rate Us"] /* Add more array's for extra sections*/
     ]
-    let icons = [[UIImage(named:"newsIcon"), UIImage(named:"calenderIcon"), UIImage(named:"downloadIcon")], [UIImage(named:"champIcon"), UIImage(named:"divisionsIcon")], [UIImage(named:"dashboardIcon"), UIImage(named:"messageIcon"), UIImage(named:"pollIcon")], [UIImage(named:"contactIcon"), UIImage(named:"settingsIcon")]]
+    let icons = [
+        [UIImage(systemName:"info.circle.fill"), UIImage(systemName:"envelope.fill"), UIImage(systemName:"square.and.arrow.up.fill"),  UIImage(systemName:"hand.thumbsup.fill")]
+    ]
 }

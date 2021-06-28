@@ -210,7 +210,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
             
-        let islastCellDisplayed = indexPath.row == viewModel.datasource.count - 1
+        let islastCellDisplayed = (indexPath.row == viewModel.datasource.count - 1) && (selectedSegment == .latest)
         
         moreNewsButton.isHidden = islastCellDisplayed ? false : true
         
