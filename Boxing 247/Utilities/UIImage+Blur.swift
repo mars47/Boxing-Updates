@@ -31,3 +31,25 @@ extension UIImage {
     }
     
 }
+
+extension UIImageView {
+    func downloadImageFrom(link: String, contentMode: UIView.ContentMode) {
+        
+        URLSession.shared.dataTask(with: URL(string:link)!){ data, response, error in
+            
+            DispatchQueue.main.async {
+                self.contentMode =  contentMode
+                if let data = data { self.image = UIImage(data: data) }
+            }
+        }.resume()
+        
+//        URLSession.sharedSession().dataTaskWithURL( NSURL(string:link)!, completionHandler: {
+//            (data, response, error) -> Void in
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.contentMode =  contentMode
+//                if let data = data { self.image = UIImage(data: data) }
+//            }
+//        })
+        
+    }
+}
