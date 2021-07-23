@@ -6,16 +6,15 @@
 //
 
 import UIKit
+import MessageUI
 
-//dismiss(animated: true, completion: nil)
-
-class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     let viewModel = HelpMenuVM()
-        
+    
     // MARK: - Configuration
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +36,7 @@ class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return viewModel.rows.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return viewModel.rows[section].count
@@ -53,39 +52,52 @@ class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        guard let viewController = getViewController(for: indexPath) else { return }
-//        pushViewController(viewController)
+        switch true {
+        
+        case indexPath.row == 0:
+            performSegue(withIdentifier: "showAboutUs", sender: nil)
+            
+        case indexPath.row == 1:
+            showEmailController()
+            
+        case indexPath.row == 2:
+            let activityVC = UIActivityViewController(activityItems: ["Check out this free app called 'Boxing Updates' to keep updated with the latest boxing news!"], applicationActivities: nil)
+            present(activityVC, animated: true, completion: nil)
+        //https://stackoverflow.com/questions/37938722/how-to-implement-share-button-in-swift
+        
+        //case indexPath.row == 3:
+        
+        default:
+            return
+        }
     }
     
-    //MARK: Class Functions
+    // MARK: - Mail Compose view delegate
     
-//    //                                     return -> UIViewController & Navigatable
-//    fileprivate func getViewController(for indexPath: IndexPath) -> B247ViewController? {
-//    
-//        let cellIndex : (Int, Int) = (indexPath.section, indexPath.row)
-//       
-//        switch cellIndex {
-//        case (0,0):
-//            let _ = storyboard?.instantiateViewController(withIdentifier: "NewsFeed") as? NewsFeedVC
-//            return nil
-//
-////        case (0,1):
-////            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
-////
-////        case (0,0):
-////            return mainStoryboard.instantiateViewController(withIdentifier: "NewsFeed") as! NewsFeedVC
-//       
-//        default:
-//            let vc = mainStoryboard.instantiateViewController(withIdentifier: "WeightDivision") as! WeightDivisionVC
-//            return vc.configureController(withProperties: self)
-//        }
-//    }
-//    
-//    func pushViewController(_ viewController: B247ViewController) {
-//        
-//        self.centerNavigationController?.pushViewController(viewController, animated: true)
-//        containerVC!.toggleLeftPanel?()
-//    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult,error: Error?) {
+        controller.dismiss(animated: true)
+    }
 }
 
+private extension HelpMenuVC {
+    
+    func showEmailController() {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let emailController = MFMailComposeViewController()
+            
+            emailController.view.backgroundColor = dark247
+            emailController.mailComposeDelegate = self
+            emailController.setToRecipients(["help@boxingupdates.co.uk"])
+            emailController.setMessageBody("<p><br><br><br><br><br><br> iOS version 14.6 </p>", isHTML: true)
+            emailController.setSubject("User Feedback ios v.1.0.0 Ticket Number \(Int.random(in: 1..<10000000))")
+            present(emailController, animated: true)
+            emailController.view.backgroundColor = dark247
+
+            
+        } else {
+            // show failure alert
+        }
+    }
+}
 

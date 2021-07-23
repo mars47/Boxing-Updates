@@ -33,7 +33,7 @@ public class NewsArticle: NSManagedObject, Updatable {
     func setPubdate(_ pubDateString: String) {
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" //date format
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
         pubDate = dateFormatter.date(from: pubDateString)
     }

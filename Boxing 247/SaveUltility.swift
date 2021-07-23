@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class SaveUtility {
     
-    // MARK: - Saving Api updates
+    // MARK: - Saving Api data
     
     static func saveNewsArticles(withData json: JSON, completion: @escaping (Bool) -> Void) {
         

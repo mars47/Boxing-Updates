@@ -17,6 +17,7 @@ class HelpMenuCell: UITableViewCell {
         super.awakeFromNib()
         self.backgroundColor = dark247
        
+        selectionStyle = .none
         let bgColorView = UIView()
         bgColorView.backgroundColor = dark247
         self.selectedBackgroundView = bgColorView
