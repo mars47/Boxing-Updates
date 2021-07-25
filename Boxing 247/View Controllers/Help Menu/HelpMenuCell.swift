@@ -15,11 +15,11 @@ class HelpMenuCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = dark247
+        self.backgroundColor = base247
        
         selectionStyle = .none
         let bgColorView = UIView()
-        bgColorView.backgroundColor = dark247
+        bgColorView.backgroundColor = base247
         self.selectedBackgroundView = bgColorView
         
         icon.contentMode = .scaleAspectFill

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMx-b8-5Kb">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMx-b8-5Kb">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,11 +15,12 @@
             <objects>
                 <viewController storyboardIdentifier="NavigationPanelVC" id="oY4-sR-CFS" customClass="HelpMenuVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHH-m1-iy6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hva-ze-4rs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <color key="backgroundColor" name="grey247"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="mPf-y8-VpU">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -27,7 +28,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PanelCell" rowHeight="43" id="3Zc-qL-CCE" customClass="HelpMenuCell" customModule="Boxing_247" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="99.333332061767578" width="343" height="43"/>
+                                        <rect key="frame" x="16" y="93" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Zc-qL-CCE" id="WYW-D7-O5d">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
@@ -35,6 +36,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-82-6AG">
                                                     <rect key="frame" x="16" y="9.6666666666666661" width="25" height="23.666666666666679"/>
+                                                    <color key="tintColor" name="pomegranate247"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="Tlf-PR-zF4"/>
                                                         <constraint firstAttribute="width" constant="25" id="yZj-3y-lcF"/>
@@ -55,7 +57,7 @@
                                                 <constraint firstItem="1DD-qD-xcr" firstAttribute="top" secondItem="WYW-D7-O5d" secondAttribute="topMargin" id="xWx-0h-3NQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="base247"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="icon" destination="f5U-82-6AG" id="bOM-m6-o4e"/>
@@ -101,9 +103,9 @@
                                     <action selector="segmentedControlTapped:" destination="1ST-Jg-Yj0" eventType="valueChanged" id="xMX-kq-jPF"/>
                                 </connections>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eOg-TI-yLx">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eOg-TI-yLx">
                                 <rect key="frame" x="0.0" y="124" width="375" height="605"/>
-                                <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="grey247"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="MML-q4-j0w">
                                     <size key="itemSize" width="372" height="225"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -133,14 +135,15 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8S-Qf-Q8r">
                                 <rect key="frame" x="142" y="691" width="91" height="30"/>
-                                <state key="normal" title="More News"/>
+                                <state key="normal" title="More News">
+                                    <color key="titleColor" name="pomegranate247"/>
+                                </state>
                                 <connections>
                                     <action selector="moreButtonPressed:" destination="1ST-Jg-Yj0" eventType="touchUpInside" id="3Mr-Lg-I5E"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hXh-aj-UiY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NdO-AU-OKs" firstAttribute="leading" secondItem="hXh-aj-UiY" secondAttribute="leading" constant="6" id="1Hz-Tz-mlI"/>
                             <constraint firstItem="hXh-aj-UiY" firstAttribute="trailing" secondItem="D8S-Qf-Q8r" secondAttribute="trailing" constant="142" id="5iW-KL-q4v"/>
@@ -156,6 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="News" largeTitleDisplayMode="always" id="cjf-qc-pTP">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" style="plain" id="qE3-hN-VPq">
+                            <color key="tintColor" name="pomegranate247"/>
                             <connections>
                                 <segue destination="oY4-sR-CFS" kind="presentation" identifier="showHelpMenu" id="NMb-h9-A6W"/>
                             </connections>
@@ -180,7 +184,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewsFeedDetail" id="ufl-ko-qw7" customClass="NewsFeedDetailVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lmh-76-fuP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZf-1s-5bO">
@@ -270,7 +274,7 @@
                                         <color key="tintColor" name="pomegranate247"/>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOFSJDF SOJSDOF FJODSFJSDOFSDJFOSD IJO FJIDOFJSDOFSDJOFI DFSJOFOSFJ SAOFDP FSDOFSOD JF" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-VB-QeH">
-                                        <rect key="frame" x="0.0" y="310.33333333333331" width="375" height="61"/>
+                                        <rect key="frame" x="16" y="310.33333333333331" width="343" height="81.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -283,7 +287,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="dark247"/>
+                                <color key="backgroundColor" name="base247"/>
                                 <constraints>
                                     <constraint firstItem="Zrl-pP-iHy" firstAttribute="top" secondItem="HZf-1s-5bO" secondAttribute="top" constant="280" id="0E4-Yx-eAB"/>
                                     <constraint firstItem="Zrl-pP-iHy" firstAttribute="top" secondItem="kMt-aX-LUo" secondAttribute="bottom" constant="8" id="6dj-1Y-cEE"/>
@@ -297,11 +301,10 @@
                                     <constraint firstItem="WMg-xa-wZf" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" constant="16" id="IBx-v8-Cff"/>
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="top" secondItem="RN1-Rr-iJj" secondAttribute="bottom" constant="5.3300000000000001" id="LYT-zI-LRj"/>
                                     <constraint firstItem="kMt-aX-LUo" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" id="PAN-Ss-8qv"/>
-                                    <constraint firstItem="mPG-VB-QeH" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" id="dN4-mR-Tqp"/>
+                                    <constraint firstItem="mPG-VB-QeH" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" constant="16" id="dN4-mR-Tqp"/>
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="top" secondItem="WMg-xa-wZf" secondAttribute="bottom" constant="12.33" id="fm0-ZF-PAn"/>
-                                    <constraint firstAttribute="trailing" secondItem="mPG-VB-QeH" secondAttribute="trailing" id="kgm-TN-Q63"/>
+                                    <constraint firstAttribute="trailing" secondItem="mPG-VB-QeH" secondAttribute="trailing" constant="16" id="kgm-TN-Q63"/>
                                     <constraint firstAttribute="bottom" secondItem="mPG-VB-QeH" secondAttribute="bottom" constant="16" id="qNm-fT-7H2"/>
-                                    <constraint firstItem="mPG-VB-QeH" firstAttribute="width" secondItem="Zrl-pP-iHy" secondAttribute="width" id="sxP-sM-XZn"/>
                                     <constraint firstAttribute="trailing" secondItem="Zrl-pP-iHy" secondAttribute="trailing" id="u3E-o3-fiL"/>
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="top" secondItem="Zrl-pP-iHy" secondAttribute="bottom" constant="10" id="xxr-dd-uLU"/>
                                     <constraint firstItem="RN1-Rr-iJj" firstAttribute="top" secondItem="kMt-aX-LUo" secondAttribute="bottom" constant="8" id="zOi-qg-59F"/>
@@ -367,7 +370,7 @@
             <objects>
                 <viewController id="f5D-5P-iH8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iwH-tI-UKb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy1-dV-DHi">
@@ -392,7 +395,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YmZ-yK-Wu0"/>
-                        <color key="backgroundColor" name="dark247"/>
+                        <color key="backgroundColor" name="base247"/>
                         <constraints>
                             <constraint firstItem="Dy1-dV-DHi" firstAttribute="leading" secondItem="YmZ-yK-Wu0" secondAttribute="leading" constant="16" id="7Zo-ad-Pat"/>
                             <constraint firstItem="qOZ-1B-v5u" firstAttribute="top" secondItem="Ch9-ar-BrB" secondAttribute="bottom" constant="16" id="InP-Yg-69r"/>
@@ -419,7 +422,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uUO-uh-3QE">
                                 <rect key="frame" x="6" y="88" width="363" height="32"/>
-                                <color key="backgroundColor" name="dark247"/>
+                                <color key="backgroundColor" name="base247"/>
                                 <segments>
                                     <segment title="By Weight Division"/>
                                     <segment title="By Federation"/>
@@ -438,7 +441,7 @@
                                         <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="-20" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BLANK" rowHeight="11" id="075-oD-jto">
-                                                <rect key="frame" x="0.0" y="28" width="335" height="11"/>
+                                                <rect key="frame" x="0.0" y="24.333333969116211" width="335" height="11"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="075-oD-jto" id="BaQ-kU-pkN">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="11"/>
@@ -447,7 +450,7 @@
                                                 <color key="backgroundColor" name="grey247"/>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RANKING_CELL" rowHeight="208" id="g5K-zu-mNS" customClass="RankingsCell" customModule="Boxing_247">
-                                                <rect key="frame" x="0.0" y="39" width="335" height="208"/>
+                                                <rect key="frame" x="0.0" y="35.333333969116211" width="335" height="208"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g5K-zu-mNS" id="0je-Bd-n9S">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="208"/>
@@ -491,7 +494,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Fx-5V-w1C"/>
-                        <color key="backgroundColor" name="dark247"/>
+                        <color key="backgroundColor" name="base247"/>
                         <constraints>
                             <constraint firstItem="cHN-fD-4ND" firstAttribute="top" secondItem="uUO-uh-3QE" secondAttribute="bottom" constant="5" id="FfE-IL-hgQ"/>
                             <constraint firstItem="8Fx-5V-w1C" firstAttribute="bottom" secondItem="cHN-fD-4ND" secondAttribute="bottom" id="T3c-0l-M6G"/>
@@ -529,6 +532,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="pomegranate247"/>
                     </tabBar>
                     <connections>
                         <segue destination="yEz-EG-iWH" kind="relationship" relationship="viewControllers" id="LVV-HS-42H"/>
@@ -579,9 +583,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OcY-sz-ttD"/>
+        <segue reference="NMb-h9-A6W"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" name="pomegranate247"/>
     <resources>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
         <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
@@ -597,6 +600,9 @@
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="alizarin247">
             <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="base247">
+            <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black247">
             <color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

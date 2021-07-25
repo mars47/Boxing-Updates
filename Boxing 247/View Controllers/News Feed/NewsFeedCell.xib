@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -69,6 +69,7 @@
                                             <constraint firstAttribute="width" constant="25" id="1X6-Zf-7QV"/>
                                             <constraint firstAttribute="height" constant="25" id="tQJ-Zy-KOe"/>
                                         </constraints>
+                                        <color key="tintColor" name="pomegranate247"/>
                                         <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKZ-4I-8yQ" userLabel="Bookmark">
@@ -77,6 +78,7 @@
                                             <constraint firstAttribute="width" constant="25" id="TSo-QM-4JB"/>
                                             <constraint firstAttribute="height" constant="25" id="lhn-OC-axu"/>
                                         </constraints>
+                                        <color key="tintColor" name="pomegranate247"/>
                                         <state key="normal" image="star" catalog="system"/>
                                         <state key="selected" image="star.fill" catalog="system"/>
                                         <connections>
@@ -89,6 +91,7 @@
                                             <constraint firstAttribute="width" constant="24" id="LKM-n3-jbK"/>
                                             <constraint firstAttribute="height" constant="24" id="cv3-g7-lwO"/>
                                         </constraints>
+                                        <color key="tintColor" name="pomegranate247"/>
                                         <state key="normal" image="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system"/>
                                     </button>
                                 </subviews>
@@ -139,6 +142,9 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="alizarin247">
             <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pomegranate247">
+            <color red="0.6470588235294118" green="0.19215686274509805" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

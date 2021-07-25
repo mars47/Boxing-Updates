@@ -10,6 +10,7 @@ import MessageUI
 
 class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
+    var window = UIApplication.shared.keyWindow
     @IBOutlet weak var tableView: UITableView!
     let viewModel = HelpMenuVM()
     
@@ -18,7 +19,7 @@ class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = dark247
+        view.backgroundColor = base247
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = test247
@@ -75,27 +76,29 @@ class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     // MARK: - Mail Compose view delegate
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult,error: Error?) {
+        
+        window?.overrideUserInterfaceStyle = .dark
         controller.dismiss(animated: true)
     }
 }
 
 private extension HelpMenuVC {
-    
+        
     func showEmailController() {
         
+        window?.overrideUserInterfaceStyle = .light
+
         if MFMailComposeViewController.canSendMail() {
             let emailController = MFMailComposeViewController()
-            
-            emailController.view.backgroundColor = dark247
+
             emailController.mailComposeDelegate = self
             emailController.setToRecipients(["help@boxingupdates.co.uk"])
             emailController.setMessageBody("<p><br><br><br><br><br><br> iOS version 14.6 </p>", isHTML: true)
             emailController.setSubject("User Feedback ios v.1.0.0 Ticket Number \(Int.random(in: 1..<10000000))")
             present(emailController, animated: true)
-            emailController.view.backgroundColor = dark247
-
             
         } else {
+            print("This device is not configured to send email. Please set up an email account.")
             // show failure alert
         }
     }

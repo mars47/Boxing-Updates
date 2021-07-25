@@ -31,7 +31,7 @@ extension UIView {
             shadowBounds.layer.borderColor = UIColor.clear.cgColor
             shadowBounds.layer.masksToBounds = true
 
-            layer.shadowColor = dark247.cgColor
+            layer.shadowColor = base247?.cgColor
             layer.shadowOffset = CGSize(width: 0, height: 0) // 0, 2
             layer.shadowRadius = 6 // 6
             layer.shadowOpacity = 1 // 1

@@ -50,7 +50,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         layout.minimumLineSpacing = 18.5
         moreNewsButton.isHidden = true
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
-        view.backgroundColor = dark247
+        view.backgroundColor = base247
         navigationController?.navigationBar.isTranslucent = true
     }
 
