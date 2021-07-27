@@ -126,8 +126,9 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        let width = (UIScreen.main.bounds.size.width - 40) // 40 = inset
-        return segmentedControl.selectedSegmentIndex == 0 ? width / 2.48 : width / 2
+        let insets: CGFloat = 20 * 2
+        let width = (UIScreen.main.bounds.size.width - insets)
+        return segmentedControl.selectedSegmentIndex == 0 ? (width / 2.48) : (width / 2)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
