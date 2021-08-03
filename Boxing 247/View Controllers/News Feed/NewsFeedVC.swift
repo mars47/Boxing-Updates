@@ -20,7 +20,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
-   
     enum Segment: Int {
         case latest
         case bookmarked
@@ -30,36 +29,41 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     // MARK: - Configuration
-
+   
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        configureView()
+        configureCollectionView()
         configureCollectionViewReload()
         configurePostDownloadCollectionViewScroll()
         viewModel.downloadNews(for:selectedSegment, completion: nil)
     }
     
-    fileprivate func configureView() {
+    override func viewDidAppear(_ animated: Bool) {
+        //check internet connection
+        presentNoInternetView()
+    }
+    
+    fileprivate func configureCollectionView() {
         
         collectionView.register(UINib.init(nibName: "NewsFeedCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.refreshControl = refreshControl
-
         layout.minimumLineSpacing = 18.5
-        moreNewsButton.isHidden = true
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
-        view.backgroundColor = base247
-        navigationController?.navigationBar.isTranslucent = true
     }
-
+    
     fileprivate func configureCollectionViewReload() {
         
         viewModel.reloadCollectionView = { [self] in
             DispatchQueue.main.async {
                 collectionView?.reloadData()
             }
+        }
+        
+        viewModel.presentNoInternetView = { [self] in
+            presentNoInternetView()
         }
     }
     
@@ -170,6 +174,36 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         self.present(alert, animated: true, completion: nil)        
     }
     
+     func presentNoInternetView() {
+        
+        let yPosition = collectionView.frame.minY - CGFloat(50)
+        let noInternetView = UIView().noInternetView(yPosition: yPosition)
+        view.addSubview(noInternetView)
+        view.bringSubviewToFront(self.segmentedControl)
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: [],
+                          
+                          animations: {
+                            noInternetView.center.y += 60
+                          },
+                          
+                          completion: { _ in
+                            
+                            UIView.animate(withDuration: 0.2, delay: 3, options: [],
+                            
+                                animations: {
+                                noInternetView.center.y -= 60
+                                },
+                                
+                                completion: { _ in
+                                
+                                noInternetView.removeFromSuperview()
+                                self.view.sendSubviewToBack(self.segmentedControl)
+                            })
+                          }
+        )
+    }
+    
     // MARK: - Collection view datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -186,15 +220,16 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         cell.presentUIAlert = { [self] title, message, completion in
             presentUIAlert(title: title, message: message, completion: completion)
         }
+        viewModel.itemsScolledCount += 1
+        viewModel.itemsScolledCount == 20 ? viewModel.handleItemsScrolled() : Void()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let deviceSize = UIScreen.main.bounds.size
         let cellInsets = 2 * 20 as CGFloat
+        let cellWidth = (deviceWidth - cellInsets)
         let labelInsets = 16 * 2 as CGFloat
-        let cellWidth = (deviceSize.width - cellInsets)
         
         /** Calculates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib */
 

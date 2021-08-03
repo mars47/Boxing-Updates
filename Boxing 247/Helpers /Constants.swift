@@ -10,6 +10,7 @@ import UIKit
 
 //let charcoal  = UIColor(red:0.06, green:0.06, blue:0.06, alpha:1.0)
 let base247 = UIColor(named: "base247")
+let pomegranate247 = UIColor(named: "pomegranate247")
 
     //UIColor(red:0.13, green:0.13, blue:0.13, alpha:1.0)
 let grey247 = UIColor(red:0.25, green:0.25, blue:0.25, alpha:1.0)
@@ -20,3 +21,4 @@ let red247 = UIColor(red:0.82, green:0.05, blue:0.00, alpha:1.0) // D00E00
 let test247 = UIColor(red:0.15, green:0.15, blue:0.15, alpha:1.0)
 
 let fetchLimit = 10
+let deviceWidth = UIScreen.main.bounds.size.width

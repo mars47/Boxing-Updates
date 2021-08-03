@@ -16,20 +16,26 @@ class NetworkManager: NSObject {
     func downloadNewsArticles(completion: @escaping (Bool) -> Void) {
         
         var successfulSave = 0
+        var didntSave = 0
     
-        for (index, url) in urls.enumerated() {
-            let islastIteration = index == self.urls.endIndex - 1
+        for url in urls {
             
             Alamofire.request(url!).responseJSON { response in
                 
                 switch response.result {
                 
                 case .success(let value):
-                    
                     SaveUtility.saveNewsArticles(withData: JSON(value)) { (isSuccess) in
                         
-                        if isSuccess { successfulSave += 1 }
-                        if islastIteration {
+                        if isSuccess {
+                            successfulSave += 1
+                        } else {
+                            didntSave += 1
+                        }
+                        
+                        let attemptedSaveCount = successfulSave + didntSave
+                        
+                        if attemptedSaveCount == self.urls.count {
                             successfulSave == self.urls.count ? completion(true) : completion(false)
                         }
                     }
@@ -37,8 +43,11 @@ class NetworkManager: NSObject {
                 case .failure(let error):
                     
                     print(error)
+                    didntSave += 1
                     
-                    if islastIteration {
+                    let attemptedSaveCount = successfulSave + didntSave
+
+                    if attemptedSaveCount == self.urls.count {
                         completion(false)
                     }
                 }
@@ -49,44 +58,19 @@ class NetworkManager: NSObject {
     func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage) -> ()) {
         
         Alamofire.request(url).responseData { (response) in
+            
             if response.error == nil {
-                print(response.result)
                 if let data = response.data {
                    let image = UIImage(data: data)
                     completion(image!)
                 }
             } else {
+                print(response.result)
                 let image = UIImage(named: "ring.jpg")!
                 completion(image)
             }
         }
-    
     }
-    
-//    func downloadNews(completion: @escaping ([Article]) -> ()) {
-//        
-//        articles.removeAll()
-//        guard let newsfeedURL = URL(string: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
-//            else { completion([Article]()); return }
-//        var json : JSON?
-//        
-//        Alamofire.request(newsfeedURL).responseJSON { response in
-//            
-//            switch response.result {
-//            case .success(let value):
-//                json = JSON(value)
-//
-//                for dict in json!["items"].arrayValue {
-//                    let article = Article(initWith: dict)
-//                    self.articles.append(article)
-//                }
-//                completion(self.articles)
-//            
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
     
 }
 

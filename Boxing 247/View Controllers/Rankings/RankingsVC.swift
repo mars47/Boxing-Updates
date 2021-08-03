@@ -103,7 +103,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         DispatchQueue.main.async {
             
-            header.configureShadowAndRoundCorners(shadowBounds: header.subviews[2])
+            header.configureShadowAndRoundCorners(shadowBounds: header.subviews[2], cornerRadius: nil)
             header is FederationHeader ? (header as! FederationHeader).roundClearPanelCorners() : Void()
         }
 

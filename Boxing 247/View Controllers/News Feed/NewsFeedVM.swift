@@ -11,9 +11,10 @@ import UIKit
 class NewsFeedVM: NSObject {
     
     // MARK: - Properties
-    
     var reloadCollectionView : ( () -> Void)?
     var scrollCollectionView : ( () -> Void)?
+    var presentNoInternetView : ( () -> Void)?
+
 
     let url = URL(string: "https://bit.ly/2tZmM0E")
 
@@ -28,6 +29,9 @@ class NewsFeedVM: NSObject {
     var allItemsFetched : Bool {
         return datasource.count == newsArticles.count
     }
+    
+    var itemsScolledCount = 0
+    let isInternetConnection = false
 
     // MARK: - Initialisation
 
@@ -104,24 +108,38 @@ class NewsFeedVM: NSObject {
             datasource =
                 bookmarkedNewsArticles
         }
+    }
+    
+    func handleItemsScrolled() {
         
+        if !isInternetConnection {
+            presentNoInternetView?()
+        }
+        
+        itemsScolledCount = 0 
     }
     
     // MARK: - Private Methods
 
     private func downloadImages(for newsArticles: [NewsArticle], completion: @escaping () -> Void) {
         
-        for (index, article) in newsArticles.enumerated() {
+        var setImageCount = 0
+        
+        for article in newsArticles {
             
-            if article.thumbnail != nil { continue }
+            if article.thumbnail != nil {
+                
+                setImageCount += 1
+                continue
+            }
             
             guard
                 let url = article.thumbnailUrl,
                 let thumbnailUrl = URL(string: url)
             else {
                 article.setImage(image: UIImage(named:"ring.jpg")!)
-                
-                if index == newsArticles.endIndex - 1 {
+                setImageCount += 1
+                if setImageCount == newsArticles.count {
                     completion()
                 }
                 continue
@@ -130,8 +148,9 @@ class NewsFeedVM: NSObject {
             downloadThumbnailImage(url: thumbnailUrl) { (image) in
                 
                 article.setImage(image: image)
+                setImageCount += 1
                 
-                if index == newsArticles.endIndex - 1 {
+                if setImageCount == newsArticles.count {
                     completion()
                 }
             }

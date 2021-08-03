@@ -24,9 +24,9 @@ extension UIView {
         }
     }
     
-    func configureShadowAndRoundCorners(shadowBounds: UIView) {
+    func configureShadowAndRoundCorners(shadowBounds: UIView, cornerRadius: CGFloat?) {
         
-            shadowBounds.layer.cornerRadius = 12
+            shadowBounds.layer.cornerRadius = cornerRadius ?? 12
             shadowBounds.layer.borderWidth = 1.0
             shadowBounds.layer.borderColor = UIColor.clear.cgColor
             shadowBounds.layer.masksToBounds = true

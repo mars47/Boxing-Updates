@@ -42,7 +42,7 @@ class NewsFeedCell: UICollectionViewCell {
         //self.author.text = "Published by \(article.author)"
         //self.content.text = article.description;
         
-        configureShadowAndRoundCorners(shadowBounds: contentView)
+        configureShadowAndRoundCorners(shadowBounds: contentView, cornerRadius: nil)
     }
     
     @IBAction func bookmarkNewsArticle(_ sender: Any) {

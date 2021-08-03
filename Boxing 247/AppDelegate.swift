@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //deleteOldNewsArticles()
         //window?.tintColor = UIColor(named: "pomegranate247")
-        //window?.backgroundColor = base247
+        window?.backgroundColor = base247
     
         
         let attributes = [NSAttributedString.Key.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedString.Key.foregroundColor: white247]

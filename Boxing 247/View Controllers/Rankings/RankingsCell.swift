@@ -35,7 +35,7 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     
     override func layoutSubviews() {
         
-        configureShadowAndRoundCorners(shadowBounds: subviews[0])
+        configureShadowAndRoundCorners(shadowBounds: subviews[0], cornerRadius: nil)
         super.layoutSubviews()
     }
     
