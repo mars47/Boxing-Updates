@@ -17,7 +17,11 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var moreNewsButton: UIButton!
+    var noInternetView : UIView!
     
+    private var enterForegroundObserver: NSObjectProtocol?
+    private var enterBackgroundObserver: NSObjectProtocol?
+
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
     enum Segment: Int {
@@ -28,20 +32,34 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return Segment(rawValue: segmentedControl.selectedSegmentIndex)!
     }
     
+    var isNoInternetViewBeingPresented = false
+    
     // MARK: - Configuration
    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         configureCollectionView()
-        configureCollectionViewReload()
-        configurePostDownloadCollectionViewScroll()
+        configureViewModelCallBacks()
+        configuredNotificationObservers()
         viewModel.downloadNews(for:selectedSegment, completion: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        //check internet connection
-        presentNoInternetView()
+        override func viewDidAppear(_ animated: Bool) {
+        
+       // if !viewModel.isInternetConnectionEnabled {
+            presentNoInternetView()
+       // }
+    }
+    
+    deinit {
+        if let enterBackgroundObserver = enterBackgroundObserver {
+            NotificationCenter.default.removeObserver(enterBackgroundObserver)
+        }
+        
+        if let enterForegroundObserver = enterForegroundObserver {
+            NotificationCenter.default.removeObserver(enterForegroundObserver)
+        }
     }
     
     fileprivate func configureCollectionView() {
@@ -54,11 +72,20 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
     }
     
-    fileprivate func configureCollectionViewReload() {
+    fileprivate func configureViewModelCallBacks() {
         
         viewModel.reloadCollectionView = { [self] in
             DispatchQueue.main.async {
                 collectionView?.reloadData()
+            }
+        }
+                
+        viewModel.scrollCollectionView = { [self] in
+            DispatchQueue.main.async {
+                let offset = viewModel.collectionViewScrollOffset
+                let lastItem = collectionView(collectionView, numberOfItemsInSection: 0) - 1
+                let indexpath = IndexPath(row: lastItem - offset, section: 0)
+                collectionView.scrollToItem(at: indexpath, at: .centeredVertically, animated: true)
             }
         }
         
@@ -67,18 +94,24 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
-    fileprivate func configurePostDownloadCollectionViewScroll() {
+    fileprivate func configuredNotificationObservers() {
         
-        viewModel.scrollCollectionView = { [self] in
+        enterForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
             
-            DispatchQueue.main.async {
-                
-                let offset = viewModel.collectionViewScrollOffset
-                let lastItem = collectionView(collectionView, numberOfItemsInSection: 0) - 1
-                let indexpath = IndexPath(row: lastItem - offset, section: 0)
-                collectionView.scrollToItem(at: indexpath, at: .centeredVertically, animated: true)
+            if (view.subviews[1] is UICollectionView) {
+                view.insertSubview( UIView(), at: 1)
+            }
+            
+            if viewModel.isInternetConnectionEnabled {
+                presentNoInternetView()
             }
         }
+        
+        enterBackgroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [unowned self] notification in
+            
+            noInternetView?.removeFromSuperview()
+        }
+
     }
     
     // MARK: - Events
@@ -174,31 +207,37 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         self.present(alert, animated: true, completion: nil)        
     }
     
-     func presentNoInternetView() {
+    func presentNoInternetView() {
         
+        if isNoInternetViewBeingPresented {
+            return
+        }
+
+        isNoInternetViewBeingPresented = true
         let yPosition = collectionView.frame.minY - CGFloat(50)
-        let noInternetView = UIView().noInternetView(yPosition: yPosition)
+        noInternetView = UIView().noInternetView(yPosition: yPosition)
         view.addSubview(noInternetView)
         view.bringSubviewToFront(self.segmentedControl)
-        
         UIView.animate(withDuration: 0.2, delay: 0, options: [],
                           
-                          animations: {
-                            noInternetView.center.y += 60
+                       animations: { [self] in
+                            noInternetView.center.y += 55
                           },
                           
                           completion: { _ in
                             
                             UIView.animate(withDuration: 0.2, delay: 3, options: [],
                             
-                                animations: {
-                                noInternetView.center.y -= 60
+                                animations: { [self] in
+                                noInternetView.center.y -= 55
                                 },
                                 
-                                completion: { _ in
+                                completion: { [self] _ in
                                 
                                 noInternetView.removeFromSuperview()
-                                self.view.sendSubviewToBack(self.segmentedControl)
+                                view.sendSubviewToBack(segmentedControl)
+                                view.bringSubviewToFront(moreNewsButton)
+                                isNoInternetViewBeingPresented = false
                             })
                           }
         )

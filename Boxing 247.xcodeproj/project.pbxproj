@@ -38,6 +38,7 @@
 		07898B5F266D772D003BAD23 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B5C266D772D003BAD23 /* CoreDataManager.swift */; };
 		07898B66266FF380003BAD23 /* NewsArticle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B64266FF380003BAD23 /* NewsArticle+CoreDataClass.swift */; };
 		07898B67266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B65266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift */; };
+		0797BE5626B933C4000356B3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE5526B933C4000356B3 /* Reachability.swift */; };
 		07B7045423B995780083D02A /* FederationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B7045223B995780083D02A /* FederationHeader.swift */; };
 		07B7045523B995780083D02A /* FederationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B7045323B995780083D02A /* FederationHeader.xib */; };
 		07BBB07926B43B58009341F4 /* UIView+CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */; };
@@ -109,6 +110,7 @@
 		07898B5C266D772D003BAD23 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		07898B64266FF380003BAD23 /* NewsArticle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsArticle+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		07898B65266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsArticle+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0797BE5526B933C4000356B3 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		07B7045223B995780083D02A /* FederationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederationHeader.swift; sourceTree = "<group>"; };
 		07B7045323B995780083D02A /* FederationHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FederationHeader.xib; sourceTree = "<group>"; };
 		07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomViews.swift"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				071C377520EF1AB5002CA348 /* NetworkManager.swift */,
+				0797BE5526B933C4000356B3 /* Reachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				07143C0C23C7F9A4007C525D /* RankingsCell.swift in Sources */,
 				072B89A12259ED8700973942 /* HelpMenuVM.swift in Sources */,
 				077CE82F20E8CC5C00462AED /* HelpMenuVC.swift in Sources */,
+				0797BE5626B933C4000356B3 /* Reachability.swift in Sources */,
 				07143C0923C7F98C007C525D /* WeightDivisionHeader.swift in Sources */,
 				074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* NetworkManager.swift in Sources */,

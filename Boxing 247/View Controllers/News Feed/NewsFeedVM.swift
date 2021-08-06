@@ -31,7 +31,9 @@ class NewsFeedVM: NSObject {
     }
     
     var itemsScolledCount = 0
-    let isInternetConnection = false
+    var isInternetConnectionEnabled : Bool {
+        ConnectionManager.shared.hasConnectivity()
+    }
 
     // MARK: - Initialisation
 
@@ -112,9 +114,9 @@ class NewsFeedVM: NSObject {
     
     func handleItemsScrolled() {
         
-        if !isInternetConnection {
+       // if !isInternetConnectionEnabled {
             presentNoInternetView?()
-        }
+       // }
         
         itemsScolledCount = 0 
     }
