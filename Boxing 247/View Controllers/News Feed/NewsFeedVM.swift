@@ -31,6 +31,7 @@ class NewsFeedVM: NSObject {
     }
     
     var itemsScolledCount = 0
+    var isDownloadingData = false 
     var isInternetConnectionEnabled : Bool {
         ConnectionManager.shared.hasConnectivity()
     }
@@ -46,6 +47,7 @@ class NewsFeedVM: NSObject {
     func downloadNews(for tab: NewsFeedVC.Segment, completion: (() -> Void)?) {
         
         #warning("Error handling needed") // "there was a problem fetching the latest news" 
+        isDownloadingData = true
         networkManager.downloadNewsArticles { [self] _ in
             
             newsArticles.removeAll()
@@ -61,6 +63,7 @@ class NewsFeedVM: NSObject {
             }
             
             updateDatasource(for: tab, itemsDisplayedCount: 0)
+            isDownloadingData = false 
             reloadCollectionView?()
             completion?()
         }
@@ -119,6 +122,18 @@ class NewsFeedVM: NSObject {
        // }
         
         itemsScolledCount = 0 
+    }
+    
+    func getDatasetData(for selectedSegment: NewsFeedVC.Segment) -> (String, String) {
+        
+        switch selectedSegment {
+        
+        case .bookmarked:
+            return ("You have no saved items", "book.circle.fill")
+        
+        case .latest:
+            return ("Unfortunately there has been a problem. Unable to find any news", "exclamationmark.bubble.fill")
+        }
     }
     
     // MARK: - Private Methods

@@ -18,6 +18,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var moreNewsButton: UIButton!
     var noInternetView : UIView!
+    let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
+
     
     private var enterForegroundObserver: NSObjectProtocol?
     private var enterBackgroundObserver: NSObjectProtocol?
@@ -47,9 +49,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
         override func viewDidAppear(_ animated: Bool) {
         
-       // if !viewModel.isInternetConnectionEnabled {
+        //if !viewModel.isInternetConnectionEnabled {
             presentNoInternetView()
-       // }
+        //}
     }
     
     deinit {
@@ -102,9 +104,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 view.insertSubview( UIView(), at: 1)
             }
             
-            if viewModel.isInternetConnectionEnabled {
+            //if viewModel.isInternetConnectionEnabled {
                 presentNoInternetView()
-            }
+            //}
         }
         
         enterBackgroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [unowned self] notification in
@@ -236,7 +238,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                                 
                                 noInternetView.removeFromSuperview()
                                 view.sendSubviewToBack(segmentedControl)
-                                view.bringSubviewToFront(moreNewsButton)
                                 isNoInternetViewBeingPresented = false
                             })
                           }
@@ -246,6 +247,11 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     // MARK: - Collection view datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        let datasetData = viewModel.getDatasetData(for: selectedSegment)
+        emptyDataSetView.configure(with: datasetData.0, image: UIImage(systemName: datasetData.1)!)
+        
+        collectionView.backgroundView = (!viewModel.isDownloadingData && viewModel.datasource.count == 0) ? emptyDataSetView : nil
         
         return viewModel.datasource.count
     }
