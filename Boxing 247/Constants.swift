@@ -22,3 +22,5 @@ let test247 = UIColor(red:0.15, green:0.15, blue:0.15, alpha:1.0)
 
 let fetchLimit = 10
 let deviceWidth = UIScreen.main.bounds.size.width
+let deviceHeight = UIScreen.main.bounds.size.height
+

@@ -18,9 +18,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var moreNewsButton: UIButton!
     var noInternetView : UIView!
+    let loadingView: LoadingView = UIView.fromNib()
     let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
 
-    
     private var enterForegroundObserver: NSObjectProtocol?
     private var enterBackgroundObserver: NSObjectProtocol?
 
@@ -37,13 +37,14 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var isNoInternetViewBeingPresented = false
     
     // MARK: - Configuration
-   
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         configureCollectionView()
         configureViewModelCallBacks()
         configuredNotificationObservers()
+        configureLoadingView()
         viewModel.downloadNews(for:selectedSegment, completion: nil)
     }
     
@@ -78,6 +79,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         viewModel.reloadCollectionView = { [self] in
             DispatchQueue.main.async {
+                
+                loadingView.isHidden = true
                 collectionView?.reloadData()
             }
         }
@@ -100,10 +103,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         enterForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
             
-            if (view.subviews[1] is UICollectionView) {
-                view.insertSubview( UIView(), at: 1)
-            }
-            
             //if viewModel.isInternetConnectionEnabled {
                 presentNoInternetView()
             //}
@@ -114,6 +113,12 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             noInternetView?.removeFromSuperview()
         }
 
+    }
+    
+    fileprivate func configureLoadingView() {
+        
+        loadingView.configureView()
+        view.addSubview(loadingView)
     }
     
     // MARK: - Events
@@ -214,33 +219,32 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         if isNoInternetViewBeingPresented {
             return
         }
-
+        
         isNoInternetViewBeingPresented = true
         let yPosition = collectionView.frame.minY - CGFloat(50)
         noInternetView = UIView().noInternetView(yPosition: yPosition)
-        view.addSubview(noInternetView)
-        view.bringSubviewToFront(self.segmentedControl)
+        view.insertSubview(noInternetView, belowSubview: segmentedControl)
+        
         UIView.animate(withDuration: 0.2, delay: 0, options: [],
-                          
+                       
                        animations: { [self] in
-                            noInternetView.center.y += 55
-                          },
-                          
-                          completion: { _ in
-                            
-                            UIView.animate(withDuration: 0.2, delay: 3, options: [],
-                            
-                                animations: { [self] in
-                                noInternetView.center.y -= 55
-                                },
-                                
-                                completion: { [self] _ in
-                                
-                                noInternetView.removeFromSuperview()
-                                view.sendSubviewToBack(segmentedControl)
-                                isNoInternetViewBeingPresented = false
-                            })
-                          }
+                        noInternetView.center.y += 55
+                       },
+                       
+                       completion: { _ in
+                        
+                        UIView.animate(withDuration: 0.2, delay: 3, options: [],
+                                       
+                                       animations: { [self] in
+                                        noInternetView.center.y -= 55
+                                       },
+                                       
+                                       completion: { [self] _ in
+                                        
+                                        noInternetView.removeFromSuperview()
+                                        isNoInternetViewBeingPresented = false
+                                       })
+                       }
         )
     }
     
@@ -289,17 +293,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     // MARK: Collection view delegate
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-            
-        let islastCellDisplayed = (indexPath.row == viewModel.datasource.count - 1) && (selectedSegment == .latest)
-        
-        moreNewsButton.isHidden = islastCellDisplayed ? false : true
-        
-        if islastCellDisplayed && viewModel.allItemsFetched {
-            moreNewsButton.isHidden = true
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //for a in viewModel.newsArticles {print("\(a.pubDate)  \(a.title)\n")}
@@ -309,5 +302,19 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         //guard let newsFeedDetailVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeedDetail") as? NewsFeedDetailVC else { return }
         //self.centerNavigationController?.pushViewController(newsFeedDetailVC, animated: true)
     }
+    
+    // MARK: Scroll view delegate
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let isEndOfScroll = (scrollView.bounds.maxY >= scrollView.contentSize.height - 100)
+        
+        moreNewsButton.isHidden = isEndOfScroll && selectedSegment == .latest ? false : true
+        
+        if isEndOfScroll && viewModel.allItemsFetched {
+            moreNewsButton.isHidden = true
+        }
+    }
+    
 }
 // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072

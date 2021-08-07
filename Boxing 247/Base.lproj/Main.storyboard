@@ -93,17 +93,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NdO-AU-OKs">
-                                <rect key="frame" x="6" y="0.0" width="363" height="32"/>
-                                <color key="backgroundColor" name="base247"/>
-                                <segments>
-                                    <segment title="Latest"/>
-                                    <segment title="Saved Items"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentedControlTapped:" destination="1ST-Jg-Yj0" eventType="valueChanged" id="xMX-kq-jPF"/>
-                                </connections>
-                            </segmentedControl>
+                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njo-LE-t1X">
+                                <rect key="frame" x="67" y="298" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eOg-TI-yLx">
                                 <rect key="frame" x="0.0" y="36" width="375" height="605"/>
                                 <color key="backgroundColor" name="grey247"/>
@@ -134,6 +127,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NdO-AU-OKs">
+                                <rect key="frame" x="6" y="0.0" width="363" height="32"/>
+                                <color key="backgroundColor" name="base247"/>
+                                <segments>
+                                    <segment title="Latest"/>
+                                    <segment title="Saved Items"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlTapped:" destination="1ST-Jg-Yj0" eventType="valueChanged" id="xMX-kq-jPF"/>
+                                </connections>
+                            </segmentedControl>
                             <button hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8S-Qf-Q8r">
                                 <rect key="frame" x="126.66666666666669" y="603" width="122" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>

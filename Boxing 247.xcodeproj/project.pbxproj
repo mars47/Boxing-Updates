@@ -40,6 +40,8 @@
 		0797BE5626B933C4000356B3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE5526B933C4000356B3 /* Reachability.swift */; };
 		0797BE5826BDB055000356B3 /* EmptyDatasetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0797BE5726BDB055000356B3 /* EmptyDatasetView.xib */; };
 		0797BE5A26BDB7C5000356B3 /* EmptyDatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE5926BDB7C5000356B3 /* EmptyDatasetView.swift */; };
+		0797BE5C26BDD38A000356B3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0797BE5B26BDD38A000356B3 /* LoadingView.xib */; };
+		0797BE5E26BDEA07000356B3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE5D26BDEA07000356B3 /* LoadingView.swift */; };
 		07B7045423B995780083D02A /* FederationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B7045223B995780083D02A /* FederationHeader.swift */; };
 		07B7045523B995780083D02A /* FederationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B7045323B995780083D02A /* FederationHeader.xib */; };
 		07BBB07926B43B58009341F4 /* UIView+CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */; };
@@ -113,6 +115,8 @@
 		0797BE5526B933C4000356B3 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0797BE5726BDB055000356B3 /* EmptyDatasetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDatasetView.xib; sourceTree = "<group>"; };
 		0797BE5926BDB7C5000356B3 /* EmptyDatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDatasetView.swift; sourceTree = "<group>"; };
+		0797BE5B26BDD38A000356B3 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		0797BE5D26BDEA07000356B3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		07B7045223B995780083D02A /* FederationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederationHeader.swift; sourceTree = "<group>"; };
 		07B7045323B995780083D02A /* FederationHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FederationHeader.xib; sourceTree = "<group>"; };
 		07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomViews.swift"; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				071B569125D5B9720010BA38 /* GradientView.swift */,
 				0797BE5726BDB055000356B3 /* EmptyDatasetView.xib */,
 				0797BE5926BDB7C5000356B3 /* EmptyDatasetView.swift */,
+				0797BE5B26BDD38A000356B3 /* LoadingView.xib */,
+				0797BE5D26BDEA07000356B3 /* LoadingView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				0744379624202AD300DF126C /* NewsFeedCell.xib in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
 				071B9F3C211A21D000EF6404 /* Logos.xcassets in Resources */,
+				0797BE5C26BDD38A000356B3 /* LoadingView.xib in Resources */,
 				0727824320E6FB520071D528 /* Main.storyboard in Resources */,
 				07F5D25923DDEBBD002AE1F2 /* CowbellView.xib in Resources */,
 			);
@@ -635,6 +642,7 @@
 				07DE4CEC210B883900730457 /* Constants.swift in Sources */,
 				07F65E8425D9065000D58087 /* UIImage+Blur.swift in Sources */,
 				07B7045423B995780083D02A /* FederationHeader.swift in Sources */,
+				0797BE5E26BDEA07000356B3 /* LoadingView.swift in Sources */,
 				07898B5E266D772D003BAD23 /* SaveUltility.swift in Sources */,
 				07898B66266FF380003BAD23 /* NewsArticle+CoreDataClass.swift in Sources */,
 			);
