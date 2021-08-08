@@ -21,6 +21,8 @@ class NewsFeedCell: UICollectionViewCell {
    
     var newsArticle : NewsArticle?
     var presentUIAlert : ( (String, String, ((Bool) -> Void )?) -> Void)?
+    var presentShareController :  (() -> Void )?
+    var presentImagePopoverController :  (() -> Void )?
     
     // MARK: - Configuration
     
