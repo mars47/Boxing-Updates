@@ -24,9 +24,10 @@ class NewsFeedVM: NSObject {
     
     var collectionViewScrollOffset = 0
     var snapshotForSegmentLatest : (Int, IndexPath?)?
+    private(set) var latestSegementContentHeight : CGFloat = 0
     
     let networkManager : NetworkManager
-    var allItemsFetched : Bool {
+    var isAllItemsFetched : Bool {
         return datasource.count == newsArticles.count
     }
     
@@ -133,6 +134,13 @@ class NewsFeedVM: NSObject {
         
         case .latest:
             return ("Unfortunately there has been a problem. Unable to find any news", "exclamationmark.bubble.fill")
+        }
+    }
+    
+    func storeContentsSizeHeight(_ contentsSizeHeight: CGFloat, selectedSegment: NewsFeedVC.Segment) {
+        
+        if selectedSegment == .bookmarked {
+            self.latestSegementContentHeight = contentsSizeHeight
         }
     }
     

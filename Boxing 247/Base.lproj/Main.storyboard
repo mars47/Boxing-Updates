@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="NavigationPanelVC" id="oY4-sR-CFS" customClass="HelpMenuVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHH-m1-iy6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hva-ze-4rs">
@@ -90,7 +90,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewsFeed" id="1ST-Jg-Yj0" userLabel="News" customClass="NewsFeedVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VD3-ur-NqY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njo-LE-t1X">
@@ -181,29 +181,58 @@
                         <outlet property="navigationBar" destination="cjf-qc-pTP" id="kuv-hQ-IOv"/>
                         <outlet property="navigationPanelButton" destination="qE3-hN-VPq" id="wPk-u2-qrD"/>
                         <outlet property="segmentedControl" destination="NdO-AU-OKs" id="duf-qr-B9u"/>
-                        <segue destination="ufl-ko-qw7" kind="presentation" identifier="showNewsDetail" id="8y1-ZZ-UVy"/>
+                        <segue destination="ufl-ko-qw7" kind="show" identifier="showNewsDetail" id="8y1-ZZ-UVy"/>
+                        <segue destination="ECn-T5-2d0" kind="presentation" identifier="NewsFeedShowPopOverVC" id="fos-2w-kJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mi9-2c-fOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2184.8000000000002" y="618.4729064039409"/>
         </scene>
+        <!--Image Pop OverVC-->
+        <scene sceneID="2Wd-Jf-pCZ">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="ECn-T5-2d0" customClass="ImagePopOverVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NXi-so-K2P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="QEq-1K-DVV">
+                                <rect key="frame" x="16" y="0.0" width="343" height="243"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gfD-zm-k2y"/>
+                        <constraints>
+                            <constraint firstItem="QEq-1K-DVV" firstAttribute="top" secondItem="gfD-zm-k2y" secondAttribute="top" id="qpK-9v-cwc"/>
+                            <constraint firstItem="gfD-zm-k2y" firstAttribute="trailing" secondItem="QEq-1K-DVV" secondAttribute="trailing" constant="16" id="umn-cr-FgX"/>
+                            <constraint firstItem="QEq-1K-DVV" firstAttribute="leading" secondItem="gfD-zm-k2y" secondAttribute="leading" constant="16" id="yq0-gK-Kfv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kno-3g-Zag"/>
+                    <connections>
+                        <outlet property="imageView" destination="QEq-1K-DVV" id="w5h-7j-Pwh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNX-ep-awC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2796" y="1324.8768472906404"/>
+        </scene>
         <!--News Feed DetailVC-->
         <scene sceneID="rM6-0a-gIV">
             <objects>
                 <viewController storyboardIdentifier="NewsFeedDetail" id="ufl-ko-qw7" customClass="NewsFeedDetailVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lmh-76-fuP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZf-1s-5bO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMt-aX-LUo">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="ns1-CR-ekv">
-                                                <rect key="frame" x="0.0" y="-44" width="375" height="316"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anthony Joshua Knocks out Tyson Fury" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-Ib-tHE">
                                                 <rect key="frame" x="16" y="17" width="343" height="64.666666666666671"/>
@@ -278,6 +307,11 @@
                                                     <constraint firstAttribute="height" constant="24" id="ke2-yI-sAR"/>
                                                 </constraints>
                                                 <state key="normal" image="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system"/>
+                                                <connections>
+                                                    <segue destination="ECn-T5-2d0" kind="popoverPresentation" identifier="NewsFeedDetailShowPopOverVC" popoverAnchorView="BKy-vM-A88" id="rmp-HX-OXb">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="tintColor" name="pomegranate247"/>
@@ -288,6 +322,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6p-N8-JGP">
+                                        <rect key="frame" x="104" y="587" width="167" height="38"/>
+                                        <color key="backgroundColor" name="grey247"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="167" id="1fo-1E-fyd"/>
+                                            <constraint firstAttribute="height" constant="38" id="izB-l8-YkL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="tintColor" name="pomegranate247"/>
+                                        <state key="normal" title="View Website" image="square.and.arrow.down.on.square.fill" catalog="system">
+                                            <color key="titleColor" name="white247"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-Op-PXE">
                                         <rect key="frame" x="186" y="379" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -310,6 +358,7 @@
                                     <constraint firstItem="WMg-xa-wZf" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" constant="16" id="IBx-v8-Cff"/>
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="top" secondItem="RN1-Rr-iJj" secondAttribute="bottom" constant="5.3300000000000001" id="LYT-zI-LRj"/>
                                     <constraint firstItem="kMt-aX-LUo" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" id="PAN-Ss-8qv"/>
+                                    <constraint firstItem="c6p-N8-JGP" firstAttribute="centerX" secondItem="HZf-1s-5bO" secondAttribute="centerX" id="ahr-U3-1Ko"/>
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" constant="16" id="dN4-mR-Tqp"/>
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="top" secondItem="WMg-xa-wZf" secondAttribute="bottom" constant="12.33" id="fm0-ZF-PAn"/>
                                     <constraint firstAttribute="trailing" secondItem="mPG-VB-QeH" secondAttribute="trailing" constant="16" id="kgm-TN-Q63"/>
@@ -327,38 +376,25 @@
                                     <outlet property="delegate" destination="ufl-ko-qw7" id="qWM-Ut-qzl"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6p-N8-JGP">
-                                <rect key="frame" x="117" y="700" width="142" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="tintColor" name="pomegranate247"/>
-                                <state key="normal" title="View Website" image="square.and.arrow.down.on.square.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                </state>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FTl-Uz-DbG"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" systemColor="linkColor"/>
                         <constraints>
                             <constraint firstItem="HZf-1s-5bO" firstAttribute="trailing" secondItem="FTl-Uz-DbG" secondAttribute="trailing" id="Bbd-Yl-liU"/>
-                            <constraint firstItem="FTl-Uz-DbG" firstAttribute="bottom" secondItem="c6p-N8-JGP" secondAttribute="bottom" id="Bwh-3n-x5V"/>
-                            <constraint firstItem="FTl-Uz-DbG" firstAttribute="top" secondItem="ns1-CR-ekv" secondAttribute="top" priority="900" constant="44" id="C9t-zD-f9y"/>
+                            <constraint firstItem="FTl-Uz-DbG" firstAttribute="top" secondItem="ns1-CR-ekv" secondAttribute="top" priority="900" id="C9t-zD-f9y"/>
+                            <constraint firstItem="FTl-Uz-DbG" firstAttribute="bottom" secondItem="c6p-N8-JGP" secondAttribute="bottom" constant="16" id="DHU-lD-unA"/>
                             <constraint firstItem="HZf-1s-5bO" firstAttribute="leading" secondItem="FTl-Uz-DbG" secondAttribute="leading" id="HtM-Bs-zOu"/>
                             <constraint firstAttribute="bottom" secondItem="HZf-1s-5bO" secondAttribute="bottom" id="JBv-tL-lFf"/>
-                            <constraint firstItem="FTl-Uz-DbG" firstAttribute="trailing" secondItem="c6p-N8-JGP" secondAttribute="trailing" constant="116" id="LLX-ps-707"/>
                             <constraint firstItem="HZf-1s-5bO" firstAttribute="top" secondItem="Lmh-76-fuP" secondAttribute="top" id="OYA-Mo-k1i"/>
-                            <constraint firstItem="c6p-N8-JGP" firstAttribute="width" secondItem="kMt-aX-LUo" secondAttribute="width" multiplier="0.338164" id="PPa-Pr-iWQ"/>
-                            <constraint firstItem="c6p-N8-JGP" firstAttribute="leading" secondItem="FTl-Uz-DbG" secondAttribute="leading" constant="117" id="fnl-Hn-T9l"/>
                             <constraint firstItem="Zrl-pP-iHy" firstAttribute="width" secondItem="Lmh-76-fuP" secondAttribute="width" id="kkT-Wo-HbQ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="PPa-Pr-iWQ"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Klr-c8-Gth"/>
+                    <navigationItem key="navigationItem" id="Klr-c8-Gth">
+                        <barButtonItem key="backBarButtonItem" title="HELLO" id="oU9-oS-tlL"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="Klr-c8-Gth" id="1Oi-LK-j6q"/>
                         <outlet property="bookmarkButton" destination="HJC-Ff-ZbZ" id="2aM-uq-SyZ"/>
                         <outlet property="descriptionLabel" destination="mPG-VB-QeH" id="Pio-rK-tAu"/>
                         <outlet property="enlargeButton" destination="BKy-vM-A88" id="0IN-ba-87z"/>
@@ -372,14 +408,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zi4-Es-eCj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2116" y="1329"/>
+            <point key="canvasLocation" x="-2116" y="1328.5714285714287"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="D9j-0i-zMM">
             <objects>
                 <viewController id="f5D-5P-iH8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iwH-tI-UKb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy1-dV-DHi">
@@ -426,7 +462,7 @@
             <objects>
                 <viewController id="llb-UN-aol" customClass="RankingsVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49s-uT-WqV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uUO-uh-3QE">
@@ -576,7 +612,7 @@
         <!--News-->
         <scene sceneID="i3M-Ip-y1a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yEz-EG-iWH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="yEz-EG-iWH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="rectangle.stack" catalog="system" selectedImage="rectangle.stack.fill" id="yU8-LI-pCm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="OO7-2s-lbv">
@@ -596,6 +632,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="rmp-HX-OXb"/>
         <segue reference="NMb-h9-A6W"/>
     </inferredMetricsTieBreakers>
     <resources>

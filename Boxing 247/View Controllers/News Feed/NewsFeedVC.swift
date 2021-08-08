@@ -10,7 +10,7 @@ import UIKit
 class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties 
-
+    
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,10 +20,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     var noInternetView : UIView!
     let loadingView: LoadingView = UIView.fromNib()
     let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
-
+    
     private var enterForegroundObserver: NSObjectProtocol?
     private var enterBackgroundObserver: NSObjectProtocol?
-
+    
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
     enum Segment: Int {
@@ -48,10 +48,13 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         viewModel.downloadNews(for:selectedSegment, completion: nil)
     }
     
-        override func viewDidAppear(_ animated: Bool) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         //if !viewModel.isInternetConnectionEnabled {
-            presentNoInternetView()
+        presentNoInternetView()
         //}
     }
     
@@ -84,7 +87,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 collectionView?.reloadData()
             }
         }
-                
+        
         viewModel.scrollCollectionView = { [self] in
             DispatchQueue.main.async {
                 let offset = viewModel.collectionViewScrollOffset
@@ -104,7 +107,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         enterForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
             
             //if viewModel.isInternetConnectionEnabled {
-                presentNoInternetView()
+            presentNoInternetView()
             //}
         }
         
@@ -112,7 +115,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
             noInternetView?.removeFromSuperview()
         }
-
+        
     }
     
     fileprivate func configureLoadingView() {
@@ -122,15 +125,17 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     // MARK: - Events
-
+    
     @IBAction func segmentedControlTapped(_ sender: Any) {
         
         func _switchAndReloadDatasource() {
             
             viewModel.switchDatasource(for: selectedSegment, indexPath: indexPath)
-            viewModel.reloadCollectionView?()
+            viewModel.storeContentsSizeHeight(collectionView.contentSize.height, selectedSegment: selectedSegment)
             
             DispatchQueue.main.async { [self] in
+                
+                collectionView.reloadData()
                 
                 if viewModel.datasource.count == 0 { return }
                 
@@ -138,7 +143,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 
                 case .latest:
                     collectionView.scrollToItem(at: viewModel.snapshotForSegmentLatest?.1 ?? IndexPath(row: 0, section: 0), at: .top, animated: false)
-                    
+                    moreNewsButton.isHidden = collectionView.isAtBottom(using: viewModel.latestSegementContentHeight) ? false : true
+
                 case .bookmarked:
                     collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredVertically, animated: false)
                 }
@@ -148,7 +154,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         var indexPath : IndexPath?
         
         if selectedSegment == .bookmarked  {
-
+            
             moreNewsButton.isHidden = true
             
             guard
@@ -180,7 +186,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        
         guard
             let article = sender as? NewsArticle,
             let viewController = segue.destination as? NewsFeedDetailVC
@@ -193,7 +199,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.view.tintColor = .label
-
+        
         if completion == nil {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         } else {
@@ -249,7 +255,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     // MARK: - Collection view datasource
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         let datasetData = viewModel.getDatasetData(for: selectedSegment)
@@ -264,7 +270,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! NewsFeedCell
         let article = viewModel.datasource[indexPath.row]
-                
+        
         cell.configureCell(with: article)
         cell.presentUIAlert = { [self] title, message, completion in
             presentUIAlert(title: title, message: message, completion: completion)
@@ -275,18 +281,18 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let cellInsets = 2 * 20 as CGFloat
         let cellWidth = (deviceWidth - cellInsets)
         let labelInsets = 16 * 2 as CGFloat
         
         /** Calculates height of cell by adding the heights of all views + spacing found in NewsFeedCell.xib */
-
+        
         let article = viewModel.datasource[indexPath.row]
         let cellHeight =
-                NewsFeedCell.calculateHeightForLabel(text: article.title ?? "", font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
-                + 25 // button stackview
-                + cellWidth / 5.63 // remaining space, dynamically calculated
+            NewsFeedCell.calculateHeightForLabel(text: article.title ?? "", font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold), width: cellWidth - labelInsets, lines: 2)
+            + 25 // button stackview
+            + cellWidth / 5.63 // remaining space, dynamically calculated
         
         return CGSize(width: cellWidth , height: cellHeight)
     }
@@ -307,14 +313,15 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        let isEndOfScroll = (scrollView.bounds.maxY >= scrollView.contentSize.height - 100)
-        
-        moreNewsButton.isHidden = isEndOfScroll && selectedSegment == .latest ? false : true
-        
-        if isEndOfScroll && viewModel.allItemsFetched {
+        if selectedSegment == .bookmarked {
             moreNewsButton.isHidden = true
+            return
         }
+        
+        let isMoreItemsInDatasource = !viewModel.isAllItemsFetched && scrollView.isAtBottom
+        moreNewsButton.isHidden = isMoreItemsInDatasource ? false : true
     }
-    
 }
+
+
 // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072

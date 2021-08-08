@@ -42,6 +42,9 @@
 		0797BE5A26BDB7C5000356B3 /* EmptyDatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE5926BDB7C5000356B3 /* EmptyDatasetView.swift */; };
 		0797BE5C26BDD38A000356B3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0797BE5B26BDD38A000356B3 /* LoadingView.xib */; };
 		0797BE5E26BDEA07000356B3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE5D26BDEA07000356B3 /* LoadingView.swift */; };
+		0797BE6026C02FD0000356B3 /* ImagePopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE5F26C02FD0000356B3 /* ImagePopOverVC.swift */; };
+		0797BE6226C08686000356B3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE6126C08686000356B3 /* String+Extensions.swift */; };
+		0797BE6426C08A02000356B3 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797BE6326C08A02000356B3 /* UIScrollView+Extensions.swift */; };
 		07B7045423B995780083D02A /* FederationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B7045223B995780083D02A /* FederationHeader.swift */; };
 		07B7045523B995780083D02A /* FederationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B7045323B995780083D02A /* FederationHeader.xib */; };
 		07BBB07926B43B58009341F4 /* UIView+CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */; };
@@ -117,6 +120,9 @@
 		0797BE5926BDB7C5000356B3 /* EmptyDatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDatasetView.swift; sourceTree = "<group>"; };
 		0797BE5B26BDD38A000356B3 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		0797BE5D26BDEA07000356B3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0797BE5F26C02FD0000356B3 /* ImagePopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopOverVC.swift; sourceTree = "<group>"; };
+		0797BE6126C08686000356B3 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		0797BE6326C08A02000356B3 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		07B7045223B995780083D02A /* FederationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederationHeader.swift; sourceTree = "<group>"; };
 		07B7045323B995780083D02A /* FederationHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FederationHeader.xib; sourceTree = "<group>"; };
 		07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomViews.swift"; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 				07143BFA23C7EF37007C525D /* Rankings */,
 				07C9997521973A0000E24E61 /* News Feed Details */,
 				07C99973219739C000E24E61 /* Help Menu */,
+				0797BE5F26C02FD0000356B3 /* ImagePopOverVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -346,8 +353,10 @@
 			children = (
 				07F65E6D25D8843E00D58087 /* UIView+Extensions.swift */,
 				07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */,
-				07F65E7E25D9064200D58087 /* Date+TimeAgo.swift */,
 				07F65E8325D9065000D58087 /* UIImage+Blur.swift */,
+				0797BE6326C08A02000356B3 /* UIScrollView+Extensions.swift */,
+				0797BE6126C08686000356B3 /* String+Extensions.swift */,
+				07F65E7E25D9064200D58087 /* Date+TimeAgo.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -616,6 +625,7 @@
 				071B569225D5B9730010BA38 /* GradientView.swift in Sources */,
 				071C377E20EF7C7E002CA348 /* NewsFeedCell.swift in Sources */,
 				07143C0423C7F0D9007C525D /* TextCell.swift in Sources */,
+				0797BE6026C02FD0000356B3 /* ImagePopOverVC.swift in Sources */,
 				07F65E6E25D8843E00D58087 /* UIView+Extensions.swift in Sources */,
 				071C378720F0020B002CA348 /* HelpMenuCell.swift in Sources */,
 				07694DB32673AA0C0043285F /* FetchUtility.swift in Sources */,
@@ -624,6 +634,7 @@
 				07898B56266BD7A7003BAD23 /* Boxing247.xcdatamodeld in Sources */,
 				07BBB07926B43B58009341F4 /* UIView+CustomViews.swift in Sources */,
 				07F5D25B23DDF386002AE1F2 /* CowbellView.swift in Sources */,
+				0797BE6226C08686000356B3 /* String+Extensions.swift in Sources */,
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
 				0797BE5A26BDB7C5000356B3 /* EmptyDatasetView.swift in Sources */,
 				07F65E7F25D9064200D58087 /* Date+TimeAgo.swift in Sources */,
@@ -638,6 +649,7 @@
 				07898B5D266D772D003BAD23 /* CoreDataProtocols.swift in Sources */,
 				071C377A20EF74E7002CA348 /* NewsFeedVM.swift in Sources */,
 				07898B5F266D772D003BAD23 /* CoreDataManager.swift in Sources */,
+				0797BE6426C08A02000356B3 /* UIScrollView+Extensions.swift in Sources */,
 				07143C0E23C7FE5E007C525D /* RankingsVC.swift in Sources */,
 				07DE4CEC210B883900730457 /* Constants.swift in Sources */,
 				07F65E8425D9065000D58087 /* UIImage+Blur.swift in Sources */,
