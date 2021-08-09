@@ -22,8 +22,8 @@ class NewsFeedCell: UICollectionViewCell {
     var newsArticle : NewsArticle?
     var presentUIAlert : ( (String, String, ((Bool) -> Void )?) -> Void)?
     var presentShareController :  (() -> Void )?
-    var presentImagePopoverController :  (() -> Void )?
-    
+    var presentImagePopoverController :  ( ((() -> Void)?) -> Void )?
+
     // MARK: - Configuration
     
     func configureCell(with article: NewsArticle) {
@@ -68,6 +68,15 @@ class NewsFeedCell: UICollectionViewCell {
         }
         
         SaveUtility.saveChanges()
+    }
+    
+    
+    @IBAction func enlargeImageButtonPressed(_ sender: Any) {
+        presentImagePopoverController?(nil)
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        presentShareController?()
     }
     
     static func calculateHeightForLabel(text:String, font:UIFont, width:CGFloat, lines:Int) -> CGFloat{

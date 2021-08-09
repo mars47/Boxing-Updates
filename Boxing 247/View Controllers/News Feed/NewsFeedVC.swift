@@ -35,9 +35,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     var isNoInternetViewBeingPresented = false
+    var isLongPressActivated = true
     
     // MARK: - Configuration
-    
+        
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -45,9 +46,10 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         configureViewModelCallBacks()
         configuredNotificationObservers()
         configureLoadingView()
+        configureLongPressGesture()
         viewModel.downloadNews(for:selectedSegment, completion: nil)
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -124,6 +126,12 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         view.addSubview(loadingView)
     }
     
+    fileprivate func configureLongPressGesture() {
+        
+        let tap = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(_:)))
+        collectionView.addGestureRecognizer(tap)
+        collectionView.isUserInteractionEnabled = true
+    }
     // MARK: - Events
     
     @IBAction func segmentedControlTapped(_ sender: Any) {
@@ -167,6 +175,21 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         _switchAndReloadDatasource()
     }
     
+    @objc func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+       
+        Vibration.success.vibrate()
+
+        if sender.state == .began  {
+            sender.isEnabled = false
+            isLongPressActivated = true
+        }
+        
+        let touchPoint = sender.location(in: collectionView)
+        let indexPath = collectionView.indexPathForItem(at: touchPoint)!
+        performSegue(withIdentifier: "NewsFeedShowPopOverVC", sender: viewModel.datasource[indexPath.row])
+        sender.isEnabled = true
+      }
+    
     @IBAction func moreButtonPressed(_ sender: Any) {
         
         let itemCount = collectionView.numberOfItems(inSection: 0)
@@ -185,14 +208,27 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
+    // MARK: - Navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard
-            let article = sender as? NewsArticle,
-            let viewController = segue.destination as? NewsFeedDetailVC
-        else { return }
+        switch true  {
         
-        viewController.newsArticle = article
+        case segue.identifier == "NewsFeedShowPopOverVC":
+            guard
+                let article = sender as? NewsArticle,
+                let imageData = article.thumbnail,
+                let viewController = segue.destination as? ImagePopOverVC
+            else { return }
+            viewController.image = UIImage(data: imageData)
+                
+        default:
+            guard
+                let article = sender as? NewsArticle,
+                let viewController = segue.destination as? NewsFeedDetailVC
+            else { return }
+            viewController.newsArticle = article
+        }
     }
     
     func presentUIAlert(title: String, message: String, completion: ((Bool) -> Void)? ) {
@@ -275,6 +311,14 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         cell.presentUIAlert = { [self] title, message, completion in
             presentUIAlert(title: title, message: message, completion: completion)
         }
+        cell.presentShareController = {
+            let activityVC = UIActivityViewController(activityItems: ["Check out this free app called 'Boxing Updates' to keep updated with the latest boxing news!"], applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
+        }
+        cell.presentImagePopoverController = { _ in
+            self.performSegue(withIdentifier: "NewsFeedShowPopOverVC", sender: article)
+        }
+
         viewModel.itemsScolledCount += 1
         viewModel.itemsScolledCount == 20 ? viewModel.handleItemsScrolled() : Void()
         return cell
@@ -297,9 +341,14 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return CGSize(width: cellWidth , height: cellHeight)
     }
     
-    // MARK: Collection view delegate
+    // MARK: - Collection view delegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if isLongPressActivated {
+            isLongPressActivated = false
+            return
+        }
         
         //for a in viewModel.newsArticles {print("\(a.pubDate)  \(a.title)\n")}
         let article = viewModel.newsArticles[indexPath.row]
@@ -309,7 +358,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         //self.centerNavigationController?.pushViewController(newsFeedDetailVC, animated: true)
     }
     
-    // MARK: Scroll view delegate
+    // MARK: - Scroll view delegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         

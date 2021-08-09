@@ -16,13 +16,14 @@ class NewsFeedDetailVC: UIViewController {
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var bookmarkButton: UIButton!
     
     @IBOutlet weak var enlargeButton: UIButton!
     @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var backButton: UINavigationItem!
     
-    var newsArticle : NewsArticle?
+    var newsArticle : NewsArticle!
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -38,7 +39,8 @@ class NewsFeedDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        websiteButton.setAttributedTitle("View Website".underLined, for: .normal)
+        imageView.image = UIImage(data: newsArticle.thumbnail ?? Data())
+        websiteButton.setAttributedTitle(" View Website".underLined, for: .normal)
         websiteButton.roundCorners(corners: .allCorners, radius: 8)
         titleLabel.text = newsArticle?.title
         descriptionLabel.text = newsArticle?.content
@@ -49,16 +51,36 @@ class NewsFeedDetailVC: UIViewController {
 //        UIApplication.shared.open(url)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let activityVC = UIActivityViewController(activityItems: ["Check out this free app called 'Boxing Updates' to keep updated with the latest boxing news!"], applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func bookmarkButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func enlargeButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "NewsFeedDetailShowPopOverVC", sender: newsArticle)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch true  {
+        
+        case segue.identifier == "NewsFeedDetailShowPopOverVC":
+            guard
+                let article = sender as? NewsArticle,
+                let imageData = article.thumbnail,
+                let viewController = segue.destination as? ImagePopOverVC
+            else { return }
+            viewController.image = UIImage(data: imageData)
+                
+        default:
+            return
+        }
+    }
 
 }
 

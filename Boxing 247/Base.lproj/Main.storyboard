@@ -198,19 +198,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="QEq-1K-DVV">
-                                <rect key="frame" x="16" y="0.0" width="343" height="243"/>
+                                <rect key="frame" x="-37.666666666666657" y="257.66666666666669" width="450.33333333333326" height="243"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="450.32999999999998" id="T4Q-r3-m7u"/>
+                                    <constraint firstAttribute="height" constant="243" id="kyb-MP-zdP"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gfD-zm-k2y"/>
                         <constraints>
-                            <constraint firstItem="QEq-1K-DVV" firstAttribute="top" secondItem="gfD-zm-k2y" secondAttribute="top" id="qpK-9v-cwc"/>
-                            <constraint firstItem="gfD-zm-k2y" firstAttribute="trailing" secondItem="QEq-1K-DVV" secondAttribute="trailing" constant="16" id="umn-cr-FgX"/>
-                            <constraint firstItem="QEq-1K-DVV" firstAttribute="leading" secondItem="gfD-zm-k2y" secondAttribute="leading" constant="16" id="yq0-gK-Kfv"/>
+                            <constraint firstItem="QEq-1K-DVV" firstAttribute="centerX" secondItem="NXi-so-K2P" secondAttribute="centerX" id="L05-JG-JSW"/>
+                            <constraint firstItem="QEq-1K-DVV" firstAttribute="centerY" secondItem="NXi-so-K2P" secondAttribute="centerY" id="upt-xf-zhG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kno-3g-Zag"/>
                     <connections>
-                        <outlet property="imageView" destination="QEq-1K-DVV" id="w5h-7j-Pwh"/>
+                        <outlet property="imageView" destination="QEq-1K-DVV" id="1Gb-Ja-Z9e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNX-ep-awC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -291,6 +294,9 @@
                                                     <constraint firstAttribute="height" constant="25" id="vNV-Nd-ybc"/>
                                                 </constraints>
                                                 <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                                <connections>
+                                                    <action selector="shareButtonPressed:" destination="ufl-ko-qw7" eventType="touchUpInside" id="u8d-5s-gcw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJC-Ff-ZbZ" userLabel="Bookmark">
                                                 <rect key="frame" x="30" y="0.0" width="25" height="25"/>
@@ -299,6 +305,9 @@
                                                     <constraint firstAttribute="width" constant="25" id="oMN-LO-a8o"/>
                                                 </constraints>
                                                 <state key="normal" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="bookmarkButtonPressed:" destination="ufl-ko-qw7" eventType="touchUpInside" id="hUG-GX-j58"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKy-vM-A88" userLabel="Enlarge">
                                                 <rect key="frame" x="60" y="0.0" width="24" height="24"/>
@@ -308,6 +317,7 @@
                                                 </constraints>
                                                 <state key="normal" image="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system"/>
                                                 <connections>
+                                                    <action selector="enlargeButtonPressed:" destination="ufl-ko-qw7" eventType="touchUpInside" id="0WQ-7y-mmf"/>
                                                     <segue destination="ECn-T5-2d0" kind="popoverPresentation" identifier="NewsFeedDetailShowPopOverVC" popoverAnchorView="BKy-vM-A88" id="rmp-HX-OXb">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
@@ -331,9 +341,15 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="tintColor" name="pomegranate247"/>
-                                        <state key="normal" title="View Website" image="square.and.arrow.down.on.square.fill" catalog="system">
+                                        <state key="normal" title=" View Website" image="safari.fill" catalog="system">
                                             <color key="titleColor" name="white247"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" name="pomegranate247"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-Op-PXE">
@@ -390,14 +406,13 @@
                             <constraint firstItem="Zrl-pP-iHy" firstAttribute="width" secondItem="Lmh-76-fuP" secondAttribute="width" id="kkT-Wo-HbQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Klr-c8-Gth">
-                        <barButtonItem key="backBarButtonItem" title="HELLO" id="oU9-oS-tlL"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Klr-c8-Gth"/>
                     <connections>
                         <outlet property="backButton" destination="Klr-c8-Gth" id="1Oi-LK-j6q"/>
                         <outlet property="bookmarkButton" destination="HJC-Ff-ZbZ" id="2aM-uq-SyZ"/>
                         <outlet property="descriptionLabel" destination="mPG-VB-QeH" id="Pio-rK-tAu"/>
                         <outlet property="enlargeButton" destination="BKy-vM-A88" id="0IN-ba-87z"/>
+                        <outlet property="imageView" destination="ns1-CR-ekv" id="6Sv-Et-lAA"/>
                         <outlet property="label" destination="Zrl-pP-iHy" id="oD9-xT-Bvf"/>
                         <outlet property="scrollview2" destination="HZf-1s-5bO" id="ojC-U9-Cba"/>
                         <outlet property="shareButton" destination="bo9-4I-hGz" id="QZd-px-ewr"/>
@@ -645,7 +660,7 @@
         <image name="rectangle.stack" catalog="system" width="128" height="122"/>
         <image name="rectangle.stack.fill" catalog="system" width="128" height="122"/>
         <image name="ring" width="450" height="243"/>
-        <image name="square.and.arrow.down.on.square.fill" catalog="system" width="122" height="128"/>
+        <image name="safari.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="alizarin247">

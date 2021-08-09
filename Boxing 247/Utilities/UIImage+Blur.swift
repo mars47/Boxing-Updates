@@ -42,14 +42,5 @@ extension UIImageView {
                 if let data = data { self.image = UIImage(data: data) }
             }
         }.resume()
-        
-//        URLSession.sharedSession().dataTaskWithURL( NSURL(string:link)!, completionHandler: {
-//            (data, response, error) -> Void in
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.contentMode =  contentMode
-//                if let data = data { self.image = UIImage(data: data) }
-//            }
-//        })
-        
     }
 }

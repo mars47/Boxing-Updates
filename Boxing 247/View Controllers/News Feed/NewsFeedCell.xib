@@ -71,6 +71,9 @@
                                         </constraints>
                                         <color key="tintColor" name="pomegranate247"/>
                                         <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                        <connections>
+                                            <action selector="shareButtonPressed:" destination="rZq-kZ-AvW" eventType="touchUpInside" id="Dbh-cm-6cz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKZ-4I-8yQ" userLabel="Bookmark">
                                         <rect key="frame" x="30" y="0.0" width="25" height="25"/>
@@ -93,6 +96,9 @@
                                         </constraints>
                                         <color key="tintColor" name="pomegranate247"/>
                                         <state key="normal" image="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="enlargeImageButtonPressed:" destination="rZq-kZ-AvW" eventType="touchUpInside" id="eGe-5o-Qs0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

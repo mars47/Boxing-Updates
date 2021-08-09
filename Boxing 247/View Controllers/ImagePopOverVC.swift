@@ -11,13 +11,21 @@ import UIKit
 class ImagePopOverVC: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    var image: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imageView.image = image
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
     }
     
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
+      }
 
     /*
     // MARK: - Navigation
