@@ -13,28 +13,27 @@ class ImagePopOverVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage?
     
+    @IBOutlet weak var background: UIImageView!
+    var screenshot: UIImage?
+    
+    @IBOutlet weak var imageViewCenter: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if screenshot == nil {
+            imageViewCenter.constant = imageViewCenter.constant - 200
+        }
 
         imageView.image = image
+        background.image = screenshot
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:))))
         view.isUserInteractionEnabled = true
     }
-    
+
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
       }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+

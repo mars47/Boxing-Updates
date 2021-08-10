@@ -54,8 +54,8 @@ class NewsFeedVM: NSObject {
             newsArticles.removeAll()
             bookmarkedNewsArticles.removeAll()
             
-            newsArticles = FetchUtility.news(fetch: .new)!
-            bookmarkedNewsArticles = FetchUtility.bookmarkedNews()!
+            newsArticles = FetchUtility.news(fetch: .new) ?? []
+            bookmarkedNewsArticles = FetchUtility.bookmarkedNews() ?? []
 
             downloadImages(for: newsArticles){ [self] in
                 

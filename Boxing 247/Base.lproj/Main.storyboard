@@ -192,11 +192,22 @@
         <!--Image Pop OverVC-->
         <scene sceneID="2Wd-Jf-pCZ">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="ECn-T5-2d0" customClass="ImagePopOverVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="ECn-T5-2d0" customClass="ImagePopOverVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NXi-so-K2P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-uQ-8DR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojA-n4-Ahf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vfJ-9W-E16">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="QEq-1K-DVV">
                                 <rect key="frame" x="-37.666666666666657" y="257.66666666666669" width="450.33333333333326" height="243"/>
                                 <constraints>
@@ -207,13 +218,23 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gfD-zm-k2y"/>
                         <constraints>
+                            <constraint firstItem="gfD-zm-k2y" firstAttribute="bottom" secondItem="ojA-n4-Ahf" secondAttribute="bottom" id="84i-2Y-AIh"/>
+                            <constraint firstItem="ojA-n4-Ahf" firstAttribute="leading" secondItem="gfD-zm-k2y" secondAttribute="leading" id="AJo-dh-zZf"/>
                             <constraint firstItem="QEq-1K-DVV" firstAttribute="centerX" secondItem="NXi-so-K2P" secondAttribute="centerX" id="L05-JG-JSW"/>
+                            <constraint firstItem="gfD-zm-k2y" firstAttribute="trailing" secondItem="ojA-n4-Ahf" secondAttribute="trailing" id="PAl-KO-CSz"/>
+                            <constraint firstItem="gfD-zm-k2y" firstAttribute="bottom" secondItem="FeR-uQ-8DR" secondAttribute="bottom" id="Vn8-Qo-Fmz"/>
+                            <constraint firstItem="gfD-zm-k2y" firstAttribute="trailing" secondItem="FeR-uQ-8DR" secondAttribute="trailing" id="aiA-Fd-4fG"/>
+                            <constraint firstItem="FeR-uQ-8DR" firstAttribute="leading" secondItem="gfD-zm-k2y" secondAttribute="leading" id="dmF-mk-yXO"/>
                             <constraint firstItem="QEq-1K-DVV" firstAttribute="centerY" secondItem="NXi-so-K2P" secondAttribute="centerY" id="upt-xf-zhG"/>
+                            <constraint firstItem="ojA-n4-Ahf" firstAttribute="top" secondItem="gfD-zm-k2y" secondAttribute="top" id="vEA-3G-U8M"/>
+                            <constraint firstItem="FeR-uQ-8DR" firstAttribute="top" secondItem="gfD-zm-k2y" secondAttribute="top" id="xp2-hZ-aMq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kno-3g-Zag"/>
                     <connections>
+                        <outlet property="background" destination="FeR-uQ-8DR" id="Qse-wv-joY"/>
                         <outlet property="imageView" destination="QEq-1K-DVV" id="1Gb-Ja-Z9e"/>
+                        <outlet property="imageViewCenter" destination="upt-xf-zhG" id="a0N-vi-iZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNX-ep-awC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,7 +244,7 @@
         <!--News Feed DetailVC-->
         <scene sceneID="rM6-0a-gIV">
             <objects>
-                <viewController storyboardIdentifier="NewsFeedDetail" id="ufl-ko-qw7" customClass="NewsFeedDetailVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsFeedDetail" modalPresentationStyle="fullScreen" id="ufl-ko-qw7" customClass="NewsFeedDetailVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lmh-76-fuP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,13 +258,14 @@
                                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="ns1-CR-ekv">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anthony Joshua Knocks out Tyson Fury" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-Ib-tHE">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anthony Joshua Knocks out Tyson Fury " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-Ib-tHE">
                                                 <rect key="frame" x="16" y="17" width="343" height="64.666666666666671"/>
+                                                <color key="backgroundColor" name="grey247"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                                <color key="textColor" name="black247"/>
+                                                <color key="textColor" name="white247"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="1" height="0.0"/>
+                                                <size key="shadowOffset" width="0.0" height="0.0"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" name="grey247"/>
@@ -668,9 +690,6 @@
         </namedColor>
         <namedColor name="base247">
             <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="black247">
-            <color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="dark247">
             <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

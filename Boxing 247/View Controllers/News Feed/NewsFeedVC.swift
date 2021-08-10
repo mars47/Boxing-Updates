@@ -185,7 +185,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
         
         let touchPoint = sender.location(in: collectionView)
-        let indexPath = collectionView.indexPathForItem(at: touchPoint)!
+        guard let indexPath = collectionView.indexPathForItem(at: touchPoint) else { return }
         performSegue(withIdentifier: "NewsFeedShowPopOverVC", sender: viewModel.datasource[indexPath.row])
         sender.isEnabled = true
       }
@@ -221,6 +221,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 let viewController = segue.destination as? ImagePopOverVC
             else { return }
             viewController.image = UIImage(data: imageData)
+            viewController.screenshot = UIImage.takeScreenshot(view: self.view.window!)!
                 
         default:
             guard
