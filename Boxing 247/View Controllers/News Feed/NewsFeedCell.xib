@@ -24,41 +24,42 @@
                         <rect key="frame" x="0.0" y="71" width="400" height="89"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="twq-I4-La3" userLabel="title stack">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;title&gt; " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-Gq-Gy0">
-                                        <rect key="frame" x="16" y="6" width="65" height="48"/>
+                                        <rect key="frame" x="16" y="6" width="65" height="52"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" placeholder="YES" id="NmO-Wp-znP"/>
-                                </constraints>
                                 <edgeInsets key="layoutMargins" top="6" left="16" bottom="6" right="16"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9ue-TS-H37" userLabel="timestamp stack">
-                                <rect key="frame" x="16" y="66" width="108" height="14"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9ue-TS-H37" userLabel="timestamp stack">
+                                <rect key="frame" x="16" y="64" width="114.5" height="16"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-pZ-lRA">
-                                        <rect key="frame" x="0.0" y="0.5" width="12" height="13"/>
+                                        <rect key="frame" x="0.0" y="2.5" width="12" height="13"/>
                                         <color key="tintColor" name="alizarin247"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="9sb-ls-W81"/>
                                             <constraint firstAttribute="width" constant="12" id="IdD-qM-zeS"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 hours agoo " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww5-1u-kwm">
-                                        <rect key="frame" x="17" y="0.0" width="91" height="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 minutes ago " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww5-1u-kwm">
+                                        <rect key="frame" x="17" y="2" width="97.5" height="14"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="91" id="SsR-g9-cS1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="SsR-g9-cS1"/>
                                             <constraint firstAttribute="height" constant="14" id="YV9-It-oNP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="3K2-UH-x9A"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9M5-ZB-46l" userLabel="button stack">
                                 <rect key="frame" x="308" y="60" width="84" height="25"/>
@@ -105,14 +106,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" priority="750" constant="89" id="6bS-EX-wmg"/>
+                            <constraint firstAttribute="height" constant="89" id="6bS-EX-wmg"/>
+                            <constraint firstItem="9ue-TS-H37" firstAttribute="top" secondItem="twq-I4-La3" secondAttribute="bottom" id="BwN-PG-yeV"/>
                             <constraint firstAttribute="trailing" secondItem="9M5-ZB-46l" secondAttribute="trailing" priority="750" constant="8" id="CoG-5o-jgK"/>
-                            <constraint firstItem="9ue-TS-H37" firstAttribute="top" secondItem="twq-I4-La3" secondAttribute="bottom" priority="750" constant="6" id="DyW-NJ-ooP"/>
                             <constraint firstAttribute="bottom" secondItem="9ue-TS-H37" secondAttribute="bottom" constant="9" id="RYR-LD-Qem"/>
                             <constraint firstItem="9ue-TS-H37" firstAttribute="leading" secondItem="cn7-WG-g0P" secondAttribute="leading" priority="750" constant="16" id="YBg-R5-5IS"/>
                             <constraint firstAttribute="bottom" secondItem="9M5-ZB-46l" secondAttribute="bottom" priority="750" constant="4" id="g1G-8b-Ngt"/>
                             <constraint firstItem="twq-I4-La3" firstAttribute="leading" secondItem="cn7-WG-g0P" secondAttribute="leading" priority="750" id="gwi-uZ-Rdm"/>
-                            <constraint firstItem="twq-I4-La3" firstAttribute="top" secondItem="cn7-WG-g0P" secondAttribute="top" priority="750" id="sdL-jm-6gg"/>
+                            <constraint firstItem="twq-I4-La3" firstAttribute="top" secondItem="cn7-WG-g0P" secondAttribute="top" id="sdL-jm-6gg"/>
                             <constraint firstAttribute="trailing" secondItem="twq-I4-La3" secondAttribute="trailing" priority="750" id="vrE-kr-zSg"/>
                         </constraints>
                     </view>

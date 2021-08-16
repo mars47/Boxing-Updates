@@ -10,24 +10,21 @@ import UIKit
 
 class ImagePopOverVC: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
-    var image: UIImage?
-    
     @IBOutlet weak var background: UIImageView!
-    var screenshot: UIImage?
-    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageViewCenter: NSLayoutConstraint!
+    
+    var screenshot: UIImage?
+    var image: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if screenshot == nil {
-            imageViewCenter.constant = imageViewCenter.constant - 200
-        }
-
         imageView.image = image
         background.image = screenshot
+        imageViewCenter.constant = screenshot == nil ? imageViewCenter.constant - 200 : imageViewCenter.constant
         
+    
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:))))
         view.isUserInteractionEnabled = true
     }
@@ -36,4 +33,3 @@ class ImagePopOverVC: UIViewController {
         dismiss(animated: true, completion: nil)
       }
 }
-

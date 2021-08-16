@@ -14,6 +14,7 @@ class NewsFeedVM: NSObject {
     var reloadCollectionView : ( () -> Void)?
     var scrollCollectionView : ( () -> Void)?
     var presentNoInternetView : ( () -> Void)?
+    var hideLoadingView : ( () -> Void)?
 
 
     let url = URL(string: "https://bit.ly/2tZmM0E")
@@ -64,7 +65,8 @@ class NewsFeedVM: NSObject {
             }
             
             updateDatasource(for: tab, itemsDisplayedCount: 0)
-            isDownloadingData = false 
+            isDownloadingData = false
+            hideLoadingView?()
             reloadCollectionView?()
             completion?()
         }
@@ -94,7 +96,9 @@ class NewsFeedVM: NSObject {
     }
     
     func updateDatasourceBookmarkRemoved() {
+        #warning("Needs refactoring")
         datasource = FetchUtility.bookmarkedNews()!
+        bookmarkedNewsArticles = datasource
         SaveUtility.saveChanges()
     }
     

@@ -284,23 +284,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WMg-xa-wZf" userLabel="timestamp stack">
-                                        <rect key="frame" x="16" y="286" width="120" height="12"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WMg-xa-wZf" userLabel="timestamp stack">
+                                        <rect key="frame" x="16" y="286" width="128.66666666666666" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eoc-hG-LdC">
-                                                <rect key="frame" x="0.0" y="0.99999999999999822" width="12" height="10.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="3.6666666666666838" width="12" height="10.666666666666668"/>
                                                 <color key="tintColor" name="alizarin247"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="12" id="bp1-l0-tAu"/>
                                                     <constraint firstAttribute="height" constant="12" id="dAH-ky-ZgP"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 hours agoo " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-UL-fmf">
-                                                <rect key="frame" x="17" y="0.0" width="103" height="12"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52 minutes agoo " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-UL-fmf">
+                                                <rect key="frame" x="17.000000000000007" y="0.0" width="111.66666666666669" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="HOJ-d1-Etf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -327,6 +327,7 @@
                                                     <constraint firstAttribute="width" constant="25" id="oMN-LO-a8o"/>
                                                 </constraints>
                                                 <state key="normal" image="star" catalog="system"/>
+                                                <state key="selected" image="star.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="bookmarkButtonPressed:" destination="ufl-ko-qw7" eventType="touchUpInside" id="hUG-GX-j58"/>
                                                 </connections>
@@ -398,7 +399,6 @@
                                     <constraint firstItem="kMt-aX-LUo" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" id="PAN-Ss-8qv"/>
                                     <constraint firstItem="c6p-N8-JGP" firstAttribute="centerX" secondItem="HZf-1s-5bO" secondAttribute="centerX" id="ahr-U3-1Ko"/>
                                     <constraint firstItem="mPG-VB-QeH" firstAttribute="leading" secondItem="HZf-1s-5bO" secondAttribute="leading" constant="16" id="dN4-mR-Tqp"/>
-                                    <constraint firstItem="mPG-VB-QeH" firstAttribute="top" secondItem="WMg-xa-wZf" secondAttribute="bottom" constant="12.33" id="fm0-ZF-PAn"/>
                                     <constraint firstAttribute="trailing" secondItem="mPG-VB-QeH" secondAttribute="trailing" constant="16" id="kgm-TN-Q63"/>
                                     <constraint firstAttribute="bottom" secondItem="mPG-VB-QeH" secondAttribute="bottom" constant="16" id="qNm-fT-7H2"/>
                                     <constraint firstAttribute="trailing" secondItem="Zrl-pP-iHy" secondAttribute="trailing" id="u3E-o3-fiL"/>
@@ -685,6 +685,7 @@
         <image name="safari.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="alizarin247">
             <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

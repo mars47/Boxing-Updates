@@ -52,6 +52,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
+        viewModel.reloadCollectionView?()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,10 +85,18 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         viewModel.reloadCollectionView = { [self] in
             DispatchQueue.main.async {
-                
-                loadingView.isHidden = true
                 collectionView?.reloadData()
             }
+        }
+        
+        viewModel.hideLoadingView = { [self] in
+            DispatchQueue.main.async {
+                loadingView.isHidden = true
+            }
+        }
+        
+        viewModel.presentNoInternetView = { [self] in
+            presentNoInternetView()
         }
         
         viewModel.scrollCollectionView = { [self] in
@@ -97,10 +106,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 let indexpath = IndexPath(row: lastItem - offset, section: 0)
                 collectionView.scrollToItem(at: indexpath, at: .centeredVertically, animated: true)
             }
-        }
-        
-        viewModel.presentNoInternetView = { [self] in
-            presentNoInternetView()
         }
     }
     
@@ -203,7 +208,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         viewModel.downloadNews(for: selectedSegment) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.refreshControl.endRefreshing()
-                self.collectionView.reloadData()
+                //self.collectionView.reloadData()
             }
         }
     }
@@ -229,6 +234,11 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 let viewController = segue.destination as? NewsFeedDetailVC
             else { return }
             viewController.newsArticle = article
+            viewController.updateViewModel = { [self] in
+                viewModel.updateDatasourceBookmarkRemoved()
+                viewModel.reloadCollectionView?()
+            }
+            viewController.selectedSegment = selectedSegment
         }
     }
     
@@ -351,12 +361,11 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             return
         }
         
-        //for a in viewModel.newsArticles {print("\(a.pubDate)  \(a.title)\n")}
-        let article = viewModel.newsArticles[indexPath.row]
-        performSegue(withIdentifier: "showNewsDetail", sender: article)
+        let article = selectedSegment == .latest ?
+            viewModel.newsArticles[indexPath.row] :
+            viewModel.bookmarkedNewsArticles[indexPath.row]
         
-        //guard let newsFeedDetailVC = storyboard?.instantiateViewController(withIdentifier: "NewsFeedDetail") as? NewsFeedDetailVC else { return }
-        //self.centerNavigationController?.pushViewController(newsFeedDetailVC, animated: true)
+        performSegue(withIdentifier: "showNewsDetail", sender: article)
     }
     
     // MARK: - Scroll view delegate

@@ -23,7 +23,27 @@ class NewsFeedDetailVC: UIViewController {
     @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var backButton: UINavigationItem!
     
-    var newsArticle : NewsArticle!
+    var newsArticle: NewsArticle!
+    var selectedSegment: NewsFeedVC.Segment!
+    var updateViewModel: ( () -> Void)?
+
+    // MARK: - Configuration
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.image = UIImage(data: newsArticle.thumbnail ?? Data())
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
+        imageView.isUserInteractionEnabled = true
+        
+        websiteButton.setAttributedTitle(" View Website".underLined, for: .normal)
+        websiteButton.roundCorners(corners: .allCorners, radius: 8)
+        bookmarkButton.isSelected = newsArticle.isBookmarked
+        
+        timeAgoLabel.text =  newsArticle.pubDate == nil ? "n/a" : Date().timeAgoSinceDate(newsArticle.pubDate!)
+        titleLabel.text = "\(newsArticle.title ?? "")"
+        descriptionLabel.text = newsArticle?.content
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -35,27 +55,9 @@ class NewsFeedDetailVC: UIViewController {
         bar?.layoutIfNeeded()
         bar?.setNeedsDisplay()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
-        imageView.image = UIImage(data: newsArticle.thumbnail ?? Data())
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        imageView.addGestureRecognizer(tap)
-        imageView.isUserInteractionEnabled = true
-        websiteButton.setAttributedTitle(" View Website".underLined, for: .normal)
-        websiteButton.roundCorners(corners: .allCorners, radius: 8)
-        
-        titleLabel.text = "\(newsArticle.title ?? "")"
-        //titleLabel.roundCorners(corners: .allCorners, radius: 4)
-        descriptionLabel.text = newsArticle?.content
+    // MARK: - Events
 
-        //= "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-//        guard let url = URL(string: "https://stackoverflow.com") else { return }
-//        UIApplication.shared.open(url)
-    }
-    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "NewsFeedDetailShowPopOverVC", sender: newsArticle)
     }
@@ -65,14 +67,34 @@ class NewsFeedDetailVC: UIViewController {
         self.present(activityVC, animated: true, completion: nil)
     }
     
-    @IBAction func bookmarkButtonPressed(_ sender: Any) {
-        
-    }
-    
     @IBAction func enlargeButtonPressed(_ sender: Any) {
-        
         performSegue(withIdentifier: "NewsFeedDetailShowPopOverVC", sender: newsArticle)
     }
+    
+    @IBAction func bookmarkButtonPressed(_ sender: Any) {
+        
+        guard let newsArticle = newsArticle else {
+            presentUIAlert(title: "Something happened", message: "Unable to bookmark item")
+            return
+        }
+        
+        switch true {
+        
+        case bookmarkButton.isSelected:
+            presentUIAlert(title: "Warning", message: "Are you sure you want to remove article from saved items?")
+            
+        case !bookmarkButton.isSelected:
+            newsArticle.isBookmarked = !bookmarkButton.isSelected
+            bookmarkButton.isSelected = !bookmarkButton.isSelected
+            
+        default: return
+            
+        }
+        
+        SaveUtility.saveChanges()
+    }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -90,8 +112,36 @@ class NewsFeedDetailVC: UIViewController {
             return
         }
     }
-
+    
 }
-
+    
+private extension NewsFeedDetailVC {
+    
+    func presentUIAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.view.tintColor = .label
+        
+        if newsArticle == nil {
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        } else {
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){ [self] handler in
+                bookmarkButton.isSelected = true
+                newsArticle.isBookmarked = true
+            })
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) { [self] handler in
+                bookmarkButton.isSelected = false
+                newsArticle.isBookmarked = false
+                
+                if selectedSegment == .bookmarked {
+                    updateViewModel?()
+                }
+            })
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+}
 
 //https://medium.com/@Anantha1992/stretchable-header-view-in-scrollview-swift-5-ios-7c4bb689ac49

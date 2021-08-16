@@ -20,9 +20,13 @@ class NewsFeedCell: UICollectionViewCell {
     @IBOutlet weak var bookmarkButton: UIButton!
    
     var newsArticle : NewsArticle?
-    var presentUIAlert : ( (String, String, ((Bool) -> Void )?) -> Void)?
-    var presentShareController :  (() -> Void )?
-    var presentImagePopoverController :  ( ((() -> Void)?) -> Void )?
+    
+    typealias UIAlertCompletion = ( (Bool) -> Void )?
+    typealias Completion = ( () -> Void )
+
+    var presentUIAlert : ( (String, String, UIAlertCompletion) -> Void)?
+    var presentShareController : ( () -> Void )?
+    var presentImagePopoverController :  ( (Completion?) -> Void )?
 
     // MARK: - Configuration
     
@@ -40,10 +44,6 @@ class NewsFeedCell: UICollectionViewCell {
         
         thumbnail.contentMode = .scaleAspectFill
         thumbnail.clipsToBounds = true
-        
-        //self.author.text = "Published by \(article.author)"
-        //self.content.text = article.description;
-        
         configureShadowAndRoundCorners(shadowBounds: contentView, cornerRadius: nil)
     }
     

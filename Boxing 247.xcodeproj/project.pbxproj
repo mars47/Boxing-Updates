@@ -265,6 +265,14 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
+		0754730226C28DEA00A1DC76 /* Image Popover */ = {
+			isa = PBXGroup;
+			children = (
+				0797BE5F26C02FD0000356B3 /* ImagePopOverVC.swift */,
+			);
+			path = "Image Popover";
+			sourceTree = "<group>";
+		};
 		07898B2F266BBB38003BAD23 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,10 +337,10 @@
 			isa = PBXGroup;
 			children = (
 				07C999722197399100E24E61 /* News Feed */,
-				07143BFA23C7EF37007C525D /* Rankings */,
 				07C9997521973A0000E24E61 /* News Feed Details */,
+				07143BFA23C7EF37007C525D /* Rankings */,
 				07C99973219739C000E24E61 /* Help Menu */,
-				0797BE5F26C02FD0000356B3 /* ImagePopOverVC.swift */,
+				0754730226C28DEA00A1DC76 /* Image Popover */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
