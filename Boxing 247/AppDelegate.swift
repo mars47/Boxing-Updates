@@ -15,13 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //deleteOldNewsArticles()
-        window?.backgroundColor = base247
-        let attributes = [NSAttributedString.Key.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedString.Key.foregroundColor: white247]
         
+        let attributes = [NSAttributedString.Key.font:  UIFont(name: "AppleSDGothicNeo-UltraLight", size: 38.0)!, NSAttributedString.Key.foregroundColor: white247]
         UINavigationBar.appearance().backgroundColor = base247
         UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().largeTitleTextAttributes = attributes
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): white247]
+        window?.backgroundColor = base247
+       
         return true
     }
 
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("DELETING: \(news.title!)\n\(news.pubDate!)\n")
            _ = NewsArticle.eraseCurrent(news)
         }
+        SaveUtility.saveChanges()
     }
 }
 
