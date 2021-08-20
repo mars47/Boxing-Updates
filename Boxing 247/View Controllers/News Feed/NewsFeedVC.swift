@@ -208,7 +208,6 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         viewModel.downloadNews(for: selectedSegment) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.refreshControl.endRefreshing()
-                //self.collectionView.reloadData()
             }
         }
     }
