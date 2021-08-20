@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Instabug
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        Instabug.start(withToken: "4c964612828aa87d11f54c754458ca63", invocationEvents: [.shake, .screenshot])
+
         
         //deleteOldNewsArticles()
         

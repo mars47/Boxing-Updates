@@ -1,14 +1,17 @@
 PODS:
   - Alamofire (4.9.1)
-  - SwiftyJSON (5.0.0)
+  - Instabug (10.8.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - Instabug
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Instabug
 
 EXTERNAL SOURCES:
   SwiftyJSON:
@@ -16,13 +19,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyJSON:
-    :commit: cbf2d4955557abc1ed5debab21d20763e7ebc540
+    :commit: b3dcd7dbd0d488e1a7077cb33b00f2083e382f07
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  SwiftyJSON: f0574c07d8ca1644050db687067209e3033a89a0
+  Instabug: e40852b1ed4a080e32442b189808ddefcd07701d
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: b37e602edba76a372f0083c60b927254cffdeabe
+PODFILE CHECKSUM: e0b3fbdf63ba96be6eb062cafe0df3b07e032f1f
 
 COCOAPODS: 1.10.1
