@@ -198,18 +198,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-uQ-8DR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
                             <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojA-n4-Ahf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vfJ-9W-E16">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="QEq-1K-DVV">
-                                <rect key="frame" x="-37.666666666666657" y="257.66666666666669" width="450.33333333333326" height="243"/>
+                                <rect key="frame" x="-37.666666666666657" y="284.66666666666669" width="450.33333333333326" height="243.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="450.32999999999998" id="T4Q-r3-m7u"/>
                                     <constraint firstAttribute="height" constant="243" id="kyb-MP-zdP"/>
@@ -619,11 +619,12 @@
                     <connections>
                         <segue destination="yEz-EG-iWH" kind="relationship" relationship="viewControllers" id="LVV-HS-42H"/>
                         <segue destination="d67-Hg-n9K" kind="relationship" relationship="viewControllers" id="PHi-24-7Dx"/>
+                        <segue destination="sFK-29-PMJ" kind="relationship" relationship="viewControllers" id="l4q-tT-AJ9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boz-ZW-bXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1455" y="-807"/>
+            <point key="canvasLocation" x="-1095" y="-819"/>
         </scene>
         <!--Rankings-->
         <scene sceneID="FVC-QD-uBd">
@@ -644,7 +645,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0H-mj-6wK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-659" y="-78"/>
+            <point key="canvasLocation" x="-1094" y="-78"/>
         </scene>
         <!--News-->
         <scene sceneID="i3M-Ip-y1a">
@@ -667,14 +668,81 @@
             </objects>
             <point key="canvasLocation" x="-2183" y="-78"/>
         </scene>
+        <!--Schedule-->
+        <scene sceneID="Boi-ed-mNk">
+            <objects>
+                <viewController id="CXM-MC-eE7" customClass="ScheduleViewController" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WPB-Ed-Inl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9f-H5-lvW">
+                                <rect key="frame" x="56" y="152" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5a2-vh-SUP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6cj-hu-Pxm"/>
+                        <color key="backgroundColor" name="base247"/>
+                        <constraints>
+                            <constraint firstItem="5a2-vh-SUP" firstAttribute="leading" secondItem="6cj-hu-Pxm" secondAttribute="leading" id="0Oc-NL-kmx"/>
+                            <constraint firstItem="6cj-hu-Pxm" firstAttribute="trailing" secondItem="5a2-vh-SUP" secondAttribute="trailing" id="K9p-1B-OeA"/>
+                            <constraint firstItem="5a2-vh-SUP" firstAttribute="top" secondItem="6cj-hu-Pxm" secondAttribute="top" id="SmE-kM-a03"/>
+                            <constraint firstItem="6cj-hu-Pxm" firstAttribute="bottom" secondItem="5a2-vh-SUP" secondAttribute="bottom" id="wjb-zu-bvy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Schedule" id="hLf-9M-7fh">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="navIcon" id="A7N-Iz-mhs">
+                            <color key="tintColor" name="pomegranate247"/>
+                            <connections>
+                                <segue destination="oY4-sR-CFS" kind="presentation" id="igG-8s-cM8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webview" destination="5a2-vh-SUP" id="EmK-r8-gvX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gw3-5f-tUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="618"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="OfM-sC-7ZC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFK-29-PMJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" selectedImage="calendar" id="7zH-0W-bsH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ZLn-J1-NiH">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="base247"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CXM-MC-eE7" kind="relationship" relationship="rootViewController" id="gAZ-9C-Mgy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWf-MU-EDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74" y="-78"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rmp-HX-OXb"/>
-        <segue reference="NMb-h9-A6W"/>
+        <segue reference="fos-2w-kJf"/>
+        <segue reference="igG-8s-cM8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
         <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="navIcon" width="30" height="30"/>

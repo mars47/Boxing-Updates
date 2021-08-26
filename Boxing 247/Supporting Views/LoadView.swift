@@ -10,18 +10,10 @@ import UIKit
 
 class LoadView: UIView {
     
-    func configureView() {
+    func configureView(height: CGFloat) {
         
-        roundCorners(corners: .allCorners, radius: 12)
-        center = CGPoint(x: deviceWidth/2, y: deviceHeight/2 )
+        roundedCorners(radius: 12)
+        //roundCorners(corners: .allCorners, radius: 12)
+        center = CGPoint(x: deviceWidth/2, y: height/2)
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
