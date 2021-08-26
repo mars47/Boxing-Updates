@@ -12,23 +12,23 @@ import WebKit
 class ScheduleViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webview: WKWebView!
-    let testView: LoadView = UIView.fromNib()
+    let loadView: LoadView = UIView.fromNib()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.prefersLargeTitles = true
-        testView.configureView(height: webview.frame.height)
+        loadView.configureView(height: webview.frame.height)
         
-        let url = URL(string:"https://box.live/upcoming-fights-schedule/") //http://fightnights.com/upcoming-boxing-schedule
-        let request = URLRequest(url: url!)
         webview.navigationDelegate = self
-        webview.addSubview(testView)
-        webview.load(request)
+        webview.addSubview(loadView)
+        
+        guard let url = URL(string:"https://box.live/upcoming-fights-schedule/") else { return }
+        webview.load(URLRequest(url: url))
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
-        testView.isHidden = true
+        loadView.isHidden = true
     }
 }

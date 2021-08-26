@@ -18,7 +18,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var moreNewsButton: UIButton!
     var noInternetView : UIView!
-    let loadingView: LoadingView = UIView.fromNib()
+    let loadView: LoadView = UIView.fromNib()
     let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
     
     private var enterForegroundObserver: NSObjectProtocol?
@@ -79,6 +79,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         collectionView.refreshControl = refreshControl
         layout.minimumLineSpacing = 18.5
         refreshControl.addTarget(self, action: #selector(refreshNews(_:)), for: .valueChanged)
+        moreNewsButton.roundedCorners(radius: 16)
     }
     
     fileprivate func configureViewModelCallBacks() {
@@ -91,7 +92,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         viewModel.hideLoadingView = { [self] in
             DispatchQueue.main.async {
-                loadingView.isHidden = true
+                loadView.isHidden = true
             }
         }
         
@@ -113,9 +114,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         enterForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
             
-            //if viewModel.isInternetConnectionEnabled {
+            if viewModel.isInternetConnectionEnabled {
             presentNoInternetView()
-            //}
+            }
         }
         
         enterBackgroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [unowned self] notification in
@@ -127,8 +128,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     fileprivate func configureLoadingView() {
         
-        loadingView.configureView()
-        view.addSubview(loadingView)
+        loadView.configureView(height: collectionView.frame.height + 20)
+        view.addSubview(loadView)
     }
     
     fileprivate func configureLongPressGesture() {
@@ -380,6 +381,5 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         moreNewsButton.isHidden = isMoreItemsInDatasource ? false : true
     }
 }
-
 
 // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072

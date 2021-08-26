@@ -40,6 +40,20 @@ extension UIView {
             layer.backgroundColor = UIColor.clear.cgColor
     }
     
+    func roundedCorners(radius: CGFloat) -> Void {
+
+        // 1. rounded corners
+        layer.cornerRadius = radius
+
+        // 3. Add the shadow
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 3)
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 6.0
+        layer.masksToBounds = false
+
+    }
+    
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         /**  how to use: view.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12) */
        
@@ -55,6 +69,8 @@ extension UIView {
     
          layer.mask = mask
      }
+    
+    
     
     func blink() {
         
