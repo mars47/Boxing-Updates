@@ -99,7 +99,7 @@ private extension HelpMenuVC {
             
         } else {
             print("This device is not configured to send email. Please set up an email account.")
-            // show failure alert
+            #warning("show failure alert") 
         }
     }
 }

@@ -46,7 +46,7 @@ class NewsFeedVM: NSObject {
     
     // MARK: - Public Methods
     
-    func downloadNews(for tab: NewsFeedVC.Segment, completion: (() -> Void)?) {
+    func downloadNews(for segment: NewsFeedVC.Segment, completion: (() -> Void)? ) {
         
         #warning("Error handling needed") // "there was a problem fetching the latest news" 
         isDownloadingData = true
@@ -64,7 +64,7 @@ class NewsFeedVM: NSObject {
                 reloadCollectionView?()
             }
             
-            updateDatasource(for: tab, itemsDisplayedCount: 0)
+            updateDatasource(for: segment, itemsDisplayedCount: 0)
             isDownloadingData = false
             hideLoadingView?()
             reloadCollectionView?()
@@ -84,7 +84,7 @@ class NewsFeedVM: NSObject {
 
         switch segment {
         
-        case .latest:
+        case .latestNews:
             datasource =
                 Array(newsArticles[0..<itemsDisplayedCount + newItemsToDisplayCount])
 
@@ -111,7 +111,7 @@ class NewsFeedVM: NSObject {
         
         switch selectedSegment {
         
-        case .latest:
+        case .latestNews:
             datasource =
                 Array(newsArticles[0..<snapshotForSegmentLatest!.0])
         case .bookmarked:
@@ -129,14 +129,14 @@ class NewsFeedVM: NSObject {
         itemsScolledCount = 0 
     }
     
-    func getDatasetData(for selectedSegment: NewsFeedVC.Segment) -> (String, String) {
+    func getEmptyDatasetText(for selectedSegment: NewsFeedVC.Segment) -> (String, String) {
         
         switch selectedSegment {
         
         case .bookmarked:
             return ("You have no saved items", "book.circle.fill")
         
-        case .latest:
+        case .latestNews:
             return ("Unfortunately there has been a problem. Unable to find any news", "exclamationmark.bubble.fill")
         }
     }

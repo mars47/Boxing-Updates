@@ -13,8 +13,8 @@ class RankingsVM {
     
     // MARK: - Properties
 
-    var banners = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3")]
-    let belts = [UIImage(named: "wbo belt"), UIImage(named: "wba belt"), UIImage(named: "wbc belt")]
+    var weightDivisions = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3")]
+    let federations = [UIImage(named: "wbo belt"), UIImage(named: "wba belt"), UIImage(named: "wbc belt")]
     let logos = [UIImage(named: "wbo logo"), UIImage(named: "wba logo"), UIImage(named: "wbc logo")]
     var sectionStates = [ [Bool](), [Bool]() ]
     
@@ -22,7 +22,7 @@ class RankingsVM {
 
     func configureSectionStates() {
         
-        for _ in banners { sectionStates[0].append(true) }
-        for _ in belts { sectionStates[1].append(true) }
+        for _ in weightDivisions { sectionStates[0].append(true) } 
+        for _ in federations { sectionStates[1].append(true) }
     }
 }

@@ -113,15 +113,15 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         
         let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
-        return segment == .weightDivision ? viewModel.banners.count : viewModel.belts.count
+        return segment == .weightDivision ? viewModel.weightDivisions.count : viewModel.federations.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex) else { return 0 }
         
-        let state = viewModel.sectionStates[segment.rawValue][section]
-        return state ? 2 : 0
+        let isSectionExpanded = viewModel.sectionStates[segment.rawValue][section]
+        return isSectionExpanded ? 2 : 0 // displays 2 cells. 'blank' cell (UI hack) + ranking cell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

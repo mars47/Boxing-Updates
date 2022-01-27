@@ -27,7 +27,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     let viewModel = NewsFeedVM()
     let refreshControl = UIRefreshControl()
     enum Segment: Int {
-        case latest
+        case latestNews
         case bookmarked
     }
     var selectedSegment : Segment {
@@ -155,7 +155,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 
                 switch selectedSegment {
                 
-                case .latest:
+                case .latestNews:
                     collectionView.scrollToItem(at: viewModel.snapshotForSegmentLatest?.1 ?? IndexPath(row: 0, section: 0), at: .top, animated: false)
                     moreNewsButton.isHidden = collectionView.isAtBottom(using: viewModel.latestSegementContentHeight) ? false : true
 
@@ -305,8 +305,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        let datasetData = viewModel.getDatasetData(for: selectedSegment)
-        emptyDataSetView.configure(with: datasetData.0, image: UIImage(systemName: datasetData.1)!)
+        let text = viewModel.getEmptyDatasetText(for: selectedSegment)
+        emptyDataSetView.configure(with: text.0, image: UIImage(systemName: text.1)!)
         
         collectionView.backgroundView = (!viewModel.isDownloadingData && viewModel.datasource.count == 0) ? emptyDataSetView : nil
         
@@ -361,7 +361,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             return
         }
         
-        let article = selectedSegment == .latest ?
+        let article = selectedSegment == .latestNews ?
             viewModel.newsArticles[indexPath.row] :
             viewModel.bookmarkedNewsArticles[indexPath.row]
         
