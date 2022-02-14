@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Belt" representedClassName="Belt" syncable="YES" codeGenerationType="class">
+    <entity name="Belt" representedClassName="Belt" syncable="YES">
         <attribute name="acquiredDate" optional="YES" attributeType="String"/>
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -8,7 +8,7 @@
         <relationship name="organisation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organisation" inverseName="belts" inverseEntity="Organisation"/>
         <relationship name="weightClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeightClass" inverseName="belts" inverseEntity="WeightClass"/>
     </entity>
-    <entity name="Boxer" representedClassName="Boxer" syncable="YES" codeGenerationType="class">
+    <entity name="Boxer" representedClassName="Boxer" syncable="YES">
         <attribute name="dateOfBirth" optional="YES" attributeType="String"/>
         <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="identifier" optional="YES" attributeType="String"/>
@@ -19,14 +19,14 @@
         <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event"/>
         <relationship name="weightClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeightClass" inverseName="boxers" inverseEntity="WeightClass"/>
     </entity>
-    <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
+    <entity name="Country" representedClassName="Country" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="isoCode" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="boxers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Boxer" inverseName="country" inverseEntity="Boxer"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="country" inverseEntity="Event"/>
     </entity>
-    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+    <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -51,13 +51,13 @@
         <attribute name="timeAgo" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Organisation" representedClassName="Organisation" syncable="YES" codeGenerationType="class">
+    <entity name="Organisation" representedClassName="Organisation" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String"/>
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="shortName" optional="YES" attributeType="String"/>
         <relationship name="belts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belt" inverseName="organisation" inverseEntity="Belt"/>
     </entity>
-    <entity name="WeightClass" representedClassName="WeightClass" syncable="YES" codeGenerationType="class">
+    <entity name="WeightClass" representedClassName="WeightClass" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="lb" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
