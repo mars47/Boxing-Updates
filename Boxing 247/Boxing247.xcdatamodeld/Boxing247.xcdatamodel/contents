@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Belt" representedClassName="Belt" syncable="YES" codeGenerationType="class">
+        <attribute name="acquiredDate" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="boxer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Boxer" inverseName="belts" inverseEntity="Boxer"/>
+        <relationship name="organisation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organisation" inverseName="belts" inverseEntity="Organisation"/>
+        <relationship name="weightClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeightClass" inverseName="belts" inverseEntity="WeightClass"/>
+    </entity>
+    <entity name="Boxer" representedClassName="Boxer" syncable="YES" codeGenerationType="class">
+        <attribute name="dateOfBirth" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailUrl" optional="YES" attributeType="String"/>
+        <relationship name="belts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belt" inverseName="boxer" inverseEntity="Belt"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="boxers" inverseEntity="Country"/>
+        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event"/>
+        <relationship name="weightClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeightClass" inverseName="boxers" inverseEntity="WeightClass"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="isoCode" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="boxers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Boxer" inverseName="country" inverseEntity="Boxer"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="country" inverseEntity="Event"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="venue" optional="YES" attributeType="String"/>
+        <relationship name="boxer1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Boxer"/>
+        <relationship name="boxer2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Boxer"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="events" inverseEntity="Country"/>
+        <relationship name="mainEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="mainEvent" inverseEntity="Event"/>
+        <relationship name="undercards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="undercards" inverseEntity="Event"/>
+        <relationship name="weightClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeightClass" inverseName="events" inverseEntity="WeightClass"/>
+    </entity>
     <entity name="NewsArticle" representedClassName="NewsArticle" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="content" optional="YES" attributeType="String"/>
@@ -13,7 +51,27 @@
         <attribute name="timeAgo" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Organisation" representedClassName="Organisation" syncable="YES" codeGenerationType="class">
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="shortName" optional="YES" attributeType="String"/>
+        <relationship name="belts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belt" inverseName="organisation" inverseEntity="Belt"/>
+    </entity>
+    <entity name="WeightClass" representedClassName="WeightClass" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="lb" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="belts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belt" inverseName="weightClass" inverseEntity="Belt"/>
+        <relationship name="boxers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Boxer" inverseName="weightClass" inverseEntity="Boxer"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="weightClass" inverseEntity="Event"/>
+    </entity>
     <elements>
         <element name="NewsArticle" positionX="-63" positionY="-18" width="128" height="194"/>
+        <element name="Belt" positionX="-63" positionY="63" width="128" height="119"/>
+        <element name="Boxer" positionX="-54" positionY="72" width="128" height="164"/>
+        <element name="Event" positionX="-36" positionY="81" width="128" height="179"/>
+        <element name="Organisation" positionX="-18" positionY="90" width="128" height="89"/>
+        <element name="WeightClass" positionX="0" positionY="99" width="128" height="119"/>
+        <element name="Country" positionX="18" positionY="108" width="128" height="104"/>
     </elements>
 </model>
