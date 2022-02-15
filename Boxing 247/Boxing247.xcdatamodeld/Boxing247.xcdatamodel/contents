@@ -16,7 +16,7 @@
         <attribute name="thumbnailUrl" optional="YES" attributeType="String"/>
         <relationship name="belts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belt" inverseName="boxer" inverseEntity="Belt"/>
         <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="boxers" inverseEntity="Country"/>
-        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event"/>
         <relationship name="weightClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeightClass" inverseName="boxers" inverseEntity="WeightClass"/>
     </entity>
     <entity name="Country" representedClassName="Country" syncable="YES">
@@ -59,7 +59,7 @@
     </entity>
     <entity name="WeightClass" representedClassName="WeightClass" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String"/>
-        <attribute name="lb" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lb" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="belts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belt" inverseName="weightClass" inverseEntity="Belt"/>
         <relationship name="boxers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Boxer" inverseName="weightClass" inverseEntity="Boxer"/>
