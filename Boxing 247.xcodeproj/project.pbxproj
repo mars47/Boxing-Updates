@@ -31,6 +31,18 @@
 		074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E95F923801C9F00BC15CB /* NewsFeedDetailVC.swift */; };
 		07694DB32673AA0C0043285F /* FetchUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07694DB22673AA0C0043285F /* FetchUtility.swift */; };
 		077CE82F20E8CC5C00462AED /* HelpMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* HelpMenuVC.swift */; };
+		078923BE27BA4D5700DF491F /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */; };
+		078923BF27BA4D5700DF491F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */; };
+		078923C027BA4D5700DF491F /* WeightClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */; };
+		078923C127BA4D5700DF491F /* WeightClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B527BA4D5700DF491F /* WeightClass+CoreDataProperties.swift */; };
+		078923C227BA4D5700DF491F /* Boxer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B627BA4D5700DF491F /* Boxer+CoreDataClass.swift */; };
+		078923C327BA4D5700DF491F /* Boxer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B727BA4D5700DF491F /* Boxer+CoreDataProperties.swift */; };
+		078923C427BA4D5700DF491F /* Organisation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B827BA4D5700DF491F /* Organisation+CoreDataClass.swift */; };
+		078923C527BA4D5700DF491F /* Organisation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B927BA4D5700DF491F /* Organisation+CoreDataProperties.swift */; };
+		078923C627BA4D5700DF491F /* Belt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BA27BA4D5700DF491F /* Belt+CoreDataClass.swift */; };
+		078923C727BA4D5700DF491F /* Belt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BB27BA4D5700DF491F /* Belt+CoreDataProperties.swift */; };
+		078923C827BA4D5700DF491F /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BC27BA4D5700DF491F /* Country+CoreDataClass.swift */; };
+		078923C927BA4D5700DF491F /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BD27BA4D5700DF491F /* Country+CoreDataProperties.swift */; };
 		07898B56266BD7A7003BAD23 /* Boxing247.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07898B54266BD7A7003BAD23 /* Boxing247.xcdatamodeld */; };
 		07898B5D266D772D003BAD23 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B5A266D772D003BAD23 /* CoreDataProtocols.swift */; };
 		07898B5E266D772D003BAD23 /* SaveUltility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B5B266D772D003BAD23 /* SaveUltility.swift */; };
@@ -111,6 +123,18 @@
 		074E95F923801C9F00BC15CB /* NewsFeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDetailVC.swift; sourceTree = "<group>"; };
 		07694DB22673AA0C0043285F /* FetchUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUtility.swift; sourceTree = "<group>"; };
 		077CE82E20E8CC5C00462AED /* HelpMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMenuVC.swift; sourceTree = "<group>"; };
+		078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "Core Data Models/Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "Core Data Models/Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WeightClass+CoreDataClass.swift"; path = "Core Data Models/WeightClass+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B527BA4D5700DF491F /* WeightClass+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WeightClass+CoreDataProperties.swift"; path = "Core Data Models/WeightClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923B627BA4D5700DF491F /* Boxer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Boxer+CoreDataClass.swift"; path = "Core Data Models/Boxer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B727BA4D5700DF491F /* Boxer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Boxer+CoreDataProperties.swift"; path = "Core Data Models/Boxer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923B827BA4D5700DF491F /* Organisation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Organisation+CoreDataClass.swift"; path = "Core Data Models/Organisation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B927BA4D5700DF491F /* Organisation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Organisation+CoreDataProperties.swift"; path = "Core Data Models/Organisation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923BA27BA4D5700DF491F /* Belt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Belt+CoreDataClass.swift"; path = "Core Data Models/Belt+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923BB27BA4D5700DF491F /* Belt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Belt+CoreDataProperties.swift"; path = "Core Data Models/Belt+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923BC27BA4D5700DF491F /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataClass.swift"; path = "Core Data Models/Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923BD27BA4D5700DF491F /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataProperties.swift"; path = "Core Data Models/Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07898B55266BD7A7003BAD23 /* Boxing247.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Boxing247.xcdatamodel; sourceTree = "<group>"; };
 		07898B5A266D772D003BAD23 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
 		07898B5B266D772D003BAD23 /* SaveUltility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUltility.swift; sourceTree = "<group>"; };
@@ -296,6 +320,18 @@
 			children = (
 				07898B64266FF380003BAD23 /* NewsArticle+CoreDataClass.swift */,
 				07898B65266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift */,
+				078923BA27BA4D5700DF491F /* Belt+CoreDataClass.swift */,
+				078923BB27BA4D5700DF491F /* Belt+CoreDataProperties.swift */,
+				078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */,
+				078923B527BA4D5700DF491F /* WeightClass+CoreDataProperties.swift */,
+				078923B627BA4D5700DF491F /* Boxer+CoreDataClass.swift */,
+				078923B727BA4D5700DF491F /* Boxer+CoreDataProperties.swift */,
+				078923B827BA4D5700DF491F /* Organisation+CoreDataClass.swift */,
+				078923B927BA4D5700DF491F /* Organisation+CoreDataProperties.swift */,
+				078923BC27BA4D5700DF491F /* Country+CoreDataClass.swift */,
+				078923BD27BA4D5700DF491F /* Country+CoreDataProperties.swift */,
+				078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */,
+				078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -656,6 +692,7 @@
 				07F65E6E25D8843E00D58087 /* UIView+Extensions.swift in Sources */,
 				071C378720F0020B002CA348 /* HelpMenuCell.swift in Sources */,
 				07694DB32673AA0C0043285F /* FetchUtility.swift in Sources */,
+				078923C527BA4D5700DF491F /* Organisation+CoreDataProperties.swift in Sources */,
 				0727824020E6FB520071D528 /* NewsFeedVC.swift in Sources */,
 				07898B67266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift in Sources */,
 				07898B56266BD7A7003BAD23 /* Boxing247.xcdatamodeld in Sources */,
@@ -663,25 +700,36 @@
 				07F5D25B23DDF386002AE1F2 /* CowbellView.swift in Sources */,
 				0797BE6226C08686000356B3 /* String+Extensions.swift in Sources */,
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
+				078923C827BA4D5700DF491F /* Country+CoreDataClass.swift in Sources */,
 				0797BE5A26BDB7C5000356B3 /* EmptyDatasetView.swift in Sources */,
 				07F65E7F25D9064200D58087 /* Date+TimeAgo.swift in Sources */,
+				078923C927BA4D5700DF491F /* Country+CoreDataProperties.swift in Sources */,
 				07F65E6225D8771F00D58087 /* RankingsVM.swift in Sources */,
+				078923BE27BA4D5700DF491F /* Event+CoreDataClass.swift in Sources */,
 				07143C0C23C7F9A4007C525D /* RankingsCell.swift in Sources */,
 				072B89A12259ED8700973942 /* HelpMenuVM.swift in Sources */,
 				077CE82F20E8CC5C00462AED /* HelpMenuVC.swift in Sources */,
 				0797BE5626B933C4000356B3 /* Reachability.swift in Sources */,
+				078923C327BA4D5700DF491F /* Boxer+CoreDataProperties.swift in Sources */,
+				078923C127BA4D5700DF491F /* WeightClass+CoreDataProperties.swift in Sources */,
 				07143C0923C7F98C007C525D /* WeightDivisionHeader.swift in Sources */,
 				074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* NetworkManager.swift in Sources */,
+				078923C727BA4D5700DF491F /* Belt+CoreDataProperties.swift in Sources */,
 				07898B5D266D772D003BAD23 /* CoreDataProtocols.swift in Sources */,
 				071C377A20EF74E7002CA348 /* NewsFeedVM.swift in Sources */,
 				07898B5F266D772D003BAD23 /* CoreDataManager.swift in Sources */,
+				078923BF27BA4D5700DF491F /* Event+CoreDataProperties.swift in Sources */,
 				0797BE6426C08A02000356B3 /* UIScrollView+Extensions.swift in Sources */,
+				078923C027BA4D5700DF491F /* WeightClass+CoreDataClass.swift in Sources */,
 				07143C0E23C7FE5E007C525D /* RankingsVC.swift in Sources */,
 				07DE4CEC210B883900730457 /* Constants.swift in Sources */,
 				07F65E8425D9065000D58087 /* UIImage+Blur.swift in Sources */,
+				078923C227BA4D5700DF491F /* Boxer+CoreDataClass.swift in Sources */,
 				07B7045423B995780083D02A /* FederationHeader.swift in Sources */,
+				078923C627BA4D5700DF491F /* Belt+CoreDataClass.swift in Sources */,
 				07898B5E266D772D003BAD23 /* SaveUltility.swift in Sources */,
+				078923C427BA4D5700DF491F /* Organisation+CoreDataClass.swift in Sources */,
 				07898B66266FF380003BAD23 /* NewsArticle+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
