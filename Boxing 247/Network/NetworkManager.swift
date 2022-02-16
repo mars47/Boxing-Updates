@@ -55,6 +55,28 @@ class NetworkManager: NSObject {
         }
     }
     
+    func downloadBoxingData(completion: @escaping (Error?) -> Void) {
+        
+        guard
+            let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
+            let urlString = NSDictionary(contentsOfFile: path)?["boxingDataUrl"] as? String,
+            let url = URL(string: urlString)
+        else { return }
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            switch response.result {
+                
+            case .success(let value):
+                SaveUtility.saveNewsArticles(withData: JSON(value)) { (isSuccess) in
+                    
+                }
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+    
     func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage) -> ()) {
         
         Alamofire.request(url).responseData { (response) in

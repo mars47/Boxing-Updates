@@ -31,6 +31,34 @@ class SaveUtility {
         }
     }
     
+    static func saveBoxingData(withData json: JSON, completion: @escaping (Bool) -> Void) {
+        
+        CoreDataManager.performBackgroundTask { (context) in
+            
+            guard
+                let beltDictionaries = json.dictionary?["belts"]?.array,
+                let boxerDictionaries = json.dictionary?["boxers"]?.array,
+                let orgDictionaries = json.dictionary?["organizations"]?.array,
+                let weightClassDictionaries = json.dictionary?["weightClasses"]?.array,
+                let countryDictionaries = json.dictionary?["country"]?.array
+            else { completion(false); return }
+            
+            _ = beltDictionaries.map{ item in
+                
+                let weightId = item["weightClassId"].intValue
+                WeightClass.Weight(rawValue: weightId) != nil ?
+                Belt.managedObject(withJson: item, in: context) : nil
+            }
+            
+            _ = boxerDictionaries.map{Boxer.managedObject(withJson: $0, in: context)}
+            _ = orgDictionaries.map{Organisation.managedObject(withJson: $0, in: context)}
+            _ = weightClassDictionaries.map{WeightClass.managedObject(withJson: $0, in: context)}
+            _ = countryDictionaries.map{Country.managedObject(withJson: $0, in: context)}
+            
+            CoreDataManager.shared.save()
+        }
+    }
+    
     /* Generic method for saving core data entities */
     static func saveObjects<T: Updatable>(ofType updatableClass: T.Type, fromData data: Data, completion: @escaping (Bool) -> Void) {
         
@@ -51,7 +79,7 @@ class SaveUtility {
         }
     }
     
-    // MARK: - Saving local updates
+    // MARK: - Saving local changes
     
     static func saveChanges() {
         
