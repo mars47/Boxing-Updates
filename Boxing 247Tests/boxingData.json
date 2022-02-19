@@ -1,7 +1,12 @@
 {
    "belts":[
       {
-         
+         "id":65,
+         "name":"WBO Minimumweight",
+         "organizationId":10,
+         "weightClassId":5,
+         "boxerId":null,
+         "acquiredDate":null
       },
       {
          "id":61,
@@ -541,18 +546,442 @@
       }
    ],
    "boxers":[
-      
+      {
+         "id":0,
+         "firstName":"Vacant",
+         "lastName":null,
+         "dateOfBirth":null,
+         "weightClassId":16,
+         "countryId":null,
+         "thumbnailUrl":null
+      },
+      {
+         "id":1,
+         "firstName":"Dillian ",
+         "lastName":"Whyte",
+         "dateOfBirth":"1988-04-11",
+         "weightClassId":19,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//5/5c/Dwhyte.jpg"
+      },
+      {
+         "id":2,
+         "firstName":"Deontay",
+         "lastName":"Wilder",
+         "dateOfBirth":"1985-10-22",
+         "weightClassId":19,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//5/5f/DeontayWilder12.jpg"
+      },
+      {
+         "id":3,
+         "firstName":"Anthony",
+         "lastName":"Joshua",
+         "dateOfBirth":"1989-10-15",
+         "weightClassId":19,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//3/38/659461.jpeg"
+      },
+      {
+         "id":4,
+         "firstName":"Tyson",
+         "lastName":"Fury",
+         "dateOfBirth":"1988-08-12",
+         "weightClassId":19,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//0/04/TysonFury1.jpg"
+      },
+      {
+         "id":5,
+         "firstName":"Errol ",
+         "lastName":"Spence Jr.",
+         "dateOfBirth":"1990-01-13",
+         "weightClassId":14,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//d/de/629465.jpeg"
+      },
+      {
+         "id":6,
+         "firstName":"Gennady",
+         "lastName":"Golovkin",
+         "dateOfBirth":"1982-04-08",
+         "weightClassId":15,
+         "countryId":3,
+         "thumbnailUrl":"https://boxrec.com/media/images//b/b9/GGG.jpg"
+      },
+      {
+         "id":7,
+         "firstName":"Canelo",
+         "lastName":"Alvarez",
+         "dateOfBirth":"1990-07-18",
+         "weightClassId":15,
+         "countryId":4,
+         "thumbnailUrl":"https://boxrec.com/media/images//7/74/Santos_Saul_Alvarez_Barragan1.jpg"
+      },
+      {
+         "id":8,
+         "firstName":"Andy",
+         "lastName":"Ruiz",
+         "dateOfBirth":"1989-09-11",
+         "weightClassId":19,
+         "countryId":4,
+         "thumbnailUrl":"https://boxrec.com/media/images//c/cc/AndyRuizJr.jpeg"
+      },
+      {
+         "id":12,
+         "firstName":"Oleksandr",
+         "lastName":"Usyk",
+         "dateOfBirth":"1987-01-17",
+         "weightClassId":19,
+         "countryId":5,
+         "thumbnailUrl":"https://boxrec.com/media/images//2/26/659772.jpg"
+      },
+      {
+         "id":13,
+         "firstName":"Arsen",
+         "lastName":"Goulamirian",
+         "dateOfBirth":"1987-10-04",
+         "weightClassId":18,
+         "countryId":6,
+         "thumbnailUrl":"https://boxrec.com/media/images//a/a7/Goulamirian_Arsen.jpg"
+      },
+      {
+         "id":14,
+         "firstName":"Ilunga ",
+         "lastName":"Makabu",
+         "dateOfBirth":"1987-11-08",
+         "weightClassId":18,
+         "countryId":7,
+         "thumbnailUrl":"https://boxrec.com/media/images//c/ce/457720.jpeg"
+      },
+      {
+         "id":15,
+         "firstName":"Mairis ",
+         "lastName":"Briedis",
+         "dateOfBirth":"1985-01-13",
+         "weightClassId":18,
+         "countryId":8,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/7/7c/MairisBriedis.jpeg/500px-MairisBriedis.jpeg"
+      },
+      {
+         "id":16,
+         "firstName":"Lawrence ",
+         "lastName":"Okolie",
+         "dateOfBirth":"1992-11-16",
+         "weightClassId":18,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/5/5e/Lawrence_Okolie.jpg/500px-Lawrence_Okolie.jpg"
+      },
+      {
+         "id":18,
+         "firstName":"Dmitry ",
+         "lastName":"Bivol",
+         "dateOfBirth":"1990-12-18",
+         "weightClassId":17,
+         "countryId":9,
+         "thumbnailUrl":"https://boxrec.com/media/images//5/51/DmitryBivol1.jpg"
+      },
+      {
+         "id":19,
+         "firstName":"Artur",
+         "lastName":"Beterbiev",
+         "dateOfBirth":"1985-01-21",
+         "weightClassId":17,
+         "countryId":9,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/2/20/Artur_Beterbiev.jpeg/500px-Artur_Beterbiev.jpeg"
+      },
+      {
+         "id":20,
+         "firstName":"Joe",
+         "lastName":"Smith Jr.",
+         "dateOfBirth":"1989-09-20",
+         "weightClassId":17,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/0/02/513839.jpeg/500px-513839.jpeg"
+      },
+      {
+         "id":22,
+         "firstName":"Ryōta",
+         "lastName":"Murata",
+         "dateOfBirth":"1986-01-12",
+         "weightClassId":15,
+         "countryId":10,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/7/78/RMurata1.jpg/500px-RMurata1.jpg"
+      },
+      {
+         "id":23,
+         "firstName":"Jermall",
+         "lastName":"Charlo",
+         "dateOfBirth":"1990-05-19",
+         "weightClassId":15,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//1/1d/471634.jpeg"
+      },
+      {
+         "id":24,
+         "firstName":"Demetrius ",
+         "lastName":"Andrade",
+         "dateOfBirth":"1988-02-19",
+         "weightClassId":15,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//b/bc/Demetrius_Andrade_2019.JPG"
+      },
+      {
+         "id":25,
+         "firstName":"Brian ",
+         "lastName":"Castaño",
+         "dateOfBirth":"1989-09-12",
+         "weightClassId":21,
+         "countryId":11,
+         "thumbnailUrl":"https://boxrec.com/media/images//e/e5/BCCastano.jpeg"
+      },
+      {
+         "id":26,
+         "firstName":"Jermell",
+         "lastName":"Charlo",
+         "dateOfBirth":"1990-05-19",
+         "weightClassId":21,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//2/2c/433135.jpeg"
+      },
+      {
+         "id":28,
+         "firstName":"Terence",
+         "lastName":"Crawford",
+         "dateOfBirth":"1987-12-28",
+         "weightClassId":14,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//3/3c/447121.jpg"
+      },
+      {
+         "id":29,
+         "firstName":"Yordenis",
+         "lastName":"Ugás",
+         "dateOfBirth":"1986-07-14",
+         "weightClassId":14,
+         "countryId":12,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/6/69/541777.jpeg/500px-541777.jpeg"
+      },
+      {
+         "id":30,
+         "firstName":"Josh",
+         "lastName":"Taylor",
+         "dateOfBirth":"1991-01-02",
+         "weightClassId":13,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/6/69/JoshTaylormtk.jpeg/500px-JoshTaylormtk.jpeg"
+      },
+      {
+         "id":31,
+         "firstName":"George",
+         "lastName":"Kambosos Jr.",
+         "dateOfBirth":"1993-06-14",
+         "weightClassId":12,
+         "countryId":13,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/d/dc/646781.jpeg/500px-646781.jpeg"
+      },
+      {
+         "id":32,
+         "firstName":"Devin",
+         "lastName":"Haney",
+         "dateOfBirth":"1998-11-17",
+         "weightClassId":12,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/7/7b/DevinHaney.jpg/500px-DevinHaney.jpg"
+      }
    ],
    "events":[
-      
+      {
+         "id":2,
+         "title":"Anthony Joshua VS Tyson Fury",
+         "date":"2021-01-30",
+         "venue":"02 Arena",
+         "countryId":null,
+         "weightClassId":19,
+         "mainEventId":null,
+         "boxer1Id":4,
+         "boxer2Id":3
+      }
    ],
    "organizations":[
-      
+      {
+         "id":10,
+         "shortName":"WBO",
+         "fullName":"World Boxing Organization"
+      },
+      {
+         "id":11,
+         "shortName":"WBC",
+         "fullName":"World Boxing Council "
+      },
+      {
+         "id":12,
+         "shortName":"WBA",
+         "fullName":"World Boxing Association"
+      },
+      {
+         "id":13,
+         "shortName":"IBF",
+         "fullName":"International Boxing Federation"
+      }
    ],
    "weightClasses":[
-      
+      {
+         "id":5,
+         "weight":"Minimumweight",
+         "lb":105
+      },
+      {
+         "id":6,
+         "weight":"Light Flyweight",
+         "lb":108
+      },
+      {
+         "id":7,
+         "weight":"Flyweight",
+         "lb":112
+      },
+      {
+         "id":8,
+         "weight":"Super Flyweight",
+         "lb":115
+      },
+      {
+         "id":9,
+         "weight":"Super Bantamweight",
+         "lb":122
+      },
+      {
+         "id":10,
+         "weight":"Featherweight",
+         "lb":126
+      },
+      {
+         "id":11,
+         "weight":"Super Featherweight",
+         "lb":130
+      },
+      {
+         "id":12,
+         "weight":"Lightweight",
+         "lb":135
+      },
+      {
+         "id":13,
+         "weight":"Super Lightweight",
+         "lb":140
+      },
+      {
+         "id":14,
+         "weight":"Welterweight",
+         "lb":147
+      },
+      {
+         "id":15,
+         "weight":"Middleweight",
+         "lb":160
+      },
+      {
+         "id":16,
+         "weight":"Super Middleweight",
+         "lb":168
+      },
+      {
+         "id":17,
+         "weight":"Light Heavyweight",
+         "lb":175
+      },
+      {
+         "id":18,
+         "weight":"Cruiserweight",
+         "lb":200
+      },
+      {
+         "id":19,
+         "weight":"Heavyweight",
+         "lb":250
+      },
+      {
+         "id":20,
+         "weight":"Bantamweight",
+         "lb":118
+      },
+      {
+         "id":21,
+         "weight":"Super Welterweight",
+         "lb":154
+      },
+      {
+         "id":22,
+         "weight":"Light Minimumweight",
+         "lb":102
+      }
    ],
    "country":[
-      
+      {
+         "id":1,
+         "isoCode":"uk",
+         "name":"United Kingdom "
+      },
+      {
+         "id":2,
+         "isoCode":"us",
+         "name":"United States "
+      },
+      {
+         "id":3,
+         "isoCode":"kz",
+         "name":"Kazakhstan"
+      },
+      {
+         "id":4,
+         "isoCode":"mx",
+         "name":"Mexico "
+      },
+      {
+         "id":5,
+         "isoCode":"ua ",
+         "name":"Ukraine "
+      },
+      {
+         "id":6,
+         "isoCode":"fr",
+         "name":"France"
+      },
+      {
+         "id":7,
+         "isoCode":"cd",
+         "name":"DR Congo"
+      },
+      {
+         "id":8,
+         "isoCode":"lv",
+         "name":"Latvia "
+      },
+      {
+         "id":9,
+         "isoCode":"ru",
+         "name":"Russia "
+      },
+      {
+         "id":10,
+         "isoCode":"jp",
+         "name":"Japan "
+      },
+      {
+         "id":11,
+         "isoCode":"ar",
+         "name":"Argentina "
+      },
+      {
+         "id":12,
+         "isoCode":"cu",
+         "name":"Cuba "
+      },
+      {
+         "id":13,
+         "isoCode":"au ",
+         "name":"Australia "
+      }
    ]
 }
