@@ -36,6 +36,7 @@
 		0787C34E27BE3D1E00283E25 /* FileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34D27BE3D1E00283E25 /* FileExtractor.swift */; };
 		0787C35027BE3EAF00283E25 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0787C34F27BE3EAF00283E25 /* Config.plist */; };
 		0787C35227C0EB6200283E25 /* boxingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35127C0EB6100283E25 /* boxingData.json */; };
+		0787C35427C1283900283E25 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C35327C1283900283E25 /* CustomError.swift */; };
 		078923BE27BA4D5700DF491F /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */; };
 		078923BF27BA4D5700DF491F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */; };
 		078923C027BA4D5700DF491F /* WeightClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */; };
@@ -131,6 +132,7 @@
 		0787C34D27BE3D1E00283E25 /* FileExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileExtractor.swift; sourceTree = "<group>"; };
 		0787C34F27BE3EAF00283E25 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		0787C35127C0EB6100283E25 /* boxingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boxingData.json; sourceTree = "<group>"; };
+		0787C35327C1283900283E25 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "Core Data Models/Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "Core Data Models/Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WeightClass+CoreDataClass.swift"; path = "Core Data Models/WeightClass+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		07F65E6925D8842A00D58087 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0787C35327C1283900283E25 /* CustomError.swift */,
 				0787C34D27BE3D1E00283E25 /* FileExtractor.swift */,
 				07F65E6D25D8843E00D58087 /* UIView+Extensions.swift */,
 				07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */,
@@ -718,6 +721,7 @@
 				07F65E6225D8771F00D58087 /* RankingsVM.swift in Sources */,
 				078923BE27BA4D5700DF491F /* Event+CoreDataClass.swift in Sources */,
 				07143C0C23C7F9A4007C525D /* RankingsCell.swift in Sources */,
+				0787C35427C1283900283E25 /* CustomError.swift in Sources */,
 				072B89A12259ED8700973942 /* HelpMenuVM.swift in Sources */,
 				077CE82F20E8CC5C00462AED /* HelpMenuVC.swift in Sources */,
 				0797BE5626B933C4000356B3 /* Reachability.swift in Sources */,
