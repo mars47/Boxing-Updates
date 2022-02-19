@@ -30,18 +30,18 @@ class SaveUtility {
             completion(true)
         }
     }
-    
-    static func saveBoxingData(withData json: JSON, completion: @escaping (Bool) -> Void) {
+        
+    static func saveBoxingData(withData json: JSON, completion: @escaping (Error?) -> Void) {
         
         CoreDataManager.performBackgroundTask { (context) in
             
             guard
                 let beltDictionaries = json.dictionary?["belts"]?.array,
+                let weightClassDictionaries = json.dictionary?["weightClasses"]?.array,
                 let boxerDictionaries = json.dictionary?["boxers"]?.array,
                 let orgDictionaries = json.dictionary?["organizations"]?.array,
-                let weightClassDictionaries = json.dictionary?["weightClasses"]?.array,
                 let countryDictionaries = json.dictionary?["country"]?.array
-            else { completion(false); return }
+            else { completion(CustomError(description: "Guard failed")); return }
             
             _ = beltDictionaries.map{ item in
                 
@@ -50,12 +50,19 @@ class SaveUtility {
                 Belt.managedObject(withJson: item, in: context) : nil
             }
             
+            _ = weightClassDictionaries.map{ item in
+                
+                let weightId = item["id"].intValue
+                WeightClass.Weight(rawValue: weightId) != nil ?
+                WeightClass.managedObject(withJson: item, in: context) : nil
+            }
+            
             _ = boxerDictionaries.map{Boxer.managedObject(withJson: $0, in: context)}
             _ = orgDictionaries.map{Organisation.managedObject(withJson: $0, in: context)}
-            _ = weightClassDictionaries.map{WeightClass.managedObject(withJson: $0, in: context)}
             _ = countryDictionaries.map{Country.managedObject(withJson: $0, in: context)}
             
             CoreDataManager.shared.save()
+            completion(nil)
         }
     }
     
@@ -91,5 +98,4 @@ class SaveUtility {
             print("Couldn't save object: \(error.localizedDescription)")
         }
     }
-
 }
