@@ -13,12 +13,16 @@ import SwiftyJSON
 
 @objc(Event)
 public class Event: NSManagedObject, Updatable {
-    
-    static var dataIdentifier: String = ""
-    static var objectIdentifier: String = ""
+        
+    static var dataIdentifier: String = "id"
+    static var objectIdentifier: String = "identifier"
     
     func update(with json: JSON) {
         
+    }
+    
+    func setId(id: String) {
+        identifier = id
     }
 
 }

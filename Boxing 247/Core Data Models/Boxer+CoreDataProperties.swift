@@ -2,7 +2,7 @@
 //  Boxer+CoreDataProperties.swift
 //  Boxing 247
 //
-//  Created by Omar on 14/02/2022.
+//  Created by Omar on 26/02/2022.
 //  Copyright © 2022 Omar. All rights reserved.
 //
 //
@@ -17,15 +17,15 @@ extension Boxer {
         return NSFetchRequest<Boxer>(entityName: "Boxer")
     }
 
-    @NSManaged public var identifier: String?
+    @NSManaged public var dateOfBirth: Date?
     @NSManaged public var firstName: String?
+    @NSManaged public var identifier: String?
     @NSManaged public var lastName: String?
-    @NSManaged public var dateOfBirth: String?
     @NSManaged public var thumbnailUrl: String?
     @NSManaged public var belts: NSSet?
-    @NSManaged public var weightClass: WeightClass?
     @NSManaged public var country: Country?
     @NSManaged public var events: NSSet?
+    @NSManaged public var weightClass: WeightClass?
 
 }
 

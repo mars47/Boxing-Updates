@@ -14,6 +14,10 @@ import SwiftyJSON
 @objc(NewsArticle)
 public class NewsArticle: NSManagedObject, Updatable {
     
+    func setId(id: String) {
+        
+    }
+    
     static var dataIdentifier: String = "guid"
     static var objectIdentifier: String = "guid"
 

@@ -21,16 +21,30 @@ public class Belt: NSManagedObject, Updatable  {
         
         identifier = "\(json["id"].intValue)"
         name = json["name"].string
-        acquiredDate = json["acquiredDate"].string
+        
+        
+        if let date = json["acquiredDate"].string {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+            acquiredDate = dateFormatter.date(from:date)
+        }
         
         if let boxerId = json["boxerId"].int {
-            self.boxer = Boxer.object(withId: "\(boxerId)", in: managedObjectContext!)
+            boxer = Boxer.fetchOrCreateObject(withId: "\(boxerId)", in: managedObjectContext!)
+            boxer?.setId(id: "\(boxerId)")
         }
         if let weightClassId = json["weightClassId"].int {
-            self.weightClass = WeightClass.object(withId: "\(weightClassId)", in: managedObjectContext!)
+            weightClass = WeightClass.fetchOrCreateObject(withId: "\(weightClassId)", in: managedObjectContext!)
+            weightClass?.setId(id: "\(weightClassId)")
         }
         if let organisationId = json["organizationId"].int {
-            self.organisation = Organisation.object(withId: "\(organisationId)", in: managedObjectContext!)
+            organisation = Organisation.fetchOrCreateObject(withId: "\(organisationId)", in: managedObjectContext!)
+            organisation?.setId(id: "\(organisationId)")
         }
+    }
+    
+    func setId(id: String) {
+        identifier = id
     }
 }

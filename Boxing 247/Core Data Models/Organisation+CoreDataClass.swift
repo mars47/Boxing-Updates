@@ -13,13 +13,19 @@ import SwiftyJSON
 
 @objc(Organisation)
 public class Organisation: NSManagedObject, Updatable {
-    
-    static var dataIdentifier: String = ""
-    static var objectIdentifier: String = ""
+        
+    static var dataIdentifier: String = "id"
+    static var objectIdentifier: String = "identifier"
     
     func update(with json: JSON) {
         
+        identifier = "\(json["id"].intValue)"
+        fullName = json["fullName"].string
+        shortName = json["shortName"].string
     }
     
+    func setId(id: String) {
+        identifier = id
+    }
 
 }

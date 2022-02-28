@@ -50,6 +50,7 @@ protocol Updatable: Managed {
     static var objectIdentifier: String { get set }
     
     func update(with json: JSON)
+    func setId(id: String)
 }
 
 extension Updatable where Self: NSManagedObject {
@@ -60,7 +61,7 @@ extension Updatable where Self: NSManagedObject {
             let objectId = json.dictionary?[dataIdentifier]?.number?.stringValue
             ?? json.dictionary?[dataIdentifier]?.string else { return }
         
-        if let object = Self.object(withId: objectId, in: context) {
+        if let object = Self.fetchObject(withId: objectId, in: context) {
             
             object.update(with: json)
             
@@ -72,9 +73,23 @@ extension Updatable where Self: NSManagedObject {
         }
     }
     
-    static func object(withId id: String, in context: NSManagedObjectContext) -> Self? {
+    static func fetchObject(withId id: String, in context: NSManagedObjectContext) -> Self? {
         
-        return try? context.fetch(fetchRequest(forId: id)).first as? Self ?? nil
+        return try? context.fetch(fetchRequest(forId: id)).first as? Self
+    }
+    
+    
+    static func fetchOrCreateObject(withId id: String, in context: NSManagedObjectContext) -> Self {
+        
+        var object : Self?
+
+        object = try? context.fetch(fetchRequest(forId: id)).first as? Self
+
+        if object == nil {
+            object = Self(entity: self.entity(), insertInto: context)
+        }
+        
+        return object!
     }
     
     static func fetchAll() -> [Self] {
