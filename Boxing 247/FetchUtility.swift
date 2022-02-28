@@ -42,6 +42,105 @@ class FetchUtility {
         }
         return nil
     }
+    
+    static func belts() -> [Belt]? {
+        
+        
+        let context = CoreDataManager.shared.container.viewContext
+        do {
+            let request = fetchRequest(entityName: "Belt", sortKey: "identifier")
+            
+            let belts = try context.fetch(request) as? [Belt]
+            return belts?.sorted(by: { Int($0.identifier!)! < Int($1.identifier!)! } )
+            
+        } catch {
+            print("Couldn't fetch news: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
+    static func events() -> [Event]? {
+        
+        
+        let context = CoreDataManager.shared.container.viewContext
+        do {
+            let request = fetchRequest(entityName: "Event", sortKey: "identifier")
+            
+            let events = try context.fetch(request) as? [Event]
+            return events?.sorted(by: { Int($0.identifier!)! < Int($1.identifier!)! } )
+            
+        } catch {
+            print("Couldn't fetch news: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
+    static func boxers() -> [Boxer]? {
+        
+        
+        let context = CoreDataManager.shared.container.viewContext
+        do {
+            let request = fetchRequest(entityName: "Boxer", sortKey: "identifier")
+            
+            let boxers = try context.fetch(request) as? [Boxer]
+            return boxers?.sorted(by: { Int($0.identifier!)! < Int($1.identifier!)! } )
+            
+            
+        } catch {
+            print("Couldn't fetch news: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
+    static func countrys() -> [Country]? {
+        
+        
+        let context = CoreDataManager.shared.container.viewContext
+        do {
+            let request = fetchRequest(entityName: "Country", sortKey: "identifier")
+            
+            let countrys = try context.fetch(request) as? [Country]
+            return countrys?.sorted(by: { Int($0.identifier!)! < Int($1.identifier!)! } )
+            
+            
+        } catch {
+            print("Couldn't fetch news: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
+    static func weightClasses() -> [WeightClass]? {
+        
+        
+        let context = CoreDataManager.shared.container.viewContext
+        do {
+            let request = fetchRequest(entityName: "WeightClass", sortKey: "lb")
+            
+           return try context.fetch(request) as? [WeightClass]
+            
+        } catch {
+            print("Couldn't fetch news: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
+    static func organisations() -> [Organisation]? {
+        
+        
+        let context = CoreDataManager.shared.container.viewContext
+        do {
+            let request = fetchRequest(entityName: "Organisation", sortKey: "identifier")
+            
+            let organisations = try context.fetch(request) as? [Organisation]
+            return organisations?.sorted(by: { Int($0.identifier!)! < Int($1.identifier!)! } )
+            
+        } catch {
+            print("Couldn't fetch news: \(error.localizedDescription)")
+        }
+        return nil
+    }
+
+    
 }
 
 private extension FetchUtility {
@@ -61,7 +160,7 @@ private extension FetchUtility {
         return fetchRequest(entityName: "NewsArticle", sortKey: "pubDate", predicate: newsType == .new ? predicate1 : predicateCompound)
     }
         
-    static func fetchRequest(entityName: String, sortKey: String, predicate: NSPredicate) -> NSFetchRequest<NSFetchRequestResult> {
+    static func fetchRequest(entityName: String, sortKey: String, predicate: NSPredicate? = nil) -> NSFetchRequest<NSFetchRequestResult> {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let sortDescriptor = NSSortDescriptor(key: sortKey, ascending: false)
