@@ -23,7 +23,7 @@ class SaveUtilityTests: XCTestCase {
     func test_saveBoxingData() throws {
         
         let expectation = self.expectation(description: "Saving JSON data")
-        let data = dataFromFile("boxingData")
+        let data = dataFromFile("AllBoxingData")
         guard let json =  try? JSON(data: data) else { XCTFail("json failed"); return }
         
         SaveUtility.saveBoxingData(withData: json) { error in
@@ -79,10 +79,10 @@ class SaveUtilityTests: XCTestCase {
         XCTAssert(country?.name == "United Kingdom ")
         XCTAssert(country?.isoCode == "uk")
         
-        /* any changes to how data is extracted:
+        /* any changes to how data is extracted in:
          
-         - in each NSManaged Object subclass
-         - from root JSON dictionary used in SaveUtility.saveBoxingData
+         - each NSManaged Object subclass / Core Data entity
+         - root JSON dictionary (used in SaveUtility.saveBoxingData)
          
           ...will fail this test */
     }
