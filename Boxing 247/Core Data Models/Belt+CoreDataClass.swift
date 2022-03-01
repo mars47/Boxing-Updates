@@ -22,7 +22,6 @@ public class Belt: NSManagedObject, Updatable  {
         identifier = "\(json["id"].intValue)"
         name = json["name"].string
         
-        
         if let date = json["acquiredDate"].string {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"

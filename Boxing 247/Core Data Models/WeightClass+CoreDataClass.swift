@@ -14,6 +14,17 @@ import SwiftyJSON
 @objc(WeightClass)
 public class WeightClass: NSManagedObject, Updatable {
         
+    static var dataIdentifier: String = "id"
+    static var objectIdentifier: String = "identifier"
+    
+    var beltSet : Set<Belt> {
+        belts as? Set<Belt> ?? Set<Belt>()
+    }
+    
+    var boxerSet : Set<Boxer> {
+        boxers as? Set<Boxer> ?? Set<Boxer>()
+    }
+    
     enum Weight: Int {
         
         case heavyweight = 19
@@ -26,9 +37,6 @@ public class WeightClass: NSManagedObject, Updatable {
         case superlightweight = 13
         case lightweight = 12
     }
-
-    static var dataIdentifier: String = "id"
-    static var objectIdentifier: String = "identifier"
     
     func update(with json: JSON) {
         
