@@ -13,15 +13,16 @@ class FetchUtility {
     
     enum NewsType {
         case old
-        case new
+        case latest
+        case all
     }
         
-    static func news(fetch newsType: NewsType) -> [NewsArticle]? {
+    static func news(fetch newsType: NewsType, from date: Date? = nil) -> [NewsArticle]? {
         
         let context = CoreDataManager.shared.container.viewContext
         do {
             
-            let request = newsRequest(for: newsType)
+            let request = newsRequest(for: newsType, date: date)
             
             return try context.fetch(request) as? [NewsArticle]
         } catch {
@@ -139,25 +140,30 @@ class FetchUtility {
         }
         return nil
     }
-
-    
 }
 
 private extension FetchUtility {
     
-    static func newsRequest(for newsType: NewsType) -> NSFetchRequest<NSFetchRequestResult> {
+    static func newsRequest(for newsType: NewsType, date: Date? = nil) -> NSFetchRequest<NSFetchRequestResult> {
         
-        let fiveDaysAgo = Calendar.current.date(byAdding: .day, value: -5, to: Date())!
+        let date = (date == nil) ? Date() : date!
+        let fiveDaysAgo = Calendar.current.date(byAdding: .day, value: -5, to: date )!
         
-        let predicate1 = newsType == .new ?
-            NSPredicate(format: "pubDate >= %@", fiveDaysAgo as NSDate) :
-            NSPredicate(format: "pubDate < %@", fiveDaysAgo as NSDate)
+        var predicate : NSPredicate?
         
-        let predicate2 = NSPredicate(format: "isBookmarked = %d", false)
+        switch newsType {
+        case .old:
+            predicate = NSPredicate(format: "pubDate <= %@", fiveDaysAgo as NSDate)
+        case .latest:
+            /* 'date >= date' == 'date *more recent than* date' */
+            let latestNews = NSPredicate(format: "pubDate >= %@", fiveDaysAgo as NSDate)
+            let newsNotBookmarked = NSPredicate(format: "isBookmarked = %d", false)
+            predicate = NSCompoundPredicate.init(type: .and, subpredicates: [latestNews, newsNotBookmarked])
+        case .all:
+            predicate = nil
+        }
         
-        let predicateCompound = NSCompoundPredicate.init(type: .and, subpredicates: [predicate1,predicate2])
-        
-        return fetchRequest(entityName: "NewsArticle", sortKey: "pubDate", predicate: newsType == .new ? predicate1 : predicateCompound)
+        return fetchRequest(entityName: "NewsArticle", sortKey: "pubDate", predicate: predicate)
     }
         
     static func fetchRequest(entityName: String, sortKey: String, predicate: NSPredicate? = nil) -> NSFetchRequest<NSFetchRequestResult> {

@@ -22,13 +22,13 @@ protocol Managed: class, NSFetchRequestResult {
 }
 
 extension Managed {
-    
+
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return []
     }
-    
+
     static var sortedFetchRequest: NSFetchRequest<Self> {
-        
+
         let request = NSFetchRequest<Self>(entityName: entityName)
         request.sortDescriptors = defaultSortDescriptors
         return request
@@ -84,12 +84,8 @@ extension Updatable where Self: NSManagedObject {
         var object : Self?
 
         object = try? context.fetch(fetchRequest(forId: id)).first as? Self
-
-        if object == nil {
-            object = Self(entity: self.entity(), insertInto: context)
-        }
         
-        return object!
+        return object != nil ? object! : Self(entity: self.entity(), insertInto: context)
     }
     
     static func fetchAll() -> [Self] {
@@ -102,6 +98,16 @@ extension Updatable where Self: NSManagedObject {
         if let elements = elements, !elements.isEmpty {
             for element in elements {
                 managedObjectContext?.delete(element)
+            }
+        }
+    }
+    
+    static func eraseCurrent<T: NSManagedObject>(elements: Set<T>?) {
+        
+        if let elements = elements, !elements.isEmpty {
+            for element in elements {
+                
+                element.managedObjectContext?.delete(element)
             }
         }
     }

@@ -55,7 +55,7 @@ class NewsFeedVM: NSObject {
             newsArticles.removeAll()
             bookmarkedNewsArticles.removeAll()
             
-            newsArticles = FetchUtility.news(fetch: .new) ?? []
+            newsArticles = FetchUtility.news(fetch: .latest) ?? []
             bookmarkedNewsArticles = FetchUtility.bookmarkedNews() ?? []
 
             downloadImages(for: newsArticles){ [self] in
@@ -72,7 +72,7 @@ class NewsFeedVM: NSObject {
         }
     }
     
-    func updateDatasource(for segment: NewsFeedVC.Segment, itemsDisplayedCount: Int ) {
+    func updateDatasource(for segment: NewsFeedVC.Segment, itemsDisplayedCount: Int) {
        
         let datasourceAllItemsCount = (segment == .bookmarked) ? bookmarkedNewsArticles.count: newsArticles.count
         
