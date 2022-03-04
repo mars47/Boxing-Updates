@@ -37,31 +37,31 @@ class BeltTests: XCTestCase {
         /* Tests that relationships have been linked through update method */
         XCTAssertFalse(boxer.beltSet.isEmpty)
         
-        XCTAssert(belt?.identifier == boxer?.beltSet.first?.identifier) //.first(where: {$0.id == 1})
-        XCTAssert(belt?.name == boxer?.beltSet.first?.name)
+        XCTAssert(belt.identifier == boxer?.beltSet.first?.identifier)
+        XCTAssert(belt.name == boxer?.beltSet.first?.name)
         
-        XCTAssertNotNil(belt.weightClass)
         XCTAssert(belt.weightClass?.name == "Heavyweight")
-        
-        XCTAssertNotNil(belt.organisation)
         XCTAssert(belt.organisation?.fullName == "World Boxing Organization")
+        
+        XCTAssertNotNil(weightclass.beltSet.first(where: {belt.identifier == $0.identifier}) )
+        XCTAssertNotNil(organisation.beltSet.first(where: {belt.identifier == $0.identifier}) )
     }
     
     func test_beltCountisOne() {
-        /* Only testing for 1 belt instance */
+        /* Testing all instances of 'Belt' in question are referencing the same 1 belt object  */
         XCTAssert(FetchUtility.belts()?.count == 1)
     }
     
     func test_update() {
         /* Tests belt data is processed */
         
-        XCTAssert(belt?.boxer?.identifier == "1")
+        XCTAssert(belt.boxer?.identifier == "1")
         let sep_01_2021 = Date(timeIntervalSince1970: 1630454400)
-        XCTAssert(belt?.acquiredDate == sep_01_2021)
+        XCTAssert(belt.acquiredDate == sep_01_2021)
         XCTAssert(belt.boxer?.firstName == "Dillian " )
         XCTAssert(belt.boxer?.lastName == "Whyte" )
         
-        let expectation = self.expectation(description: "Saving updated Belt JSON data")
+        let expectation = self.expectation(description: "A new champion ('Boxer') has acquired a belt. Data from server for this '(Belt)' has now been updated")
         CoreDataManager.performBackgroundTask { (context) in
             
             let updatedData = self.dataFromFile("updatedBeltData")
@@ -73,14 +73,14 @@ class BeltTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         belts = FetchUtility.belts()
-        belt = belts?.first
+        belt = belts.first
         
         /* Tests for absence of a duplicated belt, after updated belt data from server has been processed */
-        XCTAssert(belts?.count == 1)
+        XCTAssert(belts.count == 1)
         /* Tests belt data is successfully updated after ownership of belt is transfered */
-        XCTAssert(belt?.boxer?.identifier == "2")
+        XCTAssert(belt.boxer?.identifier == "2")
         let aug_01_2022 = Date(timeIntervalSince1970: 1659312000)
-        XCTAssert(belt?.acquiredDate == aug_01_2022)
+        XCTAssert(belt.acquiredDate == aug_01_2022)
         XCTAssert(belt.boxer?.firstName == "Deontay" )
         XCTAssert(belt.boxer?.lastName == "Wilder" )
     }

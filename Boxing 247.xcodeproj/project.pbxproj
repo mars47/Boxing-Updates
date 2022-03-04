@@ -43,6 +43,8 @@
 		0787C35C27CE545F00283E25 /* updatedBeltData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35B27CE545F00283E25 /* updatedBeltData.json */; };
 		0787C35E27CEB7D000283E25 /* orgData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35D27CEB7D000283E25 /* orgData.json */; };
 		0787C36027CEB85B00283E25 /* weightclassData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35F27CEB85B00283E25 /* weightclassData.json */; };
+		0787C36227CF6FCA00283E25 /* Boxing_247Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C36127CF6FCA00283E25 /* Boxing_247Tests.swift */; };
+		0787C36527CFD5D200283E25 /* newsArticlesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C36427CFD5D100283E25 /* newsArticlesData.json */; };
 		078923BE27BA4D5700DF491F /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */; };
 		078923BF27BA4D5700DF491F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */; };
 		078923C027BA4D5700DF491F /* WeightClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */; };
@@ -145,6 +147,8 @@
 		0787C35B27CE545F00283E25 /* updatedBeltData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = updatedBeltData.json; sourceTree = "<group>"; };
 		0787C35D27CEB7D000283E25 /* orgData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orgData.json; sourceTree = "<group>"; };
 		0787C35F27CEB85B00283E25 /* weightclassData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weightclassData.json; sourceTree = "<group>"; };
+		0787C36127CF6FCA00283E25 /* Boxing_247Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247Tests.swift; sourceTree = "<group>"; };
+		0787C36427CFD5D100283E25 /* newsArticlesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newsArticlesData.json; sourceTree = "<group>"; };
 		078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "Core Data Models/Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "Core Data Models/Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WeightClass+CoreDataClass.swift"; path = "Core Data Models/WeightClass+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -291,15 +295,10 @@
 		0727825120E6FB520071D528 /* Boxing 247Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0787C36127CF6FCA00283E25 /* Boxing_247Tests.swift */,
 				0787C34827BE3BF900283E25 /* SaveUtilityTests.swift */,
 				0787C34727BE3BF800283E25 /* BeltTests.swift */,
-				0787C35727CD6F2800283E25 /* beltData.json */,
-				0787C35B27CE545F00283E25 /* updatedBeltData.json */,
-				0787C35627CD6F2800283E25 /* boxer2Data.json */,
-				0787C35527CD6F2800283E25 /* boxer1Data.json */,
-				0787C35127C0EB6100283E25 /* AllBoxingData.json */,
-				0787C35F27CEB85B00283E25 /* weightclassData.json */,
-				0787C35D27CEB7D000283E25 /* orgData.json */,
+				0787C36327CFD5AD00283E25 /* Mock Data */,
 				0727825420E6FB520071D528 /* Info.plist */,
 			);
 			path = "Boxing 247Tests";
@@ -328,6 +327,21 @@
 				0797BE5F26C02FD0000356B3 /* ImagePopOverVC.swift */,
 			);
 			path = "Image Popover";
+			sourceTree = "<group>";
+		};
+		0787C36327CFD5AD00283E25 /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				0787C36427CFD5D100283E25 /* newsArticlesData.json */,
+				0787C35127C0EB6100283E25 /* AllBoxingData.json */,
+				0787C35727CD6F2800283E25 /* beltData.json */,
+				0787C35527CD6F2800283E25 /* boxer1Data.json */,
+				0787C35627CD6F2800283E25 /* boxer2Data.json */,
+				0787C35B27CE545F00283E25 /* updatedBeltData.json */,
+				0787C35F27CEB85B00283E25 /* weightclassData.json */,
+				0787C35D27CEB7D000283E25 /* orgData.json */,
+			);
+			name = "Mock Data";
 			sourceTree = "<group>";
 		};
 		07898B2F266BBB38003BAD23 /* Core Data */ = {
@@ -620,6 +634,7 @@
 				0787C35E27CEB7D000283E25 /* orgData.json in Resources */,
 				0787C35927CD6F2800283E25 /* boxer2Data.json in Resources */,
 				0787C35C27CE545F00283E25 /* updatedBeltData.json in Resources */,
+				0787C36527CFD5D200283E25 /* newsArticlesData.json in Resources */,
 				0787C36027CEB85B00283E25 /* weightclassData.json in Resources */,
 				0787C35227C0EB6200283E25 /* AllBoxingData.json in Resources */,
 				0787C35A27CD6F2800283E25 /* beltData.json in Resources */,
@@ -777,6 +792,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0787C36227CF6FCA00283E25 /* Boxing_247Tests.swift in Sources */,
 				0787C34A27BE3BF900283E25 /* BeltTests.swift in Sources */,
 				0787C34B27BE3BF900283E25 /* SaveUtilityTests.swift in Sources */,
 			);
