@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureCrashReporter()
         configureGlobalUIAppearanceSettings()
         deleteOldNewsArticlesAfter5days()
+        fetchAllData()
         return true
     }
     
@@ -48,8 +49,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         _ = oldNewsArticles.map({ print("DELETING: \($0.title!)\n\($0.pubDate!)\n") })
         NewsArticle.eraseCurrent(elements: Set(oldNewsArticles) )
-        
         SaveUtility.saveChanges()
+    }
+    
+    func fetchAllData() {
+        
+        guard
+            let tab = self.window?.rootViewController as? UITabBarController,
+            let nav = tab.viewControllers?[1] as? UINavigationController,
+            let rankingsVC = nav.viewControllers.first as? RankingsVC
+        else {
+            return
+        }
+        
+        
+//        NetworkManager.downloadBoxingData { error in
+//
+//            rankingsVC.hideLoadingView()
+//            rankingsVC.viewModel.isDownloadingData = false
+//            rankingsVC.viewModel.fetchRankingData()
+//            rankingsVC.viewModel.configureSectionStates()
+//            rankingsVC.tableView.reloadData()
+//        }
     }
 }
 

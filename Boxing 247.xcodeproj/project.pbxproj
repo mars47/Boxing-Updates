@@ -241,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				071B569125D5B9720010BA38 /* GradientView.swift */,
-				0797BE5726BDB055000356B3 /* EmptyDatasetView.xib */,
 				0797BE5926BDB7C5000356B3 /* EmptyDatasetView.swift */,
+				0797BE5726BDB055000356B3 /* EmptyDatasetView.xib */,
 				07A3011C26D441D3009955A7 /* LoadView.swift */,
 				07A3011E26D441E0009955A7 /* LoadView.xib */,
 			);
@@ -275,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				0727823D20E6FB520071D528 /* AppDelegate.swift */,
+				0727824120E6FB520071D528 /* Main.storyboard */,
 				07DE4CE7210883BF00730457 /* View Controllers */,
 				07C9997A21974F1000E24E61 /* Network */,
 				07898B2F266BBB38003BAD23 /* Core Data */,
@@ -284,7 +285,6 @@
 				0727826B20E6FB6D0071D528 /* Git */,
 				0727824420E6FB520071D528 /* Assets.xcassets */,
 				071B9F3B211A21D000EF6404 /* Logos.xcassets */,
-				0727824120E6FB520071D528 /* Main.storyboard */,
 				0727824620E6FB520071D528 /* LaunchScreen.storyboard */,
 				0727824920E6FB520071D528 /* Info.plist */,
 				0787C34F27BE3EAF00283E25 /* Config.plist */,

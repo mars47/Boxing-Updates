@@ -13,6 +13,7 @@ class NetworkManager: NSObject {
     
     var urls  = [URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxinginsider.com%2Ffeed%2F"), URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxingnews24.com%2Ffeed%2F")]
 //, URL(string:"https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
+    
     func downloadNewsArticles(completion: @escaping (Bool) -> Void) {
         
         var successfulSave = 0
@@ -55,7 +56,7 @@ class NetworkManager: NSObject {
         }
     }
     
-    func downloadBoxingData(completion: @escaping (Error?) -> Void) {
+    static func downloadBoxingData(completion: @escaping (Error?) -> Void) {
         
         guard
             let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
@@ -68,7 +69,7 @@ class NetworkManager: NSObject {
             switch response.result {
                 
             case .success(let value):
-                SaveUtility.saveNewsArticles(withData: JSON(value)) { (isSuccess) in
+                SaveUtility.saveBoxingData(withData: JSON(value)) { (error) in
                     
                 }
             case .failure(let error):

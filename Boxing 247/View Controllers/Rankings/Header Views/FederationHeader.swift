@@ -25,6 +25,14 @@ class FederationHeader: WeightDivisionHeader {
         height.constant = width.constant / 2
     }
     
+    func configure(with organisation: Organisation?) {
+        
+        if let beltName = organisation?.shortName?.lowercased() {
+            icon.image = UIImage(named: beltName + "_logo")
+            background.image = UIImage(named: beltName + "_belt")
+        }
+    }
+    
     func roundClearPanelCorners() {
         
         clearPanel.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 25)

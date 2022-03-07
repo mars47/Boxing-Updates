@@ -14,6 +14,11 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    
+    let loadView: LoadView = UIView.fromNib()
+    let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
+    
+    
     let viewModel = RankingsVM()
     enum Segment: Int {
         case weightDivision
@@ -28,6 +33,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.prefersLargeTitles = true
         configureTableView()
         configureHeaderViews()
+        //configureLoadingView()
         viewModel.configureSectionStates()
     }
     
@@ -42,9 +48,17 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib.init(nibName: "FederationHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "FEDERATION_HEADER")
     }
     
+    fileprivate func configureLoadingView() {
+        
+        loadView.configureView(height: tableView.frame.height + 20)
+        view.addSubview(loadView)
+    }
+    
     // MARK: - Events
 
     @IBAction func segmentedControlTapped(_ sender: Any) {
+        viewModel.selectedSegment = Segment(rawValue: segmentedControl.selectedSegmentIndex)!
+        viewModel.updateDatasource()
         tableView.reloadData()
     }
     
@@ -73,6 +87,13 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+    
+    
+    // MARK: - RankingsVC delegate
+    
+    func hideLoadingView() {
+        loadView.isHidden = true
+    }
 
     // MARK: - Table view data source
     
@@ -96,6 +117,16 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let identifier = segment == .weightDivision ? "WEIGHT_DIVISION_HEADER" : "FEDERATION_HEADER"
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! WeightDivisionHeader
         
+        if header is FederationHeader && !viewModel.datasource.isEmpty {
+            let federation = (viewModel.datasource as? [Organisation])?[section]
+            (header as! FederationHeader).configure(with: federation)
+        }
+
+        else if !(header is FederationHeader) && !viewModel.datasource.isEmpty {
+            let weightclass = (viewModel.datasource as? [WeightClass])?[section]
+            header.configure(with: weightclass)
+        }
+                
         header.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         header.button.addTarget(self, action: #selector(expandCloseButtonTapped), for: .touchUpInside)
         header.button.tag = section
@@ -113,7 +144,16 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         
         let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
-        return segment == .weightDivision ? viewModel.weightDivisions.count : viewModel.federations.count
+        return segment == .weightDivision ? viewModel.weightDivisionImages.count : viewModel.federationImages.count
+        
+        
+       // let text = viewModel.getEmptyDatasetText(for: selectedSegment)
+//        emptyDataSetView.configure(with: "", image: UIImage(systemName: "")!)
+//        let isEmptyDataSetEnabled = !viewModel.isDownloadingData && viewModel.datasource.count == 0
+//        
+//        tableView.backgroundView = isEmptyDataSetEnabled ? emptyDataSetView : nil
+//        
+//        return viewModel.datasource.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

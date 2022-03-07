@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ot7-at-2oE">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavyweight6" translatesAutoresizingMaskIntoConstraints="NO" id="hxH-d8-Vqh">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heavyweight_banner" translatesAutoresizingMaskIntoConstraints="NO" id="hxH-d8-Vqh">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="hxH-d8-Vqh" secondAttribute="height" multiplier="256:103" id="xU5-cs-nrg"/>
@@ -98,13 +98,16 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="reuseIdentifier" value="WEIGHT_DIVISION_HEADER"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="backgroundImageView" destination="hxH-d8-Vqh" id="ORn-y1-7fX"/>
                 <outlet property="button" destination="El3-kR-wHI" id="XRv-t4-YBD"/>
+                <outlet property="lb" destination="NDR-a5-ga3" id="jBi-7E-abt"/>
+                <outlet property="title" destination="HCj-FB-Cdu" id="Lez-ek-FfH"/>
             </connections>
             <point key="canvasLocation" x="86.956521739130437" y="-65.290178571428569"/>
         </view>
     </objects>
     <resources>
-        <image name="heavyweight6" width="768" height="309"/>
+        <image name="heavyweight_banner" width="1057" height="427"/>
         <image name="minus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="alizarin247">
             <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
