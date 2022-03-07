@@ -34,7 +34,7 @@ class NewsFeedVM: NSObject {
     
     var itemsScolledCount = 0
     var isDownloadingData = false 
-    var isInternetConnectionEnabled : Bool {
+    var isInternetConnectionConnected : Bool {
         ConnectionManager.shared.hasConnectivity()
     }
 
@@ -58,7 +58,7 @@ class NewsFeedVM: NSObject {
             newsArticles = FetchUtility.news(fetch: .latest) ?? []
             bookmarkedNewsArticles = FetchUtility.bookmarkedNews() ?? []
 
-            downloadImages(for: newsArticles){ [self] in
+            downloadImages(for: newsArticles) { [self] in
                 
                 SaveUtility.saveChanges()
                 reloadCollectionView?()
@@ -122,7 +122,7 @@ class NewsFeedVM: NSObject {
     
     func handleItemsScrolled() {
         
-       // if !isInternetConnectionEnabled {
+       // if !isInternetConnectionConnected {
             presentNoInternetView?()
        // }
         
