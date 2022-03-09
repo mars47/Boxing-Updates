@@ -12,10 +12,11 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     
     // MARK: - Properties
 
-    /* This cell contains a tableview that hosts 4 text cells */
+    /* This cell contains a tableview that hosts multiple text cells */
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var height: NSLayoutConstraint!
-
+    var datasource = [Belt]()
+    
     var segment: RankingsVC.Segment! {
         didSet {
             tableView.reloadData()
@@ -42,14 +43,13 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     // MARK: - Table view data source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 4
+        segment == .weightDivision ? 4 : 9
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "federationCell", for: indexPath) as! TextCell
-        cell.configureIcon(with: segment)
+        cell.configureIcon(with: segment, belt: datasource[indexPath.row])
         return cell
     }
     

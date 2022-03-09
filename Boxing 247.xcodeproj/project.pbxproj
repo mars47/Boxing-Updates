@@ -23,7 +23,6 @@
 		0727824320E6FB520071D528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0727824120E6FB520071D528 /* Main.storyboard */; };
 		0727824520E6FB520071D528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0727824420E6FB520071D528 /* Assets.xcassets */; };
 		0727824820E6FB520071D528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0727824620E6FB520071D528 /* LaunchScreen.storyboard */; };
-		0727825320E6FB520071D528 /* Boxing_247Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825220E6FB520071D528 /* Boxing_247Tests.swift */; };
 		0727825E20E6FB520071D528 /* Boxing_247UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727825D20E6FB520071D528 /* Boxing_247UITests.swift */; };
 		0727826D20E6FB9C0071D528 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0727826C20E6FB9C0071D528 /* .gitignore */; };
 		072B89A12259ED8700973942 /* HelpMenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B89A02259ED8700973942 /* HelpMenuVM.swift */; };
@@ -31,9 +30,35 @@
 		074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E95F923801C9F00BC15CB /* NewsFeedDetailVC.swift */; };
 		07694DB32673AA0C0043285F /* FetchUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07694DB22673AA0C0043285F /* FetchUtility.swift */; };
 		077CE82F20E8CC5C00462AED /* HelpMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* HelpMenuVC.swift */; };
+		0787C34627BE3B6800283E25 /* SaveUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34527BE3B6800283E25 /* SaveUtility.swift */; };
+		0787C34A27BE3BF900283E25 /* BeltTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34727BE3BF800283E25 /* BeltTests.swift */; };
+		0787C34B27BE3BF900283E25 /* SaveUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34827BE3BF900283E25 /* SaveUtilityTests.swift */; };
+		0787C34E27BE3D1E00283E25 /* FileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34D27BE3D1E00283E25 /* FileExtractor.swift */; };
+		0787C35027BE3EAF00283E25 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0787C34F27BE3EAF00283E25 /* Config.plist */; };
+		0787C35227C0EB6200283E25 /* AllBoxingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35127C0EB6100283E25 /* AllBoxingData.json */; };
+		0787C35427C1283900283E25 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C35327C1283900283E25 /* CustomError.swift */; };
+		0787C35827CD6F2800283E25 /* boxer1Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35527CD6F2800283E25 /* boxer1Data.json */; };
+		0787C35927CD6F2800283E25 /* boxer2Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35627CD6F2800283E25 /* boxer2Data.json */; };
+		0787C35A27CD6F2800283E25 /* beltData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35727CD6F2800283E25 /* beltData.json */; };
+		0787C35C27CE545F00283E25 /* updatedBeltData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35B27CE545F00283E25 /* updatedBeltData.json */; };
+		0787C35E27CEB7D000283E25 /* orgData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35D27CEB7D000283E25 /* orgData.json */; };
+		0787C36027CEB85B00283E25 /* weightclassData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35F27CEB85B00283E25 /* weightclassData.json */; };
+		0787C36227CF6FCA00283E25 /* Boxing_247Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C36127CF6FCA00283E25 /* Boxing_247Tests.swift */; };
+		0787C36527CFD5D200283E25 /* newsArticlesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C36427CFD5D100283E25 /* newsArticlesData.json */; };
+		078923BE27BA4D5700DF491F /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */; };
+		078923BF27BA4D5700DF491F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */; };
+		078923C027BA4D5700DF491F /* WeightClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */; };
+		078923C127BA4D5700DF491F /* WeightClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B527BA4D5700DF491F /* WeightClass+CoreDataProperties.swift */; };
+		078923C227BA4D5700DF491F /* Boxer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B627BA4D5700DF491F /* Boxer+CoreDataClass.swift */; };
+		078923C327BA4D5700DF491F /* Boxer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B727BA4D5700DF491F /* Boxer+CoreDataProperties.swift */; };
+		078923C427BA4D5700DF491F /* Organisation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B827BA4D5700DF491F /* Organisation+CoreDataClass.swift */; };
+		078923C527BA4D5700DF491F /* Organisation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923B927BA4D5700DF491F /* Organisation+CoreDataProperties.swift */; };
+		078923C627BA4D5700DF491F /* Belt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BA27BA4D5700DF491F /* Belt+CoreDataClass.swift */; };
+		078923C727BA4D5700DF491F /* Belt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BB27BA4D5700DF491F /* Belt+CoreDataProperties.swift */; };
+		078923C827BA4D5700DF491F /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BC27BA4D5700DF491F /* Country+CoreDataClass.swift */; };
+		078923C927BA4D5700DF491F /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078923BD27BA4D5700DF491F /* Country+CoreDataProperties.swift */; };
 		07898B56266BD7A7003BAD23 /* Boxing247.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07898B54266BD7A7003BAD23 /* Boxing247.xcdatamodeld */; };
 		07898B5D266D772D003BAD23 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B5A266D772D003BAD23 /* CoreDataProtocols.swift */; };
-		07898B5E266D772D003BAD23 /* SaveUltility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B5B266D772D003BAD23 /* SaveUltility.swift */; };
 		07898B5F266D772D003BAD23 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B5C266D772D003BAD23 /* CoreDataManager.swift */; };
 		07898B66266FF380003BAD23 /* NewsArticle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B64266FF380003BAD23 /* NewsArticle+CoreDataClass.swift */; };
 		07898B67266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07898B65266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift */; };
@@ -46,7 +71,6 @@
 		07A3011926D41E4E009955A7 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A3011826D41E4E009955A7 /* ScheduleViewController.swift */; };
 		07A3011D26D441D3009955A7 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A3011C26D441D3009955A7 /* LoadView.swift */; };
 		07A3011F26D441E0009955A7 /* LoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A3011E26D441E0009955A7 /* LoadView.xib */; };
-		07A3012226D71A8E009955A7 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07A3012126D71A8E009955A7 /* Config.plist */; };
 		07B7045423B995780083D02A /* FederationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B7045223B995780083D02A /* FederationHeader.swift */; };
 		07B7045523B995780083D02A /* FederationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B7045323B995780083D02A /* FederationHeader.xib */; };
 		07BBB07926B43B58009341F4 /* UIView+CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */; };
@@ -100,7 +124,6 @@
 		0727824720E6FB520071D528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0727824920E6FB520071D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0727824E20E6FB520071D528 /* Boxing 247Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boxing 247Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0727825220E6FB520071D528 /* Boxing_247Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247Tests.swift; sourceTree = "<group>"; };
 		0727825420E6FB520071D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0727825920E6FB520071D528 /* Boxing 247UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boxing 247UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0727825D20E6FB520071D528 /* Boxing_247UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247UITests.swift; sourceTree = "<group>"; };
@@ -111,9 +134,35 @@
 		074E95F923801C9F00BC15CB /* NewsFeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDetailVC.swift; sourceTree = "<group>"; };
 		07694DB22673AA0C0043285F /* FetchUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUtility.swift; sourceTree = "<group>"; };
 		077CE82E20E8CC5C00462AED /* HelpMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMenuVC.swift; sourceTree = "<group>"; };
+		0787C34527BE3B6800283E25 /* SaveUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUtility.swift; sourceTree = "<group>"; };
+		0787C34727BE3BF800283E25 /* BeltTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeltTests.swift; sourceTree = "<group>"; };
+		0787C34827BE3BF900283E25 /* SaveUtilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUtilityTests.swift; sourceTree = "<group>"; };
+		0787C34D27BE3D1E00283E25 /* FileExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileExtractor.swift; sourceTree = "<group>"; };
+		0787C34F27BE3EAF00283E25 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		0787C35127C0EB6100283E25 /* AllBoxingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllBoxingData.json; sourceTree = "<group>"; };
+		0787C35327C1283900283E25 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		0787C35527CD6F2800283E25 /* boxer1Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boxer1Data.json; sourceTree = "<group>"; };
+		0787C35627CD6F2800283E25 /* boxer2Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boxer2Data.json; sourceTree = "<group>"; };
+		0787C35727CD6F2800283E25 /* beltData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beltData.json; sourceTree = "<group>"; };
+		0787C35B27CE545F00283E25 /* updatedBeltData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = updatedBeltData.json; sourceTree = "<group>"; };
+		0787C35D27CEB7D000283E25 /* orgData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orgData.json; sourceTree = "<group>"; };
+		0787C35F27CEB85B00283E25 /* weightclassData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weightclassData.json; sourceTree = "<group>"; };
+		0787C36127CF6FCA00283E25 /* Boxing_247Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing_247Tests.swift; sourceTree = "<group>"; };
+		0787C36427CFD5D100283E25 /* newsArticlesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newsArticlesData.json; sourceTree = "<group>"; };
+		078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "Core Data Models/Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "Core Data Models/Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WeightClass+CoreDataClass.swift"; path = "Core Data Models/WeightClass+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B527BA4D5700DF491F /* WeightClass+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WeightClass+CoreDataProperties.swift"; path = "Core Data Models/WeightClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923B627BA4D5700DF491F /* Boxer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Boxer+CoreDataClass.swift"; path = "Core Data Models/Boxer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B727BA4D5700DF491F /* Boxer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Boxer+CoreDataProperties.swift"; path = "Core Data Models/Boxer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923B827BA4D5700DF491F /* Organisation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Organisation+CoreDataClass.swift"; path = "Core Data Models/Organisation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923B927BA4D5700DF491F /* Organisation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Organisation+CoreDataProperties.swift"; path = "Core Data Models/Organisation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923BA27BA4D5700DF491F /* Belt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Belt+CoreDataClass.swift"; path = "Core Data Models/Belt+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923BB27BA4D5700DF491F /* Belt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Belt+CoreDataProperties.swift"; path = "Core Data Models/Belt+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		078923BC27BA4D5700DF491F /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataClass.swift"; path = "Core Data Models/Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		078923BD27BA4D5700DF491F /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Country+CoreDataProperties.swift"; path = "Core Data Models/Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07898B55266BD7A7003BAD23 /* Boxing247.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Boxing247.xcdatamodel; sourceTree = "<group>"; };
 		07898B5A266D772D003BAD23 /* CoreDataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
-		07898B5B266D772D003BAD23 /* SaveUltility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUltility.swift; sourceTree = "<group>"; };
 		07898B5C266D772D003BAD23 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		07898B64266FF380003BAD23 /* NewsArticle+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsArticle+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		07898B65266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsArticle+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -126,7 +175,6 @@
 		07A3011826D41E4E009955A7 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		07A3011C26D441D3009955A7 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
 		07A3011E26D441E0009955A7 /* LoadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadView.xib; sourceTree = "<group>"; };
-		07A3012126D71A8E009955A7 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		07B7045223B995780083D02A /* FederationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederationHeader.swift; sourceTree = "<group>"; };
 		07B7045323B995780083D02A /* FederationHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FederationHeader.xib; sourceTree = "<group>"; };
 		07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CustomViews.swift"; sourceTree = "<group>"; };
@@ -193,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				071B569125D5B9720010BA38 /* GradientView.swift */,
-				0797BE5726BDB055000356B3 /* EmptyDatasetView.xib */,
 				0797BE5926BDB7C5000356B3 /* EmptyDatasetView.swift */,
+				0797BE5726BDB055000356B3 /* EmptyDatasetView.xib */,
 				07A3011C26D441D3009955A7 /* LoadView.swift */,
 				07A3011E26D441E0009955A7 /* LoadView.xib */,
 			);
@@ -227,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				0727823D20E6FB520071D528 /* AppDelegate.swift */,
+				0727824120E6FB520071D528 /* Main.storyboard */,
 				07DE4CE7210883BF00730457 /* View Controllers */,
 				07C9997A21974F1000E24E61 /* Network */,
 				07898B2F266BBB38003BAD23 /* Core Data */,
@@ -236,10 +285,9 @@
 				0727826B20E6FB6D0071D528 /* Git */,
 				0727824420E6FB520071D528 /* Assets.xcassets */,
 				071B9F3B211A21D000EF6404 /* Logos.xcassets */,
-				0727824120E6FB520071D528 /* Main.storyboard */,
 				0727824620E6FB520071D528 /* LaunchScreen.storyboard */,
-				07A3012126D71A8E009955A7 /* Config.plist */,
 				0727824920E6FB520071D528 /* Info.plist */,
+				0787C34F27BE3EAF00283E25 /* Config.plist */,
 			);
 			path = "Boxing 247";
 			sourceTree = "<group>";
@@ -247,7 +295,10 @@
 		0727825120E6FB520071D528 /* Boxing 247Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0727825220E6FB520071D528 /* Boxing_247Tests.swift */,
+				0787C36127CF6FCA00283E25 /* Boxing_247Tests.swift */,
+				0787C34827BE3BF900283E25 /* SaveUtilityTests.swift */,
+				0787C34727BE3BF800283E25 /* BeltTests.swift */,
+				0787C36327CFD5AD00283E25 /* Mock Data */,
 				0727825420E6FB520071D528 /* Info.plist */,
 			);
 			path = "Boxing 247Tests";
@@ -278,6 +329,21 @@
 			path = "Image Popover";
 			sourceTree = "<group>";
 		};
+		0787C36327CFD5AD00283E25 /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				0787C36427CFD5D100283E25 /* newsArticlesData.json */,
+				0787C35127C0EB6100283E25 /* AllBoxingData.json */,
+				0787C35727CD6F2800283E25 /* beltData.json */,
+				0787C35527CD6F2800283E25 /* boxer1Data.json */,
+				0787C35627CD6F2800283E25 /* boxer2Data.json */,
+				0787C35B27CE545F00283E25 /* updatedBeltData.json */,
+				0787C35F27CEB85B00283E25 /* weightclassData.json */,
+				0787C35D27CEB7D000283E25 /* orgData.json */,
+			);
+			name = "Mock Data";
+			sourceTree = "<group>";
+		};
 		07898B2F266BBB38003BAD23 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,7 +351,7 @@
 				07898B63266D7F78003BAD23 /* Models */,
 				07898B5C266D772D003BAD23 /* CoreDataManager.swift */,
 				07898B5A266D772D003BAD23 /* CoreDataProtocols.swift */,
-				07898B5B266D772D003BAD23 /* SaveUltility.swift */,
+				0787C34527BE3B6800283E25 /* SaveUtility.swift */,
 				07694DB22673AA0C0043285F /* FetchUtility.swift */,
 			);
 			name = "Core Data";
@@ -296,6 +362,18 @@
 			children = (
 				07898B64266FF380003BAD23 /* NewsArticle+CoreDataClass.swift */,
 				07898B65266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift */,
+				078923BA27BA4D5700DF491F /* Belt+CoreDataClass.swift */,
+				078923BB27BA4D5700DF491F /* Belt+CoreDataProperties.swift */,
+				078923B427BA4D5700DF491F /* WeightClass+CoreDataClass.swift */,
+				078923B527BA4D5700DF491F /* WeightClass+CoreDataProperties.swift */,
+				078923B627BA4D5700DF491F /* Boxer+CoreDataClass.swift */,
+				078923B727BA4D5700DF491F /* Boxer+CoreDataProperties.swift */,
+				078923B827BA4D5700DF491F /* Organisation+CoreDataClass.swift */,
+				078923B927BA4D5700DF491F /* Organisation+CoreDataProperties.swift */,
+				078923BC27BA4D5700DF491F /* Country+CoreDataClass.swift */,
+				078923BD27BA4D5700DF491F /* Country+CoreDataProperties.swift */,
+				078923B227BA4D5700DF491F /* Event+CoreDataClass.swift */,
+				078923B327BA4D5700DF491F /* Event+CoreDataProperties.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -373,6 +451,8 @@
 		07F65E6925D8842A00D58087 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0787C35327C1283900283E25 /* CustomError.swift */,
+				0787C34D27BE3D1E00283E25 /* FileExtractor.swift */,
 				07F65E6D25D8843E00D58087 /* UIView+Extensions.swift */,
 				07BBB07826B43B58009341F4 /* UIView+CustomViews.swift */,
 				07F65E8325D9065000D58087 /* UIImage+Blur.swift */,
@@ -537,13 +617,13 @@
 				07F651EB237A0AB200F79140 /* TextCell.xib in Resources */,
 				0797BE5826BDB055000356B3 /* EmptyDatasetView.xib in Resources */,
 				07A3011F26D441E0009955A7 /* LoadView.xib in Resources */,
+				0787C35027BE3EAF00283E25 /* Config.plist in Resources */,
 				07B7045523B995780083D02A /* FederationHeader.xib in Resources */,
 				0744379624202AD300DF126C /* NewsFeedCell.xib in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
 				071B9F3C211A21D000EF6404 /* Logos.xcassets in Resources */,
 				0727824320E6FB520071D528 /* Main.storyboard in Resources */,
 				07F5D25923DDEBBD002AE1F2 /* CowbellView.xib in Resources */,
-				07A3012226D71A8E009955A7 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +631,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0787C35E27CEB7D000283E25 /* orgData.json in Resources */,
+				0787C35927CD6F2800283E25 /* boxer2Data.json in Resources */,
+				0787C35C27CE545F00283E25 /* updatedBeltData.json in Resources */,
+				0787C36527CFD5D200283E25 /* newsArticlesData.json in Resources */,
+				0787C36027CEB85B00283E25 /* weightclassData.json in Resources */,
+				0787C35227C0EB6200283E25 /* AllBoxingData.json in Resources */,
+				0787C35A27CD6F2800283E25 /* beltData.json in Resources */,
+				0787C35827CD6F2800283E25 /* boxer1Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +737,7 @@
 			files = (
 				071B569225D5B9730010BA38 /* GradientView.swift in Sources */,
 				07A3011D26D441D3009955A7 /* LoadView.swift in Sources */,
+				0787C34E27BE3D1E00283E25 /* FileExtractor.swift in Sources */,
 				071C377E20EF7C7E002CA348 /* NewsFeedCell.swift in Sources */,
 				07143C0423C7F0D9007C525D /* TextCell.swift in Sources */,
 				07A3011926D41E4E009955A7 /* ScheduleViewController.swift in Sources */,
@@ -656,6 +745,7 @@
 				07F65E6E25D8843E00D58087 /* UIView+Extensions.swift in Sources */,
 				071C378720F0020B002CA348 /* HelpMenuCell.swift in Sources */,
 				07694DB32673AA0C0043285F /* FetchUtility.swift in Sources */,
+				078923C527BA4D5700DF491F /* Organisation+CoreDataProperties.swift in Sources */,
 				0727824020E6FB520071D528 /* NewsFeedVC.swift in Sources */,
 				07898B67266FF380003BAD23 /* NewsArticle+CoreDataProperties.swift in Sources */,
 				07898B56266BD7A7003BAD23 /* Boxing247.xcdatamodeld in Sources */,
@@ -663,25 +753,37 @@
 				07F5D25B23DDF386002AE1F2 /* CowbellView.swift in Sources */,
 				0797BE6226C08686000356B3 /* String+Extensions.swift in Sources */,
 				0727823E20E6FB520071D528 /* AppDelegate.swift in Sources */,
+				078923C827BA4D5700DF491F /* Country+CoreDataClass.swift in Sources */,
 				0797BE5A26BDB7C5000356B3 /* EmptyDatasetView.swift in Sources */,
 				07F65E7F25D9064200D58087 /* Date+TimeAgo.swift in Sources */,
+				078923C927BA4D5700DF491F /* Country+CoreDataProperties.swift in Sources */,
 				07F65E6225D8771F00D58087 /* RankingsVM.swift in Sources */,
+				078923BE27BA4D5700DF491F /* Event+CoreDataClass.swift in Sources */,
 				07143C0C23C7F9A4007C525D /* RankingsCell.swift in Sources */,
+				0787C35427C1283900283E25 /* CustomError.swift in Sources */,
 				072B89A12259ED8700973942 /* HelpMenuVM.swift in Sources */,
 				077CE82F20E8CC5C00462AED /* HelpMenuVC.swift in Sources */,
 				0797BE5626B933C4000356B3 /* Reachability.swift in Sources */,
+				078923C327BA4D5700DF491F /* Boxer+CoreDataProperties.swift in Sources */,
+				078923C127BA4D5700DF491F /* WeightClass+CoreDataProperties.swift in Sources */,
 				07143C0923C7F98C007C525D /* WeightDivisionHeader.swift in Sources */,
 				074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */,
 				071C377620EF1AB5002CA348 /* NetworkManager.swift in Sources */,
+				078923C727BA4D5700DF491F /* Belt+CoreDataProperties.swift in Sources */,
 				07898B5D266D772D003BAD23 /* CoreDataProtocols.swift in Sources */,
 				071C377A20EF74E7002CA348 /* NewsFeedVM.swift in Sources */,
 				07898B5F266D772D003BAD23 /* CoreDataManager.swift in Sources */,
+				078923BF27BA4D5700DF491F /* Event+CoreDataProperties.swift in Sources */,
 				0797BE6426C08A02000356B3 /* UIScrollView+Extensions.swift in Sources */,
+				078923C027BA4D5700DF491F /* WeightClass+CoreDataClass.swift in Sources */,
 				07143C0E23C7FE5E007C525D /* RankingsVC.swift in Sources */,
 				07DE4CEC210B883900730457 /* Constants.swift in Sources */,
+				0787C34627BE3B6800283E25 /* SaveUtility.swift in Sources */,
 				07F65E8425D9065000D58087 /* UIImage+Blur.swift in Sources */,
+				078923C227BA4D5700DF491F /* Boxer+CoreDataClass.swift in Sources */,
 				07B7045423B995780083D02A /* FederationHeader.swift in Sources */,
-				07898B5E266D772D003BAD23 /* SaveUltility.swift in Sources */,
+				078923C627BA4D5700DF491F /* Belt+CoreDataClass.swift in Sources */,
+				078923C427BA4D5700DF491F /* Organisation+CoreDataClass.swift in Sources */,
 				07898B66266FF380003BAD23 /* NewsArticle+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,7 +792,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0727825320E6FB520071D528 /* Boxing_247Tests.swift in Sources */,
+				0787C36227CF6FCA00283E25 /* Boxing_247Tests.swift in Sources */,
+				0787C34A27BE3BF900283E25 /* BeltTests.swift in Sources */,
+				0787C34B27BE3BF900283E25 /* SaveUtilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +996,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+				);
 				INFOPLIST_FILE = "Boxing 247Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247Tests";
@@ -910,6 +1019,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+				);
 				INFOPLIST_FILE = "Boxing 247Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TAE.Boxing-247Tests";

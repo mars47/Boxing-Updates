@@ -12,4 +12,9 @@ class CowbellView: UIView {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var cowbellIcon: UIImageView!
+    
+    func configureLabel(text: String) {
+        label.text = text
+    }
 }
+

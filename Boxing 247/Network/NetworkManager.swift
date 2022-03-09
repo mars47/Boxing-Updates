@@ -13,6 +13,7 @@ class NetworkManager: NSObject {
     
     var urls  = [URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxinginsider.com%2Ffeed%2F"), URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxingnews24.com%2Ffeed%2F")]
 //, URL(string:"https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
+    
     func downloadNewsArticles(completion: @escaping (Bool) -> Void) {
         
         var successfulSave = 0
@@ -51,6 +52,29 @@ class NetworkManager: NSObject {
                         completion(false)
                     }
                 }
+            }
+        }
+    }
+    
+    static func downloadBoxingData(completion: @escaping (Error?) -> Void) {
+        
+        guard
+            let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
+            let urlString = NSDictionary(contentsOfFile: path)?["boxingDataUrl"] as? String,
+            let url = URL(string: urlString)
+        else { return }
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            switch response.result {
+                
+            case .success(let value):
+                SaveUtility.saveBoxingData(withData: JSON(value)) { (error) in
+                    #warning("error handling needed")
+                    completion(nil)
+                }
+            case .failure(let error):
+                completion(error)
             }
         }
     }

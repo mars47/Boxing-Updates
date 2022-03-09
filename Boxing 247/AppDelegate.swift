@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         configureCrashReporter()
         configureGlobalUIAppearanceSettings()
-        //deleteOldNewsArticles()
+        deleteOldNewsArticlesAfter5days()
+        fetchAllData()
         return true
     }
     
@@ -37,20 +38,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = base247
     }
 
-    func deleteOldNewsArticles() {
+    func deleteOldNewsArticlesAfter5days(pointInTime date: Date? = nil) {
         
         guard
-            let oldNewsArticles = FetchUtility.news(fetch: .old)
+            let oldNewsArticles = FetchUtility.news(fetch: .old, from: date)
         else {
             print("fetch failure")
             return
         }
         
-        for news in oldNewsArticles {
-            print("DELETING: \(news.title!)\n\(news.pubDate!)\n")
-           _ = NewsArticle.eraseCurrent(news)
-        }
+        _ = oldNewsArticles.map({ print("DELETING: \($0.title!)\n\($0.pubDate!)\n") })
+        NewsArticle.eraseCurrent(elements: Set(oldNewsArticles) )
         SaveUtility.saveChanges()
+    }
+    
+    func fetchAllData() {
+        
+        guard
+            let tab = self.window?.rootViewController as? UITabBarController,
+            let nav = tab.viewControllers?[1] as? UINavigationController,
+            let rankingsVC = nav.viewControllers.first as? RankingsVC
+        else {
+            return
+        }
+        
+        NetworkManager.downloadBoxingData { error in
+
+            rankingsVC.viewModel.isDownloadingData = false
+            rankingsVC.viewModel.fetchRankingData()
+            rankingsVC.viewModel.updateDatasource()
+            rankingsVC.viewModel.configureSectionStates()
+            DispatchQueue.main.async {
+                rankingsVC.hideLoadingView()
+                rankingsVC.tableView?.reloadData()
+            }
+            
+        }
     }
 }
 

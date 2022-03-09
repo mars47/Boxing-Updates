@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMx-b8-5Kb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMx-b8-5Kb">
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="NavigationPanelVC" id="oY4-sR-CFS" customClass="HelpMenuVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHH-m1-iy6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hva-ze-4rs">
@@ -90,7 +90,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewsFeed" id="1ST-Jg-Yj0" userLabel="News" customClass="NewsFeedVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VD3-ur-NqY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njo-LE-t1X">
@@ -246,7 +246,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewsFeedDetail" modalPresentationStyle="fullScreen" id="ufl-ko-qw7" customClass="NewsFeedDetailVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lmh-76-fuP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZf-1s-5bO">
@@ -452,18 +452,18 @@
             <objects>
                 <viewController id="f5D-5P-iH8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iwH-tI-UKb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy1-dV-DHi">
-                                <rect key="frame" x="16" y="369" width="343" height="21"/>
+                                <rect key="frame" x="16" y="389.33333333333331" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="white247"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOZ-1B-v5u">
-                                <rect key="frame" x="16" y="164" width="343" height="182.66666666666663"/>
-                                <string key="text">The home of boxing news. Keeping you updated with the latest reports, fights schedules and rankings. Features insights and analysis from the people with passion to start the onversation - the fans. Expertly designed to make following boxing easier than ever for the casual fan. Our 5-star app provides you with breaking news, and live match updates straight to your moile device </string>
+                                <rect key="frame" x="16" y="164" width="343" height="203"/>
+                                <string key="text">The home of boxing news. Keeping you updated with the latest reports, fights schedules and rankings. Features insights and analysis from the people with passion to start the conversation - the fans. Expertly designed to make following boxing easier than ever for the casual fan. Our 5-star app provides you with breaking news, and live match updates straight to your mobile device </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="white247"/>
                                 <nil key="highlightedColor"/>
@@ -499,7 +499,7 @@
             <objects>
                 <viewController id="llb-UN-aol" customClass="RankingsVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49s-uT-WqV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uUO-uh-3QE">
@@ -523,7 +523,7 @@
                                         <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="-20" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BLANK" rowHeight="11" id="075-oD-jto">
-                                                <rect key="frame" x="0.0" y="24.333333969116211" width="335" height="11"/>
+                                                <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="11"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="075-oD-jto" id="BaQ-kU-pkN">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="11"/>
@@ -532,7 +532,7 @@
                                                 <color key="backgroundColor" name="grey247"/>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RANKING_CELL" rowHeight="208" id="g5K-zu-mNS" customClass="RankingsCell" customModule="Boxing_247">
-                                                <rect key="frame" x="0.0" y="35.333333969116211" width="335" height="208"/>
+                                                <rect key="frame" x="0.0" y="55.666666030883789" width="335" height="208"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g5K-zu-mNS" id="0je-Bd-n9S">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="208"/>
@@ -673,7 +673,7 @@
             <objects>
                 <viewController id="CXM-MC-eE7" customClass="ScheduleViewController" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WPB-Ed-Inl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9f-H5-lvW">
@@ -737,7 +737,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fos-2w-kJf"/>
-        <segue reference="igG-8s-cM8"/>
+        <segue reference="OcY-sz-ttD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>

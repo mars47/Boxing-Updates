@@ -22,13 +22,13 @@ protocol Managed: class, NSFetchRequestResult {
 }
 
 extension Managed {
-    
+
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return []
     }
-    
+
     static var sortedFetchRequest: NSFetchRequest<Self> {
-        
+
         let request = NSFetchRequest<Self>(entityName: entityName)
         request.sortDescriptors = defaultSortDescriptors
         return request
@@ -50,6 +50,7 @@ protocol Updatable: Managed {
     static var objectIdentifier: String { get set }
     
     func update(with json: JSON)
+    func setId(id: String)
 }
 
 extension Updatable where Self: NSManagedObject {
@@ -60,7 +61,7 @@ extension Updatable where Self: NSManagedObject {
             let objectId = json.dictionary?[dataIdentifier]?.number?.stringValue
             ?? json.dictionary?[dataIdentifier]?.string else { return }
         
-        if let object = Self.object(withId: objectId, in: context) {
+        if let object = Self.fetchObject(withId: objectId, in: context) {
             
             object.update(with: json)
             
@@ -72,9 +73,19 @@ extension Updatable where Self: NSManagedObject {
         }
     }
     
-    static func object(withId id: String, in context: NSManagedObjectContext) -> Self? {
+    static func fetchObject(withId id: String, in context: NSManagedObjectContext) -> Self? {
         
-        return try? context.fetch(fetchRequest(forId: id)).first as? Self ?? nil
+        return try? context.fetch(fetchRequest(forId: id)).first as? Self
+    }
+    
+    
+    static func fetchOrCreateObject(withId id: String, in context: NSManagedObjectContext) -> Self {
+        
+        var object : Self?
+
+        object = try? context.fetch(fetchRequest(forId: id)).first as? Self
+        
+        return object != nil ? object! : Self(entity: self.entity(), insertInto: context)
     }
     
     static func fetchAll() -> [Self] {
@@ -87,6 +98,16 @@ extension Updatable where Self: NSManagedObject {
         if let elements = elements, !elements.isEmpty {
             for element in elements {
                 managedObjectContext?.delete(element)
+            }
+        }
+    }
+    
+    static func eraseCurrent<T: NSManagedObject>(elements: Set<T>?) {
+        
+        if let elements = elements, !elements.isEmpty {
+            for element in elements {
+                
+                element.managedObjectContext?.delete(element)
             }
         }
     }

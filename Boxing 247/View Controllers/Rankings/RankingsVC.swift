@@ -14,6 +14,11 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    
+    let loadView: LoadView = UIView.fromNib()
+    let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
+    
+    
     let viewModel = RankingsVM()
     enum Segment: Int {
         case weightDivision
@@ -28,6 +33,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.prefersLargeTitles = true
         configureTableView()
         configureHeaderViews()
+        configureLoadingView()
         viewModel.configureSectionStates()
     }
     
@@ -42,9 +48,17 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib.init(nibName: "FederationHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "FEDERATION_HEADER")
     }
     
+    fileprivate func configureLoadingView() {
+        
+        loadView.configureView(height: tableView.frame.height + 20)
+        view.addSubview(loadView)
+    }
+    
     // MARK: - Events
 
     @IBAction func segmentedControlTapped(_ sender: Any) {
+        viewModel.selectedSegment = Segment(rawValue: segmentedControl.selectedSegmentIndex)!
+        viewModel.updateDatasource()
         tableView.reloadData()
     }
     
@@ -73,6 +87,13 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+    
+    
+    // MARK: - RankingsVC delegate
+    
+    func hideLoadingView() {
+        loadView.isHidden = true
+    }
 
     // MARK: - Table view data source
     
@@ -87,6 +108,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
         let cell = tableView.dequeueReusableCell(withIdentifier: "RANKING_CELL", for: indexPath) as! RankingsCell
         cell.segment = Segment(rawValue: self.segmentedControl.selectedSegmentIndex)!
+        cell.datasource = viewModel.belts(for:indexPath.section)
         return cell
     }
     
@@ -96,6 +118,16 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let identifier = segment == .weightDivision ? "WEIGHT_DIVISION_HEADER" : "FEDERATION_HEADER"
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as! WeightDivisionHeader
         
+        if header is FederationHeader && !viewModel.datasource.isEmpty {
+            let federation = (viewModel.datasource as? [Organisation])?[section]
+            (header as! FederationHeader).configure(with: federation)
+        }
+
+        else if !(header is FederationHeader) && !viewModel.datasource.isEmpty {
+            let weightclass = (viewModel.datasource as? [WeightClass])?[section]
+            header.configure(with: weightclass)
+        }
+                
         header.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         header.button.addTarget(self, action: #selector(expandCloseButtonTapped), for: .touchUpInside)
         header.button.tag = section
@@ -111,9 +143,13 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+                
+        emptyDataSetView.configure(with: "Unfortunately there has been a problem. Unable to find Rankings", image: UIImage(systemName: "exclamationmark.bubble.fill")!)
+        let isEmptyDataSetEnabled = !viewModel.isDownloadingData && viewModel.datasource.count == 0
         
-        let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
-        return segment == .weightDivision ? viewModel.weightDivisions.count : viewModel.federations.count
+        tableView.backgroundView = isEmptyDataSetEnabled ? emptyDataSetView : nil
+        
+        return viewModel.datasource.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -136,7 +172,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 12 : UITableView.automaticDimension
+        return indexPath.row == 0 ? 12 : viewModel.cellHeight
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

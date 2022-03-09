@@ -56,7 +56,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //if !viewModel.isInternetConnectionEnabled {
+        //if !viewModel.isInternetConnectionConnected {
         presentNoInternetView()
         //}
     }
@@ -114,7 +114,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         enterForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
             
-            if viewModel.isInternetConnectionEnabled {
+            if viewModel.isInternetConnectionConnected {
             presentNoInternetView()
             }
         }

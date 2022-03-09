@@ -13,7 +13,7 @@ import SwiftyJSON
 
 @objc(NewsArticle)
 public class NewsArticle: NSManagedObject, Updatable {
-    
+            
     static var dataIdentifier: String = "guid"
     static var objectIdentifier: String = "guid"
 
@@ -41,5 +41,9 @@ public class NewsArticle: NSManagedObject, Updatable {
     func setImage(image: UIImage) {
         
         thumbnail = image.pngData() ?? image.jpegData(compressionQuality: 1)
+    }
+    
+    func setId(id: String) {
+        
     }
 }

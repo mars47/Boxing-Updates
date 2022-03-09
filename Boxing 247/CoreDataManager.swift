@@ -73,14 +73,20 @@ final class CoreDataManager {
     static func setInMemoryStoreType(for container: NSPersistentContainer) {
         
         let description = NSPersistentStoreDescription()
+        //description.url = URL(fileURLWithPath: "/dev/null")
         description.type = NSInMemoryStoreType
         description.shouldAddStoreAsynchronously = false
         container.persistentStoreDescriptions = [description]
+    }
+    
+    /* For testing purposes only */
+    static func deInit() {
+        manager = nil
     }
 }
 
 
 struct AppStatus {
-    
+    /* 'isTest' is set inside Test Scheme and stored in userDefaults */
     static let isTesting = UserDefaults.standard.bool(forKey: "isTest")
 }
