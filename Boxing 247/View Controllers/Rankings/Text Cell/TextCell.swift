@@ -16,7 +16,7 @@ class TextCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     
-    static let height: CGFloat = 52.1
+    static let height: CGFloat = 52.5
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +45,8 @@ class TextCell: UITableViewCell {
         else if segment == .weightDivision {
             
             icon.image = UIImage(systemName: "shield")
-            updateBeltColour(icon, for: belt)
+            icon.tintColor = UIColor.systemYellow
+            icon.backgroundColor = updateBeltColour(icon, for: belt)
             iconWidth.constant = 47
             iconHeight.constant = 20
             titleLabel.text = belt.organisation?.shortName
@@ -55,26 +56,20 @@ class TextCell: UITableViewCell {
         else { fatalError() }
     }
     
-    func updateBeltColour(_ icon: UIImageView, for belt: Belt) {
+    func updateBeltColour(_ icon: UIImageView, for belt: Belt) -> UIColor {
         
-        let org = Organisation.Id(rawValue: belt.organisation!.identifierInt)
-
-        switch org {
+        switch Organisation.Id(rawValue: belt.organisation!.identifierInt) {
             
         case .wbo:
-            icon.tintColor = UIColor.systemBrown
-            icon.backgroundColor = UIColor.black
+            return burgundy
         case .wba:
-            icon.tintColor = UIColor.systemYellow
-            icon.backgroundColor = UIColor.black
+            return UIColor.black
         case .wbc:
-            icon.tintColor = UIColor.systemYellow
-            icon.backgroundColor = UIColor.systemCyan
+            return turquoise
         case .ibf:
-            icon.tintColor = UIColor.systemYellow
-            icon.backgroundColor = UIColor.systemRed
+            return UIColor.systemRed
         case .none:
-            return
+            return UIColor.clear
         }
     }
 

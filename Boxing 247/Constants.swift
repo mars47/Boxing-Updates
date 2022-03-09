@@ -20,6 +20,9 @@ let lightGrey247 = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0) // text
 let white247 = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0) // text
 let red247 = UIColor(red:0.82, green:0.05, blue:0.00, alpha:1.0) // D00E00
 
+let turquoise = UIColor(red:0.4, green:0.8, blue:0.7, alpha:1.0)
+let burgundy = UIColor(red:0.32, green:0.11, blue:0.12, alpha:1.0)
+
 let test247 = UIColor(red:0.15, green:0.15, blue:0.15, alpha:1.0)
 
 let fetchLimit = 10
