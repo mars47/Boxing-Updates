@@ -30,6 +30,14 @@ class RankingsVM {
     var federations = [Organisation]()
     var isDownloadingData = true
     var selectedSegment: RankingsVC.Segment = .weightDivision
+    var cellHeight : CGFloat  {
+        switch selectedSegment {
+        case .weightDivision:
+            return TextCell.height * CGFloat(federations.count)
+        case .federation:
+            return TextCell.height * CGFloat(weightDivisions.count)
+        }
+    }
     
     var weightDivisionImages = [UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight"), UIImage(named: "middleweight3"), UIImage(named: "heavyweight5"), UIImage(named: "cruiserweight3"), UIImage(named: "lightheavyweight2"), UIImage(named: "supermiddleweight")]
     let federationImages = [UIImage(named: "wbo belt"), UIImage(named: "wba belt"), UIImage(named: "wbc belt")]
@@ -41,8 +49,8 @@ class RankingsVM {
 
     func configureSectionStates() {
         
-        for _ in weightDivisionImages { sectionStates[0].append(true) }
-        for _ in federationImages { sectionStates[1].append(true) }
+        for _ in weightDivisions { sectionStates[0].append(true) }
+        for _ in federations { sectionStates[1].append(false) }
         //for _ in weightDivisionImages { states[0].append(.open) }
     }
     
@@ -57,10 +65,24 @@ class RankingsVM {
     func updateDatasource() {
         
         switch selectedSegment {
-        case .federation:
-            datasource = federations
         case .weightDivision:
             datasource = weightDivisions
+        case .federation:
+            datasource = federations
+        }
+    }
+    
+    func belts(for section: Int) -> [Belt] {
+        
+        switch selectedSegment {
+            
+        case .weightDivision:
+            let belts = (datasource as! [WeightClass])[section].beltSet
+            return belts.sorted(by: { $0.organisation!.identifierInt < $1.organisation!.identifierInt })
+       
+        case .federation:
+            let belts = (datasource as! [Organisation])[section].beltSet
+            return belts.sorted(by: { $0.weightClass!.lb!.intValue > $1.weightClass!.lb!.intValue })
         }
     }
 }

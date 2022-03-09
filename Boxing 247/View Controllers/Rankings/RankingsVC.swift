@@ -33,7 +33,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.prefersLargeTitles = true
         configureTableView()
         configureHeaderViews()
-        //configureLoadingView()
+        configureLoadingView()
         viewModel.configureSectionStates()
     }
     
@@ -108,6 +108,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
         let cell = tableView.dequeueReusableCell(withIdentifier: "RANKING_CELL", for: indexPath) as! RankingsCell
         cell.segment = Segment(rawValue: self.segmentedControl.selectedSegmentIndex)!
+        cell.datasource = viewModel.belts(for:indexPath.section)
         return cell
     }
     
@@ -142,18 +143,13 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+                
+        emptyDataSetView.configure(with: "Unfortunately there has been a problem. Unable to find Rankings", image: UIImage(systemName: "exclamationmark.bubble.fill")!)
+        let isEmptyDataSetEnabled = !viewModel.isDownloadingData && viewModel.datasource.count == 0
         
-        let segment = Segment(rawValue: segmentedControl.selectedSegmentIndex)
-        return segment == .weightDivision ? viewModel.weightDivisionImages.count : viewModel.federationImages.count
+        tableView.backgroundView = isEmptyDataSetEnabled ? emptyDataSetView : nil
         
-        
-       // let text = viewModel.getEmptyDatasetText(for: selectedSegment)
-//        emptyDataSetView.configure(with: "", image: UIImage(systemName: "")!)
-//        let isEmptyDataSetEnabled = !viewModel.isDownloadingData && viewModel.datasource.count == 0
-//        
-//        tableView.backgroundView = isEmptyDataSetEnabled ? emptyDataSetView : nil
-//        
-//        return viewModel.datasource.count
+        return viewModel.datasource.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -176,7 +172,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 12 : UITableView.automaticDimension
+        return indexPath.row == 0 ? 12 : viewModel.cellHeight
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

@@ -62,15 +62,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        
-//        NetworkManager.downloadBoxingData { error in
-//
-//            rankingsVC.hideLoadingView()
-//            rankingsVC.viewModel.isDownloadingData = false
-//            rankingsVC.viewModel.fetchRankingData()
-//            rankingsVC.viewModel.configureSectionStates()
-//            rankingsVC.tableView.reloadData()
-//        }
+        NetworkManager.downloadBoxingData { error in
+
+            rankingsVC.viewModel.isDownloadingData = false
+            rankingsVC.viewModel.fetchRankingData()
+            rankingsVC.viewModel.updateDatasource()
+            rankingsVC.viewModel.configureSectionStates()
+            DispatchQueue.main.async {
+                rankingsVC.hideLoadingView()
+                rankingsVC.tableView?.reloadData()
+            }
+            
+        }
     }
 }
 

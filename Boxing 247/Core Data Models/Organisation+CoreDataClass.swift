@@ -20,6 +20,18 @@ public class Organisation: NSManagedObject, Updatable {
     var beltSet : Set<Belt> {
         belts as? Set<Belt> ?? Set<Belt>()
     }
+    
+    var identifierInt : Int {
+        Int(identifier!)!
+    }
+        
+    enum Id: Int {
+        
+        case wbo = 10
+        case wba = 12
+        case wbc = 11
+        case ibf = 13
+    }
         
     func update(with json: JSON) {
         

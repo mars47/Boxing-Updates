@@ -13,6 +13,10 @@ class TextCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var iconHeight: NSLayoutConstraint!
     @IBOutlet weak var iconWidth: NSLayoutConstraint!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    
+    static let height: CGFloat = 52.1
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,25 +25,57 @@ class TextCell: UITableViewCell {
         icon.layer.cornerRadius = icon.frame.height / 2
     }
 
-    func configureIcon(with segment: RankingsVC.Segment) {
+    func configureIcon(with segment: RankingsVC.Segment, belt: Belt) {
         
         if segment == .federation {
+            
             let view: CowbellView = UIView.fromNib()
+            let lb = belt.weightClass?.lb?.stringValue ?? ""
+            view.configureLabel(text: lb + " lb")
             view.cowbellIcon.tintColor = UIColor(named: "pomegranate247")
             icon.image = view.asImage()
             icon.backgroundColor = UIColor.clear
+            icon.tintColor = UIColor.clear
             iconWidth.constant = 38
             iconHeight.constant = 30
+            titleLabel.text = belt.weightClass?.name
+            subtitleLabel.text = belt.boxer?.name
         }
         
         else if segment == .weightDivision {
+            
             icon.image = UIImage(systemName: "shield")
-            icon.tintColor = UIColor.yellow
-            icon.backgroundColor = UIColor.black
+            updateBeltColour(icon, for: belt)
             iconWidth.constant = 47
             iconHeight.constant = 20
+            titleLabel.text = belt.organisation?.shortName
+            subtitleLabel.text = belt.boxer?.name
         }
 
         else { fatalError() }
     }
+    
+    func updateBeltColour(_ icon: UIImageView, for belt: Belt) {
+        
+        let org = Organisation.Id(rawValue: belt.organisation!.identifierInt)
+
+        switch org {
+            
+        case .wbo:
+            icon.tintColor = UIColor.systemBrown
+            icon.backgroundColor = UIColor.black
+        case .wba:
+            icon.tintColor = UIColor.systemYellow
+            icon.backgroundColor = UIColor.black
+        case .wbc:
+            icon.tintColor = UIColor.systemYellow
+            icon.backgroundColor = UIColor.systemCyan
+        case .ibf:
+            icon.tintColor = UIColor.systemYellow
+            icon.backgroundColor = UIColor.systemRed
+        case .none:
+            return
+        }
+    }
+
 }

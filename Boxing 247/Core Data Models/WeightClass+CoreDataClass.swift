@@ -25,6 +25,10 @@ public class WeightClass: NSManagedObject, Updatable {
         boxers as? Set<Boxer> ?? Set<Boxer>()
     }
     
+    var identifierInt : Int {
+        Int(identifier!)!
+    }
+        
     enum Weight: Int {
         
         case heavyweight = 19

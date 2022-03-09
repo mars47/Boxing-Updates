@@ -21,6 +21,10 @@ public class Boxer: NSManagedObject, Updatable {
         belts as? Set<Belt> ?? Set<Belt>()
     }
     
+    var name: String? {
+        (firstName != nil  && lastName != nil) ? "\(firstName!) \(lastName!)" : nil
+    }
+    
     func update(with json: JSON) {
         
         identifier = "\(json["id"].intValue)"

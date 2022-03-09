@@ -70,7 +70,8 @@ class NetworkManager: NSObject {
                 
             case .success(let value):
                 SaveUtility.saveBoxingData(withData: JSON(value)) { (error) in
-                    
+                    #warning("error handling needed")
+                    completion(nil)
                 }
             case .failure(let error):
                 completion(error)

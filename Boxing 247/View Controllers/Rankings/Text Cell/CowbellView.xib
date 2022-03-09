@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weight_icon" translatesAutoresizingMaskIntoConstraints="NO" id="EFc-oQ-ngr">
                     <rect key="frame" x="0.0" y="0.0" width="55" height="52"/>
-                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" systemColor="systemGrayColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="EFc-oQ-ngr" secondAttribute="height" multiplier="55:52" id="4Ka-Vi-ymp"/>
                     </constraints>
@@ -24,12 +25,13 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="147 lb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cFk-lG-vYq">
                     <rect key="frame" x="7" y="27" width="42" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" systemColor="systemGrayColor"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                     <color key="textColor" name="white247"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="2Ux-V9-uDl"/>
             <constraints>
                 <constraint firstItem="EFc-oQ-ngr" firstAttribute="bottom" secondItem="2Ux-V9-uDl" secondAttribute="bottom" id="5YG-Rk-Cy6"/>
                 <constraint firstItem="EFc-oQ-ngr" firstAttribute="top" secondItem="wHo-Vh-xCn" secondAttribute="top" id="8Ur-ks-tjn"/>
@@ -37,7 +39,6 @@
                 <constraint firstItem="EFc-oQ-ngr" firstAttribute="leading" secondItem="2Ux-V9-uDl" secondAttribute="leading" id="k74-jD-W54"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="2Ux-V9-uDl"/>
             <connections>
                 <outlet property="cowbellIcon" destination="EFc-oQ-ngr" id="o1C-CR-qKG"/>
                 <outlet property="label" destination="cFk-lG-vYq" id="oeD-fH-dd4"/>
@@ -50,5 +51,8 @@
         <namedColor name="white247">
             <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
