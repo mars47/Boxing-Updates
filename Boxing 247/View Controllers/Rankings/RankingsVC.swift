@@ -18,7 +18,6 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let loadView: LoadView = UIView.fromNib()
     let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
     
-    
     let viewModel = RankingsVM()
     enum Segment: Int {
         case weightDivision
@@ -81,13 +80,27 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                      tableView.insertRows(at: indexPaths, with: .fade)
     }
     
+    @objc func headerTapped(_ sender: UITapGestureRecognizer?) {
+        guard let section = sender?.view?.tag else { return }
+
+        performSegue(withIdentifier: "RankingsShowPopOverVC", sender: viewModel.datasource[section] as! WeightClass)
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+       if segue.identifier == "RankingsShowPopOverVC" {
+            guard
+                let weightClass = sender as? WeightClass,
+                let name = weightClass.name?.lowercased(),
+                let viewController = segue.destination as? ImagePopOverVC
+            else { return }
+            
+            viewController.image = UIImage(named: name + "_banner")
+            viewController.screenshot = UIImage.takeScreenshot(view: self.view.window!)!
+        }
     }
-    
     
     // MARK: - RankingsVC delegate
     
@@ -132,6 +145,12 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         header.button.addTarget(self, action: #selector(expandCloseButtonTapped), for: .touchUpInside)
         header.button.tag = section
         header.configureButtonImage(isExpanded: viewModel.sectionStates[segment!.rawValue][section])
+        
+        if viewModel.selectedSegment == .weightDivision {
+            let tapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(headerTapped(_:)) )
+            header.tag = section
+            header.addGestureRecognizer(tapGestureRecognizer)
+        }
         
         DispatchQueue.main.async {
             

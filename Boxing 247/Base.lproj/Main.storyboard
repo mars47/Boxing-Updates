@@ -598,6 +598,7 @@
                     <connections>
                         <outlet property="segmentedControl" destination="uUO-uh-3QE" id="EVZ-sw-gfF"/>
                         <outlet property="tableView" destination="wpv-GG-dyY" id="Y4k-JK-Fws"/>
+                        <segue destination="ECn-T5-2d0" kind="presentation" identifier="RankingsShowPopOverVC" id="seF-e4-wXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzd-ci-gQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -736,7 +737,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fos-2w-kJf"/>
+        <segue reference="seF-e4-wXh"/>
         <segue reference="OcY-sz-ttD"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -28,6 +28,6 @@ class WeightDivisionHeader: UITableViewHeaderFooterView {
         }
         
         title.text = weightclass?.name
-        lb.text = (weightclass?.lb?.stringValue ?? "") + "LBS"
+        lb.text = (weightclass?.lb?.stringValue ?? "") + " LBS"
     }
 }
