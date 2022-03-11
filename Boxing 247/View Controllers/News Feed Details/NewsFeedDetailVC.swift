@@ -6,6 +6,7 @@
 //  Copyright © 2019 Omar. All rights reserved.
 //
 
+import SafariServices
 import UIKit
 
 class NewsFeedDetailVC: UIViewController {
@@ -60,6 +61,18 @@ class NewsFeedDetailVC: UIViewController {
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "NewsFeedDetailShowPopOverVC", sender: newsArticle)
+    }
+    
+    @IBAction func websiteButtonPressed(_ sender: Any) {
+        
+        guard
+            let urlString = newsArticle.link,
+            let url = URL(string: urlString)
+        else {
+            return
+        }
+        let vc = SFSafariViewController(url:url)
+        present(vc, animated: false)
     }
     
     @IBAction func shareButtonPressed(_ sender: Any) {
