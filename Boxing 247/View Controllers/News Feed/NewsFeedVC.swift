@@ -56,9 +56,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //if !viewModel.isInternetConnectionConnected {
-        presentNoInternetView()
-        //}
+        if !viewModel.isInternetConnectionConnected {
+            presentNoInternetView()
+        }
     }
     
     deinit {
@@ -114,8 +114,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         enterForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
             
-            if viewModel.isInternetConnectionConnected {
-            presentNoInternetView()
+            if !viewModel.isInternetConnectionConnected {
+                presentNoInternetView()
             }
         }
         
@@ -383,3 +383,4 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 }
 
 // https://stackoverflow.com/questions/44187881/uicollectionview-full-width-cells-allow-autolayout-dynamic-height/44352072
+

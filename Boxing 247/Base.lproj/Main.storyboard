@@ -502,18 +502,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uUO-uh-3QE">
-                                <rect key="frame" x="6" y="0.0" width="363" height="32"/>
-                                <color key="backgroundColor" name="base247"/>
-                                <segments>
-                                    <segment title="By Weight Division"/>
-                                    <segment title="By Federation"/>
-                                </segments>
-                                <color key="tintColor" red="0.08986357868" green="0.08986357868" blue="0.08986357868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="segmentedControlTapped:" destination="llb-UN-aol" eventType="valueChanged" id="atB-kX-x4N"/>
-                                </connections>
-                            </segmentedControl>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4U-1X-b4W">
+                                <rect key="frame" x="67" y="298" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHN-fD-4ND">
                                 <rect key="frame" x="0.0" y="36" width="375" height="605"/>
                                 <subviews>
@@ -574,6 +567,18 @@
                                     <constraint firstAttribute="bottom" secondItem="wpv-GG-dyY" secondAttribute="bottom" id="egt-Lj-vb3"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uUO-uh-3QE">
+                                <rect key="frame" x="6" y="0.0" width="363" height="32"/>
+                                <color key="backgroundColor" name="base247"/>
+                                <segments>
+                                    <segment title="By Weight Division"/>
+                                    <segment title="By Federation"/>
+                                </segments>
+                                <color key="tintColor" red="0.08986357868" green="0.08986357868" blue="0.08986357868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlTapped:" destination="llb-UN-aol" eventType="valueChanged" id="atB-kX-x4N"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Fx-5V-w1C"/>
                         <color key="backgroundColor" name="base247"/>
