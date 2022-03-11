@@ -29,6 +29,20 @@ public class WeightClass: NSManagedObject, Updatable {
         Int(identifier!)!
     }
         
+    func update(with json: JSON) {
+        
+        identifier = "\(json["id"].intValue)"
+        name = json["weight"].string
+        lb = NSNumber(value: json["lb"].intValue)
+    }
+    
+    func setId(id: String) {
+        identifier = id
+    }
+}
+
+extension WeightClass {
+    
     enum Weight: Int {
         
         case heavyweight = 19
@@ -40,16 +54,30 @@ public class WeightClass: NSManagedObject, Updatable {
         case welterweight = 14
         case superlightweight = 13
         case lightweight = 12
-    }
-    
-    func update(with json: JSON) {
         
-        identifier = "\(json["id"].intValue)"
-        name = json["weight"].string
-        lb = NSNumber(value: json["lb"].intValue)
-    }
-    
-    func setId(id: String) {
-        identifier = id
+        var lbString: String {
+            
+            switch self {
+                
+            case .heavyweight:
+                return "200+ LBS"
+            case .cruiserweight:
+                return "175 – 200 LBS"
+            case .lightcruiserweight:
+                return "168 – 175 LBS"
+            case .supermiddleweight:
+                return "160 – 168 LBS"
+            case .middleweight:
+                return "154 – 160 LBS"
+            case .superwelterweight:
+                return "147 – 154 LBS"
+            case .welterweight:
+                return "140 – 147 LBS"
+            case .superlightweight:
+                return "135 – 140 LBS"
+            case .lightweight:
+                return "130 – 135 LBS"
+            }
+        }
     }
 }
