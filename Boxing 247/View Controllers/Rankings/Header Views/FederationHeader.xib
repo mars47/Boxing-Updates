@@ -43,7 +43,15 @@
                         <constraint firstAttribute="trailing" secondItem="bwu-8g-7bQ" secondAttribute="trailing" constant="11" id="vPB-uE-Fqj"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-pl-C5B">
+                <view opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owb-sq-QJv">
+                    <rect key="frame" x="291" y="133" width="29" height="27"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="JNd-GK-GR5"/>
+                        <constraint firstAttribute="width" constant="29" id="JlI-8q-AHj"/>
+                    </constraints>
+                </view>
+                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPP-pl-C5B">
                     <rect key="frame" x="297" y="138" width="17" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="3ui-oS-zKO"/>
@@ -59,9 +67,11 @@
                 <constraint firstItem="02Y-k9-s27" firstAttribute="leading" secondItem="qfb-qK-gcO" secondAttribute="leading" id="78w-aH-jyM"/>
                 <constraint firstItem="qfb-qK-gcO" firstAttribute="trailing" secondItem="jPP-pl-C5B" secondAttribute="trailing" constant="6" id="CDL-Ee-DyQ"/>
                 <constraint firstItem="02Y-k9-s27" firstAttribute="bottom" secondItem="qfb-qK-gcO" secondAttribute="bottom" id="LDy-Ya-fI5"/>
+                <constraint firstItem="Owb-sq-QJv" firstAttribute="bottom" secondItem="qfb-qK-gcO" secondAttribute="bottom" id="MiH-SS-FyW"/>
                 <constraint firstItem="q7J-lB-BMG" firstAttribute="top" secondItem="JyH-Re-vdl" secondAttribute="top" id="RcV-n8-Zkj"/>
                 <constraint firstItem="q7J-lB-BMG" firstAttribute="height" secondItem="02Y-k9-s27" secondAttribute="height" multiplier="0.640625" id="Vma-1n-XfI"/>
                 <constraint firstItem="qfb-qK-gcO" firstAttribute="bottom" secondItem="jPP-pl-C5B" secondAttribute="bottom" constant="6" id="ZjH-kt-PHY"/>
+                <constraint firstItem="Owb-sq-QJv" firstAttribute="trailing" secondItem="qfb-qK-gcO" secondAttribute="trailing" id="cp0-hQ-zLk"/>
                 <constraint firstItem="qfb-qK-gcO" firstAttribute="trailing" secondItem="q7J-lB-BMG" secondAttribute="trailing" constant="32.5" id="h1s-mD-8ki"/>
                 <constraint firstItem="q7J-lB-BMG" firstAttribute="width" secondItem="02Y-k9-s27" secondAttribute="width" multiplier="0.320312" id="jVI-ef-V4Z"/>
                 <constraint firstItem="02Y-k9-s27" firstAttribute="trailing" secondItem="qfb-qK-gcO" secondAttribute="trailing" id="lJw-HP-Tjm"/>
@@ -71,6 +81,7 @@
             <connections>
                 <outlet property="background" destination="02Y-k9-s27" id="m8n-Vi-eb9"/>
                 <outlet property="button" destination="jPP-pl-C5B" id="0Ic-5M-kOs"/>
+                <outlet property="buttonClearPanel" destination="Owb-sq-QJv" id="IxN-7G-rgw"/>
                 <outlet property="clearPanel" destination="q7J-lB-BMG" id="mHc-zx-MpD"/>
                 <outlet property="height" destination="rZm-ph-KJa" id="zvr-ZR-4IO"/>
                 <outlet property="icon" destination="bwu-8g-7bQ" id="5HD-dR-wsa"/>

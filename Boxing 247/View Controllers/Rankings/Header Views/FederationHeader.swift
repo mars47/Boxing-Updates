@@ -15,6 +15,7 @@ class FederationHeader: WeightDivisionHeader {
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var clearPanel: UIView!
+    @IBOutlet weak var buttonClearPanel: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,5 +37,6 @@ class FederationHeader: WeightDivisionHeader {
     func roundClearPanelCorners() {
         
         clearPanel.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 25)
+        buttonClearPanel.roundCorners(corners: [.topLeft, .bottomRight], radius: 12)
     }
 }
