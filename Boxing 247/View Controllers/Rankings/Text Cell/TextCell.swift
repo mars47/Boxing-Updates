@@ -31,7 +31,7 @@ class TextCell: UITableViewCell {
             
             let cowbellView: CowbellView = UIView.fromNib()
             var lb = (belt.weightClass?.lb?.stringValue ?? "") + " lb"
-            if WeightClass.Weight(rawValue: belt.weightClass!.identifierInt) == .heavyweight {
+            if belt.weightClass?.weight == .heavyweight {
                 lb = "200+lb"
             }
             cowbellView.configureLabel(text: lb)
@@ -49,7 +49,7 @@ class TextCell: UITableViewCell {
             
             icon.image = UIImage(systemName: "shield")
             icon.tintColor = UIColor.systemYellow
-            icon.backgroundColor = updateBeltColour(icon, for: belt)
+            icon.backgroundColor = UIColor.updateBeltColour(for: belt)
             iconWidth.constant = 47
             iconHeight.constant = 20
             titleLabel.text = belt.organisation?.shortName
@@ -59,21 +59,6 @@ class TextCell: UITableViewCell {
         else { fatalError() }
     }
     
-    func updateBeltColour(_ icon: UIImageView, for belt: Belt) -> UIColor {
-        
-        switch Organisation.Id(rawValue: belt.organisation!.identifierInt) {
-            
-        case .wbo:
-            return burgundy
-        case .wba:
-            return UIColor.black
-        case .wbc:
-            return turquoise
-        case .ibf:
-            return UIColor.systemRed
-        case .none:
-            return UIColor.clear
-        }
-    }
-
 }
+
+

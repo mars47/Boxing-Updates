@@ -38,23 +38,27 @@ extension UIImage {
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let screenshot:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        print("Taking Screenshot")
-
-        UIGraphicsEndImageContext()
         return screenshot
     }
     
 }
 
-extension UIImageView {
-    func downloadImageFrom(link: String, contentMode: UIView.ContentMode) {
+extension UIColor {
+    
+    static func updateBeltColour(for belt: Belt) -> UIColor {
         
-        URLSession.shared.dataTask(with: URL(string:link)!){ data, response, error in
+        switch Organisation.Id(rawValue: belt.organisation!.identifierInt) {
             
-            DispatchQueue.main.async {
-                self.contentMode =  contentMode
-                if let data = data { self.image = UIImage(data: data) }
-            }
-        }.resume()
+        case .wbo:
+            return burgundy
+        case .wba:
+            return UIColor.black
+        case .wbc:
+            return turquoise
+        case .ibf:
+            return UIColor.systemRed
+        case .none:
+            return UIColor.clear
+        }
     }
 }
