@@ -94,6 +94,11 @@ protocol RankingsVCDelegate {
     
     func hideLoadingView()
     func presentNoInternetView()
+    func pushViewController(belt: Belt)
+}
+
+extension RankingsVCDelegate {
+    func pushViewController(belt: Belt){}
 }
 
 enum States: Int {

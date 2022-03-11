@@ -16,6 +16,7 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var height: NSLayoutConstraint!
     var datasource = [Belt]()
+    var delegate: RankingsVCDelegate? 
     
     var segment: RankingsVC.Segment! {
         didSet {
@@ -56,5 +57,9 @@ class RankingsCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.pushViewController(belt: datasource[indexPath.row])
     }
 }

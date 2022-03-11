@@ -130,7 +130,8 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-       if segue.identifier == "RankingsShowPopOverVC" {
+        switch true {
+        case segue.identifier == "RankingsShowPopOverVC":
             guard
                 let weightClass = sender as? WeightClass,
                 let name = weightClass.name?.lowercased(),
@@ -139,13 +140,30 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             
             viewController.image = UIImage(named: name + "_banner")
             viewController.screenshot = UIImage.takeScreenshot(view: self.view.window!)!
+        
+        case segue.identifier == "RankingsVCShowBoxerProfile":
+            guard
+                let belt = sender as? Belt,
+                let viewController = segue.destination as? BoxerProfileVC
+            else { return }
+
+            viewController.belt = belt
+            viewController.screenshot = UIImage.takeScreenshot(view: self.view.window!)!
+            
+        default:
+            return
         }
+        
     }
     
     // MARK: - RankingsVC delegate
     
     func hideLoadingView() {
         loadView.isHidden = true
+    }
+    
+    func pushViewController(belt: Belt) {
+        performSegue(withIdentifier: "RankingsVCShowBoxerProfile", sender: belt)
     }
     
     func presentNoInternetView() {
@@ -196,6 +214,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let cell = tableView.dequeueReusableCell(withIdentifier: "RANKING_CELL", for: indexPath) as! RankingsCell
         cell.segment = Segment(rawValue: self.segmentedControl.selectedSegmentIndex)!
         cell.datasource = viewModel.belts(for:indexPath.section)
+        cell.delegate = self
         
         viewModel.itemsScolledCount += 1
         viewModel.itemsScolledCount == 10 ? viewModel.handleItemsScrolled() : Void()
@@ -290,6 +309,10 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 _cell.layoutSubviews()
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("true")
     }
 }
 

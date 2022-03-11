@@ -374,6 +374,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="websiteButtonPressed:" destination="ufl-ko-qw7" eventType="touchUpInside" id="Pj0-g0-5wm"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-Op-PXE">
                                         <rect key="frame" x="186" y="379" width="42" height="21"/>
@@ -494,6 +497,125 @@
             </objects>
             <point key="canvasLocation" x="-1415.2" y="1329.3103448275863"/>
         </scene>
+        <!--Boxer ProfileVC-->
+        <scene sceneID="dD7-2h-o7h">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Vzu-kz-n6x" customClass="BoxerProfileVC" customModule="Boxing_247" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oLt-fV-Kzt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCC-Lk-Png">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecr-Z3-wfy">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bmL-ci-Z2T">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X62-ZM-AOY">
+                                <rect key="frame" x="49.666666666666657" y="299.66666666666669" width="276" height="213.00000000000006"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tysonfury" translatesAutoresizingMaskIntoConstraints="NO" id="aFN-Lu-UgA">
+                                        <rect key="frame" x="8" y="8" width="91" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gb" translatesAutoresizingMaskIntoConstraints="NO" id="q94-tb-4RE">
+                                        <rect key="frame" x="102" y="43" width="38" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tyson Fury" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I6l-05-8Ot">
+                                        <rect key="frame" x="107" y="8" width="161" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDy-jX-etJ">
+                                        <rect key="frame" x="8" y="136" width="260" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="312 days (04-05-2019)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4s-3r-l3z">
+                                                <rect key="frame" x="77" y="37" width="175" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WBO Heavyweight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AET-gA-HBK">
+                                                <rect key="frame" x="77" y="8" width="175" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shield" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5uh-Q5-90D">
+                                                <rect key="frame" x="8" y="23.999999999999091" width="58" height="23"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="1" green="1" blue="0.094713172129999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="base247"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="United Kingdom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pwT-db-9p7">
+                                        <rect key="frame" x="140" y="45" width="128" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="33 years old" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDl-fT-RQL">
+                                        <rect key="frame" x="107" y="79" width="161" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="grey247"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="V3k-Rk-KlG"/>
+                                    <constraint firstAttribute="height" constant="213" id="Xnc-1j-vKK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d47-J3-QrI"/>
+                        <constraints>
+                            <constraint firstItem="d47-J3-QrI" firstAttribute="trailing" secondItem="bCC-Lk-Png" secondAttribute="trailing" id="4TH-MU-AXd"/>
+                            <constraint firstItem="bCC-Lk-Png" firstAttribute="leading" secondItem="d47-J3-QrI" secondAttribute="leading" id="C78-eF-YgC"/>
+                            <constraint firstItem="X62-ZM-AOY" firstAttribute="centerX" secondItem="oLt-fV-Kzt" secondAttribute="centerX" id="GGf-rX-GSx"/>
+                            <constraint firstItem="ecr-Z3-wfy" firstAttribute="top" secondItem="d47-J3-QrI" secondAttribute="top" id="NmY-gF-da1"/>
+                            <constraint firstItem="d47-J3-QrI" firstAttribute="trailing" secondItem="ecr-Z3-wfy" secondAttribute="trailing" id="Ycc-ka-4z6"/>
+                            <constraint firstItem="d47-J3-QrI" firstAttribute="bottom" secondItem="ecr-Z3-wfy" secondAttribute="bottom" id="elE-gX-zJC"/>
+                            <constraint firstItem="d47-J3-QrI" firstAttribute="bottom" secondItem="bCC-Lk-Png" secondAttribute="bottom" id="qca-Y4-idw"/>
+                            <constraint firstItem="bCC-Lk-Png" firstAttribute="top" secondItem="d47-J3-QrI" secondAttribute="top" id="rJp-v1-ptB"/>
+                            <constraint firstItem="ecr-Z3-wfy" firstAttribute="leading" secondItem="d47-J3-QrI" secondAttribute="leading" id="yVP-AA-njV"/>
+                            <constraint firstItem="X62-ZM-AOY" firstAttribute="centerY" secondItem="oLt-fV-Kzt" secondAttribute="centerY" id="z5D-9V-JKP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZhF-01-ODX"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="hDl-fT-RQL" id="WZW-VT-FLv"/>
+                        <outlet property="background" destination="bCC-Lk-Png" id="m79-nw-gzH"/>
+                        <outlet property="beltAcquiredDateLabel" destination="P4s-3r-l3z" id="Tq1-xI-aN2"/>
+                        <outlet property="beltContainerView" destination="zDy-jX-etJ" id="06V-hg-eSH"/>
+                        <outlet property="beltImageView" destination="5uh-Q5-90D" id="Jm0-g7-kea"/>
+                        <outlet property="beltNameLabel" destination="AET-gA-HBK" id="ZPl-XG-ec6"/>
+                        <outlet property="countryLabel" destination="pwT-db-9p7" id="0Zk-sS-Qg8"/>
+                        <outlet property="flagImageView" destination="q94-tb-4RE" id="PDX-88-mwj"/>
+                        <outlet property="nameLabel" destination="I6l-05-8Ot" id="xHN-vX-EpC"/>
+                        <outlet property="profileView" destination="X62-ZM-AOY" id="ROa-Xa-RUT"/>
+                        <outlet property="thumbnailImageView" destination="aFN-Lu-UgA" id="Lam-d1-FMj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Tb-2p-9fd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623.20000000000005" y="1328.5714285714287"/>
+        </scene>
         <!--Rankings-->
         <scene sceneID="3Cw-Fm-dsI">
             <objects>
@@ -603,7 +725,8 @@
                     <connections>
                         <outlet property="segmentedControl" destination="uUO-uh-3QE" id="EVZ-sw-gfF"/>
                         <outlet property="tableView" destination="wpv-GG-dyY" id="Y4k-JK-Fws"/>
-                        <segue destination="ECn-T5-2d0" kind="presentation" identifier="RankingsShowPopOverVC" id="seF-e4-wXh"/>
+                        <segue destination="ECn-T5-2d0" kind="presentation" identifier="RankingsShowPopOverVC" animates="NO" id="seF-e4-wXh"/>
+                        <segue destination="Vzu-kz-n6x" kind="showDetail" identifier="RankingsVCShowBoxerProfile" animates="NO" id="qRN-fi-RhH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzd-ci-gQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -750,6 +873,7 @@
         <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="gb" width="64" height="64"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="navIcon" width="30" height="30"/>
         <image name="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system" width="121" height="128"/>
@@ -757,9 +881,11 @@
         <image name="rectangle.stack.fill" catalog="system" width="128" height="122"/>
         <image name="ring" width="450" height="243"/>
         <image name="safari.fill" catalog="system" width="128" height="121"/>
+        <image name="shield" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="tysonfury" width="200" height="255"/>
         <namedColor name="alizarin247">
             <color red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
