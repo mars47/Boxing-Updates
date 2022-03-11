@@ -57,12 +57,19 @@ class NetworkManager: NSObject {
     }
     
     static func downloadBoxingData(completion: @escaping (Error?) -> Void) {
-        
+                
+        #if DEBUG
+        loadMockData()
+        #else
+                
         guard
             let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
             let urlString = NSDictionary(contentsOfFile: path)?["boxingDataUrl"] as? String,
-            let url = URL(string: urlString)
-        else { return }
+            let url = URL(string: urlString) /* AWS endpoint */
+        else {
+            loadMockData()
+            return
+        }
         
         Alamofire.request(url).responseJSON { response in
             
@@ -77,6 +84,7 @@ class NetworkManager: NSObject {
                 completion(error)
             }
         }
+        #endif
     }
     
     func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage) -> ()) {
@@ -96,5 +104,12 @@ class NetworkManager: NSObject {
         }
     }
     
+    func loadMockData() {
+        let data = FileExtractor.extractJsonFile(withName: "AllBoxingData", forClass: NetworkManager.self)
+        guard let json =  try? JSON(data: data) else { fatalError() }
+        SaveUtility.saveBoxingData(withData: json) { error in
+            completion(error)
+        }
+    }
 }
 

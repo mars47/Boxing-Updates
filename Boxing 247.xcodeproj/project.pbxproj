@@ -30,6 +30,7 @@
 		074E95FA23801C9F00BC15CB /* NewsFeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E95F923801C9F00BC15CB /* NewsFeedDetailVC.swift */; };
 		07694DB32673AA0C0043285F /* FetchUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07694DB22673AA0C0043285F /* FetchUtility.swift */; };
 		077CE82F20E8CC5C00462AED /* HelpMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CE82E20E8CC5C00462AED /* HelpMenuVC.swift */; };
+		077FD72E27DB3B3C005301D1 /* AllBoxingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0787C35127C0EB6100283E25 /* AllBoxingData.json */; };
 		0787C34627BE3B6800283E25 /* SaveUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34527BE3B6800283E25 /* SaveUtility.swift */; };
 		0787C34A27BE3BF900283E25 /* BeltTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34727BE3BF800283E25 /* BeltTests.swift */; };
 		0787C34B27BE3BF900283E25 /* SaveUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787C34827BE3BF900283E25 /* SaveUtilityTests.swift */; };
@@ -619,6 +620,7 @@
 				07A3011F26D441E0009955A7 /* LoadView.xib in Resources */,
 				0787C35027BE3EAF00283E25 /* Config.plist in Resources */,
 				07B7045523B995780083D02A /* FederationHeader.xib in Resources */,
+				077FD72E27DB3B3C005301D1 /* AllBoxingData.json in Resources */,
 				0744379624202AD300DF126C /* NewsFeedCell.xib in Resources */,
 				0727824520E6FB520071D528 /* Assets.xcassets in Resources */,
 				071B9F3C211A21D000EF6404 /* Logos.xcassets in Resources */,
