@@ -59,7 +59,9 @@ class NetworkManager: NSObject {
     static func downloadBoxingData(completion: @escaping (Error?) -> Void) {
                 
         #if DEBUG
-        loadMockData()
+        NetworkManager.loadMockData(){ error in
+            completion(error)
+        }
         #else
                 
         guard
@@ -67,7 +69,8 @@ class NetworkManager: NSObject {
             let urlString = NSDictionary(contentsOfFile: path)?["boxingDataUrl"] as? String,
             let url = URL(string: urlString) /* AWS endpoint */
         else {
-            loadMockData()
+            NetworkManager.loadMockData(){ error in
+                completion(error) }
             return
         }
         
@@ -104,7 +107,7 @@ class NetworkManager: NSObject {
         }
     }
     
-    func loadMockData() {
+    static func loadMockData(completion: @escaping (Error?) -> Void) {
         let data = FileExtractor.extractJsonFile(withName: "AllBoxingData", forClass: NetworkManager.self)
         guard let json =  try? JSON(data: data) else { fatalError() }
         SaveUtility.saveBoxingData(withData: json) { error in
