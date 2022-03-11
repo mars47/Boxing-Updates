@@ -29,11 +29,14 @@ class TextCell: UITableViewCell {
         
         if segment == .federation {
             
-            let view: CowbellView = UIView.fromNib()
-            let lb = belt.weightClass?.lb?.stringValue ?? ""
-            view.configureLabel(text: lb + " lb")
-            view.cowbellIcon.tintColor = UIColor(named: "pomegranate247")
-            icon.image = view.asImage()
+            let cowbellView: CowbellView = UIView.fromNib()
+            var lb = (belt.weightClass?.lb?.stringValue ?? "") + " lb"
+            if WeightClass.Weight(rawValue: belt.weightClass!.identifierInt) == .heavyweight {
+                lb = "200+lb"
+            }
+            cowbellView.configureLabel(text: lb)
+            cowbellView.cowbellIcon.tintColor = UIColor(named: "pomegranate247")
+            icon.image = cowbellView.asImage()
             icon.backgroundColor = UIColor.clear
             icon.tintColor = UIColor.clear
             iconWidth.constant = 38
