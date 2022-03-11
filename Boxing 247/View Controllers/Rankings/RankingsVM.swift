@@ -9,17 +9,6 @@
 import Foundation
 import UIKit
 
-protocol RankingsVCDelegate {
-    
-    func refreshTableView()
-    func hideLoadingView()
-}
-
-enum States: Int {
-    case open
-    case closed
-}
-
 class RankingsVM {
     
     // MARK: - Properties
@@ -30,6 +19,11 @@ class RankingsVM {
     var federations = [Organisation]()
     var isDownloadingData = true
     var selectedSegment: RankingsVC.Segment = .weightDivision
+    var isInternetConnectionConnected : Bool {
+        ConnectionManager.shared.hasConnectivity()
+    }
+    var itemsScolledCount = 0
+
     var cellHeight : CGFloat  {
         switch selectedSegment {
         case .weightDivision:
@@ -85,4 +79,24 @@ class RankingsVM {
             return belts.sorted(by: { $0.weightClass!.lb!.intValue > $1.weightClass!.lb!.intValue })
         }
     }
+    
+    func handleItemsScrolled() {
+        
+        if !isInternetConnectionConnected {
+            delegate?.presentNoInternetView()
+        }
+        
+        itemsScolledCount = 0
+    }
+}
+
+protocol RankingsVCDelegate {
+    
+    func hideLoadingView()
+    func presentNoInternetView()
+}
+
+enum States: Int {
+    case open
+    case closed
 }

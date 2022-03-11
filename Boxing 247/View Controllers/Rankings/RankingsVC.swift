@@ -8,13 +8,14 @@
 
 import UIKit
 
-class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, RankingsVCDelegate {
     
     // MARK: - Properties
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    var noInternetView : UIView!
     let loadView: LoadView = UIView.fromNib()
     let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
     
@@ -23,6 +24,11 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case weightDivision
         case federation
     }
+    
+    private var enterForegroundObserver: NSObjectProtocol?
+    private var enterBackgroundObserver: NSObjectProtocol?
+    var isNoInternetViewBeingPresented = false
+
         
     // MARK: - Configuration
     
@@ -33,7 +39,25 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         configureTableView()
         configureHeaderViews()
         configureLoadingView()
+        configuredNotificationObservers()
         viewModel.configureSectionStates()
+        viewModel.delegate = self 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !viewModel.isInternetConnectionConnected {
+            presentNoInternetView()
+        }
+    }
+    
+    deinit {
+        if let enterBackgroundObserver = enterBackgroundObserver {
+            NotificationCenter.default.removeObserver(enterBackgroundObserver)
+        }
+        
+        if let enterForegroundObserver = enterForegroundObserver {
+            NotificationCenter.default.removeObserver(enterForegroundObserver)
+        }
     }
     
     fileprivate func configureTableView() {
@@ -51,6 +75,22 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         loadView.configureView(height: tableView.frame.height + 20)
         view.addSubview(loadView)
+    }
+    
+    fileprivate func configuredNotificationObservers() {
+        
+        enterForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
+            
+            if !viewModel.isInternetConnectionConnected {
+            presentNoInternetView()
+            }
+        }
+        
+        enterBackgroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [unowned self] notification in
+            
+            noInternetView?.removeFromSuperview()
+        }
+        
     }
     
     // MARK: - Events
@@ -107,6 +147,40 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func hideLoadingView() {
         loadView.isHidden = true
     }
+    
+    func presentNoInternetView() {
+        
+        if isNoInternetViewBeingPresented {
+            return
+        }
+        
+        isNoInternetViewBeingPresented = true
+        let yPosition = tableView.frame.minY - CGFloat(14)
+        noInternetView = UIView().noInternetView(yPosition: yPosition)
+        view.insertSubview(noInternetView, belowSubview: segmentedControl)
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: [],
+                       
+                       animations: { [self] in
+                        noInternetView.center.y += 55
+                       },
+                       
+                       completion: { _ in
+                        
+                        UIView.animate(withDuration: 0.2, delay: 3, options: [],
+                                       
+                                       animations: { [self] in
+                                        noInternetView.center.y -= 55
+                                       },
+                                       
+                                       completion: { [self] _ in
+                                        
+                                        noInternetView.removeFromSuperview()
+                                        isNoInternetViewBeingPresented = false
+                                       })
+                       }
+        )
+    }
 
     // MARK: - Table view data source
     
@@ -122,6 +196,10 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RANKING_CELL", for: indexPath) as! RankingsCell
         cell.segment = Segment(rawValue: self.segmentedControl.selectedSegmentIndex)!
         cell.datasource = viewModel.belts(for:indexPath.section)
+        
+        viewModel.itemsScolledCount += 1
+        viewModel.itemsScolledCount == 10 ? viewModel.handleItemsScrolled() : Void()
+        
         return cell
     }
     
