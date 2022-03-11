@@ -29,6 +29,10 @@ public class WeightClass: NSManagedObject, Updatable {
         Int(identifier!)!
     }
         
+    var weight: Weight{
+        Weight(rawValue: identifierInt)!
+    }
+    
     func update(with json: JSON) {
         
         identifier = "\(json["id"].intValue)"
