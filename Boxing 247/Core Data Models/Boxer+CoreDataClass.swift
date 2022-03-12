@@ -52,4 +52,7 @@ public class Boxer: NSManagedObject, Updatable {
         identifier = id
     }
     
+    func setImage(image: UIImage?) {
+        thumbnail = image?.pngData() ?? image?.jpegData(compressionQuality: 0.25)
+    }
 }

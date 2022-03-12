@@ -13,6 +13,7 @@
         <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary"/>
         <attribute name="thumbnailUrl" optional="YES" attributeType="String"/>
         <relationship name="belts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belt" inverseName="boxer" inverseEntity="Belt"/>
         <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="boxers" inverseEntity="Country"/>
@@ -66,7 +67,7 @@
     </entity>
     <elements>
         <element name="Belt" positionX="-63" positionY="63" width="128" height="119"/>
-        <element name="Boxer" positionX="-54" positionY="72" width="128" height="164"/>
+        <element name="Boxer" positionX="-54" positionY="72" width="128" height="179"/>
         <element name="Country" positionX="18" positionY="108" width="128" height="104"/>
         <element name="Event" positionX="-36" positionY="81" width="128" height="164"/>
         <element name="NewsArticle" positionX="-63" positionY="-18" width="128" height="194"/>
