@@ -122,9 +122,9 @@ class NewsFeedVM: NSObject {
     
     func handleItemsScrolled() {
         
-       // if !isInternetConnectionConnected {
+        if !isInternetConnectionConnected {
             presentNoInternetView?()
-       // }
+        }
         
         itemsScolledCount = 0 
     }
@@ -188,8 +188,8 @@ class NewsFeedVM: NSObject {
     
     private func downloadThumbnailImage(url: URL, completion: @escaping (UIImage) -> Void) {
         
-        networkManager.downloadThumbnailImage(for: url) { (image) in
-            completion(image)
+        NetworkManager.downloadThumbnailImage(for: url) { (image) in
+            completion(image ?? UIImage(named: "ring.jpg")! )
         }
     }  
 }

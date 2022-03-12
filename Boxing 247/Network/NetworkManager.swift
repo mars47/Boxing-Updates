@@ -90,7 +90,7 @@ class NetworkManager: NSObject {
         #endif
     }
     
-    func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage) -> ()) {
+    static func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage?) -> ()) {
         
         Alamofire.request(url).responseData { (response) in
             
@@ -101,8 +101,7 @@ class NetworkManager: NSObject {
                 }
             } else {
                 print(response.result)
-                let image = UIImage(named: "ring.jpg")!
-                completion(image)
+                completion(nil)
             }
         }
     }
