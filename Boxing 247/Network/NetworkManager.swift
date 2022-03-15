@@ -14,7 +14,7 @@ class NetworkManager: NSObject {
     var urls  = [URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxinginsider.com%2Ffeed%2F"), URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxingnews24.com%2Ffeed%2F")]
 //, URL(string:"https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
     
-    func downloadNewsArticles(completion: @escaping (Bool) -> Void) {
+    func downloadNewsArticles(completion: @escaping (Error?) -> Void) {
         
         var successfulSave = 0
         var didntSave = 0
@@ -37,7 +37,7 @@ class NetworkManager: NSObject {
                         let attemptedSaveCount = successfulSave + didntSave
                         
                         if attemptedSaveCount == self.urls.count {
-                            successfulSave == self.urls.count ? completion(true) : completion(false)
+                            successfulSave == self.urls.count ? completion(nil) : completion(CustomError(description: "There was a problem fetching all the latest news"))
                         }
                     }
                     
@@ -49,7 +49,7 @@ class NetworkManager: NSObject {
                     let attemptedSaveCount = successfulSave + didntSave
 
                     if attemptedSaveCount == self.urls.count {
-                        completion(false)
+                        attemptedSaveCount == self.urls.count ? completion(error) : completion(CustomError(description: "There was a problem fetching all the latest news"))
                     }
                 }
             }

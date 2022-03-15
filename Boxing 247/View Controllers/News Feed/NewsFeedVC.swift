@@ -100,6 +100,21 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             presentNoInternetView()
         }
         
+        viewModel.presentErrorAlert = { [self] error in
+            
+            var message: String!
+            
+            if error is CustomError {
+                message = (error as! CustomError).errorDescription
+            } else {
+                message = error.localizedDescription
+            }
+            
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         viewModel.scrollCollectionView = { [self] in
             DispatchQueue.main.async {
                 let offset = viewModel.collectionViewScrollOffset

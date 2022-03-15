@@ -14,6 +14,7 @@ class NewsFeedVM: NSObject {
     var reloadCollectionView : ( () -> Void)?
     var scrollCollectionView : ( () -> Void)?
     var presentNoInternetView : ( () -> Void)?
+    var presentErrorAlert : ( (Error) -> Void)?
     var hideLoadingView : ( () -> Void)?
 
 
@@ -48,9 +49,8 @@ class NewsFeedVM: NSObject {
     
     func downloadNews(for segment: NewsFeedVC.Segment, completion: (() -> Void)? ) {
         
-        #warning("Error handling needed") // "there was a problem fetching the latest news" 
         isDownloadingData = true
-        networkManager.downloadNewsArticles { [self] _ in
+        networkManager.downloadNewsArticles { [self] error in
             
             newsArticles.removeAll()
             bookmarkedNewsArticles.removeAll()
@@ -69,6 +69,9 @@ class NewsFeedVM: NSObject {
             hideLoadingView?()
             reloadCollectionView?()
             completion?()
+            if error != nil {
+                presentErrorAlert?(error!)
+            }
         }
     }
     
@@ -96,10 +99,12 @@ class NewsFeedVM: NSObject {
     }
     
     func updateDatasourceBookmarkRemoved() {
-        #warning("Needs refactoring")
-        datasource = FetchUtility.bookmarkedNews()!
-        bookmarkedNewsArticles = datasource
-        SaveUtility.saveChanges()
+        
+        if let bookmarkedNews = FetchUtility.bookmarkedNews() {
+            datasource = bookmarkedNews
+            bookmarkedNewsArticles = datasource
+            SaveUtility.saveChanges()
+        }
     }
     
     func switchDatasource(for selectedSegment: NewsFeedVC.Segment, indexPath: IndexPath?) {
