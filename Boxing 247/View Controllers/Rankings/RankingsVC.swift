@@ -153,7 +153,7 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         default:
             return
         }
-        
+    
     }
     
     // MARK: - RankingsVC delegate
@@ -311,9 +311,6 @@ class RankingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("true")
-    }
 }
 
 

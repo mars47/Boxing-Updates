@@ -13,7 +13,8 @@ struct HelpMenuVM {
         
     let sections =  ["Help"]
     let rows = [
-        ["About Us", "Send Feedback", "Share App", "Rate Us"] /* Add more array's for extra sections*/
+        ["About Us", "Send Feedback", "Share App"] /* ,"Rate Us" */
+        /* Add more array's for extra sections*/
     ]
     let icons = [
         [UIImage(systemName:"info.circle.fill"), UIImage(systemName:"envelope.fill"), UIImage(systemName:"square.and.arrow.up.fill"),  UIImage(systemName:"hand.thumbsup.fill")]

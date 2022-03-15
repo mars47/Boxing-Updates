@@ -10,7 +10,12 @@ import MessageUI
 
 class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
-    let window = UIApplication.shared.windows[0]
+    let window = UIApplication
+        .shared
+        .connectedScenes
+        .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+        .first { $0.isKeyWindow }
+    
     @IBOutlet weak var tableView: UITableView!
     let viewModel = HelpMenuVM()
     
@@ -77,7 +82,7 @@ class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult,error: Error?) {
         
-        window.overrideUserInterfaceStyle = .dark
+        //window?.overrideUserInterfaceStyle = .dark
         controller.dismiss(animated: true)
     }
 }
@@ -94,13 +99,13 @@ private extension HelpMenuVC {
             emailController.setToRecipients(["help@boxingupdates.co.uk"])
             emailController.setMessageBody("<p><br><br><br><br><br><br> iOS version \(version) </p>", isHTML: true)
             emailController.setSubject("User Feedback ios v.1.0.0 Ticket Number \(Int.random(in: 1..<10000000))")
-            window.overrideUserInterfaceStyle = .light
             present(emailController, animated: true)
             
         } else {
-            print("This device is not configured to send email. Please set up an email account.")
-            #warning("show failure alert") 
+            let alert = UIAlertController(title: "This device is not configured to send email", message: "Please set up an email account", preferredStyle: UIAlertController.Style.alert)
+            alert.view.tintColor = .label
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
-
