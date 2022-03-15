@@ -12,7 +12,7 @@ import SwiftyJSON
 
 // MARK: - Managed protocol
 
-protocol Managed: class, NSFetchRequestResult {
+protocol Managed: NSFetchRequestResult {
 
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
