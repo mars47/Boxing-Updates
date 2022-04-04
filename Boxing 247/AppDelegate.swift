@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Instabug
+//import Instabug
 
 
 @UIApplicationMain
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func configureCrashReporter() {
-        Instabug.start(withToken: "4c964612828aa87d11f54c754458ca63", invocationEvents: [.shake, .screenshot])
+        //Instabug.start(withToken: "4c964612828aa87d11f54c754458ca63", invocationEvents: [.shake, .screenshot])
     }
     
     func configureGlobalUIAppearanceSettings() {
