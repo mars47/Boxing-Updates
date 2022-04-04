@@ -7,6 +7,8 @@ use_frameworks!
 target 'Boxing 247' do
     pod 'Alamofire', '~> 4.5'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Crashlytics'
 end
  
   target 'Boxing 247Tests' do
