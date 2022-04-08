@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Instabug
-
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,15 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-        configureCrashReporter()
+        FirebaseApp.configure()
         configureGlobalUIAppearanceSettings()
         deleteOldNewsArticlesAfter5days()
         fetchAllData()
+        
         return true
-    }
-    
-    func configureCrashReporter() {
-        Instabug.start(withToken: "4c964612828aa87d11f54c754458ca63", invocationEvents: [.shake, .screenshot])
     }
     
     func configureGlobalUIAppearanceSettings() {
