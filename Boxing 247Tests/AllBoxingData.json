@@ -253,7 +253,7 @@
          "name":"WBC Heavyweight",
          "organizationId":11,
          "weightClassId":19,
-         "boxerId":12,
+         "boxerId":4,
          "acquiredDate":"2020-02-22"
       },
       {
@@ -389,7 +389,7 @@
          "name":"WBA Heavyweight",
          "organizationId":12,
          "weightClassId":19,
-         "boxerId":4,
+         "boxerId":12,
          "acquiredDate":"2021-09-01"
       },
       {

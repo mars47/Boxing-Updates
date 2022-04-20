@@ -27,7 +27,7 @@ public class NewsArticle: NSManagedObject, Updatable {
         thumbnailUrl = dictionary["thumbnail"].string!
         descriptionInfo = dictionary["description"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         descriptionInfo = self.description.trimmingCharacters(in: .whitespacesAndNewlines);
-        content = dictionary["content"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        content = dictionary["content"].string!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
     }
     
     func setPubdate(_ pubDateString: String) {
@@ -40,6 +40,7 @@ public class NewsArticle: NSManagedObject, Updatable {
     
     func setImage(image: UIImage) {
         
+        if image.size == CGSize(width: 1.0, height: 1.0) { return }
         thumbnail = image.pngData() ?? image.jpegData(compressionQuality: 1)
     }
     
