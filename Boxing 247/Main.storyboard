@@ -466,12 +466,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOZ-1B-v5u">
                                 <rect key="frame" x="16" y="164" width="343" height="203"/>
-                                <string key="text">The home of boxing news. Keeping you updated with the latest reports, fights schedules and rankings. Features insights and analysis from the people with passion to start the conversation - the fans. Expertly designed to make following boxing easier than ever for the casual fan. Our 5-star app provides you with breaking news, and live match updates straight to your mobile device </string>
+                                <string key="text">The home of boxing news. Keeping you updated with the latest reports, fight schedules and rankings. Features insights and analysis from the people with passion to start the conversation - the fans. Expertly designed to make following boxing easier than ever for the casual fan. Our 5-star app provides you with breaking news, and live match updates straight to your mobile device </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="white247"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ring" translatesAutoresizingMaskIntoConstraints="NO" id="Ch9-ar-BrB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-RW" translatesAutoresizingMaskIntoConstraints="NO" id="Ch9-ar-BrB">
                                 <rect key="frame" x="16" y="30" width="273" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="273" id="09T-W7-yIZ"/>
@@ -871,9 +871,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rmp-HX-OXb"/>
-        <segue reference="OcY-sz-ttD"/>
+        <segue reference="igG-8s-cM8"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Logo-RW" width="3168" height="1116"/>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
         <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
@@ -903,7 +904,7 @@
             <color red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pomegranate247">
-            <color red="0.6470588235294118" green="0.19215686274509805" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.64619016650000005" green="0.19203650950000001" blue="0.1512782872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white247">
             <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1007,6 +1007,7 @@
 			baseConfigurationReference = BAC4A4151CAA5088C92E999B /* Pods-Boxing 247.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
@@ -1028,6 +1029,7 @@
 			baseConfigurationReference = 2EE16E0F3F43C9587A4BBE1F /* Pods-Boxing 247.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 666EPUUFJ9;
 				INFOPLIST_FILE = "Boxing 247/Info.plist";
