@@ -71,8 +71,14 @@ class HelpMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             present(activityVC, animated: true, completion: nil)
         //https://stackoverflow.com/questions/37938722/how-to-implement-share-button-in-swift
         
-        //case indexPath.row == 3:
-        
+        case indexPath.row == 3:
+            let appId = 1619551031 //340779800
+            let urlString = "itms-apps://itunes.apple.com/app/id\(appId)?action=write-review&mt=8"
+            if urlString.isValid() {
+                guard let url = URL(string: urlString) else { return }
+                UIApplication.shared.open(url,options: [:])
+            }
+            
         default:
             return
         }

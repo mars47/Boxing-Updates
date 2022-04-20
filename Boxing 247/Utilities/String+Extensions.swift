@@ -10,6 +10,14 @@ import UIKit
 import Foundation
 
 extension String {
+    
+    func isValid() -> Bool {
+        
+        if let url = URL(string: self) {
+            return UIApplication.shared.canOpenURL(url)
+        }
+        return false
+    }
 
     var underLined: NSAttributedString {
         NSMutableAttributedString(string: self, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])

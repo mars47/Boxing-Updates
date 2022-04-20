@@ -13,7 +13,7 @@ struct HelpMenuVM {
         
     let sections =  ["Help"]
     let rows = [
-        ["About Us", "Send Feedback", "Share App"] /* ,"Rate Us" */
+        ["About Us", "Send Feedback", "Share App", "Rate Us" ] 
         /* Add more array's for extra sections*/
     ]
     let icons = [
