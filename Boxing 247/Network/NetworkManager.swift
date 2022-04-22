@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import AppTrackingTransparency
 
 class NetworkManager: NSObject {
     
@@ -113,5 +114,30 @@ class NetworkManager: NSObject {
             completion(error)
         }
     }
+    
+    static func requestPermission(completion: @escaping () -> Void) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                case .authorized:
+                    // Tracking authorization dialog was shown
+                    // and we are authorized
+                    print("Authorized")
+                case .denied:
+                    // Tracking authorization dialog was
+                    // shown and permission is denied
+                    print("Denied")
+                case .notDetermined:
+                    // Tracking authorization dialog has not been shown
+                    print("Not Determined")
+                case .restricted:
+                    print("Restricted")
+                @unknown default:
+                    print("Unknown")
+                }
+                
+                completion()
+            }
+    }
+
 }
 

@@ -22,9 +22,14 @@ class ScheduleViewController: UIViewController, WKNavigationDelegate {
         
         webview.navigationDelegate = self
         webview.addSubview(loadView)
+
+        NetworkManager.requestPermission(){
+            DispatchQueue.main.async {
+                guard let url = URL(string: "https://www.boxingscene.com/schedule") else { return }
+                self.webview.load(URLRequest(url: url))
+            }
+        }
         
-        guard let url = URL(string:"https://box.live/upcoming-fights-schedule/") else { return }
-        webview.load(URLRequest(url: url))
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
