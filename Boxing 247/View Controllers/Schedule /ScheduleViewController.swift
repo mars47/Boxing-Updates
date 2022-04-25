@@ -25,7 +25,9 @@ class ScheduleViewController: UIViewController, WKNavigationDelegate {
 
         NetworkManager.requestPermission(){
             DispatchQueue.main.async {
-                guard let url = URL(string: "https://www.boxingscene.com/schedule") else { return }
+                
+                guard let url = URL(string: "http://fightnights.com/upcoming-boxing-schedule") else { return }
+                //guard let url = URL(string: "https://www.boxingscene.com/schedule") else { return }
                 self.webview.load(URLRequest(url: url))
             }
         }

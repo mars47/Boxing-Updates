@@ -86,13 +86,13 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         viewModel.reloadCollectionView = { [self] in
             DispatchQueue.main.async {
-                collectionView?.reloadData()
+                self.collectionView?.reloadData()
             }
         }
         
         viewModel.hideLoadingView = { [self] in
             DispatchQueue.main.async {
-                loadView.isHidden = true
+                self.loadView.isHidden = true
             }
         }
         
@@ -116,7 +116,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
         
         viewModel.scrollCollectionView = { [self] in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 let offset = viewModel.collectionViewScrollOffset
                 let lastItem = collectionView(collectionView, numberOfItemsInSection: 0) - 1
                 let indexpath = IndexPath(row: lastItem - offset, section: 0)

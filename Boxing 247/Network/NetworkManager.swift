@@ -116,6 +116,7 @@ class NetworkManager: NSObject {
     }
     
     static func requestPermission(completion: @escaping () -> Void) {
+        
             ATTrackingManager.requestTrackingAuthorization { status in
                 switch status {
                 case .authorized:
