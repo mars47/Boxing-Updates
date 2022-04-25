@@ -17,26 +17,21 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var navigationPanelButton: UIBarButtonItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var moreNewsButton: UIButton!
+   
     var noInternetView : UIView!
     let loadView: LoadView = UIView.fromNib()
     let emptyDataSetView: EmptyDatasetView = UIView.fromNib()
-    
+    let refreshControl = UIRefreshControl()
+
     private var enterForegroundObserver: NSObjectProtocol?
     private var enterBackgroundObserver: NSObjectProtocol?
+       
+    var selectedSegment : NewsFeedVM.Segment {
+        return NewsFeedVM.Segment(rawValue: segmentedControl.selectedSegmentIndex)!
+    }
     
     let viewModel = NewsFeedVM()
-    let refreshControl = UIRefreshControl()
-    enum Segment: Int {
-        case latestNews
-        case bookmarked
-    }
-    var selectedSegment : Segment {
-        return Segment(rawValue: segmentedControl.selectedSegmentIndex)!
-    }
-    
-    var isNoInternetViewBeingPresented = false
-    var isLongPressActivated = true
-    
+
     // MARK: - Configuration
         
     override func viewDidLoad() {
@@ -202,7 +197,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
         if sender.state == .began  {
             sender.isEnabled = false
-            isLongPressActivated = true
+            viewModel.isLongPressActivated = true
         }
         
         let touchPoint = sender.location(in: collectionView)
@@ -284,11 +279,11 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func presentNoInternetView() {
         
-        if isNoInternetViewBeingPresented {
+        if viewModel.isNoInternetViewBeingPresented {
             return
         }
         
-        isNoInternetViewBeingPresented = true
+        viewModel.isNoInternetViewBeingPresented = true
         let yPosition = collectionView.frame.minY - CGFloat(50)
         noInternetView = UIView().noInternetView(yPosition: yPosition)
         view.insertSubview(noInternetView, belowSubview: segmentedControl)
@@ -310,7 +305,7 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                                        completion: { [self] _ in
                                         
                                         noInternetView.removeFromSuperview()
-                                        isNoInternetViewBeingPresented = false
+                                        viewModel.isNoInternetViewBeingPresented = false
                                        })
                        }
         )
@@ -371,8 +366,8 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if isLongPressActivated {
-            isLongPressActivated = false
+        if viewModel.isLongPressActivated {
+            viewModel.isLongPressActivated = false
             return
         }
         

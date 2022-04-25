@@ -17,7 +17,11 @@ class NewsFeedVM: NSObject {
     var presentErrorAlert : ( (Error) -> Void)?
     var hideLoadingView : ( () -> Void)?
 
-
+    enum Segment: Int {
+        case latestNews
+        case bookmarked
+    }
+    
     let url = URL(string: "https://bit.ly/2tZmM0E")
 
     var datasource: [NewsArticle] = []
@@ -34,7 +38,9 @@ class NewsFeedVM: NSObject {
     }
     
     var itemsScolledCount = 0
-    var isDownloadingData = false 
+    var isDownloadingData = false
+    var isNoInternetViewBeingPresented = false
+    var isLongPressActivated = true
     var isInternetConnectionConnected : Bool {
         ConnectionManager.shared.hasConnectivity()
     }
@@ -47,7 +53,7 @@ class NewsFeedVM: NSObject {
     
     // MARK: - Public Methods
     
-    func downloadNews(for segment: NewsFeedVC.Segment, completion: (() -> Void)? ) {
+    func downloadNews(for segment: Segment, completion: (() -> Void)? ) {
         
         isDownloadingData = true
         networkManager.downloadNewsArticles { [self] error in
@@ -75,7 +81,7 @@ class NewsFeedVM: NSObject {
         }
     }
     
-    func updateDatasource(for segment: NewsFeedVC.Segment, itemsDisplayedCount: Int) {
+    func updateDatasource(for segment: Segment, itemsDisplayedCount: Int) {
        
         let datasourceAllItemsCount = (segment == .bookmarked) ? bookmarkedNewsArticles.count: newsArticles.count
         
@@ -107,7 +113,7 @@ class NewsFeedVM: NSObject {
         }
     }
     
-    func switchDatasource(for selectedSegment: NewsFeedVC.Segment, indexPath: IndexPath?) {
+    func switchDatasource(for selectedSegment: Segment, indexPath: IndexPath?) {
         
         if selectedSegment == .bookmarked {
             bookmarkedNewsArticles = FetchUtility.bookmarkedNews()!
@@ -134,7 +140,7 @@ class NewsFeedVM: NSObject {
         itemsScolledCount = 0 
     }
     
-    func getEmptyDatasetText(for selectedSegment: NewsFeedVC.Segment) -> (String, String) {
+    func getEmptyDatasetText(for selectedSegment: Segment) -> (String, String) {
         
         switch selectedSegment {
         
@@ -146,7 +152,7 @@ class NewsFeedVM: NSObject {
         }
     }
     
-    func storeContentsSizeHeight(_ contentsSizeHeight: CGFloat, selectedSegment: NewsFeedVC.Segment) {
+    func storeContentsSizeHeight(_ contentsSizeHeight: CGFloat, selectedSegment: Segment) {
         
         if selectedSegment == .bookmarked {
             self.latestSegementContentHeight = contentsSizeHeight

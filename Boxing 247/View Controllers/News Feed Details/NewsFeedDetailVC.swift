@@ -25,7 +25,7 @@ class NewsFeedDetailVC: UIViewController {
     @IBOutlet weak var backButton: UINavigationItem!
     
     var newsArticle: NewsArticle!
-    var selectedSegment: NewsFeedVC.Segment!
+    var selectedSegment: NewsFeedVM.Segment!
     var updateViewModel: ( () -> Void)?
 
     // MARK: - Configuration
