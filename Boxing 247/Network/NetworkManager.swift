@@ -38,7 +38,7 @@ class NetworkManager: NSObject {
                         let attemptedSaveCount = successfulSave + didntSave
                         
                         if attemptedSaveCount == self.urls.count {
-                            successfulSave == self.urls.count ? completion(nil) : completion(CustomError(description: "There was a problem fetching all the latest news"))
+                            successfulSave == self.urls.count ? completion(nil) : completion(CustomError(description: "Unable to fetch news from all sources"))
                         }
                     }
                     
@@ -50,7 +50,7 @@ class NetworkManager: NSObject {
                     let attemptedSaveCount = successfulSave + didntSave
 
                     if attemptedSaveCount == self.urls.count {
-                        attemptedSaveCount == self.urls.count ? completion(error) : completion(CustomError(description: "There was a problem fetching all the latest news"))
+                        attemptedSaveCount == self.urls.count ? completion(error) : completion(CustomError(description: "TUnable to fetch news from all sources"))
                     }
                 }
             }

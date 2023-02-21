@@ -43,8 +43,4 @@ public class NewsArticle: NSManagedObject, Updatable {
         if image.size == CGSize(width: 1.0, height: 1.0) { return }
         thumbnail = image.pngData() ?? image.jpegData(compressionQuality: 1)
     }
-    
-    func setId(id: String) {
-        
-    }
 }

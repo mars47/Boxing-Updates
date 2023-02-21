@@ -50,7 +50,10 @@ protocol Updatable: Managed {
     static var objectIdentifier: String { get set }
     
     func update(with json: JSON)
-    func setId(id: String)
+}
+
+extension Updatable {
+    func setId(id: String) {}
 }
 
 extension Updatable where Self: NSManagedObject {
