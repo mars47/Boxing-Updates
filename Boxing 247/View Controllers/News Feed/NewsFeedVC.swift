@@ -92,7 +92,9 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
         
         viewModel.presentNoInternetView = { [self] in
-            presentNoInternetView()
+            DispatchQueue.main.async { [self] in
+                self.presentNoInternetView()
+            }
         }
         
         viewModel.presentErrorAlert = { [self] error in
@@ -105,9 +107,12 @@ class NewsFeedVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 message = error.localizedDescription
             }
             
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: error is CustomError ? "" : "Error", message: message, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         
         viewModel.scrollCollectionView = { [self] in
