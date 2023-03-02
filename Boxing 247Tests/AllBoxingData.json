@@ -1,0 +1,987 @@
+{
+   "belts":[
+      {
+         "id":65,
+         "name":"WBO Minimumweight",
+         "organizationId":10,
+         "weightClassId":5,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":61,
+         "name":"WBO Light Flyweight",
+         "organizationId":10,
+         "weightClassId":6,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":57,
+         "name":"WBO Flyweight",
+         "organizationId":10,
+         "weightClassId":7,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":53,
+         "name":"WBO Super Flyweight",
+         "organizationId":10,
+         "weightClassId":8,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":45,
+         "name":"WBO Super Bantamweight",
+         "organizationId":10,
+         "weightClassId":9,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":41,
+         "name":"WBO Featherweight",
+         "organizationId":10,
+         "weightClassId":10,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":37,
+         "name":"WBO Super Featherweight",
+         "organizationId":10,
+         "weightClassId":11,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":33,
+         "name":"WBO Lightweight",
+         "organizationId":10,
+         "weightClassId":12,
+         "boxerId":31,
+         "acquiredDate":"2021-11-27"
+      },
+      {
+         "id":29,
+         "name":"WBO Super Lightweight",
+         "organizationId":10,
+         "weightClassId":13,
+         "boxerId":30,
+         "acquiredDate":"2021-05-22"
+      },
+      {
+         "id":25,
+         "name":"WBO Welterweight",
+         "organizationId":10,
+         "weightClassId":14,
+         "boxerId":28,
+         "acquiredDate":"2018-06-09"
+      },
+      {
+         "id":17,
+         "name":"WBO Middleweight",
+         "organizationId":10,
+         "weightClassId":15,
+         "boxerId":24,
+         "acquiredDate":"2018-10-20"
+      },
+      {
+         "id":13,
+         "name":"WBO Super Middleweight",
+         "organizationId":10,
+         "weightClassId":16,
+         "boxerId":7,
+         "acquiredDate":"2021-05-08"
+      },
+      {
+         "id":9,
+         "name":"WBO Light Cruiserweight",
+         "organizationId":10,
+         "weightClassId":17,
+         "boxerId":20,
+         "acquiredDate":"2021-04-10"
+      },
+      {
+         "id":5,
+         "name":"WBO Cruiserweight",
+         "organizationId":10,
+         "weightClassId":18,
+         "boxerId":16,
+         "acquiredDate":"2021-03-20"
+      },
+      {
+         "id":1,
+         "name":"WBO Heavyweight",
+         "organizationId":10,
+         "weightClassId":19,
+         "boxerId":12,
+         "acquiredDate":"2021-09-01"
+      },
+      {
+         "id":49,
+         "name":"WBO Bantamweight",
+         "organizationId":10,
+         "weightClassId":20,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":21,
+         "name":"WBO Super Welterweight",
+         "organizationId":10,
+         "weightClassId":21,
+         "boxerId":25,
+         "acquiredDate":"2021-02-13"
+      },
+      {
+         "id":66,
+         "name":"WBC Minimumweight",
+         "organizationId":11,
+         "weightClassId":5,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":62,
+         "name":"WBC Light Flyweight",
+         "organizationId":11,
+         "weightClassId":6,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":58,
+         "name":"WBC Flyweight",
+         "organizationId":11,
+         "weightClassId":7,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":54,
+         "name":"WBC Super Flyweight",
+         "organizationId":11,
+         "weightClassId":8,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":46,
+         "name":"WBC Super Bantamweight",
+         "organizationId":11,
+         "weightClassId":9,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":42,
+         "name":"WBC Featherweight",
+         "organizationId":11,
+         "weightClassId":10,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":38,
+         "name":"WBC Super Featherweight",
+         "organizationId":11,
+         "weightClassId":11,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":34,
+         "name":"WBC Lightweight",
+         "organizationId":11,
+         "weightClassId":12,
+         "boxerId":32,
+         "acquiredDate":"2019-10-23"
+      },
+      {
+         "id":30,
+         "name":"WBC Super Lightweight",
+         "organizationId":11,
+         "weightClassId":13,
+         "boxerId":30,
+         "acquiredDate":"2021-05-22"
+      },
+      {
+         "id":26,
+         "name":"WBC Welterweight",
+         "organizationId":11,
+         "weightClassId":14,
+         "boxerId":5,
+         "acquiredDate":"2019-09-28"
+      },
+      {
+         "id":18,
+         "name":"WBC Middleweight",
+         "organizationId":11,
+         "weightClassId":15,
+         "boxerId":23,
+         "acquiredDate":"2019-06-26"
+      },
+      {
+         "id":14,
+         "name":"WBC Super Middleweight",
+         "organizationId":11,
+         "weightClassId":16,
+         "boxerId":7,
+         "acquiredDate":"2020-12-19"
+      },
+      {
+         "id":10,
+         "name":"WBC Light Cruiserweight",
+         "organizationId":11,
+         "weightClassId":17,
+         "boxerId":19,
+         "acquiredDate":"2019-10-18"
+      },
+      {
+         "id":6,
+         "name":"WBC Cruiserweight",
+         "organizationId":11,
+         "weightClassId":18,
+         "boxerId":14,
+         "acquiredDate":"2020-01-31"
+      },
+      {
+         "id":2,
+         "name":"WBC Heavyweight",
+         "organizationId":11,
+         "weightClassId":19,
+         "boxerId":4,
+         "acquiredDate":"2020-02-22"
+      },
+      {
+         "id":50,
+         "name":"WBC Bantamweight",
+         "organizationId":11,
+         "weightClassId":20,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":22,
+         "name":"WBC Super Welterweight",
+         "organizationId":11,
+         "weightClassId":21,
+         "boxerId":26,
+         "acquiredDate":"2019-12-21"
+      },
+      {
+         "id":67,
+         "name":"WBA Minimumweight",
+         "organizationId":12,
+         "weightClassId":5,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":63,
+         "name":"WBA Light Flyweight",
+         "organizationId":12,
+         "weightClassId":6,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":59,
+         "name":"WBA Flyweight",
+         "organizationId":12,
+         "weightClassId":7,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":55,
+         "name":"WBA Super Flyweight",
+         "organizationId":12,
+         "weightClassId":8,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":47,
+         "name":"WBA Super Bantamweight",
+         "organizationId":12,
+         "weightClassId":9,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":43,
+         "name":"WBA Featherweight",
+         "organizationId":12,
+         "weightClassId":10,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":39,
+         "name":"WBA Super Featherweight",
+         "organizationId":12,
+         "weightClassId":11,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":35,
+         "name":"WBA Lightweight",
+         "organizationId":12,
+         "weightClassId":12,
+         "boxerId":31,
+         "acquiredDate":"2021-11-27"
+      },
+      {
+         "id":31,
+         "name":"WBA Super Lightweight",
+         "organizationId":12,
+         "weightClassId":13,
+         "boxerId":30,
+         "acquiredDate":"2019-10-26"
+      },
+      {
+         "id":27,
+         "name":"WBA Welterweight",
+         "organizationId":12,
+         "weightClassId":14,
+         "boxerId":29,
+         "acquiredDate":"2021-01-29"
+      },
+      {
+         "id":19,
+         "name":"WBA Middleweight",
+         "organizationId":12,
+         "weightClassId":15,
+         "boxerId":22,
+         "acquiredDate":"2021-01-06"
+      },
+      {
+         "id":15,
+         "name":"WBA Super Middleweight",
+         "organizationId":12,
+         "weightClassId":16,
+         "boxerId":7,
+         "acquiredDate":"2020-12-19"
+      },
+      {
+         "id":11,
+         "name":"WBA Light Cruiserweight",
+         "organizationId":12,
+         "weightClassId":17,
+         "boxerId":18,
+         "acquiredDate":"2016-05-21"
+      },
+      {
+         "id":7,
+         "name":"WBA Cruiserweight",
+         "organizationId":12,
+         "weightClassId":18,
+         "boxerId":13,
+         "acquiredDate":"2019-08-31"
+      },
+      {
+         "id":3,
+         "name":"WBA Heavyweight",
+         "organizationId":12,
+         "weightClassId":19,
+         "boxerId":12,
+         "acquiredDate":"2021-09-01"
+      },
+      {
+         "id":51,
+         "name":"WBA Bantamweight",
+         "organizationId":12,
+         "weightClassId":20,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":23,
+         "name":"WBA Super Welterweight",
+         "organizationId":12,
+         "weightClassId":21,
+         "boxerId":26,
+         "acquiredDate":"2020-09-26"
+      },
+      {
+         "id":68,
+         "name":"IBF Minimumweight",
+         "organizationId":13,
+         "weightClassId":5,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":64,
+         "name":"IBF Light Flyweight",
+         "organizationId":13,
+         "weightClassId":6,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":60,
+         "name":"IBF Flyweight",
+         "organizationId":13,
+         "weightClassId":7,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":56,
+         "name":"IBF Super Flyweight",
+         "organizationId":13,
+         "weightClassId":8,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":48,
+         "name":"IBF Super Bantamweight",
+         "organizationId":13,
+         "weightClassId":9,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":44,
+         "name":"IBF Featherweight",
+         "organizationId":13,
+         "weightClassId":10,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":40,
+         "name":"IBF Super Featherweight",
+         "organizationId":13,
+         "weightClassId":11,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":36,
+         "name":"IBF Lightweight",
+         "organizationId":13,
+         "weightClassId":12,
+         "boxerId":31,
+         "acquiredDate":"2021-11-27"
+      },
+      {
+         "id":32,
+         "name":"IBF Super Lightweight",
+         "organizationId":13,
+         "weightClassId":13,
+         "boxerId":30,
+         "acquiredDate":"2019-05-18"
+      },
+      {
+         "id":28,
+         "name":"IBF Welterweight",
+         "organizationId":13,
+         "weightClassId":14,
+         "boxerId":5,
+         "acquiredDate":"2017-05-27"
+      },
+      {
+         "id":20,
+         "name":"IBF Middleweight",
+         "organizationId":13,
+         "weightClassId":15,
+         "boxerId":6,
+         "acquiredDate":"2019-10-05"
+      },
+      {
+         "id":16,
+         "name":"IBF Super Middleweight",
+         "organizationId":13,
+         "weightClassId":16,
+         "boxerId":7,
+         "acquiredDate":"2021-11-06"
+      },
+      {
+         "id":12,
+         "name":"IBF Light Cruiserweight",
+         "organizationId":13,
+         "weightClassId":17,
+         "boxerId":19,
+         "acquiredDate":"2017-11-11"
+      },
+      {
+         "id":8,
+         "name":"IBF Cruiserweight",
+         "organizationId":13,
+         "weightClassId":18,
+         "boxerId":15,
+         "acquiredDate":"2020-09-06"
+      },
+      {
+         "id":4,
+         "name":"IBF Heavyweight",
+         "organizationId":13,
+         "weightClassId":19,
+         "boxerId":12,
+         "acquiredDate":"2021-09-01"
+      },
+      {
+         "id":52,
+         "name":"IBF Bantamweight",
+         "organizationId":13,
+         "weightClassId":20,
+         "boxerId":null,
+         "acquiredDate":null
+      },
+      {
+         "id":24,
+         "name":"IBF Super Welterweight",
+         "organizationId":13,
+         "weightClassId":21,
+         "boxerId":26,
+         "acquiredDate":"2020-09-26"
+      }
+   ],
+   "boxers":[
+      {
+         "id":0,
+         "firstName":"Vacant",
+         "lastName":null,
+         "dateOfBirth":null,
+         "weightClassId":16,
+         "countryId":null,
+         "thumbnailUrl":null
+      },
+      {
+         "id":1,
+         "firstName":"Dillian ",
+         "lastName":"Whyte",
+         "dateOfBirth":"1988-04-11",
+         "weightClassId":19,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//5/5c/Dwhyte.jpg"
+      },
+      {
+         "id":2,
+         "firstName":"Deontay",
+         "lastName":"Wilder",
+         "dateOfBirth":"1985-10-22",
+         "weightClassId":19,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//5/5f/DeontayWilder12.jpg"
+      },
+      {
+         "id":3,
+         "firstName":"Anthony",
+         "lastName":"Joshua",
+         "dateOfBirth":"1989-10-15",
+         "weightClassId":19,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//3/38/659461.jpeg"
+      },
+      {
+         "id":4,
+         "firstName":"Tyson",
+         "lastName":"Fury",
+         "dateOfBirth":"1988-08-12",
+         "weightClassId":19,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//0/04/TysonFury1.jpg"
+      },
+      {
+         "id":5,
+         "firstName":"Errol ",
+         "lastName":"Spence Jr.",
+         "dateOfBirth":"1990-01-13",
+         "weightClassId":14,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//d/de/629465.jpeg"
+      },
+      {
+         "id":6,
+         "firstName":"Gennady",
+         "lastName":"Golovkin",
+         "dateOfBirth":"1982-04-08",
+         "weightClassId":15,
+         "countryId":3,
+         "thumbnailUrl":"https://boxrec.com/media/images//b/b9/GGG.jpg"
+      },
+      {
+         "id":7,
+         "firstName":"Canelo",
+         "lastName":"Alvarez",
+         "dateOfBirth":"1990-07-18",
+         "weightClassId":15,
+         "countryId":4,
+         "thumbnailUrl":"https://boxrec.com/media/images//7/74/Santos_Saul_Alvarez_Barragan1.jpg"
+      },
+      {
+         "id":8,
+         "firstName":"Andy",
+         "lastName":"Ruiz",
+         "dateOfBirth":"1989-09-11",
+         "weightClassId":19,
+         "countryId":4,
+         "thumbnailUrl":"https://boxrec.com/media/images//c/cc/AndyRuizJr.jpeg"
+      },
+      {
+         "id":12,
+         "firstName":"Oleksandr",
+         "lastName":"Usyk",
+         "dateOfBirth":"1987-01-17",
+         "weightClassId":19,
+         "countryId":5,
+         "thumbnailUrl":"https://boxrec.com/media/images//2/26/659772.jpg"
+      },
+      {
+         "id":13,
+         "firstName":"Arsen",
+         "lastName":"Goulamirian",
+         "dateOfBirth":"1987-10-04",
+         "weightClassId":18,
+         "countryId":6,
+         "thumbnailUrl":"https://boxrec.com/media/images//a/a7/Goulamirian_Arsen.jpg"
+      },
+      {
+         "id":14,
+         "firstName":"Ilunga ",
+         "lastName":"Makabu",
+         "dateOfBirth":"1987-11-08",
+         "weightClassId":18,
+         "countryId":7,
+         "thumbnailUrl":"https://boxrec.com/media/images//c/ce/457720.jpeg"
+      },
+      {
+         "id":15,
+         "firstName":"Mairis ",
+         "lastName":"Briedis",
+         "dateOfBirth":"1985-01-13",
+         "weightClassId":18,
+         "countryId":8,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/7/7c/MairisBriedis.jpeg/500px-MairisBriedis.jpeg"
+      },
+      {
+         "id":16,
+         "firstName":"Lawrence ",
+         "lastName":"Okolie",
+         "dateOfBirth":"1992-11-16",
+         "weightClassId":18,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/5/5e/Lawrence_Okolie.jpg/500px-Lawrence_Okolie.jpg"
+      },
+      {
+         "id":18,
+         "firstName":"Dmitry ",
+         "lastName":"Bivol",
+         "dateOfBirth":"1990-12-18",
+         "weightClassId":17,
+         "countryId":9,
+         "thumbnailUrl":"https://boxrec.com/media/images//5/51/DmitryBivol1.jpg"
+      },
+      {
+         "id":19,
+         "firstName":"Artur",
+         "lastName":"Beterbiev",
+         "dateOfBirth":"1985-01-21",
+         "weightClassId":17,
+         "countryId":9,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/2/20/Artur_Beterbiev.jpeg/500px-Artur_Beterbiev.jpeg"
+      },
+      {
+         "id":20,
+         "firstName":"Joe",
+         "lastName":"Smith Jr.",
+         "dateOfBirth":"1989-09-20",
+         "weightClassId":17,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/0/02/513839.jpeg/500px-513839.jpeg"
+      },
+      {
+         "id":22,
+         "firstName":"Ryōta",
+         "lastName":"Murata",
+         "dateOfBirth":"1986-01-12",
+         "weightClassId":15,
+         "countryId":10,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/7/78/RMurata1.jpg/500px-RMurata1.jpg"
+      },
+      {
+         "id":23,
+         "firstName":"Jermall",
+         "lastName":"Charlo",
+         "dateOfBirth":"1990-05-19",
+         "weightClassId":15,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//1/1d/471634.jpeg"
+      },
+      {
+         "id":24,
+         "firstName":"Demetrius ",
+         "lastName":"Andrade",
+         "dateOfBirth":"1988-02-19",
+         "weightClassId":15,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//b/bc/Demetrius_Andrade_2019.JPG"
+      },
+      {
+         "id":25,
+         "firstName":"Brian ",
+         "lastName":"Castaño",
+         "dateOfBirth":"1989-09-12",
+         "weightClassId":21,
+         "countryId":11,
+         "thumbnailUrl":"https://boxrec.com/media/images//e/e5/BCCastano.jpeg"
+      },
+      {
+         "id":26,
+         "firstName":"Jermell",
+         "lastName":"Charlo",
+         "dateOfBirth":"1990-05-19",
+         "weightClassId":21,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//2/2c/433135.jpeg"
+      },
+      {
+         "id":28,
+         "firstName":"Terence",
+         "lastName":"Crawford",
+         "dateOfBirth":"1987-12-28",
+         "weightClassId":14,
+         "countryId":2,
+         "thumbnailUrl":"https://boxrec.com/media/images//3/3c/447121.jpg"
+      },
+      {
+         "id":29,
+         "firstName":"Yordenis",
+         "lastName":"Ugás",
+         "dateOfBirth":"1986-07-14",
+         "weightClassId":14,
+         "countryId":12,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/6/69/541777.jpeg/500px-541777.jpeg"
+      },
+      {
+         "id":30,
+         "firstName":"Josh",
+         "lastName":"Taylor",
+         "dateOfBirth":"1991-01-02",
+         "weightClassId":13,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/6/69/JoshTaylormtk.jpeg/500px-JoshTaylormtk.jpeg"
+      },
+      {
+         "id":31,
+         "firstName":"George",
+         "lastName":"Kambosos Jr.",
+         "dateOfBirth":"1993-06-14",
+         "weightClassId":12,
+         "countryId":13,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/d/dc/646781.jpeg/500px-646781.jpeg"
+      },
+      {
+         "id":32,
+         "firstName":"Devin",
+         "lastName":"Haney",
+         "dateOfBirth":"1998-11-17",
+         "weightClassId":12,
+         "countryId":1,
+         "thumbnailUrl":"https://boxrec.com/media/images//thumb/7/7b/DevinHaney.jpg/500px-DevinHaney.jpg"
+      }
+   ],
+   "events":[
+      {
+         "id":2,
+         "title":"Anthony Joshua VS Tyson Fury",
+         "date":"2021-01-30",
+         "venue":"02 Arena",
+         "countryId":null,
+         "weightClassId":19,
+         "mainEventId":null,
+         "boxer1Id":4,
+         "boxer2Id":3
+      }
+   ],
+   "organizations":[
+      {
+         "id":10,
+         "shortName":"WBO",
+         "fullName":"World Boxing Organization"
+      },
+      {
+         "id":11,
+         "shortName":"WBC",
+         "fullName":"World Boxing Council "
+      },
+      {
+         "id":12,
+         "shortName":"WBA",
+         "fullName":"World Boxing Association"
+      },
+      {
+         "id":13,
+         "shortName":"IBF",
+         "fullName":"International Boxing Federation"
+      }
+   ],
+   "weightClasses":[
+      {
+         "id":5,
+         "weight":"Minimumweight",
+         "lb":105
+      },
+      {
+         "id":6,
+         "weight":"Light Flyweight",
+         "lb":108
+      },
+      {
+         "id":7,
+         "weight":"Flyweight",
+         "lb":112
+      },
+      {
+         "id":8,
+         "weight":"Super Flyweight",
+         "lb":115
+      },
+      {
+         "id":9,
+         "weight":"Super Bantamweight",
+         "lb":122
+      },
+      {
+         "id":10,
+         "weight":"Featherweight",
+         "lb":126
+      },
+      {
+         "id":11,
+         "weight":"Super Featherweight",
+         "lb":130
+      },
+      {
+         "id":12,
+         "weight":"Lightweight",
+         "lb":135
+      },
+      {
+         "id":13,
+         "weight":"Super Lightweight",
+         "lb":140
+      },
+      {
+         "id":14,
+         "weight":"Welterweight",
+         "lb":147
+      },
+      {
+         "id":15,
+         "weight":"Middleweight",
+         "lb":160
+      },
+      {
+         "id":16,
+         "weight":"Super Middleweight",
+         "lb":168
+      },
+      {
+         "id":17,
+         "weight":"Light Heavyweight",
+         "lb":175
+      },
+      {
+         "id":18,
+         "weight":"Cruiserweight",
+         "lb":200
+      },
+      {
+         "id":19,
+         "weight":"Heavyweight",
+         "lb":250
+      },
+      {
+         "id":20,
+         "weight":"Bantamweight",
+         "lb":118
+      },
+      {
+         "id":21,
+         "weight":"Super Welterweight",
+         "lb":154
+      },
+      {
+         "id":22,
+         "weight":"Light Minimumweight",
+         "lb":102
+      }
+   ],
+   "country":[
+      {
+         "id":1,
+         "isoCode":"uk",
+         "name":"United Kingdom "
+      },
+      {
+         "id":2,
+         "isoCode":"us",
+         "name":"United States "
+      },
+      {
+         "id":3,
+         "isoCode":"kz",
+         "name":"Kazakhstan"
+      },
+      {
+         "id":4,
+         "isoCode":"mx",
+         "name":"Mexico "
+      },
+      {
+         "id":5,
+         "isoCode":"ua ",
+         "name":"Ukraine "
+      },
+      {
+         "id":6,
+         "isoCode":"fr",
+         "name":"France"
+      },
+      {
+         "id":7,
+         "isoCode":"cd",
+         "name":"DR Congo"
+      },
+      {
+         "id":8,
+         "isoCode":"lv",
+         "name":"Latvia "
+      },
+      {
+         "id":9,
+         "isoCode":"ru",
+         "name":"Russia "
+      },
+      {
+         "id":10,
+         "isoCode":"jp",
+         "name":"Japan "
+      },
+      {
+         "id":11,
+         "isoCode":"ar",
+         "name":"Argentina "
+      },
+      {
+         "id":12,
+         "isoCode":"cu",
+         "name":"Cuba "
+      },
+      {
+         "id":13,
+         "isoCode":"au",
+         "name":"Australia "
+      }
+   ]
+}
