@@ -63,11 +63,11 @@ class NetworkManager: NSObject {
     
     static func downloadBoxingData(completion: @escaping (Error?) -> Void) {
                 
-        #if DEBUG
-        NetworkManager.loadMockData(){ error in
-            completion(error)
-        }
-        #else
+//        #if DEBUG
+//        NetworkManager.loadMockData(){ error in
+//            completion(error)
+//        }
+//        #else
                 
         guard
             let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
@@ -92,7 +92,7 @@ class NetworkManager: NSObject {
                 completion(error)
             }
         }
-        #endif
+//        #endif
     }
     
     static func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage?) -> ()) {
