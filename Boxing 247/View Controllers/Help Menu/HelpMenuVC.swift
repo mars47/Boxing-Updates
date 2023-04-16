@@ -104,7 +104,7 @@ private extension HelpMenuVC {
             emailController.mailComposeDelegate = self
             emailController.setToRecipients(["help@boxingupdates.co.uk"])
             emailController.setMessageBody("<p><br><br><br><br><br><br> iOS version \(version) </p>", isHTML: true)
-            emailController.setSubject("User Feedback ios v.1.0.1 Ticket Number \(Int.random(in: 1..<10000000))")
+            emailController.setSubject("User Feedback ios v.1.1.0 Ticket Number \(Int.random(in: 1..<10000000))")
             present(emailController, animated: true)
             
         } else {
