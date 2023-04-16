@@ -12,8 +12,12 @@ import AppTrackingTransparency
 
 class NetworkManager: NSObject {
     
-    var urls  = [URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxinginsider.com%2Ffeed%2F"), URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxingnews24.com%2Ffeed%2F")]
-//, URL(string:"https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
+    var urls  = [URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.ringtv.com%2Ffeed%2F"),
+                 URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ffeeds.feedburner.com%2Fboxing247%2FtuVW"),
+                 URL(string:"https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.boxingnewsonline.net%2Ffeed%2F")
+    ]
+
+    // offline: URL(string:"https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.boxingnews24.com%2Ffeed%2F")
     
     func downloadNewsArticles(completion: @escaping (Error?) -> Void) {
         
@@ -59,11 +63,11 @@ class NetworkManager: NSObject {
     
     static func downloadBoxingData(completion: @escaping (Error?) -> Void) {
                 
-        #if DEBUG
-        NetworkManager.loadMockData(){ error in
-            completion(error)
-        }
-        #else
+//        #if DEBUG
+//        NetworkManager.loadMockData(){ error in
+//            completion(error)
+//        }
+//        #else
                 
         guard
             let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
@@ -88,7 +92,7 @@ class NetworkManager: NSObject {
                 completion(error)
             }
         }
-        #endif
+//        #endif
     }
     
     static func downloadThumbnailImage(for url: URL, completion: @escaping (UIImage?) -> ()) {
